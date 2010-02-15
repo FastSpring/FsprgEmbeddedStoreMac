@@ -8,14 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import "FSAquaticPrimeLicense.h"
+#import "FSLicense.h"
 
 
 @interface FSLicenseDocumentRepresentation : NSObject {
-	FSAquaticPrimeLicense *license;
+	FSLicense *license;
 }
 
-- (FSAquaticPrimeLicense *)license;
+- (FSLicense *)license;
 
 - (void)setDataSource:(WebDataSource *)aDataSource;
 - (void)receivedData:(NSData *)aData withDataSource:(WebDataSource *)aDataSource;

@@ -1,17 +1,17 @@
 //
-//  FSAquaticPrimeLicense.m
+//  FSLicense.m
 //  FSEmbeddedStore
 //
 //  Created by Lars Steiger on 2/12/10.
 //  Copyright 2010 FastSpring. All rights reserved.
 //
 
-#import "FSAquaticPrimeLicense.h"
+#import "FSLicense.h"
 
 
-@implementation FSAquaticPrimeLicense
+@implementation FSLicense
 
-+ (FSAquaticPrimeLicense *)licenseFromData:(NSData *)aData {
++ (FSLicense *)licenseFromData:(NSData *)aData {
 	NSPropertyListFormat *format = nil;
 	NSString *errorDesc = nil;
 	
@@ -21,10 +21,10 @@
 													   errorDescription:&errorDesc];
 		
 	
-	return [[[FSAquaticPrimeLicense alloc] initWithDictionary:aDict] autorelease];
+	return [[[FSLicense alloc] initWithDictionary:aDict] autorelease];
 }
 
-- (FSAquaticPrimeLicense *)initWithDictionary:(NSDictionary *)aDict {
+- (FSLicense *)initWithDictionary:(NSDictionary *)aDict {
 	self = [super init];
 	if (self != nil) {
 		dict = [aDict retain];
@@ -35,10 +35,6 @@
 
 - (NSString *)valueForKey:(NSString *)key {
 	return [dict valueForKey:key];
-}
-
-- (NSString *)signature {
-	return [self valueForKey:@"signature"];
 }
 
 @end

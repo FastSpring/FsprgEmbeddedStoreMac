@@ -11,7 +11,7 @@
 
 @implementation FSLicenseDocumentRepresentation
 
-- (FSAquaticPrimeLicense *)license {
+- (FSLicense *)license {
 	return license;
 }
 
@@ -19,7 +19,7 @@
 }
 
 - (void)receivedData:(NSData *)aData withDataSource:(WebDataSource *)aDataSource {
-	license = [[FSAquaticPrimeLicense licenseFromData:aData] retain];
+	license = [[FSLicense licenseFromData:aData] retain];
 }
 
 - (void)receivedError:(NSError *)anError withDataSource:(WebDataSource *)aDataSource {
