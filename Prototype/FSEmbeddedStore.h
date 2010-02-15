@@ -16,7 +16,10 @@
 }
 
 - (IBAction)open:(id)sender;
+- (IBAction)show1PasswordMenu:(id)sender;
 - (void)setLoading:(BOOL)aFlag;
 - (BOOL)loading;
+
+- (void)js_goBack;
 
 @end
