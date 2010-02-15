@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		46044EB2111E3024004FD66A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46044EB1111E3024004FD66A /* WebKit.framework */; };
 		46044EB8111E3042004FD66A /* FSEmbeddedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 46044EB7111E3042004FD66A /* FSEmbeddedStore.m */; };
+		465C54B91129FDB1008B62D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465C54B81129FDB1008B62D7 /* AddressBook.framework */; };
 		46D398CB1125CBC700150E98 /* page1.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CA1125CBC700150E98 /* page1.html */; };
 		46D398CD1125CC2E00150E98 /* page3.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CC1125CC2E00150E98 /* page3.html */; };
 		46D398D51125CC5800150E98 /* page2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398D41125CC5800150E98 /* page2.html */; };
 		46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 46D398ED1125CE1600150E98 /* aquaticprime_license.txt */; };
 		46D3992B1125D0FD00150E98 /* FSLicenseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3992A1125D0FD00150E98 /* FSLicenseWebView.m */; };
 		46D3992E1125D18500150E98 /* FSLicenseDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3992D1125D18500150E98 /* FSLicenseDocumentRepresentation.m */; };
-		46D3993E1125D38600150E98 /* FSAquaticPrimeLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3993D1125D38600150E98 /* FSAquaticPrimeLicense.m */; };
+		46D3993E1125D38600150E98 /* FSLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3993D1125D38600150E98 /* FSLicense.m */; };
+		46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */; };
+		46D39C6B112953DB00150E98 /* pricing_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C6A112953DB00150E98 /* pricing_page.html */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -34,6 +37,7 @@
 		46044EB1111E3024004FD66A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		46044EB6111E3042004FD66A /* FSEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStore.h; sourceTree = "<group>"; };
 		46044EB7111E3042004FD66A /* FSEmbeddedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStore.m; sourceTree = "<group>"; };
+		465C54B81129FDB1008B62D7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		46D398CA1125CBC700150E98 /* page1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page1.html; sourceTree = "<group>"; };
 		46D398CC1125CC2E00150E98 /* page3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page3.html; sourceTree = "<group>"; };
 		46D398D41125CC5800150E98 /* page2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page2.html; sourceTree = "<group>"; };
@@ -42,8 +46,10 @@
 		46D3992A1125D0FD00150E98 /* FSLicenseWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicenseWebView.m; sourceTree = "<group>"; };
 		46D3992C1125D18500150E98 /* FSLicenseDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicenseDocumentRepresentation.h; sourceTree = "<group>"; };
 		46D3992D1125D18500150E98 /* FSLicenseDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicenseDocumentRepresentation.m; sourceTree = "<group>"; };
-		46D3993C1125D38600150E98 /* FSAquaticPrimeLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAquaticPrimeLicense.h; sourceTree = "<group>"; };
-		46D3993D1125D38600150E98 /* FSAquaticPrimeLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAquaticPrimeLicense.m; sourceTree = "<group>"; };
+		46D3993C1125D38600150E98 /* FSLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicense.h; sourceTree = "<group>"; };
+		46D3993D1125D38600150E98 /* FSLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicense.m; sourceTree = "<group>"; };
+		46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FSEmbeddedStoreStyle; sourceTree = "<group>"; };
+		46D39C6A112953DB00150E98 /* pricing_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pricing_page.html; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FSEmbeddedStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSEmbeddedStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -55,6 +61,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				46044EB2111E3024004FD66A /* WebKit.framework in Frameworks */,
+				465C54B91129FDB1008B62D7 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +77,8 @@
 				46D3992A1125D0FD00150E98 /* FSLicenseWebView.m */,
 				46D3992C1125D18500150E98 /* FSLicenseDocumentRepresentation.h */,
 				46D3992D1125D18500150E98 /* FSLicenseDocumentRepresentation.m */,
-				46D3993C1125D38600150E98 /* FSAquaticPrimeLicense.h */,
-				46D3993D1125D38600150E98 /* FSAquaticPrimeLicense.m */,
+				46D3993C1125D38600150E98 /* FSLicense.h */,
+				46D3993D1125D38600150E98 /* FSLicense.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -79,8 +86,10 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				46044EB1111E3024004FD66A /* WebKit.framework */,
+				465C54B81129FDB1008B62D7 /* AddressBook.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -88,7 +97,6 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 			);
@@ -127,6 +135,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46D39C6A112953DB00150E98 /* pricing_page.html */,
+				46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -193,9 +203,11 @@
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				46D398CB1125CBC700150E98 /* page1.html in Resources */,
-				46D398CD1125CC2E00150E98 /* page3.html in Resources */,
 				46D398D51125CC5800150E98 /* page2.html in Resources */,
+				46D398CD1125CC2E00150E98 /* page3.html in Resources */,
 				46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */,
+				46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */,
+				46D39C6B112953DB00150E98 /* pricing_page.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +222,7 @@
 				46044EB8111E3042004FD66A /* FSEmbeddedStore.m in Sources */,
 				46D3992B1125D0FD00150E98 /* FSLicenseWebView.m in Sources */,
 				46D3992E1125D18500150E98 /* FSLicenseDocumentRepresentation.m in Sources */,
-				46D3993E1125D38600150E98 /* FSAquaticPrimeLicense.m in Sources */,
+				46D3993E1125D38600150E98 /* FSLicense.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

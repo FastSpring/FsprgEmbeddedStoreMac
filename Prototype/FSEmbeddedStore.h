@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
+#import <AddressBook/AddressBook.h>
 
 
 @interface FSEmbeddedStore : NSObject {
@@ -17,6 +18,8 @@
 
 - (IBAction)open:(id)sender;
 - (IBAction)show1PasswordMenu:(id)sender;
+- (IBAction)fillMeFromAddressBook:(id)sender;
+
 - (void)setLoading:(BOOL)aFlag;
 - (BOOL)loading;
 
