@@ -8,6 +8,7 @@
 
 #import "FSEmbeddedStoreDelegate.h"
 #import <WebKit/WebKit.h>
+#import "MyOrderViewController.h"
 
 
 @implementation FSEmbeddedStoreDelegate
@@ -43,7 +44,7 @@
 	// * connect outlet view of File's Owner with CustomView
 	// * add e.g. a Label to the CustomView
 	// * bind Value to File's Owner representedObject.Name
-	NSViewController *controller = [[[NSViewController alloc] initWithNibName:@"OrderView" bundle:nil] retain];
+	MyOrderViewController *controller = [[[MyOrderViewController alloc] initWithNibName:@"OrderView" bundle:nil] retain];
 	[controller setRepresentedObject:order];
 	return [controller view];
 }

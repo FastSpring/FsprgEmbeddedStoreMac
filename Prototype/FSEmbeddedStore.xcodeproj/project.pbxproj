@@ -16,6 +16,7 @@
 		465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */; };
 		465CC20B112DDDBD001E286C /* FSEmbeddedStoreDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */; };
 		465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC21E112E01A3001E286C /* FSStoreParameters.m */; };
+		467BE1481131BB22003B0654 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BE1471131BB22003B0654 /* MyOrderViewController.m */; };
 		46D398CB1125CBC700150E98 /* page1.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CA1125CBC700150E98 /* page1.html */; };
 		46D398CD1125CC2E00150E98 /* page3.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CC1125CC2E00150E98 /* page3.html */; };
 		46D398D51125CC5800150E98 /* page2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398D41125CC5800150E98 /* page2.html */; };
@@ -52,6 +53,8 @@
 		465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreDelegate.m; sourceTree = "<group>"; };
 		465CC21D112E01A3001E286C /* FSStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStoreParameters.h; sourceTree = "<group>"; };
 		465CC21E112E01A3001E286C /* FSStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStoreParameters.m; sourceTree = "<group>"; };
+		467BE1461131BB22003B0654 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		467BE1471131BB22003B0654 /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
 		46D398CA1125CBC700150E98 /* page1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page1.html; sourceTree = "<group>"; };
 		46D398CC1125CC2E00150E98 /* page3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page3.html; sourceTree = "<group>"; };
 		46D398D41125CC5800150E98 /* page2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page2.html; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				465CC21E112E01A3001E286C /* FSStoreParameters.m */,
 				465CC209112DDDBD001E286C /* FSEmbeddedStoreDelegate.h */,
 				465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */,
+				467BE1461131BB22003B0654 /* MyOrderViewController.h */,
+				467BE1471131BB22003B0654 /* MyOrderViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */,
 				465CC20B112DDDBD001E286C /* FSEmbeddedStoreDelegate.m in Sources */,
 				465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */,
+				467BE1481131BB22003B0654 /* MyOrderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -351,7 +351,7 @@
 	465CC15F112D4C24001E286C /* FSOrder.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {686, 741}}";
-			sepNavSelRange = "{616, 0}";
+			sepNavSelRange = "{1078, 0}";
 			sepNavVisRange = "{136, 948}";
 		};
 	};
@@ -433,9 +433,9 @@
 	};
 	465CC21E112E01A3001E286C /* FSStoreParameters.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 1456}}";
-			sepNavSelRange = "{820, 0}";
-			sepNavVisRange = "{527, 512}";
+			sepNavIntBoundsRect = "{{0, 0}, {686, 1443}}";
+			sepNavSelRange = "{381, 0}";
+			sepNavVisRange = "{90, 1121}";
 		};
 	};
 	465CC227112E9400001E286C /* complicated.plist */ = {
@@ -742,9 +742,9 @@
 	};
 	46D398D41125CC5800150E98 /* page2.html */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1818, 9867}}";
-			sepNavSelRange = "{5849, 0}";
-			sepNavVisRange = "{0, 2715}";
+			sepNavIntBoundsRect = "{{0, 0}, {44742, 8359}}";
+			sepNavSelRange = "{38985, 0}";
+			sepNavVisRange = "{30246, 8739}";
 		};
 	};
 	46D398ED1125CE1600150E98 /* aquaticprime_license.txt */ = {
@@ -769,7 +769,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {2966, 741}}";
 			sepNavSelRange = "{484, 0}";
-			sepNavVisRange = "{0, 2879}";
+			sepNavVisRange = "{0, 2456}";
 		};
 	};
 	46D39D781129631700150E98 /* style.css */ = {
