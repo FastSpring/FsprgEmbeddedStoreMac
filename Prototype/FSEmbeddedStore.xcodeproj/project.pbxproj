@@ -8,15 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		46044EB2111E3024004FD66A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46044EB1111E3024004FD66A /* WebKit.framework */; };
-		46044EB8111E3042004FD66A /* FSEmbeddedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 46044EB7111E3042004FD66A /* FSEmbeddedStore.m */; };
+		461E84131131670B00789635 /* OrderView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 461E84121131670B00789635 /* OrderView.nib */; };
 		465C54B91129FDB1008B62D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465C54B81129FDB1008B62D7 /* AddressBook.framework */; };
+		465CC147112D4ACF001E286C /* FSOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC146112D4ACF001E286C /* FSOrderView.m */; };
+		465CC14A112D4BDE001E286C /* FSOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */; };
+		465CC160112D4C24001E286C /* FSOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC15F112D4C24001E286C /* FSOrder.m */; };
+		465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */; };
+		465CC20B112DDDBD001E286C /* FSEmbeddedStoreDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */; };
+		465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC21E112E01A3001E286C /* FSStoreParameters.m */; };
 		46D398CB1125CBC700150E98 /* page1.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CA1125CBC700150E98 /* page1.html */; };
 		46D398CD1125CC2E00150E98 /* page3.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CC1125CC2E00150E98 /* page3.html */; };
 		46D398D51125CC5800150E98 /* page2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398D41125CC5800150E98 /* page2.html */; };
 		46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 46D398ED1125CE1600150E98 /* aquaticprime_license.txt */; };
-		46D3992B1125D0FD00150E98 /* FSLicenseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3992A1125D0FD00150E98 /* FSLicenseWebView.m */; };
-		46D3992E1125D18500150E98 /* FSLicenseDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3992D1125D18500150E98 /* FSLicenseDocumentRepresentation.m */; };
-		46D3993E1125D38600150E98 /* FSLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D3993D1125D38600150E98 /* FSLicense.m */; };
 		46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */; };
 		46D39C6B112953DB00150E98 /* pricing_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C6A112953DB00150E98 /* pricing_page.html */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
@@ -35,19 +38,24 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* FSEmbeddedStore_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStore_Prefix.pch; sourceTree = "<group>"; };
 		46044EB1111E3024004FD66A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		46044EB6111E3042004FD66A /* FSEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStore.h; sourceTree = "<group>"; };
-		46044EB7111E3042004FD66A /* FSEmbeddedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStore.m; sourceTree = "<group>"; };
+		461E84121131670B00789635 /* OrderView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = OrderView.nib; sourceTree = "<group>"; };
 		465C54B81129FDB1008B62D7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		465CC145112D4ACF001E286C /* FSOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderView.h; sourceTree = "<group>"; };
+		465CC146112D4ACF001E286C /* FSOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderView.m; sourceTree = "<group>"; };
+		465CC148112D4BDE001E286C /* FSOrderDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderDocumentRepresentation.h; sourceTree = "<group>"; };
+		465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderDocumentRepresentation.m; sourceTree = "<group>"; };
+		465CC15E112D4C24001E286C /* FSOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrder.h; sourceTree = "<group>"; };
+		465CC15F112D4C24001E286C /* FSOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrder.m; sourceTree = "<group>"; };
+		465CC187112D4E69001E286C /* FSEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreController.h; sourceTree = "<group>"; };
+		465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreController.m; sourceTree = "<group>"; };
+		465CC209112DDDBD001E286C /* FSEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
+		465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreDelegate.m; sourceTree = "<group>"; };
+		465CC21D112E01A3001E286C /* FSStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStoreParameters.h; sourceTree = "<group>"; };
+		465CC21E112E01A3001E286C /* FSStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStoreParameters.m; sourceTree = "<group>"; };
 		46D398CA1125CBC700150E98 /* page1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page1.html; sourceTree = "<group>"; };
 		46D398CC1125CC2E00150E98 /* page3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page3.html; sourceTree = "<group>"; };
 		46D398D41125CC5800150E98 /* page2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page2.html; sourceTree = "<group>"; };
 		46D398ED1125CE1600150E98 /* aquaticprime_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aquaticprime_license.txt; sourceTree = "<group>"; };
-		46D399291125D0FD00150E98 /* FSLicenseWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicenseWebView.h; sourceTree = "<group>"; };
-		46D3992A1125D0FD00150E98 /* FSLicenseWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicenseWebView.m; sourceTree = "<group>"; };
-		46D3992C1125D18500150E98 /* FSLicenseDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicenseDocumentRepresentation.h; sourceTree = "<group>"; };
-		46D3992D1125D18500150E98 /* FSLicenseDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicenseDocumentRepresentation.m; sourceTree = "<group>"; };
-		46D3993C1125D38600150E98 /* FSLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicense.h; sourceTree = "<group>"; };
-		46D3993D1125D38600150E98 /* FSLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicense.m; sourceTree = "<group>"; };
 		46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FSEmbeddedStoreStyle; sourceTree = "<group>"; };
 		46D39C6A112953DB00150E98 /* pricing_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pricing_page.html; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,14 +79,18 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				46044EB6111E3042004FD66A /* FSEmbeddedStore.h */,
-				46044EB7111E3042004FD66A /* FSEmbeddedStore.m */,
-				46D399291125D0FD00150E98 /* FSLicenseWebView.h */,
-				46D3992A1125D0FD00150E98 /* FSLicenseWebView.m */,
-				46D3992C1125D18500150E98 /* FSLicenseDocumentRepresentation.h */,
-				46D3992D1125D18500150E98 /* FSLicenseDocumentRepresentation.m */,
-				46D3993C1125D38600150E98 /* FSLicense.h */,
-				46D3993D1125D38600150E98 /* FSLicense.m */,
+				465CC187112D4E69001E286C /* FSEmbeddedStoreController.h */,
+				465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */,
+				465CC15E112D4C24001E286C /* FSOrder.h */,
+				465CC15F112D4C24001E286C /* FSOrder.m */,
+				465CC145112D4ACF001E286C /* FSOrderView.h */,
+				465CC146112D4ACF001E286C /* FSOrderView.m */,
+				465CC148112D4BDE001E286C /* FSOrderDocumentRepresentation.h */,
+				465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */,
+				465CC21D112E01A3001E286C /* FSStoreParameters.h */,
+				465CC21E112E01A3001E286C /* FSStoreParameters.m */,
+				465CC209112DDDBD001E286C /* FSEmbeddedStoreDelegate.h */,
+				465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -144,6 +156,7 @@
 				46D398D41125CC5800150E98 /* page2.html */,
 				46D398CC1125CC2E00150E98 /* page3.html */,
 				46D398ED1125CE1600150E98 /* aquaticprime_license.txt */,
+				461E84121131670B00789635 /* OrderView.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 				46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */,
 				46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */,
 				46D39C6B112953DB00150E98 /* pricing_page.html in Resources */,
+				461E84131131670B00789635 /* OrderView.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,10 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				46044EB8111E3042004FD66A /* FSEmbeddedStore.m in Sources */,
-				46D3992B1125D0FD00150E98 /* FSLicenseWebView.m in Sources */,
-				46D3992E1125D18500150E98 /* FSLicenseDocumentRepresentation.m in Sources */,
-				46D3993E1125D38600150E98 /* FSLicense.m in Sources */,
+				465CC147112D4ACF001E286C /* FSOrderView.m in Sources */,
+				465CC14A112D4BDE001E286C /* FSOrderDocumentRepresentation.m in Sources */,
+				465CC160112D4C24001E286C /* FSOrder.m in Sources */,
+				465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */,
+				465CC20B112DDDBD001E286C /* FSEmbeddedStoreDelegate.m in Sources */,
+				465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

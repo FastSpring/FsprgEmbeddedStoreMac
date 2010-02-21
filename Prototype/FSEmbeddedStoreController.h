@@ -8,21 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
-#import <AddressBook/AddressBook.h>
+#import "FSEmbeddedStoreDelegate.h"
 
 
-@interface FSEmbeddedStore : NSObject {
+@interface FSEmbeddedStoreController : NSObject {
 	IBOutlet WebView* webView;
 	BOOL loading;
+	FSEmbeddedStoreDelegate *delegate;
 }
 
-- (IBAction)open:(id)sender;
-- (IBAction)show1PasswordMenu:(id)sender;
+- (FSEmbeddedStoreDelegate *)delegate;
+- (void)setDelegate:(FSEmbeddedStoreDelegate *)aDelegate;
+
+- (IBAction)load:(id)sender;
 - (IBAction)fillMeFromAddressBook:(id)sender;
 
 - (void)setLoading:(BOOL)aFlag;
 - (BOOL)loading;
-
-- (void)js_goBack;
 
 @end

@@ -1,8 +1,8 @@
 //
-//  FSLicenseWebView.h
+//  FSOrderView.h
 //  FSEmbeddedStore
 //
-//  Created by Lars Steiger on 2/12/10.
+//  Created by Lars Steiger on 2/18/10.
 //  Copyright 2010 FastSpring. All rights reserved.
 //
 
@@ -10,13 +10,14 @@
 #import <WebKit/WebKit.h>
 
 
-@interface FSLicenseWebView : WebView {
+@interface FSOrderView : NSView <WebDocumentView> {
 	WebDataSource *dataSource;
+	BOOL needsLayout;
 }
 
+- (WebDataSource *)dataSource;
 - (void)setDataSource:(WebDataSource *)aDataSource;
-- (void)dataSourceUpdated:(WebDataSource *)aDataSource;
+- (BOOL)needsLayout;
 - (void)setNeedsLayout:(BOOL)flag;
-- (void)layout;
 
 @end
