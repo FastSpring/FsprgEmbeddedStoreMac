@@ -14,11 +14,11 @@
 @interface FSEmbeddedStoreController : NSObject {
 	IBOutlet WebView* webView;
 	BOOL loading;
-	FSEmbeddedStoreDelegate *delegate;
+	id <FSEmbeddedStoreDelegate> delegate;
 }
 
-- (FSEmbeddedStoreDelegate *)delegate;
-- (void)setDelegate:(FSEmbeddedStoreDelegate *)aDelegate;
+- (id <FSEmbeddedStoreDelegate>)delegate;
+- (void)setDelegate:(id <FSEmbeddedStoreDelegate>)aDelegate;
 
 - (IBAction)load:(id)sender;
 - (IBAction)fillMeFromAddressBook:(id)sender;

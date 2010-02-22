@@ -1,17 +1,22 @@
 //
-//  FSEmbeddedStoreDelegate.m
+//  MyEmbeddedStoreController.m
 //  FSEmbeddedStore
 //
-//  Created by Lars Steiger on 2/18/10.
+//  Created by Lars Steiger on 2/22/10.
 //  Copyright 2010 FastSpring. All rights reserved.
 //
 
-#import "FSEmbeddedStoreDelegate.h"
-#import <WebKit/WebKit.h>
+#import "MyEmbeddedStoreController.h"
 #import "MyOrderViewController.h"
 
 
-@implementation FSEmbeddedStoreDelegate
+@implementation MyEmbeddedStoreController
+
+- (void)awakeFromNib
+{
+	[super setDelegate:self];
+	[super load:nil];
+}
 
 - (void)willLoadStoreWithParameters:(FSStoreParameters *)parameters {
 	[parameters setStoreId:@"" withProduct:@""];
@@ -44,7 +49,7 @@
 	// * connect outlet view of File's Owner with CustomView
 	// * add e.g. a Label to the CustomView
 	// * bind Value to File's Owner representedObject.Name
-	MyOrderViewController *controller = [[[MyOrderViewController alloc] initWithNibName:@"OrderView" bundle:nil] retain];
+	MyOrderViewController *controller = [[[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil] retain];
 	[controller setRepresentedObject:order];
 	return [controller view];
 }

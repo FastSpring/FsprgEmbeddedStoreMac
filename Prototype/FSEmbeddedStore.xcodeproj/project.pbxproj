@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		46044EB2111E3024004FD66A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46044EB1111E3024004FD66A /* WebKit.framework */; };
-		461E84131131670B00789635 /* OrderView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 461E84121131670B00789635 /* OrderView.nib */; };
 		465C54B91129FDB1008B62D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465C54B81129FDB1008B62D7 /* AddressBook.framework */; };
 		465CC147112D4ACF001E286C /* FSOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC146112D4ACF001E286C /* FSOrderView.m */; };
 		465CC14A112D4BDE001E286C /* FSOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */; };
 		465CC160112D4C24001E286C /* FSOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC15F112D4C24001E286C /* FSOrder.m */; };
 		465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */; };
-		465CC20B112DDDBD001E286C /* FSEmbeddedStoreDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */; };
 		465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC21E112E01A3001E286C /* FSStoreParameters.m */; };
 		467BE1481131BB22003B0654 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BE1471131BB22003B0654 /* MyOrderViewController.m */; };
 		46D398CB1125CBC700150E98 /* page1.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CA1125CBC700150E98 /* page1.html */; };
@@ -23,6 +21,8 @@
 		46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 46D398ED1125CE1600150E98 /* aquaticprime_license.txt */; };
 		46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */; };
 		46D39C6B112953DB00150E98 /* pricing_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C6A112953DB00150E98 /* pricing_page.html */; };
+		46F35F7C1132EBD100AA2DE2 /* MyEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F35F7B1132EBD100AA2DE2 /* MyEmbeddedStoreController.m */; };
+		46F35F951132EEB700AA2DE2 /* MyOrderView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 46F35F941132EEB700AA2DE2 /* MyOrderView.nib */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -39,7 +39,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* FSEmbeddedStore_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStore_Prefix.pch; sourceTree = "<group>"; };
 		46044EB1111E3024004FD66A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		461E84121131670B00789635 /* OrderView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = OrderView.nib; sourceTree = "<group>"; };
 		465C54B81129FDB1008B62D7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		465CC145112D4ACF001E286C /* FSOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderView.h; sourceTree = "<group>"; };
 		465CC146112D4ACF001E286C /* FSOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderView.m; sourceTree = "<group>"; };
@@ -49,8 +48,6 @@
 		465CC15F112D4C24001E286C /* FSOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrder.m; sourceTree = "<group>"; };
 		465CC187112D4E69001E286C /* FSEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreController.h; sourceTree = "<group>"; };
 		465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreController.m; sourceTree = "<group>"; };
-		465CC209112DDDBD001E286C /* FSEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
-		465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreDelegate.m; sourceTree = "<group>"; };
 		465CC21D112E01A3001E286C /* FSStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStoreParameters.h; sourceTree = "<group>"; };
 		465CC21E112E01A3001E286C /* FSStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStoreParameters.m; sourceTree = "<group>"; };
 		467BE1461131BB22003B0654 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
@@ -61,6 +58,10 @@
 		46D398ED1125CE1600150E98 /* aquaticprime_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aquaticprime_license.txt; sourceTree = "<group>"; };
 		46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FSEmbeddedStoreStyle; sourceTree = "<group>"; };
 		46D39C6A112953DB00150E98 /* pricing_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pricing_page.html; sourceTree = "<group>"; };
+		46F35F7A1132EBD100AA2DE2 /* MyEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEmbeddedStoreController.h; sourceTree = "<group>"; };
+		46F35F7B1132EBD100AA2DE2 /* MyEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEmbeddedStoreController.m; sourceTree = "<group>"; };
+		46F35F811132EDE000AA2DE2 /* FSEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
+		46F35F941132EEB700AA2DE2 /* MyOrderView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MyOrderView.nib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FSEmbeddedStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSEmbeddedStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +85,7 @@
 			children = (
 				465CC187112D4E69001E286C /* FSEmbeddedStoreController.h */,
 				465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */,
+				46F35F811132EDE000AA2DE2 /* FSEmbeddedStoreDelegate.h */,
 				465CC15E112D4C24001E286C /* FSOrder.h */,
 				465CC15F112D4C24001E286C /* FSOrder.m */,
 				465CC145112D4ACF001E286C /* FSOrderView.h */,
@@ -92,10 +94,7 @@
 				465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */,
 				465CC21D112E01A3001E286C /* FSStoreParameters.h */,
 				465CC21E112E01A3001E286C /* FSStoreParameters.m */,
-				465CC209112DDDBD001E286C /* FSEmbeddedStoreDelegate.h */,
-				465CC20A112DDDBD001E286C /* FSEmbeddedStoreDelegate.m */,
-				467BE1461131BB22003B0654 /* MyOrderViewController.h */,
-				467BE1471131BB22003B0654 /* MyOrderViewController.m */,
+				46F35F821132EDF900AA2DE2 /* Examples */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -161,7 +160,7 @@
 				46D398D41125CC5800150E98 /* page2.html */,
 				46D398CC1125CC2E00150E98 /* page3.html */,
 				46D398ED1125CE1600150E98 /* aquaticprime_license.txt */,
-				461E84121131670B00789635 /* OrderView.nib */,
+				46F35F941132EEB700AA2DE2 /* MyOrderView.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -173,6 +172,17 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46F35F821132EDF900AA2DE2 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				46F35F7A1132EBD100AA2DE2 /* MyEmbeddedStoreController.h */,
+				46F35F7B1132EBD100AA2DE2 /* MyEmbeddedStoreController.m */,
+				467BE1461131BB22003B0654 /* MyOrderViewController.h */,
+				467BE1471131BB22003B0654 /* MyOrderViewController.m */,
+			);
+			name = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +236,7 @@
 				46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */,
 				46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */,
 				46D39C6B112953DB00150E98 /* pricing_page.html in Resources */,
-				461E84131131670B00789635 /* OrderView.nib in Resources */,
+				46F35F951132EEB700AA2DE2 /* MyOrderView.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +252,9 @@
 				465CC14A112D4BDE001E286C /* FSOrderDocumentRepresentation.m in Sources */,
 				465CC160112D4C24001E286C /* FSOrder.m in Sources */,
 				465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */,
-				465CC20B112DDDBD001E286C /* FSEmbeddedStoreDelegate.m in Sources */,
 				465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */,
 				467BE1481131BB22003B0654 /* MyOrderViewController.m in Sources */,
+				46F35F7C1132EBD100AA2DE2 /* MyEmbeddedStoreController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

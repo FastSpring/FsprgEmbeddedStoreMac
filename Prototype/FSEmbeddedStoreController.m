@@ -14,16 +14,6 @@
 
 @implementation FSEmbeddedStoreController
 
-- (void)awakeFromNib
-{
-	[WebView registerViewClass:[FSOrderView class]
-		     representationClass:[FSOrderDocumentRepresentation class]
-			 forMIMEType:@"text/plain"];
-
-	[self setDelegate:[[FSEmbeddedStoreDelegate alloc] init]];
-	[self load:nil];
-}
-
 - (id) init
 {
 	self = [super init];
@@ -33,11 +23,12 @@
 	return self;
 }
 
-- (FSEmbeddedStoreDelegate *)delegate
+- (id <FSEmbeddedStoreDelegate>)delegate
 {
     return [[delegate retain] autorelease]; 
 }
-- (void)setDelegate:(FSEmbeddedStoreDelegate *)aDelegate
+
+- (void)setDelegate:(id <FSEmbeddedStoreDelegate>)aDelegate
 {
     if (delegate != aDelegate) {
         [delegate release];
@@ -47,6 +38,10 @@
 
 - (IBAction)load:(id)sender
 {
+	[WebView registerViewClass:[FSOrderView class]
+		   representationClass:[FSOrderDocumentRepresentation class]
+				   forMIMEType:@"text/plain"];
+
 	[self setLoading:TRUE];
 	[webView setFrameLoadDelegate:self];
 	[webView setUIDelegate:self];
