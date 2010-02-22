@@ -8,13 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString * const kFSModeActive;
+extern NSString * const kFSModeActiveTest;
+extern NSString * const kFSModeTest;
 
 @interface FSStoreParameters : NSObject {
 	NSString *storeId;
 	NSString *product;
 	NSString *campaign;
 	NSString *option;
-	BOOL test;
+	NSString *mode;
 	NSString *referrer;
 	NSString *source;
 }
@@ -30,8 +33,8 @@
 - (void)setCampaign:(NSString *)aCampaign;
 - (NSString *)option;
 - (void)setOption:(NSString *)anOption;
-- (BOOL)test;
-- (void)setTest:(BOOL)flag;
+- (NSString *)mode;
+- (void)setMode:(NSString *)aMode;
 - (NSString *)referrer;
 - (void)setReferrer:(NSString *)aReferrer;
 - (NSString *)source;

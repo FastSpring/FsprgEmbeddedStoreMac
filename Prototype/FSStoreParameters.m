@@ -9,6 +9,10 @@
 #import "FSStoreParameters.h"
 
 
+NSString * const kFSModeActive = @"active";
+NSString * const kFSModeActiveTest = @"active.test";
+NSString * const kFSModeTest = @"test";
+
 @implementation FSStoreParameters
 
 + (FSStoreParameters *)parameters
@@ -23,7 +27,7 @@
 		[self setStoreId:nil withProduct:nil];
 		[self setCampaign:nil];
 		[self setOption:nil];
-		[self setTest:FALSE];
+		[self setMode:kFSModeActive];
 		[self setReferrer:nil];
 		[self setSource:nil];
 	}
@@ -83,13 +87,16 @@
     }
 }
 
-- (BOOL)test
+- (NSString *)mode
 {
-    return test;
+    return [[mode retain] autorelease]; 
 }
-- (void)setTest:(BOOL)flag
+- (void)setMode:(NSString *)aMode
 {
-    test = flag;
+    if (mode != aMode) {
+        [mode release];
+        mode = [aMode retain];
+    }
 }
 
 - (NSString *)referrer

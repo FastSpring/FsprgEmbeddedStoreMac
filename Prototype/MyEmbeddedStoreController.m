@@ -8,6 +8,7 @@
 
 #import "MyEmbeddedStoreController.h"
 #import "MyOrderViewController.h"
+#import "FSStoreParameters.h"
 
 
 @implementation MyEmbeddedStoreController
@@ -22,7 +23,7 @@
 	[parameters setStoreId:@"" withProduct:@""];
 	[parameters setCampaign:@""];
 	[parameters setOption:@""];
-	[parameters setTest:FALSE];
+	[parameters setMode:kFSModeTest];
 	[parameters setReferrer:@""];
 	[parameters setSource:@""];
 }
