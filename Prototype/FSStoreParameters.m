@@ -36,10 +36,7 @@ NSString * const kFSModeTest = @"test";
 
 - (NSURLRequest *)toURLRequest
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"page1" ofType:@"html"];
-	NSString *urlAsStr = [NSString stringWithFormat:@"file://%@", path];
-	//NSString *urlAsStr = @"file:///Users/lars/Desktop/FSEmbeddedStoreStyle/window.xhtml";
-	
+	NSString *urlAsStr = [NSString stringWithFormat:@"http://sites.fastspring.com/%@/product/%@?mode=test", [self storeId], [self product]];
 	return [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlAsStr]];
 }
 

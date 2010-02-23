@@ -15,12 +15,7 @@
 		465CC189112D4E69001E286C /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */; };
 		465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC21E112E01A3001E286C /* FSStoreParameters.m */; };
 		467BE1481131BB22003B0654 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BE1471131BB22003B0654 /* MyOrderViewController.m */; };
-		46D398CB1125CBC700150E98 /* page1.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CA1125CBC700150E98 /* page1.html */; };
-		46D398CD1125CC2E00150E98 /* page3.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398CC1125CC2E00150E98 /* page3.html */; };
-		46D398D51125CC5800150E98 /* page2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D398D41125CC5800150E98 /* page2.html */; };
-		46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 46D398ED1125CE1600150E98 /* aquaticprime_license.txt */; };
 		46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */; };
-		46D39C6B112953DB00150E98 /* pricing_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 46D39C6A112953DB00150E98 /* pricing_page.html */; };
 		46F35F7C1132EBD100AA2DE2 /* MyEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F35F7B1132EBD100AA2DE2 /* MyEmbeddedStoreController.m */; };
 		46F35F951132EEB700AA2DE2 /* MyOrderView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 46F35F941132EEB700AA2DE2 /* MyOrderView.nib */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
@@ -52,12 +47,7 @@
 		465CC21E112E01A3001E286C /* FSStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStoreParameters.m; sourceTree = "<group>"; };
 		467BE1461131BB22003B0654 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		467BE1471131BB22003B0654 /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
-		46D398CA1125CBC700150E98 /* page1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page1.html; sourceTree = "<group>"; };
-		46D398CC1125CC2E00150E98 /* page3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page3.html; sourceTree = "<group>"; };
-		46D398D41125CC5800150E98 /* page2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page2.html; sourceTree = "<group>"; };
-		46D398ED1125CE1600150E98 /* aquaticprime_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aquaticprime_license.txt; sourceTree = "<group>"; };
 		46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FSEmbeddedStoreStyle; sourceTree = "<group>"; };
-		46D39C6A112953DB00150E98 /* pricing_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pricing_page.html; sourceTree = "<group>"; };
 		46F35F7A1132EBD100AA2DE2 /* MyEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEmbeddedStoreController.h; sourceTree = "<group>"; };
 		46F35F7B1132EBD100AA2DE2 /* MyEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEmbeddedStoreController.m; sourceTree = "<group>"; };
 		46F35F811132EDE000AA2DE2 /* FSEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
@@ -151,15 +141,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				46D39C6A112953DB00150E98 /* pricing_page.html */,
 				46D39C3511294C7F00150E98 /* FSEmbeddedStoreStyle */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
-				46D398CA1125CBC700150E98 /* page1.html */,
-				46D398D41125CC5800150E98 /* page2.html */,
-				46D398CC1125CC2E00150E98 /* page3.html */,
-				46D398ED1125CE1600150E98 /* aquaticprime_license.txt */,
 				46F35F941132EEB700AA2DE2 /* MyOrderView.nib */,
 			);
 			name = Resources;
@@ -230,12 +215,7 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				46D398CB1125CBC700150E98 /* page1.html in Resources */,
-				46D398D51125CC5800150E98 /* page2.html in Resources */,
-				46D398CD1125CC2E00150E98 /* page3.html in Resources */,
-				46D398EE1125CE1600150E98 /* aquaticprime_license.txt in Resources */,
 				46D39C3F11294C7F00150E98 /* FSEmbeddedStoreStyle in Resources */,
-				46D39C6B112953DB00150E98 /* pricing_page.html in Resources */,
 				46F35F951132EEB700AA2DE2 /* MyOrderView.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

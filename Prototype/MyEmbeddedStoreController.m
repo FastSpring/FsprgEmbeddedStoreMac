@@ -20,7 +20,7 @@
 }
 
 - (void)willLoadStoreWithParameters:(FSStoreParameters *)parameters {
-	[parameters setStoreId:@"" withProduct:@""];
+	[parameters setStoreId:@"spootnik" withProduct:@"fsembeddedstore"];
 	[parameters setCampaign:@""];
 	[parameters setOption:@""];
 	[parameters setMode:kFSModeTest];

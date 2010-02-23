@@ -40,12 +40,14 @@
 {
 	[WebView registerViewClass:[FSOrderView class]
 		   representationClass:[FSOrderDocumentRepresentation class]
-				   forMIMEType:@"text/plain"];
+				   forMIMEType:@"text/xml"];
 
 	[self setLoading:TRUE];
 	[webView setFrameLoadDelegate:self];
 	[webView setUIDelegate:self];
 
+	[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
+	
 	FSStoreParameters *parameters = [FSStoreParameters parameters];
 	[[self delegate] willLoadStoreWithParameters:parameters];
 	[[webView mainFrame] loadRequest:[parameters toURLRequest]];
@@ -95,7 +97,12 @@
 	[self setValue:[address valueForKey:kABAddressZIPKey] forId:@"user:postal_code"];
 }
 
-#pragma: FrameLoadDelegate
+#pragma: WebFrameLoadDelegate
+
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
+{
+	[self setLoading:TRUE];
+}
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
