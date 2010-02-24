@@ -87,4 +87,11 @@
 {
 }
 
+- (void)dealloc
+{
+    [self setDataSource:nil];
+	
+    [super dealloc];
+}
+
 @end

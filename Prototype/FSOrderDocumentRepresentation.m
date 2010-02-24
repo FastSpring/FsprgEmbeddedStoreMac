@@ -64,4 +64,11 @@
 {
 }
 
+- (void)dealloc
+{
+    [self setOrder:nil];
+	
+    [super dealloc];
+}
+
 @end

@@ -120,4 +120,16 @@ NSString * const kFSModeTest = @"test";
     }
 }
 
+- (void)dealloc
+{
+    [self setStoreId:nil withProduct:nil];
+    [self setCampaign:nil];
+    [self setOption:nil];
+    [self setMode:nil];
+    [self setReferrer:nil];
+    [self setSource:nil];
+	
+    [super dealloc];
+}
+
 @end
