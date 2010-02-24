@@ -1,5 +1,5 @@
 //
-//  FSEmbeddedStore.h
+//  FSEmbeddedStoreController.h
 //  FSEmbeddedStore
 //
 //  Created by Lars Steiger on 2/12/10.

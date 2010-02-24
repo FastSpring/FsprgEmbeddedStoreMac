@@ -1,5 +1,5 @@
 //
-//  FSEmbeddedStore.m
+//  FSEmbeddedStoreController.m
 //  FSEmbeddedStore
 //
 //  Created by Lars Steiger on 2/12/10.
@@ -97,7 +97,7 @@
 	[self setValue:[address valueForKey:kABAddressZIPKey] forId:@"user:postal_code"];
 }
 
-#pragma: WebFrameLoadDelegate
+// WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
@@ -123,7 +123,7 @@
 	[[self delegate] didReceiveOrder:anOrder];
 }
 
-#pragma: UIDelegate
+// WebUIDelegate
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
@@ -146,6 +146,13 @@
 
 - (NSView *)viewWithFrame:(NSRect)aFrame forOrder:(FSOrder *)anOrder {
 	return [[self delegate] viewWithFrame:aFrame forOrder:anOrder];
+}
+
+- (void)dealloc
+{
+    [self setDelegate:nil];
+	
+    [super dealloc];
 }
 
 @end
