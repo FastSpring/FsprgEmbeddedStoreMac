@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		46044EB2111E3024004FD66A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46044EB1111E3024004FD66A /* WebKit.framework */; };
+		4627B85F1135239B002EA430 /* FSOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4627B85E1135239B002EA430 /* FSOrderItem.m */; };
+		4627B862113528E8002EA430 /* FSLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 4627B861113528E8002EA430 /* FSLicense.m */; };
+		4627B874113529E9002EA430 /* FSFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4627B873113529E9002EA430 /* FSFileDownload.m */; };
+		4627B8B3113536DB002EA430 /* FSFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4627B8B2113536DB002EA430 /* FSFulfillment.m */; };
 		465C54B91129FDB1008B62D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465C54B81129FDB1008B62D7 /* AddressBook.framework */; };
 		465CC147112D4ACF001E286C /* FSOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC146112D4ACF001E286C /* FSOrderView.m */; };
 		465CC14A112D4BDE001E286C /* FSOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */; };
@@ -34,6 +38,14 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* FSEmbeddedStore_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStore_Prefix.pch; sourceTree = "<group>"; };
 		46044EB1111E3024004FD66A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		4627B85D1135239B002EA430 /* FSOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderItem.h; sourceTree = "<group>"; };
+		4627B85E1135239B002EA430 /* FSOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderItem.m; sourceTree = "<group>"; };
+		4627B860113528E8002EA430 /* FSLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicense.h; sourceTree = "<group>"; };
+		4627B861113528E8002EA430 /* FSLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicense.m; sourceTree = "<group>"; };
+		4627B872113529E9002EA430 /* FSFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFileDownload.h; sourceTree = "<group>"; };
+		4627B873113529E9002EA430 /* FSFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFileDownload.m; sourceTree = "<group>"; };
+		4627B8B1113536DB002EA430 /* FSFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFulfillment.h; sourceTree = "<group>"; };
+		4627B8B2113536DB002EA430 /* FSFulfillment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFulfillment.m; sourceTree = "<group>"; };
 		465C54B81129FDB1008B62D7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		465CC145112D4ACF001E286C /* FSOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderView.h; sourceTree = "<group>"; };
 		465CC146112D4ACF001E286C /* FSOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderView.m; sourceTree = "<group>"; };
@@ -76,14 +88,13 @@
 				465CC187112D4E69001E286C /* FSEmbeddedStoreController.h */,
 				465CC188112D4E69001E286C /* FSEmbeddedStoreController.m */,
 				46F35F811132EDE000AA2DE2 /* FSEmbeddedStoreDelegate.h */,
-				465CC15E112D4C24001E286C /* FSOrder.h */,
-				465CC15F112D4C24001E286C /* FSOrder.m */,
 				465CC145112D4ACF001E286C /* FSOrderView.h */,
 				465CC146112D4ACF001E286C /* FSOrderView.m */,
 				465CC148112D4BDE001E286C /* FSOrderDocumentRepresentation.h */,
 				465CC149112D4BDE001E286C /* FSOrderDocumentRepresentation.m */,
 				465CC21D112E01A3001E286C /* FSStoreParameters.h */,
 				465CC21E112E01A3001E286C /* FSStoreParameters.m */,
+				4627B8631135290D002EA430 /* Model */,
 				46F35F821132EDF900AA2DE2 /* Examples */,
 			);
 			name = Classes;
@@ -157,6 +168,23 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4627B8631135290D002EA430 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				465CC15E112D4C24001E286C /* FSOrder.h */,
+				465CC15F112D4C24001E286C /* FSOrder.m */,
+				4627B85D1135239B002EA430 /* FSOrderItem.h */,
+				4627B85E1135239B002EA430 /* FSOrderItem.m */,
+				4627B8B1113536DB002EA430 /* FSFulfillment.h */,
+				4627B8B2113536DB002EA430 /* FSFulfillment.m */,
+				4627B860113528E8002EA430 /* FSLicense.h */,
+				4627B861113528E8002EA430 /* FSLicense.m */,
+				4627B872113529E9002EA430 /* FSFileDownload.h */,
+				4627B873113529E9002EA430 /* FSFileDownload.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		46F35F821132EDF900AA2DE2 /* Examples */ = {
@@ -235,6 +263,10 @@
 				465CC21F112E01A3001E286C /* FSStoreParameters.m in Sources */,
 				467BE1481131BB22003B0654 /* MyOrderViewController.m in Sources */,
 				46F35F7C1132EBD100AA2DE2 /* MyEmbeddedStoreController.m in Sources */,
+				4627B85F1135239B002EA430 /* FSOrderItem.m in Sources */,
+				4627B862113528E8002EA430 /* FSLicense.m in Sources */,
+				4627B874113529E9002EA430 /* FSFileDownload.m in Sources */,
+				4627B8B3113536DB002EA430 /* FSFulfillment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

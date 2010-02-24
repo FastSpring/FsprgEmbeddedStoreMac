@@ -7,17 +7,30 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FSOrderItem.h"
 
 
 @interface FSOrder : NSObject {
-	NSDictionary *dictionary;
+	NSDictionary *raw;
 }
 
 + (FSOrder *)orderFromData:(NSData *)aData;
 
-- (NSDictionary *)dictionary;
-- (void)setDictionary:(NSDictionary *)aDictionary;
+- (FSOrder *)initWithDictionary:(NSDictionary *)aDictionary;
+- (NSDictionary *)raw;
+- (void)setRaw:(NSDictionary *)aDictionary;
 
-- (NSString *)valueForKey:(NSString *)aKey;
+- (BOOL)orderIsTest;
+- (NSString *)orderReference;
+- (NSString *)orderLanguage;
+- (NSString *)orderCurrency;
+- (NSNumber *)orderTotal;
+- (NSString *)customerFirstName;
+- (NSString *)customerLastName;
+- (NSString *)customerCompany;
+- (NSString *)customerEmail;
+	
+- (FSOrderItem *)firstOrderItem;
+- (NSArray *)orderItems;
 
 @end

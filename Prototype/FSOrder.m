@@ -18,39 +18,109 @@
 	
 	NSDictionary *aDict = [NSPropertyListSerialization propertyListFromData:aData
 													   mutabilityOption:NSPropertyListImmutable
-													   format:&format 
+													   format:format 
 													   errorDescription:&errorDesc];
 		
 	
-	FSOrder *order = [[FSOrder alloc] init];
-	[order setDictionary:aDict];
-	
-	return [order autorelease];
+	return [[[FSOrder alloc] initWithDictionary:aDict] autorelease];
 }
 
-- (id) init
+- (FSOrder *)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
-		[self setDictionary:nil];
+		[self setRaw:aDictionary];
 	}
 	return self;
-}
-										
-- (NSDictionary *)dictionary
+}									
+- (NSDictionary *)raw
 {
-    return [[dictionary retain] autorelease]; 
+    return [[raw retain] autorelease]; 
 }
-- (void)setDictionary:(NSDictionary *)aDictionary
+- (void)setRaw:(NSDictionary *)aDictionary
 {
-    if (dictionary != aDictionary) {
-        [dictionary release];
-        dictionary = [aDictionary retain];
+    if (raw != aDictionary) {
+        [raw release];
+        raw = [aDictionary retain];
     }
 }
 
-- (NSString *)valueForKey:(NSString *)aKey {
-	return [[self dictionary] valueForKey:aKey];
+- (BOOL)orderIsTest
+{
+	return [[[self raw] valueForKey:@"OrderIsTest"] boolValue];
+}
+
+- (NSString *)orderReference
+{
+	return [[self raw] valueForKey:@"OrderReference"];
+}
+
+- (NSString *)orderLanguage
+{
+	return [[self raw] valueForKey:@"OrderLanguage"];
+}
+
+- (NSString *)orderCurrency
+{
+	return [[self raw] valueForKey:@"OrderCurrency"];
+}
+
+- (NSNumber *)orderTotal
+{
+	return [[self raw] valueForKey:@"OrderTotal"];
+}
+
+- (NSString *)customerFirstName
+{
+	return [[self raw] valueForKey:@"CustomerFirstName"];
+}
+
+- (NSString *)customerLastName
+{
+	return [[self raw] valueForKey:@"CustomerLastName"];
+}
+
+- (NSString *)customerCompany
+{
+	return [[self raw] valueForKey:@"CustomerCompany"];
+}
+
+- (NSString *)customerEmail
+{
+	return [[self raw] valueForKey:@"CustomerEmail"];
+}
+
+- (FSOrderItem *)firstOrderItem
+{
+	NSArray *items = [[self raw] valueForKey:@"OrderItems"];
+	return [FSOrderItem itemWithDictionary:[items objectAtIndex:0]];
+}
+
+- (NSArray *)orderItems
+{
+	NSArray *items = [[self raw] valueForKey:@"OrderItems"];
+	NSMutableArray *orderItems = [NSMutableArray arrayWithCapacity:[items count]];
+
+	NSUInteger i, count = [items count];
+	for (i = 0; i < count; i++) {
+		NSDictionary *anItem = [items objectAtIndex:i];
+		[orderItems addObject:[FSOrderItem itemWithDictionary:anItem]];
+	}
+	
+	return orderItems;
+}
+
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
+{
+	// Don't need KVO as data won't change. Prevent having to keep (retain) instance variables.
+	return FALSE;
+}
+
+- (void)dealloc
+{
+    [self setRaw:nil];
+	
+    [super dealloc];
 }
 
 @end

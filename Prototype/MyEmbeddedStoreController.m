@@ -30,6 +30,8 @@
 
 - (void)didReceiveOrder:(FSOrder *)order
 {
+	FSOrderItem *item = [order firstOrderItem];
+	NSLog(@"%@ is licensed to %@", [item productDisplay], [[item license] licenseEmail]);
 }
 
 - (NSView *)viewWithFrame:(NSRect)frame forOrder:(FSOrder *)order

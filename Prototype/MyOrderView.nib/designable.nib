@@ -169,15 +169,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">displayPatternValue1: representedObject.CustomerFirstName</string>
+						<string key="label">displayPatternValue1: representedObject.customerFirstName</string>
 						<reference key="source" ref="185712522"/>
 						<reference key="destination" ref="821287737"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="185712522"/>
 							<reference key="NSDestination" ref="821287737"/>
-							<string key="NSLabel">displayPatternValue1: representedObject.CustomerFirstName</string>
+							<string key="NSLabel">displayPatternValue1: representedObject.customerFirstName</string>
 							<string key="NSBinding">displayPatternValue1</string>
-							<string key="NSKeyPath">representedObject.CustomerFirstName</string>
+							<string key="NSKeyPath">representedObject.customerFirstName</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSDisplayPattern</string>
 								<string key="NS.object.0">Hi %{value1}@</string>
@@ -185,19 +185,19 @@
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">30</int>
+					<int key="connectionID">33</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">displayPatternValue1: representedObject.CustomerEmail</string>
+						<string key="label">displayPatternValue1: representedObject.firstOrderItem.license.licenseEmail</string>
 						<reference key="source" ref="643423648"/>
 						<reference key="destination" ref="821287737"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="643423648"/>
 							<reference key="NSDestination" ref="821287737"/>
-							<string key="NSLabel">displayPatternValue1: representedObject.CustomerEmail</string>
+							<string key="NSLabel">displayPatternValue1: representedObject.firstOrderItem.license.licenseEmail</string>
 							<string key="NSBinding">displayPatternValue1</string>
-							<string key="NSKeyPath">representedObject.CustomerEmail</string>
+							<string key="NSKeyPath">representedObject.firstOrderItem.license.licenseEmail</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSDisplayPattern</string>
 								<string key="NS.object.0">FSEmbeddedStore prototype is registered to %{value1}@</string>
@@ -205,7 +205,7 @@
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">32</int>
+					<int key="connectionID">34</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -363,7 +363,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">32</int>
+			<int key="maxID">34</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
