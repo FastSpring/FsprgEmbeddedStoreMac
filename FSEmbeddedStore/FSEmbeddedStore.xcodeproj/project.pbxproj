@@ -7,31 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46668AB111254E6500613623 /* FSEmbeddedStoreController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46668AAF11254E6500613623 /* FSEmbeddedStoreController.h */; };
-		46668AB211254E6500613623 /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46668AB011254E6500613623 /* FSEmbeddedStoreController.m */; };
+		46105B701137324500D91F4B /* FSEmbeddedStoreController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B671137324500D91F4B /* FSEmbeddedStoreController.h */; };
+		46105B711137324500D91F4B /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B681137324500D91F4B /* FSEmbeddedStoreController.m */; };
+		46105B721137324500D91F4B /* FSEmbeddedStoreDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B691137324500D91F4B /* FSEmbeddedStoreDelegate.h */; };
+		46105B731137324500D91F4B /* FSOrderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B6A1137324500D91F4B /* FSOrderView.h */; };
+		46105B741137324500D91F4B /* FSOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B6B1137324500D91F4B /* FSOrderView.m */; };
+		46105B751137324500D91F4B /* FSOrderDocumentRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B6C1137324500D91F4B /* FSOrderDocumentRepresentation.h */; };
+		46105B761137324500D91F4B /* FSOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B6D1137324500D91F4B /* FSOrderDocumentRepresentation.m */; };
+		46105B771137324500D91F4B /* FSStoreParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B6E1137324500D91F4B /* FSStoreParameters.h */; };
+		46105B781137324500D91F4B /* FSStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B6F1137324500D91F4B /* FSStoreParameters.m */; };
+		46105B841137325400D91F4B /* FSOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B7A1137325300D91F4B /* FSOrder.h */; };
+		46105B851137325400D91F4B /* FSOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B7B1137325300D91F4B /* FSOrder.m */; };
+		46105B861137325400D91F4B /* FSOrderItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B7C1137325300D91F4B /* FSOrderItem.h */; };
+		46105B871137325400D91F4B /* FSOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B7D1137325300D91F4B /* FSOrderItem.m */; };
+		46105B881137325400D91F4B /* FSFulfillment.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B7E1137325300D91F4B /* FSFulfillment.h */; };
+		46105B891137325400D91F4B /* FSFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B7F1137325300D91F4B /* FSFulfillment.m */; };
+		46105B8A1137325400D91F4B /* FSLicense.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B801137325300D91F4B /* FSLicense.h */; };
+		46105B8B1137325400D91F4B /* FSLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B811137325400D91F4B /* FSLicense.m */; };
+		46105B8C1137325400D91F4B /* FSFileDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = 46105B821137325400D91F4B /* FSFileDownload.h */; };
+		46105B8D1137325400D91F4B /* FSFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B831137325400D91F4B /* FSFileDownload.m */; };
+		46105BB81137332E00D91F4B /* complicated.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46105B8F1137326B00D91F4B /* complicated.plist */; };
+		46105BB91137332E00D91F4B /* FSOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B911137326B00D91F4B /* FSOrderTest.m */; };
+		46105BBD1137376100D91F4B /* FSFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B831137325400D91F4B /* FSFileDownload.m */; };
+		46105BBE1137376200D91F4B /* FSFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B7F1137325300D91F4B /* FSFulfillment.m */; };
+		46105BBF1137376200D91F4B /* FSLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B811137325400D91F4B /* FSLicense.m */; };
+		46105BC01137376300D91F4B /* FSOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B7B1137325300D91F4B /* FSOrder.m */; };
+		46105BC11137376400D91F4B /* FSOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B7D1137325300D91F4B /* FSOrderItem.m */; };
+		4610624011373CEC00D91F4B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610623F11373CEC00D91F4B /* AddressBook.framework */; };
+		4610624411373D0500D91F4B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624311373D0500D91F4B /* AppKit.framework */; };
+		4610624811373D1600D91F4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624711373D1600D91F4B /* Foundation.framework */; };
+		4610624C11373D2A00D91F4B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624B11373D2A00D91F4B /* WebKit.framework */; };
+		461064391137C50000D91F4B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610623F11373CEC00D91F4B /* AddressBook.framework */; };
+		4610643A1137C50100D91F4B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624B11373D2A00D91F4B /* WebKit.framework */; };
+		4610643F1137C50400D91F4B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624311373D0500D91F4B /* AppKit.framework */; };
+		461064401137C50500D91F4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624711373D1600D91F4B /* Foundation.framework */; };
+		46BDAF311137D6F000E0D5B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BDAF301137D6F000E0D5B7 /* Cocoa.framework */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
-		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* FSEmbeddedStore_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStore_Prefix.pch; sourceTree = "<group>"; };
-		46668AAF11254E6500613623 /* FSEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreController.h; sourceTree = "<group>"; };
-		46668AB011254E6500613623 /* FSEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreController.m; sourceTree = "<group>"; };
+		46105B671137324500D91F4B /* FSEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreController.h; sourceTree = "<group>"; };
+		46105B681137324500D91F4B /* FSEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmbeddedStoreController.m; sourceTree = "<group>"; };
+		46105B691137324500D91F4B /* FSEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
+		46105B6A1137324500D91F4B /* FSOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderView.h; sourceTree = "<group>"; };
+		46105B6B1137324500D91F4B /* FSOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderView.m; sourceTree = "<group>"; };
+		46105B6C1137324500D91F4B /* FSOrderDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderDocumentRepresentation.h; sourceTree = "<group>"; };
+		46105B6D1137324500D91F4B /* FSOrderDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderDocumentRepresentation.m; sourceTree = "<group>"; };
+		46105B6E1137324500D91F4B /* FSStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStoreParameters.h; sourceTree = "<group>"; };
+		46105B6F1137324500D91F4B /* FSStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStoreParameters.m; sourceTree = "<group>"; };
+		46105B7A1137325300D91F4B /* FSOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrder.h; sourceTree = "<group>"; };
+		46105B7B1137325300D91F4B /* FSOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrder.m; sourceTree = "<group>"; };
+		46105B7C1137325300D91F4B /* FSOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderItem.h; sourceTree = "<group>"; };
+		46105B7D1137325300D91F4B /* FSOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderItem.m; sourceTree = "<group>"; };
+		46105B7E1137325300D91F4B /* FSFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFulfillment.h; sourceTree = "<group>"; };
+		46105B7F1137325300D91F4B /* FSFulfillment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFulfillment.m; sourceTree = "<group>"; };
+		46105B801137325300D91F4B /* FSLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLicense.h; sourceTree = "<group>"; };
+		46105B811137325400D91F4B /* FSLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLicense.m; sourceTree = "<group>"; };
+		46105B821137325400D91F4B /* FSFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFileDownload.h; sourceTree = "<group>"; };
+		46105B831137325400D91F4B /* FSFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFileDownload.m; sourceTree = "<group>"; };
+		46105B8F1137326B00D91F4B /* complicated.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = complicated.plist; sourceTree = "<group>"; };
+		46105B901137326B00D91F4B /* FSOrderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOrderTest.h; sourceTree = "<group>"; };
+		46105B911137326B00D91F4B /* FSOrderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOrderTest.m; sourceTree = "<group>"; };
+		46105BB31137331900D91F4B /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46105BB41137331900D91F4B /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		4610623F11373CEC00D91F4B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		4610624311373D0500D91F4B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4610624711373D1600D91F4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4610624B11373D2A00D91F4B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		46BDAF301137D6F000E0D5B7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* FSEmbeddedStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSEmbeddedStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		46105BB01137331900D91F4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4610624011373CEC00D91F4B /* AddressBook.framework in Frameworks */,
+				4610624411373D0500D91F4B /* AppKit.framework in Frameworks */,
+				4610624811373D1600D91F4B /* Foundation.framework in Frameworks */,
+				4610624C11373D2A00D91F4B /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				461064391137C50000D91F4B /* AddressBook.framework in Frameworks */,
+				4610643A1137C50100D91F4B /* WebKit.framework in Frameworks */,
+				4610643F1137C50400D91F4B /* AppKit.framework in Frameworks */,
+				461064401137C50500D91F4B /* Foundation.framework in Frameworks */,
+				46BDAF311137D6F000E0D5B7 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* FSEmbeddedStore.framework */,
+				46105BB31137331900D91F4B /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
+				46105B8E1137326B00D91F4B /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
@@ -72,6 +144,7 @@
 			children = (
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				46105BB41137331900D91F4B /* UnitTests-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -79,8 +152,16 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				46668AAF11254E6500613623 /* FSEmbeddedStoreController.h */,
-				46668AB011254E6500613623 /* FSEmbeddedStoreController.m */,
+				46105B671137324500D91F4B /* FSEmbeddedStoreController.h */,
+				46105B681137324500D91F4B /* FSEmbeddedStoreController.m */,
+				46105B691137324500D91F4B /* FSEmbeddedStoreDelegate.h */,
+				46105B6A1137324500D91F4B /* FSOrderView.h */,
+				46105B6B1137324500D91F4B /* FSOrderView.m */,
+				46105B6C1137324500D91F4B /* FSOrderDocumentRepresentation.h */,
+				46105B6D1137324500D91F4B /* FSOrderDocumentRepresentation.m */,
+				46105B6E1137324500D91F4B /* FSStoreParameters.h */,
+				46105B6F1137324500D91F4B /* FSStoreParameters.m */,
+				46105B791137325300D91F4B /* Model */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -88,7 +169,9 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				4610623F11373CEC00D91F4B /* AddressBook.framework */,
+				4610624B11373D2A00D91F4B /* WebKit.framework */,
+				46BDAF301137D6F000E0D5B7 /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -96,9 +179,8 @@
 		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
-				D2F7E79907B2D74100F64583 /* CoreData.framework */,
-				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+				4610624311373D0500D91F4B /* AppKit.framework */,
+				4610624711373D1600D91F4B /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -111,6 +193,33 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		46105B791137325300D91F4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46105B7A1137325300D91F4B /* FSOrder.h */,
+				46105B7B1137325300D91F4B /* FSOrder.m */,
+				46105B7C1137325300D91F4B /* FSOrderItem.h */,
+				46105B7D1137325300D91F4B /* FSOrderItem.m */,
+				46105B7E1137325300D91F4B /* FSFulfillment.h */,
+				46105B7F1137325300D91F4B /* FSFulfillment.m */,
+				46105B801137325300D91F4B /* FSLicense.h */,
+				46105B811137325400D91F4B /* FSLicense.m */,
+				46105B821137325400D91F4B /* FSFileDownload.h */,
+				46105B831137325400D91F4B /* FSFileDownload.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		46105B8E1137326B00D91F4B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				46105B8F1137326B00D91F4B /* complicated.plist */,
+				46105B901137326B00D91F4B /* FSOrderTest.h */,
+				46105B911137326B00D91F4B /* FSOrderTest.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -118,13 +227,40 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46668AB111254E6500613623 /* FSEmbeddedStoreController.h in Headers */,
+				46105B701137324500D91F4B /* FSEmbeddedStoreController.h in Headers */,
+				46105B721137324500D91F4B /* FSEmbeddedStoreDelegate.h in Headers */,
+				46105B731137324500D91F4B /* FSOrderView.h in Headers */,
+				46105B751137324500D91F4B /* FSOrderDocumentRepresentation.h in Headers */,
+				46105B771137324500D91F4B /* FSStoreParameters.h in Headers */,
+				46105B841137325400D91F4B /* FSOrder.h in Headers */,
+				46105B861137325400D91F4B /* FSOrderItem.h in Headers */,
+				46105B881137325400D91F4B /* FSFulfillment.h in Headers */,
+				46105B8A1137325400D91F4B /* FSLicense.h in Headers */,
+				46105B8C1137325400D91F4B /* FSFileDownload.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		46105BB21137331900D91F4B /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46105BB71137331A00D91F4B /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				46105BAE1137331900D91F4B /* Resources */,
+				46105BAF1137331900D91F4B /* Sources */,
+				46105BB01137331900D91F4B /* Frameworks */,
+				46105BB11137331900D91F4B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 46105BB31137331900D91F4B /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8DC2EF4F0486A6940098B216 /* FSEmbeddedStore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "FSEmbeddedStore" */;
@@ -149,6 +285,9 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = FastSpring;
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FSEmbeddedStore" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
@@ -158,11 +297,20 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* FSEmbeddedStore */,
+				46105BB21137331900D91F4B /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		46105BAE1137331900D91F4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46105BB81137332E00D91F4B /* complicated.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF520486A6940098B216 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,12 +321,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46105BB11137331900D91F4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		46105BAF1137331900D91F4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46105BB91137332E00D91F4B /* FSOrderTest.m in Sources */,
+				46105BBD1137376100D91F4B /* FSFileDownload.m in Sources */,
+				46105BBE1137376200D91F4B /* FSFulfillment.m in Sources */,
+				46105BBF1137376200D91F4B /* FSLicense.m in Sources */,
+				46105BC01137376300D91F4B /* FSOrder.m in Sources */,
+				46105BC11137376400D91F4B /* FSOrderItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46668AB211254E6500613623 /* FSEmbeddedStoreController.m in Sources */,
+				46105B711137324500D91F4B /* FSEmbeddedStoreController.m in Sources */,
+				46105B741137324500D91F4B /* FSOrderView.m in Sources */,
+				46105B761137324500D91F4B /* FSOrderDocumentRepresentation.m in Sources */,
+				46105B781137324500D91F4B /* FSStoreParameters.m in Sources */,
+				46105B851137325400D91F4B /* FSOrder.m in Sources */,
+				46105B871137325400D91F4B /* FSOrderItem.m in Sources */,
+				46105B891137325400D91F4B /* FSFulfillment.m in Sources */,
+				46105B8B1137325400D91F4B /* FSLicense.m in Sources */,
+				46105B8D1137325400D91F4B /* FSFileDownload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +388,10 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -217,13 +406,17 @@
 			};
 			name = Debug;
 		};
-		1DEB91AF08733DA50010E9CD /* Release */ = {
+		1DEB91AF08733DA50010E9CD /* Release 10.5+ */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -233,33 +426,160 @@
 				PRODUCT_NAME = FSEmbeddedStore;
 				WRAPPER_EXTENSION = framework;
 			};
-			name = Release;
+			name = "Release 10.5+";
 		};
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
-		1DEB91B308733DA50010E9CD /* Release */ = {
+		1DEB91B308733DA50010E9CD /* Release 10.5+ */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
-			name = Release;
+			name = "Release 10.5+";
+		};
+		46105BB51137331A00D91F4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		46105BB61137331A00D91F4B /* Release 10.5+ */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = "Release 10.5+";
+		};
+		4610638D1137C26D00D91F4B /* Release 10.4 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.4;
+			};
+			name = "Release 10.4";
+		};
+		4610638E1137C26D00D91F4B /* Release 10.4 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FSEmbeddedStore_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				PRODUCT_NAME = FSEmbeddedStore;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = "Release 10.4";
+		};
+		4610638F1137C26D00D91F4B /* Release 10.4 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = "Release 10.4";
 		};
 /* End XCBuildConfiguration section */
 
@@ -268,19 +588,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91AE08733DA50010E9CD /* Debug */,
-				1DEB91AF08733DA50010E9CD /* Release */,
+				1DEB91AF08733DA50010E9CD /* Release 10.5+ */,
+				4610638E1137C26D00D91F4B /* Release 10.4 */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release 10.5+";
 		};
 		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FSEmbeddedStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
-				1DEB91B308733DA50010E9CD /* Release */,
+				1DEB91B308733DA50010E9CD /* Release 10.5+ */,
+				4610638D1137C26D00D91F4B /* Release 10.4 */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release 10.5+";
+		};
+		46105BB71137331A00D91F4B /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46105BB51137331A00D91F4B /* Debug */,
+				46105BB61137331A00D91F4B /* Release 10.5+ */,
+				4610638F1137C26D00D91F4B /* Release 10.4 */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release 10.5+";
 		};
 /* End XCConfigurationList section */
 	};
