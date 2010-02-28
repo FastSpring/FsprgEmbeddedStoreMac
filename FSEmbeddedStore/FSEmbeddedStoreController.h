@@ -12,17 +12,15 @@
 
 
 @interface FSEmbeddedStoreController : NSObject {
-	IBOutlet WebView* webView;
-	BOOL loading;
+	WebView* webView;
 	id <FSEmbeddedStoreDelegate> delegate;
 }
 
+- (WebView *)webView;
+- (void)setWebView:(WebView *)aWebView;
 - (id <FSEmbeddedStoreDelegate>)delegate;
 - (void)setDelegate:(id <FSEmbeddedStoreDelegate>)aDelegate;
 
-- (IBAction)load:(id)sender;
-
-- (void)setLoading:(BOOL)aFlag;
-- (BOOL)loading;
+- (void)load;
 
 @end

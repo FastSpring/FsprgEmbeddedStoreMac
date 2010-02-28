@@ -18,13 +18,30 @@
 {
 	self = [super init];
 	if (self != nil) {
+		[self setWebView:nil];
 		[self setDelegate:nil];
 	}
 	return self;
 }
 
+- (WebView *)webView
+{
+    return [[webView retain] autorelease]; 
+}
+
+- (void)setWebView:(WebView *)aWebView
+{
+    if (webView != aWebView) {
+        [webView release];
+        webView = [aWebView retain];
+    }
+}
+
 - (id <FSEmbeddedStoreDelegate>)delegate
 {
+	if(delegate == nil) {
+		NSLog(@"No delegate has been assigned to FSEmbeddedStoreController!");
+	}
     return [[delegate retain] autorelease]; 
 }
 
@@ -36,13 +53,12 @@
     }
 }
 
-- (IBAction)load:(id)sender
+- (void)load
 {
 	[WebView registerViewClass:[FSOrderView class]
 		   representationClass:[FSOrderDocumentRepresentation class]
 				   forMIMEType:@"text/xml"];
 
-	[self setLoading:TRUE];
 	[webView setFrameLoadDelegate:self];
 	[webView setUIDelegate:self];
 
@@ -57,23 +73,11 @@
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
-	[self setLoading:TRUE];
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-	[self setLoading:FALSE];
 	[[self delegate] didLoadWebFrame:frame];
-}
-
-- (void)setLoading:(BOOL)aFlag
-{
-	loading = aFlag;
-}
-
-- (BOOL)loading
-{
-	return loading;
 }
 
 // WebUIDelegate
@@ -99,6 +103,7 @@
 
 - (void)dealloc
 {
+    [self setWebView:nil];
     [self setDelegate:nil];
 	
     [super dealloc];

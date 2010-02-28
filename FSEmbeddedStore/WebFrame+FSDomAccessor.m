@@ -27,55 +27,17 @@ NSString * const kFSPostalCodeFieldId = @"user:postal_code";
 		aValue = @"";
 	}
 
-	//NSString *script = [NSString stringWithFormat:@"document.getElementById('%@').value='%@'",anId, aValue];
-	//[[self windowObject] evaluateWebScript:script];
 	return [[[self DOMDocument] getElementById:anId] setValue:aValue];
 }
 
 - (NSString *)fs_valueForId:(NSString *)anId
 {
-	//NSString *script = [NSString stringWithFormat:@"document.getElementById('%@').value",anId];
-	//return [[self windowObject] evaluateWebScript:script];
-	return [[[self DOMDocument] getElementById:anId] value];
+	DOMElement *element = [[self DOMDocument] getElementById:anId];
+	if(element == nil) {
+		return nil;
+	} else {
+		return [element value];
+	}
 }
-
-/**
- MOVE TO EXAMPLE
- 
- - (IBAction)fillMeFromAddressBook:(id)sender
- {
- ABPerson *me = [[ABAddressBook sharedAddressBook] me];
- 
- NSString *firstName = [me valueForProperty:kABFirstNameProperty];
- NSString *lastName = [me valueForProperty:kABLastNameProperty];
- [self fs_setValue:[NSString stringWithFormat:@"%@ %@", firstName, lastName] forId:kFSNameFieldId];
- [self fs_setValue:[me valueForProperty:kABOrganizationProperty] forId:kFSCompanyFieldId];
- 
- ABMultiValue *allPhones = [me valueForProperty:kABPhoneProperty];
- NSString *phone = [allPhones valueAtIndex:[allPhones indexForIdentifier:[allPhones primaryIdentifier]]];
- [self fs_setValue:phone forId:kFSPhoneNumberFieldId];
- 
- ABMultiValue *allEmails = [me valueForProperty:kABEmailProperty];
- NSString *email = [allEmails valueAtIndex:[allEmails indexForIdentifier:[allEmails primaryIdentifier]]];
- [self fs_setValue:email forId:kEmailFieldId];
- 
- ABMultiValue *allAddresses = [me valueForProperty:kABAddressProperty];
- NSDictionary *address = [allAddresses valueAtIndex:[allAddresses indexForIdentifier:[allAddresses primaryIdentifier]]];
- 
- NSString *countryCode = [[address valueForKey:kABAddressCountryCodeKey] uppercaseString];
- [self fs_setValue:countryCode forId:kCountryFieldId];
- [self fs_setValue:[address valueForKey:kABAddressStreetKey] forId:kAddress1FieldId];
- [self fs_setValue:@"" forId:kAddress2FieldId];
- [self fs_setValue:[address valueForKey:kABAddressCityKey] forId:kCityFieldId];
- NSString *state = [address valueForKey:kABAddressStateKey];
- if(state != nil && ([countryCode isEqual:@"US"] || [countryCode isEqual:@"CA"] || [countryCode isEqual:@"AU"])) {
- NSString *region = [NSString stringWithFormat:@"%@-%@", countryCode, state];
- [self fs_setValue:region forId:kFSRegionFieldId];
- } else {
- [self fs_setValue:@"" forId:kFSRegionFieldId];
- }
- [self fs_setValue:[address valueForKey:kABAddressZIPKey] forId:kFSPostalCodeFieldId];
- }
- */
 
 @end
