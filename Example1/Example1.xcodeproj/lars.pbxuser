@@ -1,0 +1,214 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 46709611113AE59B00932A17 /* Example1 */;
+		activeSDKPreference = macosx10.5;
+		activeTarget = 8D1107260486CEB800E47090 /* Example1 */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* Example1 */,
+		);
+		codeSenseManager = 46709627113AE5B200932A17 /* Code sense */;
+		executables = (
+			46709611113AE59B00932A17 /* Example1 */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					690,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					450,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 289074030;
+			PBXWorkspaceStateSaveDate = 289074030;
+		};
+		perUserProjectItems = {
+			467BEE43113AFA3200C21AFE /* PBXTextBookmark */ = 467BEE43113AFA3200C21AFE /* PBXTextBookmark */;
+			467BEE69113AFD9000C21AFE /* PBXTextBookmark */ = 467BEE69113AFD9000C21AFE /* PBXTextBookmark */;
+			467BEE6A113AFD9000C21AFE /* PBXTextBookmark */ = 467BEE6A113AFD9000C21AFE /* PBXTextBookmark */;
+			467BEE78113AFED700C21AFE /* PBXTextBookmark */ = 467BEE78113AFED700C21AFE /* PBXTextBookmark */;
+			467BEE79113AFED700C21AFE /* PlistBookmark */ = 467BEE79113AFED700C21AFE /* PlistBookmark */;
+			467BEE7A113AFED700C21AFE /* PBXTextBookmark */ = 467BEE7A113AFED700C21AFE /* PBXTextBookmark */;
+		};
+		sourceControlManager = 46709626113AE5B200932A17 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	46709611113AE59B00932A17 /* Example1 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Example1;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	46709626113AE5B200932A17 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	46709627113AE5B200932A17 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	467BED7B113AEF7300C21AFE /* AppController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {868, 443}}";
+			sepNavSelRange = "{158, 0}";
+			sepNavVisRange = "{0, 408}";
+		};
+	};
+	467BED7C113AEF7300C21AFE /* AppController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {901, 1170}}";
+			sepNavSelRange = "{2950, 0}";
+			sepNavVisRange = "{1732, 1498}";
+		};
+	};
+	467BEE17113AF88000C21AFE /* OrderViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {868, 420}}";
+			sepNavSelRange = "{237, 35}";
+			sepNavVisRange = "{0, 279}";
+		};
+	};
+	467BEE18113AF88000C21AFE /* OrderViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {880, 443}}";
+			sepNavSelRange = "{268, 0}";
+			sepNavVisRange = "{0, 557}";
+		};
+	};
+	467BEE43113AFA3200C21AFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BED7B113AEF7300C21AFE /* AppController.h */;
+		name = "AppController.h: 10";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 0;
+	};
+	467BEE69113AFD9000C21AFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
+		name = "AppController.m: 81";
+		rLen = 0;
+		rLoc = 2950;
+		rType = 0;
+		vrLen = 1498;
+		vrLoc = 1732;
+	};
+	467BEE6A113AFD9000C21AFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BEE17113AF88000C21AFE /* OrderViewController.h */;
+		name = "OrderViewController.h: 16";
+		rLen = 35;
+		rLoc = 237;
+		rType = 0;
+		vrLen = 279;
+		vrLoc = 0;
+	};
+	467BEE78113AFED700C21AFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BEE18113AF88000C21AFE /* OrderViewController.m */;
+		name = "OrderViewController.m: 13";
+		rLen = 0;
+		rLoc = 268;
+		rType = 0;
+		vrLen = 557;
+		vrLoc = 0;
+	};
+	467BEE79113AFED700C21AFE /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/lars/Xcode/FSEmbeddedStore/Example1/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	467BEE7A113AFED700C21AFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BED7B113AEF7300C21AFE /* AppController.h */;
+		name = "AppController.h: 9";
+		rLen = 0;
+		rLoc = 158;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 0;
+	};
+	8D1107260486CEB800E47090 /* Example1 */ = {
+		activeExec = 0;
+		executables = (
+			46709611113AE59B00932A17 /* Example1 */,
+		);
+	};
+}
