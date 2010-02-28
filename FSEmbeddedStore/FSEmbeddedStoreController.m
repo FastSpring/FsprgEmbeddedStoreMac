@@ -53,50 +53,6 @@
 	[[webView mainFrame] loadRequest:[parameters toURLRequest]];
 }
 
-- (void)setValue:(NSString *)aValue forId:(NSString *)anId
-{
-	if(aValue == nil) {
-		aValue = @"";
-	}
-	NSString *script = [NSString stringWithFormat:@"document.getElementById('%@').value='%@'",anId, aValue];
-	[[webView windowScriptObject] evaluateWebScript:script];
-}
-
-- (IBAction)fillMeFromAddressBook:(id)sender
-{
-	ABPerson *me = [[ABAddressBook sharedAddressBook] me];
-
-	NSString *firstName = [me valueForProperty:kABFirstNameProperty];
-	NSString *lastName = [me valueForProperty:kABLastNameProperty];
-	[self setValue:[NSString stringWithFormat:@"%@ %@", firstName, lastName] forId:@"user:name"];
-	[self setValue:[me valueForProperty:kABOrganizationProperty] forId:@"user:company"];
-
-	ABMultiValue *allPhones = [me valueForProperty:kABPhoneProperty];
-	NSString *phone = [allPhones valueAtIndex:[allPhones indexForIdentifier:[allPhones primaryIdentifier]]];
-	[self setValue:phone forId:@"user:phone_number"];
-
-	ABMultiValue *allEmails = [me valueForProperty:kABEmailProperty];
-	NSString *email = [allEmails valueAtIndex:[allEmails indexForIdentifier:[allEmails primaryIdentifier]]];
-	[self setValue:email forId:@"user:email"];
-
-	ABMultiValue *allAddresses = [me valueForProperty:kABAddressProperty];
-	NSDictionary *address = [allAddresses valueAtIndex:[allAddresses indexForIdentifier:[allAddresses primaryIdentifier]]];
-					
-	NSString *countryCode = [[address valueForKey:kABAddressCountryCodeKey] uppercaseString];
-	[self setValue:countryCode forId:@"user:country"];
-	[self setValue:[address valueForKey:kABAddressStreetKey] forId:@"user:address_1"];
-	[self setValue:@"" forId:@"user:address_2"];
-	[self setValue:[address valueForKey:kABAddressCityKey] forId:@"user:city"];
-	NSString *state = [address valueForKey:kABAddressStateKey];
-	if(state != nil && ([countryCode isEqual:@"US"] || [countryCode isEqual:@"CA"] || [countryCode isEqual:@"AU"])) {
-		NSString *region = [NSString stringWithFormat:@"%@-%@", countryCode, state];
-		[self setValue:region forId:@"user:region"];
-	} else {
-		[self setValue:@"" forId:@"user:region"];
-	}
-	[self setValue:[address valueForKey:kABAddressZIPKey] forId:@"user:postal_code"];
-}
-
 // WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
@@ -107,6 +63,7 @@
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
 	[self setLoading:FALSE];
+	[[self delegate] didLoadWebFrame:frame];
 }
 
 - (void)setLoading:(BOOL)aFlag
@@ -117,10 +74,6 @@
 - (BOOL)loading
 {
 	return loading;
-}
-
-- (void)didReceiveOrder:(FSOrder *)anOrder {
-	[[self delegate] didReceiveOrder:anOrder];
 }
 
 // WebUIDelegate
@@ -142,10 +95,6 @@
 	[window makeKeyAndOrderFront:sender];
 	
 	return subWebView;
-}
-
-- (NSView *)viewWithFrame:(NSRect)aFrame forOrder:(FSOrder *)anOrder {
-	return [[self delegate] viewWithFrame:aFrame forOrder:anOrder];
 }
 
 - (void)dealloc

@@ -42,6 +42,9 @@
 		4610643F1137C50400D91F4B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624311373D0500D91F4B /* AppKit.framework */; };
 		461064401137C50500D91F4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624711373D1600D91F4B /* Foundation.framework */; };
 		46BDAF311137D6F000E0D5B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BDAF301137D6F000E0D5B7 /* Cocoa.framework */; };
+		46BDAF831137F45200E0D5B7 /* WebFrame+FSDomAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 46BDAF811137F45200E0D5B7 /* WebFrame+FSDomAccessor.h */; };
+		46BDAF841137F45200E0D5B7 /* WebFrame+FSDomAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDAF821137F45200E0D5B7 /* WebFrame+FSDomAccessor.m */; };
+		46BDAF851137F45200E0D5B7 /* WebFrame+FSDomAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDAF821137F45200E0D5B7 /* WebFrame+FSDomAccessor.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,8 @@
 		4610624711373D1600D91F4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4610624B11373D2A00D91F4B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		46BDAF301137D6F000E0D5B7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		46BDAF811137F45200E0D5B7 /* WebFrame+FSDomAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebFrame+FSDomAccessor.h"; sourceTree = "<group>"; };
+		46BDAF821137F45200E0D5B7 /* WebFrame+FSDomAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebFrame+FSDomAccessor.m"; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* FSEmbeddedStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSEmbeddedStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +166,8 @@
 				46105B6D1137324500D91F4B /* FSOrderDocumentRepresentation.m */,
 				46105B6E1137324500D91F4B /* FSStoreParameters.h */,
 				46105B6F1137324500D91F4B /* FSStoreParameters.m */,
+				46BDAF811137F45200E0D5B7 /* WebFrame+FSDomAccessor.h */,
+				46BDAF821137F45200E0D5B7 /* WebFrame+FSDomAccessor.m */,
 				46105B791137325300D91F4B /* Model */,
 			);
 			name = Classes;
@@ -213,11 +220,19 @@
 		46105B8E1137326B00D91F4B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				46BDAF95113A742900E0D5B7 /* Model */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		46BDAF95113A742900E0D5B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				46105B8F1137326B00D91F4B /* complicated.plist */,
 				46105B901137326B00D91F4B /* FSOrderTest.h */,
 				46105B911137326B00D91F4B /* FSOrderTest.m */,
 			);
-			name = Tests;
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +252,7 @@
 				46105B881137325400D91F4B /* FSFulfillment.h in Headers */,
 				46105B8A1137325400D91F4B /* FSLicense.h in Headers */,
 				46105B8C1137325400D91F4B /* FSFileDownload.h in Headers */,
+				46BDAF831137F45200E0D5B7 /* WebFrame+FSDomAccessor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +364,7 @@
 				46105BBF1137376200D91F4B /* FSLicense.m in Sources */,
 				46105BC01137376300D91F4B /* FSOrder.m in Sources */,
 				46105BC11137376400D91F4B /* FSOrderItem.m in Sources */,
+				46BDAF851137F45200E0D5B7 /* WebFrame+FSDomAccessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +381,7 @@
 				46105B891137325400D91F4B /* FSFulfillment.m in Sources */,
 				46105B8B1137325400D91F4B /* FSLicense.m in Sources */,
 				46105B8D1137325400D91F4B /* FSFileDownload.m in Sources */,
+				46BDAF841137F45200E0D5B7 /* WebFrame+FSDomAccessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

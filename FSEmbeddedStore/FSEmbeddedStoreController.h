@@ -21,7 +21,6 @@
 - (void)setDelegate:(id <FSEmbeddedStoreDelegate>)aDelegate;
 
 - (IBAction)load:(id)sender;
-- (IBAction)fillMeFromAddressBook:(id)sender;
 
 - (void)setLoading:(BOOL)aFlag;
 - (BOOL)loading;
