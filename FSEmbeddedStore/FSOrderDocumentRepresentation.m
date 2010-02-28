@@ -7,6 +7,7 @@
 //
 
 #import "FSOrderDocumentRepresentation.h"
+#import "FSEmbeddedStoreController.h"
 
 
 @implementation FSOrderDocumentRepresentation
@@ -53,7 +54,8 @@
 - (void)receivedData:(NSData *)aData withDataSource:(WebDataSource *)aDataSource
 {
 	[self setOrder:[FSOrder orderFromData:aData]];
-	[[[[aDataSource webFrame] webView] frameLoadDelegate] didReceiveOrder:[self order]];
+	FSEmbeddedStoreController *delegate = [[[aDataSource webFrame] webView] frameLoadDelegate];
+	[[delegate delegate] didReceiveOrder:[self order]];
 }
 
 - (void)receivedError:(NSError *)anError withDataSource:(WebDataSource *)aDataSource

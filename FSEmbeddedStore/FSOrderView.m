@@ -9,6 +9,7 @@
 #import "FSOrderView.h"
 #import "FSOrderDocumentRepresentation.h"
 #import "FSOrder.h"
+#import "FSEmbeddedStoreController.h"
 
 
 @implementation FSOrderView
@@ -74,8 +75,8 @@
 		FSOrderDocumentRepresentation *representation = [[self dataSource] representation];
 		FSOrder *order = [representation order];
 
-		id delegate = [[[[self dataSource] webFrame] webView] UIDelegate];
-		NSView *newSubview = [delegate viewWithFrame:[self frame] forOrder:order];
+		FSEmbeddedStoreController *delegate = [[[[self dataSource] webFrame] webView] UIDelegate];
+		NSView *newSubview = [[delegate delegate] viewWithFrame:[self frame] forOrder:order];
 		[self addSubview:newSubview];
 	}
 }
