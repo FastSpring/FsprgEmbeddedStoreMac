@@ -41,6 +41,11 @@
 		4610643A1137C50100D91F4B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624B11373D2A00D91F4B /* WebKit.framework */; };
 		4610643F1137C50400D91F4B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624311373D0500D91F4B /* AppKit.framework */; };
 		461064401137C50500D91F4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4610624711373D1600D91F4B /* Foundation.framework */; };
+		4622345A113BC73600FD4AE6 /* FSStoreParametersTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 46223459113BC73600FD4AE6 /* FSStoreParametersTest.m */; };
+		4622345F113BC88A00FD4AE6 /* FSEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B681137324500D91F4B /* FSEmbeddedStoreController.m */; };
+		46223460113BC88E00FD4AE6 /* FSOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B6D1137324500D91F4B /* FSOrderDocumentRepresentation.m */; };
+		46223461113BC89000FD4AE6 /* FSOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B6B1137324500D91F4B /* FSOrderView.m */; };
+		46223462113BC89200FD4AE6 /* FSStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 46105B6F1137324500D91F4B /* FSStoreParameters.m */; };
 		46BDAF311137D6F000E0D5B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BDAF301137D6F000E0D5B7 /* Cocoa.framework */; };
 		46BDAF831137F45200E0D5B7 /* WebFrame+FSDomAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 46BDAF811137F45200E0D5B7 /* WebFrame+FSDomAccessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46BDAF841137F45200E0D5B7 /* WebFrame+FSDomAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDAF821137F45200E0D5B7 /* WebFrame+FSDomAccessor.m */; };
@@ -80,6 +85,8 @@
 		4610624311373D0500D91F4B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4610624711373D1600D91F4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4610624B11373D2A00D91F4B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		46223458113BC73600FD4AE6 /* FSStoreParametersTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStoreParametersTest.h; sourceTree = "<group>"; };
+		46223459113BC73600FD4AE6 /* FSStoreParametersTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStoreParametersTest.m; sourceTree = "<group>"; };
 		46BDAF301137D6F000E0D5B7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		46BDAF811137F45200E0D5B7 /* WebFrame+FSDomAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebFrame+FSDomAccessor.h"; sourceTree = "<group>"; };
 		46BDAF821137F45200E0D5B7 /* WebFrame+FSDomAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebFrame+FSDomAccessor.m"; sourceTree = "<group>"; };
@@ -224,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				46BDAF95113A742900E0D5B7 /* Model */,
+				46223458113BC73600FD4AE6 /* FSStoreParametersTest.h */,
+				46223459113BC73600FD4AE6 /* FSStoreParametersTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -369,6 +378,11 @@
 				46105BC01137376300D91F4B /* FSOrder.m in Sources */,
 				46105BC11137376400D91F4B /* FSOrderItem.m in Sources */,
 				46BDAF851137F45200E0D5B7 /* WebFrame+FSDomAccessor.m in Sources */,
+				4622345A113BC73600FD4AE6 /* FSStoreParametersTest.m in Sources */,
+				4622345F113BC88A00FD4AE6 /* FSEmbeddedStoreController.m in Sources */,
+				46223460113BC88E00FD4AE6 /* FSOrderDocumentRepresentation.m in Sources */,
+				46223461113BC89000FD4AE6 /* FSOrderView.m in Sources */,
+				46223462113BC89200FD4AE6 /* FSStoreParameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

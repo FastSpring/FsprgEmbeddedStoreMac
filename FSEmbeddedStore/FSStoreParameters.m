@@ -17,117 +17,129 @@ NSString * const kFSModeTest = @"test";
 
 + (FSStoreParameters *)parameters
 {
-	return [[[FSStoreParameters alloc] init] retain];
+	return [[[FSStoreParameters alloc] init] autorelease];
 }
 
 - (id) init
 {
 	self = [super init];
 	if (self != nil) {
-		[self setStoreId:nil withProduct:nil];
-		[self setCampaign:nil];
-		[self setOption:nil];
-		[self setMode:kFSModeActive];
-		[self setReferrer:nil];
-		[self setSource:nil];
+		[self setRaw:[NSMutableDictionary dictionaryWithCapacity:5]];
 	}
 	return self;
 }
 
+- (NSMutableDictionary *)raw
+{
+    return [[raw retain] autorelease]; 
+}
+
+- (void)setRaw:(NSMutableDictionary *)aRaw
+{
+    if (raw != aRaw) {
+        [raw release];
+        raw = [aRaw retain];
+    }
+}
+
 - (NSURLRequest *)toURLRequest
 {
-	NSString *urlAsStr = [NSString stringWithFormat:@"http://sites.fastspring.com/%@/product/%@?mode=test", [self storeId], [self product]];
+	NSString *urlAsStr = [NSString stringWithFormat:@"http://sites.fastspring.com/%@/product/%@",
+						  [[self storeId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+						  [[self productId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	
+	NSString *queryStr = @"";
+	NSArray *keys = [[self raw] allKeys];
+	keys = [keys sortedArrayUsingSelector:@selector(compare:)];
+	
+	NSUInteger i, count = [keys count];
+	for (i = 0; i < count; i++) {
+		NSString *key = [keys objectAtIndex:i];
+		NSString *value = [[self raw] valueForKey:key];
+		if(value != nil) {
+			queryStr = [queryStr stringByAppendingFormat:@"&%@=%@",
+						key,
+						[value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+		}
+	}
+		
+	if([queryStr length] > 0) {
+		urlAsStr = [NSString stringWithFormat:@"%@?%@", urlAsStr, [queryStr substringFromIndex:1]];
+	}
+	
+	
 	return [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlAsStr]];
 }
-
+		   
 - (NSString *)storeId
 {
-    return [[storeId retain] autorelease]; 
+	return [[storeId retain] autorelease]; 
 }
-- (NSString *)product
+- (NSString *)productId
 {
-    return [[product retain] autorelease]; 
+	return [[productId retain] autorelease]; 
 }
-- (void)setStoreId:(NSString *)aStoreId withProduct:(NSString *)aProduct
+- (void)setStoreId:(NSString *)aStoreId withProductId:(NSString *)aProductId
 {
-    if (storeId != aStoreId) {
-        [storeId release];
-        storeId = [aStoreId retain];
-    }
-    if (product != aProduct) {
-        [product release];
-        product = [aProduct retain];
-    }
-}
-
-- (NSString *)campaign
-{
-    return [[campaign retain] autorelease]; 
-}
-- (void)setCampaign:(NSString *)aCampaign
-{
-    if (campaign != aCampaign) {
-        [campaign release];
-        campaign = [aCampaign retain];
-    }
-}
-
-- (NSString *)option
-{
-    return [[option retain] autorelease]; 
-}
-- (void)setOption:(NSString *)anOption
-{
-    if (option != anOption) {
-        [option release];
-        option = [anOption retain];
-    }
+	if (storeId != aStoreId) {
+		[storeId release];
+		storeId = [aStoreId retain];
+	}
+	if (productId != aProductId) {
+		[productId release];
+		productId = [aProductId retain];
+	}
 }
 
 - (NSString *)mode
 {
-    return [[mode retain] autorelease]; 
+    return [[self raw] valueForKey:@"mode"];
 }
 - (void)setMode:(NSString *)aMode
 {
-    if (mode != aMode) {
-        [mode release];
-        mode = [aMode retain];
-    }
+	[[self raw] setObject:aMode forKey:@"mode"];
+}
+
+- (NSString *)campaign
+{
+    return [[self raw] valueForKey:@"campaign"];
+}
+- (void)setCampaign:(NSString *)aCampaign
+{
+	[[self raw] setObject:aCampaign forKey:@"campaign"];
+}
+
+- (NSString *)option
+{
+    return [[self raw] valueForKey:@"option"];
+}
+- (void)setOption:(NSString *)anOption
+{
+	[[self raw] setObject:anOption forKey:@"option"];
 }
 
 - (NSString *)referrer
 {
-    return [[referrer retain] autorelease]; 
+    return [[self raw] valueForKey:@"referrer"];
 }
 - (void)setReferrer:(NSString *)aReferrer
 {
-    if (referrer != aReferrer) {
-        [referrer release];
-        referrer = [aReferrer retain];
-    }
+	[[self raw] setObject:aReferrer forKey:@"referrer"];
 }
 
 - (NSString *)source
 {
-    return [[source retain] autorelease]; 
+    return [[self raw] valueForKey:@"source"];
 }
 - (void)setSource:(NSString *)aSource
 {
-    if (source != aSource) {
-        [source release];
-        source = [aSource retain];
-    }
+	[[self raw] setObject:aSource forKey:@"source"];
 }
 
 - (void)dealloc
 {
-    [self setStoreId:nil withProduct:nil];
-    [self setCampaign:nil];
-    [self setOption:nil];
-    [self setMode:nil];
-    [self setReferrer:nil];
-    [self setSource:nil];
+	[self setStoreId:nil withProductId:nil];
+    [self setRaw:nil];
 	
     [super dealloc];
 }

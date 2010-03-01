@@ -14,27 +14,26 @@ extern NSString * const kFSModeTest;
 
 @interface FSStoreParameters : NSObject {
 	NSString *storeId;
-	NSString *product;
-	NSString *campaign;
-	NSString *option;
-	NSString *mode;
-	NSString *referrer;
-	NSString *source;
+	NSString *productId;
+	NSMutableDictionary *raw;
 }
 
 + (FSStoreParameters *)parameters;
 
 - (NSURLRequest *)toURLRequest;
 
+- (NSMutableDictionary *)raw;
+- (void)setRaw:(NSMutableDictionary *)aRaw;
+
 - (NSString *)storeId;
-- (NSString *)product;
-- (void)setStoreId:(NSString *)aStoreId withProduct:(NSString *)aProduct;
+- (NSString *)productId;
+- (void)setStoreId:(NSString *)aStoreId withProductId:(NSString *)aProductId;
+- (NSString *)mode;
+- (void)setMode:(NSString *)aMode;
 - (NSString *)campaign;
 - (void)setCampaign:(NSString *)aCampaign;
 - (NSString *)option;
 - (void)setOption:(NSString *)anOption;
-- (NSString *)mode;
-- (void)setMode:(NSString *)aMode;
 - (NSString *)referrer;
 - (void)setReferrer:(NSString *)aReferrer;
 - (NSString *)source;

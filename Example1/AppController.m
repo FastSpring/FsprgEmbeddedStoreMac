@@ -30,12 +30,8 @@
 
 - (void)willLoadStoreWithParameters:(FSStoreParameters *)parameters
 {
-	[parameters setStoreId:@"spootnik" withProduct:@"fsembeddedstore"];
-	[parameters setCampaign:@""];
-	[parameters setOption:@""];
+	[parameters setStoreId:@"spootnik" withProductId:@"fsembeddedstore"];
 	[parameters setMode:kFSModeTest];
-	[parameters setReferrer:@""];
-	[parameters setSource:@""];
 }
 
 - (void)didLoadWebFrame:(WebFrame *)frame
