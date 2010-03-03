@@ -9,7 +9,6 @@
 #import "FSEmbeddedStoreController.h"
 #import "FSOrderView.h"
 #import "FSOrderDocumentRepresentation.h"
-#import <AddressBook/AddressBook.h>
 
 
 @implementation FSEmbeddedStoreController
@@ -77,7 +76,6 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-	[[self delegate] didLoadWebFrame:frame];
 }
 
 // WebUIDelegate

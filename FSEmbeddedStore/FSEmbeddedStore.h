@@ -9,7 +9,6 @@
 #import "FSEmbeddedStoreController.h"
 #import "FSEmbeddedStoreDelegate.h"
 #import "FSStoreParameters.h"
-#import "WebFrame+FSDomAccessor.h"
 
 // Model
 #import "FSOrder.h"
