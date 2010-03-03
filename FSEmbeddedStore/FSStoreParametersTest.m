@@ -78,4 +78,32 @@
 	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?additional=aValue", [[[params toURLRequest] URL] description], nil);
 }
 
+- (void)testContactDefaults
+{
+	[params setStoreId:@"storeId" withProductId:@"productId"];
+	[params setContactFname:@"fname"];
+	[params setContactLname:@"lname"];
+	[params setContactEmail:@"email"];
+	[params setContactCompany:@"company"];
+	[params setContactPhone:@"phone"];
+
+	STAssertEqualObjects(@"https://sites.fastspring.com/storeId/product/productId?contact_company=company&contact_email=email&contact_fname=fname&contact_lname=lname&contact_phone=phone", [[[params toURLRequest] URL] description], nil);
+}
+
+- (void)testInstantOrderProcess
+{
+	[params setOrderProcessType:kFSOrderProcessInstant];
+	[params setStoreId:@"storeId" withProductId:@"productId"];
+	
+	STAssertEqualObjects(@"https://sites.fastspring.com/storeId/instant/productId", [[[params toURLRequest] URL] description], nil);
+}
+
+- (void)testUnknownOrderProcess
+{
+	[params setOrderProcessType:666];
+	[params setStoreId:@"storeId" withProductId:@"productId"];
+
+	STAssertThrows([params toURLRequest], nil);
+}
+
 @end

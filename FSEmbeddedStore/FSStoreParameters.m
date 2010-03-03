@@ -9,10 +9,6 @@
 #import "FSStoreParameters.h"
 
 
-NSString * const kFSModeActive = @"active";
-NSString * const kFSModeActiveTest = @"active.test";
-NSString * const kFSModeTest = @"test";
-
 @implementation FSStoreParameters
 
 + (FSStoreParameters *)parameters
@@ -24,6 +20,7 @@ NSString * const kFSModeTest = @"test";
 {
 	self = [super init];
 	if (self != nil) {
+		[self setOrderProcessType:kFSOrderProcessDetail];
 		[self setRaw:[NSMutableDictionary dictionaryWithCapacity:5]];
 	}
 	return self;
@@ -44,9 +41,28 @@ NSString * const kFSModeTest = @"test";
 
 - (NSURLRequest *)toURLRequest
 {
-	NSString *urlAsStr = [NSString stringWithFormat:@"http://sites.fastspring.com/%@/product/%@",
-						  [[self storeId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-						  [[self productId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *storeIdEncoded = [[self storeId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *productIdEncoded = [[self productId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+	NSString *urlAsStr;
+	switch([self orderProcessType]) {
+		case kFSOrderProcessDetail: {
+			NSString *protocol = @"http";
+			if([self hasContactDefaults]) {
+				protocol = @"https";
+			}
+			urlAsStr = [NSString stringWithFormat:@"%@://sites.fastspring.com/%@/product/%@", protocol, storeIdEncoded, productIdEncoded];
+			break;
+		}
+		case kFSOrderProcessInstant: {
+			urlAsStr = [NSString stringWithFormat:@"https://sites.fastspring.com/%@/instant/%@", storeIdEncoded, productIdEncoded];
+			break;
+		}
+		default: {
+			NSAssert1(FALSE, @"OrderProcess constant %i unknown.", [self orderProcessType]);
+			break;
+		}
+	}
 	
 	NSString *queryStr = @"";
 	NSArray *keys = [[self raw] allKeys];
@@ -67,10 +83,18 @@ NSString * const kFSModeTest = @"test";
 		urlAsStr = [NSString stringWithFormat:@"%@?%@", urlAsStr, [queryStr substringFromIndex:1]];
 	}
 	
-	
 	return [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlAsStr]];
 }
-		   
+
+- (int)orderProcessType
+{
+    return orderProcessType;
+}
+- (void)setOrderProcessType:(int)anOrderProcessType
+{
+    orderProcessType = anOrderProcessType;
+}
+
 - (NSString *)storeId
 {
 	return [[storeId retain] autorelease]; 
@@ -91,49 +115,68 @@ NSString * const kFSModeTest = @"test";
 	}
 }
 
-- (NSString *)mode
-{
-    return [[self raw] valueForKey:@"mode"];
-}
 - (void)setMode:(NSString *)aMode
 {
 	[[self raw] setObject:aMode forKey:@"mode"];
 }
 
-- (NSString *)campaign
-{
-    return [[self raw] valueForKey:@"campaign"];
-}
 - (void)setCampaign:(NSString *)aCampaign
 {
 	[[self raw] setObject:aCampaign forKey:@"campaign"];
 }
 
-- (NSString *)option
-{
-    return [[self raw] valueForKey:@"option"];
-}
 - (void)setOption:(NSString *)anOption
 {
 	[[self raw] setObject:anOption forKey:@"option"];
 }
 
-- (NSString *)referrer
-{
-    return [[self raw] valueForKey:@"referrer"];
-}
 - (void)setReferrer:(NSString *)aReferrer
 {
 	[[self raw] setObject:aReferrer forKey:@"referrer"];
 }
 
-- (NSString *)source
-{
-    return [[self raw] valueForKey:@"source"];
-}
 - (void)setSource:(NSString *)aSource
 {
 	[[self raw] setObject:aSource forKey:@"source"];
+}
+
+- (BOOL)hasContactDefaults
+{
+	return hasContactDefaults;
+}
+- (void)setHasContactDefaults:(BOOL)flag
+{
+	hasContactDefaults = flag;
+}
+		   
+- (void)setContactFname:(NSString *)aContactFname
+{
+	[[self raw] setObject:aContactFname forKey:@"contact_fname"];
+	[self setHasContactDefaults:TRUE];
+}
+
+- (void)setContactLname:(NSString *)aContactLname
+{
+	[[self raw] setObject:aContactLname forKey:@"contact_lname"];
+	[self setHasContactDefaults:TRUE];
+}
+
+- (void)setContactEmail:(NSString *)aContactEmail
+{
+	[[self raw] setObject:aContactEmail forKey:@"contact_email"];
+	[self setHasContactDefaults:TRUE];
+}
+
+- (void)setContactCompany:(NSString *)aContactCompany
+{
+	[[self raw] setObject:aContactCompany forKey:@"contact_company"];
+	[self setHasContactDefaults:TRUE];
+}
+
+- (void)setContactPhone:(NSString *)aContactPhone
+{
+	[[self raw] setObject:aContactPhone forKey:@"contact_phone"];
+	[self setHasContactDefaults:TRUE];
 }
 
 - (void)dealloc
