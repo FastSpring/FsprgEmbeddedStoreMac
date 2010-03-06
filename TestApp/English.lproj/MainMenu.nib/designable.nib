@@ -21,10 +21,10 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="29"/>
-			<integer value="371"/>
 			<integer value="606"/>
 			<integer value="693"/>
+			<integer value="29"/>
+			<integer value="371"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -782,7 +782,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 558}, {670, 471}}</string>
 				<int key="NSWTFlags">1946157056</int>
-				<string key="NSWindowTitle">FstSpgEmbeddedStore TestApp</string>
+				<string key="NSWindowTitle">FastSpring EmbeddedStore TestApp</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="318394995">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
