@@ -13,7 +13,7 @@
 
 @protocol FSEmbeddedStoreDelegate <NSObject>
 
-- (void)willLoadStoreWithParameters:(FSStoreParameters *)parameters;
+- (void)didLoadStore;
 - (void)didReceiveOrder:(FSOrder *)order;
 - (NSView *)viewWithFrame:(NSRect)frame forOrder:(FSOrder *)order;
 

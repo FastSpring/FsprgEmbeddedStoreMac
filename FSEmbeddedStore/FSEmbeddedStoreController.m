@@ -13,6 +13,13 @@
 
 @implementation FSEmbeddedStoreController
 
++ (void)initialize
+{
+	[WebView registerViewClass:[FSOrderView class]
+		   representationClass:[FSOrderDocumentRepresentation class]
+				   forMIMEType:@"text/xml"];
+}
+
 - (id) init
 {
 	self = [super init];
@@ -32,7 +39,14 @@
 {
     if (webView != aWebView) {
         [webView release];
+		[webView setFrameLoadDelegate:nil];
+		[webView setUIDelegate:nil];
+		[webView setApplicationNameForUserAgent:nil];
+		
         webView = [aWebView retain];
+		[webView setFrameLoadDelegate:self];
+		[webView setUIDelegate:self];
+		[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
     }
 }
 
@@ -52,19 +66,9 @@
     }
 }
 
-- (void)load
+- (void)loadWithParameters:(FSStoreParameters *)parameters
 {
-	[WebView registerViewClass:[FSOrderView class]
-		   representationClass:[FSOrderDocumentRepresentation class]
-				   forMIMEType:@"text/xml"];
 
-	[webView setFrameLoadDelegate:self];
-	[webView setUIDelegate:self];
-
-	[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
-	
-	FSStoreParameters *parameters = [FSStoreParameters parameters];
-	[[self delegate] willLoadStoreWithParameters:parameters];
 	[[webView mainFrame] loadRequest:[parameters toURLRequest]];
 }
 
@@ -76,6 +80,7 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
+	[[self delegate] didLoadStore];
 }
 
 // WebUIDelegate

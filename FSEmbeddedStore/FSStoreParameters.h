@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define kFSOrderProcessDetail	0
-#define kFSOrderProcessInstant	1
+#define kFSOrderProcessDetail	@"detail"
+#define kFSOrderProcessInstant	@"instant"
 
 #define kFSModeActive		@"active"
 #define kFSModeActiveTest	@"active.test"
@@ -17,9 +17,6 @@
 
 
 @interface FSStoreParameters : NSObject {
-	int orderProcessType;
-	NSString *storeId;
-	NSString *productId;
 	BOOL hasContactDefaults;
 	NSMutableDictionary *raw;
 }
@@ -27,26 +24,39 @@
 + (FSStoreParameters *)parameters;
 
 - (NSURLRequest *)toURLRequest;
+- (NSURL *)toURL;
 
 - (NSMutableDictionary *)raw;
 - (void)setRaw:(NSMutableDictionary *)aRaw;
 
-- (int)orderProcessType;
-- (void)setOrderProcessType:(int)anOrderProcessType;
-- (NSString *)storeId;
-- (NSString *)productId;
+- (NSString *)orderProcessType;
+- (void)setOrderProcessType:(NSString *)anOrderProcessType;
 - (void)setStoreId:(NSString *)aStoreId withProductId:(NSString *)aProductId;
+- (NSString *)storeId;
+- (void)setStoreId:(NSString *)aStoreId;
+- (NSString *)productId;
+- (void)setProductId:(NSString *)aProductId;
+- (NSString *)mode;
 - (void)setMode:(NSString *)aMode;
+- (NSString *)campaign;
 - (void)setCampaign:(NSString *)aCampaign;
+- (NSString *)option;
 - (void)setOption:(NSString *)anOption;
+- (NSString *)referrer;
 - (void)setReferrer:(NSString *)aReferrer;
+- (NSString *)source;
 - (void)setSource:(NSString *)aSource;
 
 - (BOOL)hasContactDefaults;
+- (NSString *)contactFname;
 - (void)setContactFname:(NSString *)aContactFname;
+- (NSString *)contactLname;
 - (void)setContactLname:(NSString *)aContactLname;
+- (NSString *)contactEmail;
 - (void)setContactEmail:(NSString *)aContactEmail;
+- (NSString *)contactCompany;
 - (void)setContactCompany:(NSString *)aContactCompany;
+- (NSString *)contactPhone;
 - (void)setContactPhone:(NSString *)aContactPhone;
 
 @end

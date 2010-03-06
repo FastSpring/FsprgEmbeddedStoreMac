@@ -21,6 +21,6 @@
 - (id <FSEmbeddedStoreDelegate>)delegate;
 - (void)setDelegate:(id <FSEmbeddedStoreDelegate>)aDelegate;
 
-- (void)load;
+- (void)loadWithParameters:(FSStoreParameters *)parameters;
 
 @end

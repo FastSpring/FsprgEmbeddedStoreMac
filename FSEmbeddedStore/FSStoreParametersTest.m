@@ -21,11 +21,16 @@
     [params release];
 }
 
+- (void)testEmpty
+{
+	STAssertEqualObjects(@"http://sites.fastspring.com//product/", [[params toURL] description], nil);
+}
+
 - (void)testNoParam
 {
 	[params setStoreId:@"storeId" withProductId:@"productId"];
 	
-	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId", [[[params toURLRequest] URL] description], nil);
+	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId", [[params toURL] description], nil);
 }
 
 - (void)testOneParam
@@ -33,7 +38,7 @@
 	[params setStoreId:@"storeId" withProductId:@"productId"];
 	[params setMode:kFSModeTest];
 	
-	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?mode=test", [[[params toURLRequest] URL] description], nil);
+	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?mode=test", [[params toURL] description], nil);
 }
 
 - (void)testTwoParams
@@ -42,7 +47,7 @@
 	[params setMode:kFSModeTest];
 	[params setCampaign:@"aCampaign"];
 	
-	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?campaign=aCampaign&mode=test", [[[params toURLRequest] URL] description], nil);
+	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?campaign=aCampaign&mode=test", [[params toURL] description], nil);
 }
 
 - (void)testAllParams
@@ -55,7 +60,7 @@
 	[params setSource:@"aSource"];
 	
 	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?campaign=aCampaign&mode=test&option=anOption&referrer=aReferrer&source=aSource",
-						 [[[params toURLRequest] URL] description], nil);
+						 [[params toURL] description], nil);
 }
 
 - (void)testSpecialChars
@@ -67,7 +72,7 @@
 	[params setSource:@"%"];
 	
 	STAssertEqualObjects(@"http://sites.fastspring.com/%C3%A4/product/%C3%B6?campaign=%C3%BC&option=%3E&referrer=%3C&source=%25",
-						 [[[params toURLRequest] URL] description], nil);
+						 [[params toURL] description], nil);
 }
 
 - (void)testParamViaRaw
@@ -75,7 +80,7 @@
 	[params setStoreId:@"storeId" withProductId:@"productId"];
 	[[params raw] setValue:@"aValue" forKey:@"additional"];
 	
-	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?additional=aValue", [[[params toURLRequest] URL] description], nil);
+	STAssertEqualObjects(@"http://sites.fastspring.com/storeId/product/productId?additional=aValue", [[params toURL] description], nil);
 }
 
 - (void)testContactDefaults
@@ -87,7 +92,7 @@
 	[params setContactCompany:@"company"];
 	[params setContactPhone:@"phone"];
 
-	STAssertEqualObjects(@"https://sites.fastspring.com/storeId/product/productId?contact_company=company&contact_email=email&contact_fname=fname&contact_lname=lname&contact_phone=phone", [[[params toURLRequest] URL] description], nil);
+	STAssertEqualObjects(@"https://sites.fastspring.com/storeId/product/productId?contact_company=company&contact_email=email&contact_fname=fname&contact_lname=lname&contact_phone=phone", [[params toURL] description], nil);
 }
 
 - (void)testInstantOrderProcess
@@ -95,12 +100,12 @@
 	[params setOrderProcessType:kFSOrderProcessInstant];
 	[params setStoreId:@"storeId" withProductId:@"productId"];
 	
-	STAssertEqualObjects(@"https://sites.fastspring.com/storeId/instant/productId", [[[params toURLRequest] URL] description], nil);
+	STAssertEqualObjects(@"https://sites.fastspring.com/storeId/instant/productId", [[params toURL] description], nil);
 }
 
 - (void)testUnknownOrderProcess
 {
-	[params setOrderProcessType:666];
+	[params setOrderProcessType:@"foo"];
 	[params setStoreId:@"storeId" withProductId:@"productId"];
 
 	STAssertThrows([params toURLRequest], nil);
