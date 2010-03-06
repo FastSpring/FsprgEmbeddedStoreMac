@@ -23,5 +23,7 @@
 - (void)setDelegate:(id <FSEmbeddedStoreDelegate>)aDelegate;
 
 - (void)loadWithParameters:(FSStoreParameters *)parameters;
+- (BOOL)isLoading;
+- (double)estimatedLoadingProgress;
 
 @end

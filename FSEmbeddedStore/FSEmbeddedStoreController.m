@@ -43,11 +43,21 @@
 		[webView setFrameLoadDelegate:nil];
 		[webView setUIDelegate:nil];
 		[webView setApplicationNameForUserAgent:nil];
+		[[NSNotificationCenter defaultCenter] removeObserver:self];
+		
 		
         webView = [aWebView retain];
 		[webView setFrameLoadDelegate:self];
 		[webView setUIDelegate:self];
 		[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
+		[[NSNotificationCenter defaultCenter] addObserver:self 
+												 selector:@selector(estimatedLoadingProgressChanged:) 
+													 name:WebViewProgressStartedNotification 
+												   object:webView];
+		[[NSNotificationCenter defaultCenter] addObserver:self 
+												 selector:@selector(estimatedLoadingProgressChanged:) 
+													 name:WebViewProgressEstimateChangedNotification 
+												   object:webView];
     }
 }
 
@@ -73,6 +83,30 @@
 	isInitialLoad = TRUE;
 	[[webView mainFrame] loadRequest:[parameters toURLRequest]];
 }
+
+
+- (BOOL)isLoading
+{
+	return [self estimatedLoadingProgress] < 100;
+}
+- (void)setIsLoading:(BOOL)aFlag
+{
+	// just triggering change observer
+}
+- (double)estimatedLoadingProgress
+{
+	return [webView estimatedProgress] * 100;
+}
+- (void)setEstimatedLoadingProgress:(double)aProgress
+{
+	// just triggering change observer
+}
+- (void)estimatedLoadingProgressChanged:(NSNotification *)aNotification
+{
+	[self setEstimatedLoadingProgress:-1];
+	[self setIsLoading:TRUE];
+}
+
 
 // WebFrameLoadDelegate
 
