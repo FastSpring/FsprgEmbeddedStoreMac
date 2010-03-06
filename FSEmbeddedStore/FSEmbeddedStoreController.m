@@ -26,6 +26,7 @@
 	if (self != nil) {
 		[self setWebView:nil];
 		[self setDelegate:nil];
+		isInitialLoad = FALSE;
 	}
 	return self;
 }
@@ -69,6 +70,7 @@
 - (void)loadWithParameters:(FSStoreParameters *)parameters
 {
 
+	isInitialLoad = TRUE;
 	[[webView mainFrame] loadRequest:[parameters toURLRequest]];
 }
 
@@ -80,7 +82,10 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-	[[self delegate] didLoadStore];
+	if(isInitialLoad) {
+		isInitialLoad = FALSE;
+		[[self delegate] didLoadStore];
+	}
 }
 
 // WebUIDelegate

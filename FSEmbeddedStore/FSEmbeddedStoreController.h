@@ -14,6 +14,7 @@
 @interface FSEmbeddedStoreController : NSObject {
 	WebView* webView;
 	id <FSEmbeddedStoreDelegate> delegate;
+	BOOL isInitialLoad;
 }
 
 - (WebView *)webView;
