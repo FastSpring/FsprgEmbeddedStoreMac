@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		467BED23113AEB9C00C21AFE /* FSEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467BED22113AEB9C00C21AFE /* FSEmbeddedStore.framework */; };
-		467BED35113AEBA700C21AFE /* FSEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 467BED22113AEB9C00C21AFE /* FSEmbeddedStore.framework */; };
 		467BED7D113AEF7300C21AFE /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 467BED7B113AEF7300C21AFE /* AppController.h */; };
 		467BED7E113AEF7300C21AFE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BED7C113AEF7300C21AFE /* AppController.m */; };
 		467BEDEA113AF50200C21AFE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467BEDE9113AF50200C21AFE /* AddressBook.framework */; };
 		467BEE14113AF82100C21AFE /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 467BEE13113AF82100C21AFE /* OrderView.xib */; };
 		467BEE3D113AFA1600C21AFE /* OrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 467BEE17113AF88000C21AFE /* OrderViewController.h */; };
 		467BEE3E113AFA1700C21AFE /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BEE18113AF88000C21AFE /* OrderViewController.m */; };
+		46CC455111428A0E0031BE75 /* FstSpgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */; };
+		46CC457711428A1D0031BE75 /* FstSpgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -28,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				467BED35113AEBA700C21AFE /* FSEmbeddedStore.framework in Copy Frameworks */,
+				46CC457711428A1D0031BE75 /* FstSpgEmbeddedStore.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,13 +44,13 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Example1_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1_Prefix.pch; sourceTree = "<group>"; };
-		467BED22113AEB9C00C21AFE /* FSEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSEmbeddedStore.framework; path = "../FSEmbeddedStore/build/Release 10.5+/FSEmbeddedStore.framework"; sourceTree = SOURCE_ROOT; };
 		467BED7B113AEF7300C21AFE /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		467BED7C113AEF7300C21AFE /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		467BEDE9113AF50200C21AFE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		467BEE13113AF82100C21AFE /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		467BEE17113AF88000C21AFE /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		467BEE18113AF88000C21AFE /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FstSpgEmbeddedStore.framework; path = ../FstSpgEmbeddedStore/build/Release/FstSpgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Example1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,8 +61,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				467BED23113AEB9C00C21AFE /* FSEmbeddedStore.framework in Frameworks */,
 				467BEDEA113AF50200C21AFE /* AddressBook.framework in Frameworks */,
+				46CC455111428A0E0031BE75 /* FstSpgEmbeddedStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +83,9 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				467BED22113AEB9C00C21AFE /* FSEmbeddedStore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				467BEDE9113AF50200C21AFE /* AddressBook.framework */,
+				46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -257,6 +257,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
+					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -279,6 +280,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
+					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

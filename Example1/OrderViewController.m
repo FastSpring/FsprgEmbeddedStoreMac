@@ -1,20 +1,20 @@
 //
 //  OrderViewController.m
-//  FSEmbeddedStoreExample
+//  Example1
 //
 //  Created by Lars Steiger on 2/28/10.
 //  Copyright 2010 FastSpring. All rights reserved.
 //
 
 #import "OrderViewController.h"
-#import <FSEmbeddedStore/FSEmbeddedStore.h>
+#import <FstSpgEmbeddedStore/FstSpgEmbeddedStore.h>
 
 
 @implementation OrderViewController
 
 - (IBAction)showLicense:(id)sender
 {
-	FSOrder *order = [self representedObject];
+	FstSpgOrder *order = [self representedObject];
 	
 	NSString *message = [NSString stringWithFormat:@"Name: %@\nEmail: %@", [order customerLastName], [order customerEmail]];
 	NSRunInformationalAlertPanel(@"Your License", message, @"OK", nil, nil);
