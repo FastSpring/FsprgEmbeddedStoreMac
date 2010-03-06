@@ -282,13 +282,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>29</integer>
-									<integer>23</integer>
+									<integer>4</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 97}, {283, 660}}</string>
+							<string>{{0, 0}, {283, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -325,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FSStoreParametersTest.m</string>
+								<string>FSEmbeddedStoreController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FSStoreParametersTest.m</string>
+										<string>FSEmbeddedStoreController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>46847FF0114268B400786795</string>
+										<string>468480A511427C8500786795</string>
 										<key>history</key>
 										<array>
 											<string>46105C0B1137398900D91F4B</string>
@@ -356,7 +356,6 @@
 											<string>46F4DE4C113E77CC00ECAFE6</string>
 											<string>46F4DE50113E77CC00ECAFE6</string>
 											<string>46F4DE51113E77CC00ECAFE6</string>
-											<string>46F4DFFC113EE92200ECAFE6</string>
 											<string>46F4E07D113FCAAE00ECAFE6</string>
 											<string>46F4E07E113FCAAE00ECAFE6</string>
 											<string>46F4E082113FCAAE00ECAFE6</string>
@@ -366,12 +365,13 @@
 											<string>46F4E2D21140EC4200ECAFE6</string>
 											<string>46F4E2D31140EC4200ECAFE6</string>
 											<string>46F4E2D41140EC4200ECAFE6</string>
-											<string>46F4E2D51140EC4200ECAFE6</string>
 											<string>46F4E2D61140EC4200ECAFE6</string>
 											<string>46847FEC114268B400786795</string>
-											<string>46847FED114268B400786795</string>
 											<string>46847FEE114268B400786795</string>
-											<string>46847FEF114268B400786795</string>
+											<string>46847FF8114269E000786795</string>
+											<string>4684804A114270FE00786795</string>
+											<string>4684805D114272A100786795</string>
+											<string>4684805E114272A100786795</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -611,6 +611,8 @@
 							<string>237pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
