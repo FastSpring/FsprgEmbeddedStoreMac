@@ -20,6 +20,8 @@
     if (self) {
 		[self setDataSource:nil];
         [self setNeedsLayout:FALSE];
+		[self setAutoresizesSubviews:TRUE];
+		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
     }
     return self;
 }
@@ -52,14 +54,6 @@
 
 - (void)drawRect:(NSRect)aRect
 {
-	[self setFrame:[[[dataSource webFrame] frameView] frame]];
-	
-	NSUInteger i, count = [[self subviews] count];
-	for (i = 0; i < count; i++) {
-		NSView *subview = [[self subviews] objectAtIndex:i];
-		[subview setFrame:[self frame]];
-	}
-	
 	if([self needsLayout]) {
 		[self setNeedsLayout:FALSE];
 		[self layout];
@@ -70,7 +64,7 @@
 - (void)layout
 {
 	if([[self subviews] count] == 0) {
-		[self setFrame:[[[dataSource webFrame] frameView] frame]];
+		[self setFrame:[[self superview] frame]];
 		
 		FSOrderDocumentRepresentation *representation = [[self dataSource] representation];
 		FSOrder *order = [representation order];
