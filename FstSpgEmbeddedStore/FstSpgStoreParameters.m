@@ -15,6 +15,7 @@ NSString * const kFstSpgModeActive = @"active";
 NSString * const kFstSpgModeActiveTest = @"active.test";
 NSString * const kFstSpgModeTest = @"test";
 
+static NSString * const kLanguage = @"language";
 static NSString * const kOrderProcessType = @"orderProcessType";
 static NSString * const kStoreId = @"storeId";
 static NSString * const kProductId = @"productId";
@@ -74,6 +75,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	self = [super init];
 	if (self != nil) {
 		[self setRaw:[NSMutableDictionary dictionaryWithCapacity:15]];
+		[self setLanguage:[[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode]];
 		[self setOrderProcessType:kFstSpgOrderProcessDetail];
 	}
 	return self;
@@ -153,6 +155,16 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	} else {
 		[[self raw] setObject:anObject forKey:aKey];
 	}
+}
+
+- (NSString *)language
+{
+    return [[self raw] objectForKey:kLanguage];
+}
+
+- (void)setLanguage:(NSString *)aLanguage
+{
+	[self setObject:aLanguage forKey:kLanguage];
 }
 
 - (NSString *)orderProcessType

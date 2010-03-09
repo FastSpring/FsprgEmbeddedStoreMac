@@ -29,6 +29,8 @@ extern NSString * const kFstSpgModeTest;
 - (NSMutableDictionary *)raw;
 - (void)setRaw:(NSMutableDictionary *)aRaw;
 
+- (NSString *)language;
+- (void)setLanguage:(NSString *)aLanguage;
 - (NSString *)orderProcessType;
 - (void)setOrderProcessType:(NSString *)anOrderProcessType;
 - (void)setStoreId:(NSString *)aStoreId withProductId:(NSString *)aProductId;
