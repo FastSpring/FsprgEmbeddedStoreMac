@@ -8,13 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define kFstSpgOrderProcessDetail	@"detail"
-#define kFstSpgOrderProcessInstant	@"instant"
+extern NSString * const kFstSpgOrderProcessDetail;
+extern NSString * const kFstSpgOrderProcessDetail;
+extern NSString * const kFstSpgOrderProcessInstant;
 
-#define kFstSpgModeActive		@"active"
-#define kFstSpgModeActiveTest	@"active.test"
-#define kFstSpgModeTest			@"test"
-
+extern NSString * const kFstSpgModeActive;
+extern NSString * const kFstSpgModeActiveTest;
+extern NSString * const kFstSpgModeTest;
 
 @interface FstSpgStoreParameters : NSObject {
 	BOOL hasContactDefaults;

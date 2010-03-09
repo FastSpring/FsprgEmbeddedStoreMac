@@ -8,22 +8,51 @@
 
 #import "FstSpgStoreParameters.h"
 
-#define kOrderProcessType @"orderProcessType"
-#define kStoreId @"storeId"
-#define kProductId @"productId"
-#define kMode @"mode"
-#define kCampaign @"campaign"
-#define kOption @"option"
-#define kReferrer @"referrer"
-#define kSource @"source"
-#define kContactFname @"contact_fname"
-#define kContactLname @"contact_lname"
-#define kContactEmail @"contact_email"
-#define kContactCompany @"contact_company"
-#define kContactPhone @"contact_phone"
+NSString * const kFstSpgOrderProcessDetail = @"detail";
+NSString * const kFstSpgOrderProcessInstant = @"instant";
 
+NSString * const kFstSpgModeActive = @"active";
+NSString * const kFstSpgModeActiveTest = @"active.test";
+NSString * const kFstSpgModeTest = @"test";
+
+static NSString * const kOrderProcessType = @"orderProcessType";
+static NSString * const kStoreId = @"storeId";
+static NSString * const kProductId = @"productId";
+static NSString * const kMode = @"mode";
+static NSString * const kCampaign = @"campaign";
+static NSString * const kOption = @"option";
+static NSString * const kReferrer = @"referrer";
+static NSString * const kSource = @"source";
+static NSString * const kContactFname = @"contact_fname";
+static NSString * const kContactLname = @"contact_lname";
+static NSString * const kContactEmail = @"contact_email";
+static NSString * const kContactCompany = @"contact_company";
+static NSString * const kContactPhone = @"contact_phone";
+
+static NSMutableDictionary *keyPathsForValuesAffecting; 
 
 @implementation FstSpgStoreParameters
+
++ (void)initialize
+{
+	keyPathsForValuesAffecting = [[NSMutableDictionary dictionaryWithCapacity:1] retain];
+	
+	NSSet *toURLSet = [NSSet setWithObjects:NSStringFromSelector(@selector(orderProcessType)), 
+											NSStringFromSelector(@selector(storeId)),
+											NSStringFromSelector(@selector(productId)),
+											NSStringFromSelector(@selector(mode)),
+											NSStringFromSelector(@selector(campaign)),
+											NSStringFromSelector(@selector(option)),
+											NSStringFromSelector(@selector(referrer)),
+											NSStringFromSelector(@selector(source)),
+											NSStringFromSelector(@selector(contactFname)),
+											NSStringFromSelector(@selector(contactLname)),
+											NSStringFromSelector(@selector(contactEmail)),
+											NSStringFromSelector(@selector(contactCompany)),
+											NSStringFromSelector(@selector(contactPhone)),
+											nil];
+	[keyPathsForValuesAffecting setObject:toURLSet forKey:NSStringFromSelector(@selector(toURL))];
+}
 
 + (FstSpgStoreParameters *)parameters
 {
@@ -32,11 +61,12 @@
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key
 {
-	if([key isEqualTo:@"toURL"]) {
-		return [NSSet setWithObjects:kOrderProcessType, kStoreId, kProductId, kMode, kCampaign, kOption, kReferrer, kSource,
-									 @"contactFname", @"contactLname", @"contactEmail", @"contactCompany", @"contactPhone", nil];
+	NSSet *keyPaths = [keyPathsForValuesAffecting valueForKey:key];
+	if(keyPaths == nil) {
+		return [NSSet set];
+	} else {
+		return keyPaths;
 	}
-	return [NSSet set];
 }
 
 - (id) init
