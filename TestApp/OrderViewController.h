@@ -10,7 +10,12 @@
 
 
 @interface OrderViewController : NSViewController {
-
+	NSString *fileName;
 }
+
+- (NSString *)fileName;
+- (void)setFileName:(NSString *)aFileName;
+
+- (IBAction)saveAs:(id)sender;
 
 @end
