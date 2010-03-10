@@ -251,13 +251,15 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (BOOL)hasContactDefaults
 {
-	return hasContactDefaults;
+	NSArray *allKeys = [[self raw] allKeys];
+
+	return [allKeys containsObject:kContactFname] ||
+		   [allKeys containsObject:kContactLname] ||
+		   [allKeys containsObject:kContactEmail] ||
+		   [allKeys containsObject:kContactCompany] ||
+		   [allKeys containsObject:kContactPhone];
 }
-- (void)setHasContactDefaults:(BOOL)flag
-{
-	hasContactDefaults = flag;
-}
-		   
+
 - (NSString *)contactFname
 {
     return [[self raw] objectForKey:kContactFname];
@@ -265,7 +267,6 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (void)setContactFname:(NSString *)aContactFname
 {
 	[self setObject:aContactFname forKey:kContactFname];
-	[self setHasContactDefaults:TRUE];
 }
 
 - (NSString *)contactLname
@@ -275,7 +276,6 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (void)setContactLname:(NSString *)aContactLname
 {
 	[self setObject:aContactLname forKey:kContactLname];
-	[self setHasContactDefaults:TRUE];
 }
 
 - (NSString *)contactEmail
@@ -285,7 +285,6 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (void)setContactEmail:(NSString *)aContactEmail
 {
 	[self setObject:aContactEmail forKey:kContactEmail];
-	[self setHasContactDefaults:TRUE];
 }
 
 - (NSString *)contactCompany
@@ -295,7 +294,6 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (void)setContactCompany:(NSString *)aContactCompany
 {
 	[self setObject:aContactCompany forKey:kContactCompany];
-	[self setHasContactDefaults:TRUE];
 }
 
 - (NSString *)contactPhone
@@ -305,7 +303,6 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (void)setContactPhone:(NSString *)aContactPhone
 {
 	[self setObject:aContactPhone forKey:kContactPhone];
-	[self setHasContactDefaults:TRUE];
 }
 
 - (void)dealloc
