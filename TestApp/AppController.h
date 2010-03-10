@@ -8,22 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import <FstSpgEmbeddedStore/FstSpgEmbeddedStore.h>
+#import <FsprgEmbeddedStore/FsprgEmbeddedStore.h>
 
 
-@interface AppController : NSObject <FstSpgEmbeddedStoreDelegate> {
+@interface AppController : NSObject <FsprgEmbeddedStoreDelegate> {
 	IBOutlet NSWindow *window;
 	IBOutlet NSView* settingsView;
 	IBOutlet NSView* previewView;
 	IBOutlet WebView* previewWebView;
-	FstSpgStoreParameters *params;
-	FstSpgEmbeddedStoreController *storeController;
+	FsprgStoreParameters *params;
+	FsprgEmbeddedStoreController *storeController;
 }
 
-- (FstSpgStoreParameters *)params;
-- (void)setParams:(FstSpgStoreParameters *)aParams;
-- (FstSpgEmbeddedStoreController *)storeController;
-- (void)setStoreController:(FstSpgEmbeddedStoreController *)aStoreController;
+- (FsprgStoreParameters *)params;
+- (void)setParams:(FsprgStoreParameters *)aParams;
+- (FsprgEmbeddedStoreController *)storeController;
+- (void)setStoreController:(FsprgEmbeddedStoreController *)aStoreController;
 - (IBAction)switchToSettings:(id)sender;
 - (IBAction)switchToPreview:(id)sender;
 - (IBAction)reloadPreview:(id)sender;
