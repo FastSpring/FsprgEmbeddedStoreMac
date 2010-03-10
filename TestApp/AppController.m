@@ -81,7 +81,6 @@ static NSString * const kParams = @"params";
 {
 	[previewWebView setHidden:TRUE];
 	[[self storeController] loadWithParameters:[self params]];
-	//[[self storeController] loadWithContentsOfFile:@"/Users/lars/Desktop/test.plist"];
 }
 
 // FsprgEmbeddedStoreDelegate

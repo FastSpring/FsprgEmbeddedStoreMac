@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		46886D6D1147AAD5000BC887 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */; };
 		46886D7C1147AAE3000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */; };
+		46886FB211481087000BC887 /* OrderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 46886FB011481087000BC887 /* OrderView.h */; };
+		46886FB311481087000BC887 /* OrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46886FB111481087000BC887 /* OrderView.m */; };
 		46F4DFB9113EDD7C00ECAFE6 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F4DFB5113EDD7C00ECAFE6 /* AppController.h */; };
 		46F4DFBA113EDD7C00ECAFE6 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DFB6113EDD7C00ECAFE6 /* AppController.m */; };
 		46F4DFBB113EDD7C00ECAFE6 /* OrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */; };
@@ -45,6 +47,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* TestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp_Prefix.pch; sourceTree = "<group>"; };
 		46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = ../FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
+		46886FB011481087000BC887 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
+		46886FB111481087000BC887 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
 		46F4DFB5113EDD7C00ECAFE6 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
 		46F4DFB6113EDD7C00ECAFE6 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = SOURCE_ROOT; };
 		46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = SOURCE_ROOT; };
@@ -75,6 +79,8 @@
 				46F4DFB6113EDD7C00ECAFE6 /* AppController.m */,
 				46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */,
 				46F4DFB8113EDD7C00ECAFE6 /* OrderViewController.m */,
+				46886FB011481087000BC887 /* OrderView.h */,
+				46886FB111481087000BC887 /* OrderView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 			files = (
 				46F4DFB9113EDD7C00ECAFE6 /* AppController.h in Headers */,
 				46F4DFBB113EDD7C00ECAFE6 /* OrderViewController.h in Headers */,
+				46886FB211481087000BC887 /* OrderView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +195,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = FastSpring;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TestApp" */;
 			compatibilityVersion = "Xcode 3.0";
 			hasScannedForEncodings = 1;
@@ -222,6 +232,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				46F4DFBA113EDD7C00ECAFE6 /* AppController.m in Sources */,
 				46F4DFBC113EDD7C00ECAFE6 /* OrderViewController.m in Sources */,
+				46886FB311481087000BC887 /* OrderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
