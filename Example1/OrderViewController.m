@@ -7,14 +7,14 @@
 //
 
 #import "OrderViewController.h"
-#import <FstSpgEmbeddedStore/FstSpgEmbeddedStore.h>
+#import <FsprgEmbeddedStore/FsprgEmbeddedStore.h>
 
 
 @implementation OrderViewController
 
 - (IBAction)showLicense:(id)sender
 {
-	FstSpgOrder *order = [self representedObject];
+	FsprgOrder *order = [self representedObject];
 	
 	NSString *message = [NSString stringWithFormat:@"Name: %@\nEmail: %@", [order customerLastName], [order customerEmail]];
 	NSRunInformationalAlertPanel(@"Your License", message, @"OK", nil, nil);

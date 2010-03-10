@@ -17,7 +17,7 @@
 {
 	self = [super init];
 	if (self != nil) {
-		[self setStoreController:[[[FstSpgEmbeddedStoreController alloc] init] autorelease]];
+		[self setStoreController:[[[FsprgEmbeddedStoreController alloc] init] autorelease]];
 		[[self storeController] setDelegate:self];
 	}
 	return self;
@@ -29,12 +29,12 @@
 	[self load:nil];
 }
 
-- (FstSpgEmbeddedStoreController *)storeController
+- (FsprgEmbeddedStoreController *)storeController
 {
     return [[storeController retain] autorelease]; 
 }
 
-- (void)setStoreController:(FstSpgEmbeddedStoreController *)aStoreController
+- (void)setStoreController:(FsprgEmbeddedStoreController *)aStoreController
 {
     if (storeController != aStoreController) {
         [storeController release];
@@ -44,9 +44,10 @@
 
 - (IBAction)load:(id)sender
 {
-	FstSpgStoreParameters *parameters = [FstSpgStoreParameters parameters];
+	FsprgStoreParameters *parameters = [FsprgStoreParameters parameters];
+	[parameters setOrderProcessType:kFsprgOrderProcessDetail];
 	[parameters setStoreId:@"spootnik" withProductId:@"fsembeddedstore"];
-	[parameters setMode:kFstSpgModeTest];
+	[parameters setMode:kFsprgModeTest];
 	
 	ABPerson *me = [[ABAddressBook sharedAddressBook] me];
 	[parameters setContactFname:[me valueForProperty:kABFirstNameProperty]];
@@ -64,18 +65,18 @@
 	[[self storeController] loadWithParameters:parameters];
 }
 
-// FstSpgEmbeddedStoreDelegate
+// FsprgEmbeddedStoreDelegate
 
 - (void)didLoadStore
 {
 }
 
-- (void)didReceiveOrder:(FstSpgOrder *)order
+- (void)didReceiveOrder:(FsprgOrder *)order
 {
 	NSLog(@"Order from %@ successfully received.", [order customerEmail]);
 }
 
-- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FstSpgOrder *)order
+- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order
 {
 	OrderViewController *orderViewController = [[OrderViewController alloc] initWithNibName:@"OrderView" bundle:nil];
 	[orderViewController setRepresentedObject:order];

@@ -13,8 +13,8 @@
 		467BEE14113AF82100C21AFE /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 467BEE13113AF82100C21AFE /* OrderView.xib */; };
 		467BEE3D113AFA1600C21AFE /* OrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 467BEE17113AF88000C21AFE /* OrderViewController.h */; };
 		467BEE3E113AFA1700C21AFE /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BEE18113AF88000C21AFE /* OrderViewController.m */; };
-		46CC455111428A0E0031BE75 /* FstSpgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */; };
-		46CC457711428A1D0031BE75 /* FstSpgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */; };
+		46886E621147B916000BC887 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */; };
+		46886E6B1147B9A6000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -28,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				46CC457711428A1D0031BE75 /* FstSpgEmbeddedStore.framework in Copy Frameworks */,
+				46886E6B1147B9A6000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +50,7 @@
 		467BEE13113AF82100C21AFE /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		467BEE17113AF88000C21AFE /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		467BEE18113AF88000C21AFE /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
-		46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FstSpgEmbeddedStore.framework; path = ../FstSpgEmbeddedStore/build/Release/FstSpgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
+		46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = ../FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Example1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,7 +62,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				467BEDEA113AF50200C21AFE /* AddressBook.framework in Frameworks */,
-				46CC455111428A0E0031BE75 /* FstSpgEmbeddedStore.framework in Frameworks */,
+				46886E621147B916000BC887 /* FsprgEmbeddedStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */,
 				467BEDE9113AF50200C21AFE /* AddressBook.framework */,
-				46CC455011428A0E0031BE75 /* FstSpgEmbeddedStore.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -258,6 +258,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
 					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
+					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Debug\"",
+					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -281,6 +284,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
 					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
+					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Debug\"",
+					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -305,10 +311,8 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;

@@ -8,16 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import <FstSpgEmbeddedStore/FstSpgEmbeddedStore.h>
+#import <FsprgEmbeddedStore/FsprgEmbeddedStore.h>
 
 
-@interface AppController : NSObject <FstSpgEmbeddedStoreDelegate> {
+@interface AppController : NSObject <FsprgEmbeddedStoreDelegate> {
 	IBOutlet WebView* storeView;
-	FstSpgEmbeddedStoreController *storeController;
+	FsprgEmbeddedStoreController *storeController;
 }
 
-- (FstSpgEmbeddedStoreController *)storeController;
-- (void)setStoreController:(FstSpgEmbeddedStoreController *)aStoreController;
+- (FsprgEmbeddedStoreController *)storeController;
+- (void)setStoreController:(FsprgEmbeddedStoreController *)aStoreController;
 
 - (IBAction)load:(id)sender;
 
