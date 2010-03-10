@@ -14,6 +14,7 @@
 - (void) setUp
 {
 	params = [[FsprgStoreParameters parameters] retain];
+	[params setOrderProcessType:kFsprgOrderProcessDetail];
 }
 
 - (void) tearDown
