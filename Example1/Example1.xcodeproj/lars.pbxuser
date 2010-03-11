@@ -2,7 +2,7 @@
 {
 	089C165DFE840E0CC02AAC07 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 631}}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 360}}";
 			sepNavSelRange = "{93, 0}";
 			sepNavVisRange = "{0, 93}";
 		};
@@ -80,32 +80,21 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289929028;
-			PBXWorkspaceStateSaveDate = 289929028;
+			PBXPerProjectTemplateStateSaveDate = 289998371;
+			PBXWorkspaceStateSaveDate = 289998371;
 		};
 		perUserProjectItems = {
-			463699681146CF7900553E98 /* PlistBookmark */ = 463699681146CF7900553E98 /* PlistBookmark */;
-			46886D2B1147AA90000BC887 /* PBXTextBookmark */ = 46886D2B1147AA90000BC887 /* PBXTextBookmark */;
-			46886F3F1147F84A000BC887 /* PBXTextBookmark */ = 46886F3F1147F84A000BC887 /* PBXTextBookmark */;
-			46886F401147F84A000BC887 /* PBXTextBookmark */ = 46886F401147F84A000BC887 /* PBXTextBookmark */;
-			46CC459311428A940031BE75 /* PBXTextBookmark */ = 46CC459311428A940031BE75 /* PBXTextBookmark */;
-			46CC459411428A940031BE75 /* PBXTextBookmark */ = 46CC459411428A940031BE75 /* PBXTextBookmark */;
-			46CC4612114290B50031BE75 /* PBXTextBookmark */ = 46CC4612114290B50031BE75 /* PBXTextBookmark */;
+			46A649ED1148DAE200B31C85 /* PBXTextBookmark */ = 46A649ED1148DAE200B31C85 /* PBXTextBookmark */;
+			46A649EE1148DAE200B31C85 /* PBXTextBookmark */ = 46A649EE1148DAE200B31C85 /* PBXTextBookmark */;
+			46A649EF1148DAE200B31C85 /* PBXTextBookmark */ = 46A649EF1148DAE200B31C85 /* PBXTextBookmark */;
+			46A64C3D1149061600B31C85 /* PBXTextBookmark */ = 46A64C3D1149061600B31C85 /* PBXTextBookmark */;
+			46A64C781149064600B31C85 /* PlistBookmark */ = 46A64C781149064600B31C85 /* PlistBookmark */;
+			46A64C791149064600B31C85 /* PBXTextBookmark */ = 46A64C791149064600B31C85 /* PBXTextBookmark */;
+			46A64C7A1149064600B31C85 /* PBXTextBookmark */ = 46A64C7A1149064600B31C85 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 46709626113AE5B200932A17 /* Source Control */;
 		userBuildSettings = {
 		};
-	};
-	463699681146CF7900553E98 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/lars/Xcode/FSEmbeddedStore/Example1/Info.plist;
-		rLen = 0;
-		rLoc = 2147483647;
 	};
 	46709611113AE59B00932A17 /* Example1 */ = {
 		isa = PBXExecutable;
@@ -153,63 +142,53 @@
 	};
 	467BED7B113AEF7300C21AFE /* AppController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 432}}";
-			sepNavSelRange = "{513, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 360}}";
+			sepNavSelRange = "{135, 414}";
 			sepNavVisRange = "{0, 549}";
 		};
 	};
 	467BED7C113AEF7300C21AFE /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 1196}}";
-			sepNavSelRange = "{1004, 0}";
-			sepNavVisRange = "{561, 1308}";
+			sepNavIntBoundsRect = "{{0, 0}, {831, 1248}}";
+			sepNavSelRange = "{135, 2381}";
+			sepNavVisRange = "{1928, 588}";
 		};
 	};
 	467BEE17113AF88000C21AFE /* OrderViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 583}}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 399}}";
 			sepNavSelRange = "{42, 0}";
 			sepNavVisRange = "{0, 265}";
 		};
 	};
 	467BEE18113AF88000C21AFE /* OrderViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {880, 583}}";
-			sepNavSelRange = "{73, 0}";
-			sepNavVisRange = "{0, 555}";
+			sepNavIntBoundsRect = "{{0, 0}, {880, 368}}";
+			sepNavSelRange = "{326, 0}";
+			sepNavVisRange = "{0, 552}";
 		};
 	};
-	46886D2B1147AA90000BC887 /* PBXTextBookmark */ = {
+	46A649ED1148DAE200B31C85 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
+		name = "AppController.m: 9";
+		rLen = 2381;
+		rLoc = 135;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 1928;
+	};
+	46A649EE1148DAE200B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 467BED7B113AEF7300C21AFE /* AppController.h */;
-		name = "AppController.h: 21";
-		rLen = 0;
-		rLoc = 513;
+		name = "AppController.h: 9";
+		rLen = 414;
+		rLoc = 135;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 0;
 	};
-	46886F3F1147F84A000BC887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
-		name = "AppController.m: 76";
-		rLen = 0;
-		rLoc = 2107;
-		rType = 0;
-		vrLen = 679;
-		vrLoc = 1772;
-	};
-	46886F401147F84A000BC887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
-		name = "AppController.m: 48";
-		rLen = 0;
-		rLoc = 1004;
-		rType = 0;
-		vrLen = 1308;
-		vrLoc = 561;
-	};
-	46CC459311428A940031BE75 /* PBXTextBookmark */ = {
+	46A649EF1148DAE200B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 467BEE17113AF88000C21AFE /* OrderViewController.h */;
 		name = "OrderViewController.h: 4";
@@ -219,17 +198,28 @@
 		vrLen = 265;
 		vrLoc = 0;
 	};
-	46CC459411428A940031BE75 /* PBXTextBookmark */ = {
+	46A64C3D1149061600B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 467BEE18113AF88000C21AFE /* OrderViewController.m */;
-		name = "OrderViewController.m: 5";
+		name = "OrderViewController.m: 17";
 		rLen = 0;
-		rLoc = 73;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 0;
 	};
-	46CC4612114290B50031BE75 /* PBXTextBookmark */ = {
+	46A64C781149064600B31C85 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/lars/Xcode/FSEmbeddedStore/Example1/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	46A64C791149064600B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 089C165DFE840E0CC02AAC07 /* English */;
 		name = "InfoPlist.strings: 3";
@@ -237,6 +227,16 @@
 		rLoc = 93;
 		rType = 0;
 		vrLen = 93;
+		vrLoc = 0;
+	};
+	46A64C7A1149064600B31C85 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BED7B113AEF7300C21AFE /* AppController.h */;
+		name = "AppController.h: 9";
+		rLen = 414;
+		rLoc = 135;
+		rType = 0;
+		vrLen = 549;
 		vrLoc = 0;
 	};
 	8D1107260486CEB800E47090 /* Example1 */ = {
