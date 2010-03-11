@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -274,18 +272,26 @@
 								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>462DB90211496C9D007C65B7</string>
+								<string>462DB90311496C9D007C65B7</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>29</integer>
+									<integer>27</integer>
+									<integer>26</integer>
+								</array>
+								<array>
+									<integer>32</integer>
+									<integer>29</integer>
+									<integer>27</integer>
+									<integer>26</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {284, 603}}</string>
+							<string>{{0, 214}, {284, 603}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -315,6 +321,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -332,14 +340,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>46A64C6E1149063E00B31C85</string>
+										<string>462DB90911496CDB007C65B7</string>
 										<key>history</key>
 										<array>
-											<string>46A64A921148EA4E00B31C85</string>
 											<string>46A64B191148FE8600B31C85</string>
-											<string>46A64B1A1148FE8600B31C85</string>
-											<string>46A64B1C1148FE8600B31C85</string>
-											<string>46A64B1F1148FE8600B31C85</string>
 											<string>46A64B211148FE8600B31C85</string>
 											<string>46A64B231148FE8600B31C85</string>
 											<string>46A64B581149001000B31C85</string>
@@ -347,7 +351,7 @@
 											<string>46A64C331149061100B31C85</string>
 											<string>46A64C6C1149063E00B31C85</string>
 											<string>46A64C6D1149063E00B31C85</string>
-											<string>46A64C321149061100B31C85</string>
+											<string>462DB90411496C9D007C65B7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -359,14 +363,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {843, 418}}</string>
+								<string>{{0, 0}, {843, 411}}</string>
 								<key>RubberWindowFrame</key>
 								<string>69 84 1149 662 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>418pt</string>
+							<string>411pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -379,14 +383,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 423}, {843, 198}}</string>
+								<string>{{0, 416}, {843, 205}}</string>
 								<key>RubberWindowFrame</key>
 								<string>69 84 1149 662 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>198pt</string>
+							<string>205pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -405,9 +409,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>46A64C6F1149063E00B31C85</string>
+				<string>462DB90611496C9D007C65B7</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>46A64C701149063E00B31C85</string>
+				<string>462DB90711496C9D007C65B7</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -545,9 +549,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>46A649B31148D96200B31C85</string>
-		<string>/Users/lars/Xcode/FSEmbeddedStore/Example2/Example2.xcodeproj</string>
+		<string>/Users/lars/Xcode/FsprgEmbeddedStore/Example2/Example2.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>69 84 1149 662 0 0 1280 778 </string>
@@ -627,7 +630,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>46A649B31148D96200B31C85</string>
-				<string>46A64C711149063E00B31C85</string>
+				<string>462DB90811496C9D007C65B7</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

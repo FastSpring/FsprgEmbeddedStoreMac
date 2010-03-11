@@ -32,7 +32,6 @@
 		46A64A911148E3F000B31C85 /* NSDictionary_DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A64A7E1148E3F000B31C85 /* NSDictionary_DeepMutableCopy.m */; };
 		46A64AAE1148EB1300B31C85 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A64AAD1148EB1300B31C85 /* libicucore.dylib */; };
 		46A64AC81148F1EC00B31C85 /* OrderView.css in Resources */ = {isa = PBXBuildFile; fileRef = 46A64AC71148F1EC00B31C85 /* OrderView.css */; };
-		46A64AFD1148FC2900B31C85 /* jquery-1.4.2.js in Sources */ = {isa = PBXBuildFile; fileRef = 46A64AFC1148FC2900B31C85 /* jquery-1.4.2.js */; };
 		46A64B141148FE8300B31C85 /* jquery-1.4.2.js in Resources */ = {isa = PBXBuildFile; fileRef = 46A64AFC1148FC2900B31C85 /* jquery-1.4.2.js */; };
 		46A64BDA114903BD00B31C85 /* MGTemplateEngine README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 46A64BD8114903BD00B31C85 /* MGTemplateEngine README.txt */; };
 		46A64BDB114903BD00B31C85 /* Source Code License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 46A64BD9114903BD00B31C85 /* Source Code License.rtf */; };
@@ -338,7 +337,6 @@
 				46A64A8A1148E3F000B31C85 /* RegexKitLite.m in Sources */,
 				46A64A8F1148E3F000B31C85 /* NSArray_DeepMutableCopy.m in Sources */,
 				46A64A911148E3F000B31C85 /* NSDictionary_DeepMutableCopy.m in Sources */,
-				46A64AFD1148FC2900B31C85 /* jquery-1.4.2.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

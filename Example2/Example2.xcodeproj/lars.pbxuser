@@ -63,28 +63,44 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289998375;
-			PBXWorkspaceStateSaveDate = 289998375;
+			PBXPerProjectTemplateStateSaveDate = 290024551;
+			PBXWorkspaceStateSaveDate = 290024551;
 		};
 		perUserProjectItems = {
-			46A64A921148EA4E00B31C85 /* PBXTextBookmark */ = 46A64A921148EA4E00B31C85 /* PBXTextBookmark */;
+			462DB90411496C9D007C65B7 /* PBXTextBookmark */ = 462DB90411496C9D007C65B7 /* PBXTextBookmark */;
+			462DB90911496CDB007C65B7 /* PBXTextBookmark */ = 462DB90911496CDB007C65B7 /* PBXTextBookmark */;
 			46A64B191148FE8600B31C85 /* PBXTextBookmark */ = 46A64B191148FE8600B31C85 /* PBXTextBookmark */;
-			46A64B1A1148FE8600B31C85 /* PBXTextBookmark */ = 46A64B1A1148FE8600B31C85 /* PBXTextBookmark */;
-			46A64B1C1148FE8600B31C85 /* PBXTextBookmark */ = 46A64B1C1148FE8600B31C85 /* PBXTextBookmark */;
-			46A64B1F1148FE8600B31C85 /* PBXTextBookmark */ = 46A64B1F1148FE8600B31C85 /* PBXTextBookmark */;
 			46A64B211148FE8600B31C85 /* PBXTextBookmark */ = 46A64B211148FE8600B31C85 /* PBXTextBookmark */;
 			46A64B231148FE8600B31C85 /* PBXTextBookmark */ = 46A64B231148FE8600B31C85 /* PBXTextBookmark */;
 			46A64B581149001000B31C85 /* PBXTextBookmark */ = 46A64B581149001000B31C85 /* PBXTextBookmark */;
 			46A64B591149001000B31C85 /* PBXTextBookmark */ = 46A64B591149001000B31C85 /* PBXTextBookmark */;
-			46A64C321149061100B31C85 /* PBXTextBookmark */ = 46A64C321149061100B31C85 /* PBXTextBookmark */;
 			46A64C331149061100B31C85 /* PBXTextBookmark */ = 46A64C331149061100B31C85 /* PBXTextBookmark */;
 			46A64C6C1149063E00B31C85 /* PlistBookmark */ = 46A64C6C1149063E00B31C85 /* PlistBookmark */;
 			46A64C6D1149063E00B31C85 /* PBXTextBookmark */ = 46A64C6D1149063E00B31C85 /* PBXTextBookmark */;
-			46A64C6E1149063E00B31C85 /* PBXTextBookmark */ = 46A64C6E1149063E00B31C85 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 46A649B51148D96200B31C85 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	462DB90411496C9D007C65B7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 46A649D41148DA0300B31C85 /* AppController.h */;
+		name = "AppController.h: 13";
+		rLen = 0;
+		rLoc = 236;
+		rType = 0;
+		vrLen = 548;
+		vrLoc = 0;
+	};
+	462DB90911496CDB007C65B7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 46A649D41148DA0300B31C85 /* AppController.h */;
+		name = "AppController.h: 15";
+		rLen = 0;
+		rLoc = 311;
+		rType = 0;
+		vrLen = 548;
+		vrLoc = 0;
 	};
 	46A649A41148D95600B31C85 /* Example2 */ = {
 		isa = PBXExecutable;
@@ -132,8 +148,8 @@
 	};
 	46A649D41148DA0300B31C85 /* AppController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {782, 386}}";
-			sepNavSelRange = "{236, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {782, 379}}";
+			sepNavSelRange = "{311, 0}";
 			sepNavVisRange = "{0, 548}";
 		};
 	};
@@ -158,23 +174,6 @@
 			sepNavVisRange = "{8232, 257}";
 		};
 	};
-	46A64A921148EA4E00B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46A64A931148EA4E00B31C85 /* FsprgEmbeddedStoreController.h */;
-		name = "FsprgEmbeddedStoreController.h: 16";
-		rLen = 0;
-		rLoc = 347;
-		rType = 0;
-		vrLen = 589;
-		vrLoc = 156;
-	};
-	46A64A931148EA4E00B31C85 /* FsprgEmbeddedStoreController.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgEmbeddedStoreController.h;
-		path = /Users/lars/Xcode/FSEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgEmbeddedStoreController.h;
-		sourceTree = "<absolute>";
-	};
 	46A64AC71148F1EC00B31C85 /* OrderView.css */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {652, 416}}";
@@ -198,57 +197,6 @@
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 7439;
-	};
-	46A64B1A1148FE8600B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46A64B1B1148FE8600B31C85 /* FsprgOrder.h */;
-		name = "FsprgOrder.h: 34";
-		rLen = 10;
-		rLoc = 744;
-		rType = 0;
-		vrLen = 762;
-		vrLoc = 0;
-	};
-	46A64B1B1148FE8600B31C85 /* FsprgOrder.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgOrder.h;
-		path = /Users/lars/Xcode/FSEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgOrder.h;
-		sourceTree = "<absolute>";
-	};
-	46A64B1C1148FE8600B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46A64B1D1148FE8600B31C85 /* FsprgOrderItem.h */;
-		name = "FsprgOrderItem.h: 33";
-		rLen = 7;
-		rLoc = 698;
-		rType = 0;
-		vrLen = 788;
-		vrLoc = 0;
-	};
-	46A64B1D1148FE8600B31C85 /* FsprgOrderItem.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgOrderItem.h;
-		path = /Users/lars/Xcode/FSEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgOrderItem.h;
-		sourceTree = "<absolute>";
-	};
-	46A64B1F1148FE8600B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46A64B201148FE8600B31C85 /* FsprgLicense.h */;
-		name = "FsprgLicense.h: 25";
-		rLen = 16;
-		rLoc = 533;
-		rType = 0;
-		vrLen = 646;
-		vrLoc = 0;
-	};
-	46A64B201148FE8600B31C85 /* FsprgLicense.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgLicense.h;
-		path = /Users/lars/Xcode/FSEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgLicense.h;
-		sourceTree = "<absolute>";
 	};
 	46A64B211148FE8600B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -297,16 +245,6 @@
 		vrLen = 858;
 		vrLoc = 0;
 	};
-	46A64C321149061100B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46A649D41148DA0300B31C85 /* AppController.h */;
-		name = "AppController.h: 13";
-		rLen = 0;
-		rLoc = 236;
-		rType = 0;
-		vrLen = 548;
-		vrLoc = 0;
-	};
 	46A64C331149061100B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 46A649D51148DA0300B31C85 /* AppController.m */;
@@ -336,16 +274,6 @@
 		rLoc = 85;
 		rType = 0;
 		vrLen = 93;
-		vrLoc = 0;
-	};
-	46A64C6E1149063E00B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46A649D41148DA0300B31C85 /* AppController.h */;
-		name = "AppController.h: 13";
-		rLen = 0;
-		rLoc = 236;
-		rType = 0;
-		vrLen = 548;
 		vrLoc = 0;
 	};
 	8D1107260486CEB800E47090 /* Example2 */ = {
