@@ -1,0 +1,32 @@
+body {
+	font-family: Lucida Grande;
+}
+
+.thankYouNote {
+	margin: 50px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.orderItemsTitle {
+	display: none;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 0px;
+	border-bottom: 1px solid black;
+}
+
+.orderItem {
+	display: none;
+	padding-top: 10px;
+	margin-left: 20px;
+}
+
+.productName {
+	font-size: 14px;
+}
+
+.licenseKey {
+	font-family: Courier New;
+	font-size: 12px;
+}

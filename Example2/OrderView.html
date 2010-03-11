@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<title>Your Order</title>
+		<link rel="stylesheet" type="text/css" href="OrderView.css">
+		<script src="jquery-1.4.2.js"></script>
+		<script language="javascript">
+			$(function() {
+				$(".orderItemsTitle").fadeIn(2000);
+				$(".orderItem").fadeIn(2000);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="thankYouNote">Thanks for you order {{ order.customerFirstName }}!</div>
+		<div class="orderItemsTitle">Ordered items</div>
+		{% for orderItem in order.orderItems %}
+		<div class="orderItem">
+			<div class="productName">
+			{{ orderItem.productName }}
+			{% if orderItem.quantity > 1 %} ({{ orderItem.quantity }}) {% /if %}
+			</div>
+			<div class="licenseKey">Your license key: {{ orderItem.license.firstLicenseCode }}</div>
+		</div>
+		{% /for %}
+	</body>
+</html>
