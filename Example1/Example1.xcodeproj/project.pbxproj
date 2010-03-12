@@ -13,6 +13,7 @@
 		467BEE14113AF82100C21AFE /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 467BEE13113AF82100C21AFE /* OrderView.xib */; };
 		467BEE3D113AFA1600C21AFE /* OrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 467BEE17113AF88000C21AFE /* OrderViewController.h */; };
 		467BEE3E113AFA1700C21AFE /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BEE18113AF88000C21AFE /* OrderViewController.m */; };
+		4684D95D114A323500CFE920 /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4684D95C114A323500CFE920 /* APPL.icns */; };
 		46886E621147B916000BC887 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */; };
 		46886E6B1147B9A6000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
@@ -50,6 +51,7 @@
 		467BEE13113AF82100C21AFE /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		467BEE17113AF88000C21AFE /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		467BEE18113AF88000C21AFE /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		4684D95C114A323500CFE920 /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
 		46886E611147B916000BC887 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = ../FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Example1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				467BEE13113AF82100C21AFE /* OrderView.xib */,
+				4684D95C114A323500CFE920 /* APPL.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				467BEE14113AF82100C21AFE /* OrderView.xib in Resources */,
+				4684D95D114A323500CFE920 /* APPL.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

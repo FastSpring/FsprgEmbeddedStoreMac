@@ -63,24 +63,61 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289998381;
-			PBXWorkspaceStateSaveDate = 289998381;
+			PBXPerProjectTemplateStateSaveDate = 290075097;
+			PBXWorkspaceStateSaveDate = 290075097;
 		};
 		perUserProjectItems = {
+			4684D994114A332500CFE920 /* PBXTextBookmark */ = 4684D994114A332500CFE920 /* PBXTextBookmark */;
+			4684D995114A332500CFE920 /* PBXBookmark */ = 4684D995114A332500CFE920 /* PBXBookmark */;
+			4684D996114A332500CFE920 /* PlistBookmark */ = 4684D996114A332500CFE920 /* PlistBookmark */;
+			4684D997114A332500CFE920 /* PlistBookmark */ = 4684D997114A332500CFE920 /* PlistBookmark */;
 			46886FC411481273000BC887 /* PBXTextBookmark */ = 46886FC411481273000BC887 /* PBXTextBookmark */;
 			46886FC511481273000BC887 /* PBXTextBookmark */ = 46886FC511481273000BC887 /* PBXTextBookmark */;
 			46886FC611481273000BC887 /* PBXTextBookmark */ = 46886FC611481273000BC887 /* PBXTextBookmark */;
 			46886FFD11481DD7000BC887 /* PBXTextBookmark */ = 46886FFD11481DD7000BC887 /* PBXTextBookmark */;
-			46886FFE11481DD7000BC887 /* PBXTextBookmark */ = 46886FFE11481DD7000BC887 /* PBXTextBookmark */;
 			46A64C2A1149060700B31C85 /* PBXTextBookmark */ = 46A64C2A1149060700B31C85 /* PBXTextBookmark */;
-			46A64C661149063700B31C85 /* PlistBookmark */ = 46A64C661149063700B31C85 /* PlistBookmark */;
 			46A64C671149063700B31C85 /* PBXTextBookmark */ = 46A64C671149063700B31C85 /* PBXTextBookmark */;
-			46A64C681149063700B31C85 /* PBXTextBookmark */ = 46A64C681149063700B31C85 /* PBXTextBookmark */;
 			46F4E18B1140397600ECAFE6 /* PBXBookmark */ = 46F4E18B1140397600ECAFE6 /* PBXBookmark */;
 		};
 		sourceControlManager = 46F4DF6B113E8A0A00ECAFE6 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	4684D994114A332500CFE920 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 46F4DFB5113EDD7C00ECAFE6 /* AppController.h */;
+		name = "AppController.h: 20";
+		rLen = 0;
+		rLoc = 500;
+		rType = 0;
+		vrLen = 849;
+		vrLoc = 0;
+	};
+	4684D995114A332500CFE920 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4684D94C114A31F300CFE920 /* APPL.icns */;
+	};
+	4684D996114A332500CFE920 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/lars/Xcode/FsprgEmbeddedStore/TestApp/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	4684D997114A332500CFE920 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/lars/Xcode/FsprgEmbeddedStore/TestApp/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
 	};
 	46886FB011481087000BC887 /* OrderView.h */ = {
 		uiCtxt = {
@@ -136,16 +173,6 @@
 		vrLen = 425;
 		vrLoc = 0;
 	};
-	46886FFE11481DD7000BC887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46F4DFB5113EDD7C00ECAFE6 /* AppController.h */;
-		name = "AppController.h: 20";
-		rLen = 28;
-		rLoc = 461;
-		rType = 0;
-		vrLen = 849;
-		vrLoc = 0;
-	};
 	46A64C2A1149060700B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 46F4DFB6113EDD7C00ECAFE6 /* AppController.m */;
@@ -156,17 +183,6 @@
 		vrLen = 1279;
 		vrLoc = 0;
 	};
-	46A64C661149063700B31C85 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/lars/Xcode/FSEmbeddedStore/TestApp/Info.plist;
-		rLen = 0;
-		rLoc = 2147483647;
-	};
 	46A64C671149063700B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 089C165DFE840E0CC02AAC07 /* English */;
@@ -175,16 +191,6 @@
 		rLoc = 85;
 		rType = 0;
 		vrLen = 93;
-		vrLoc = 0;
-	};
-	46A64C681149063700B31C85 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 46F4DFB5113EDD7C00ECAFE6 /* AppController.h */;
-		name = "AppController.h: 20";
-		rLen = 28;
-		rLoc = 461;
-		rType = 0;
-		vrLen = 849;
 		vrLoc = 0;
 	};
 	46F4DF5A113E89FD00ECAFE6 /* TestApp */ = {
@@ -234,7 +240,7 @@
 	46F4DFB5113EDD7C00ECAFE6 /* AppController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {952, 641}}";
-			sepNavSelRange = "{461, 28}";
+			sepNavSelRange = "{500, 0}";
 			sepNavVisRange = "{0, 849}";
 		};
 	};

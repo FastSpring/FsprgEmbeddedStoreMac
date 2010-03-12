@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4684D97F114A32F500CFE920 /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4684D97E114A32F500CFE920 /* APPL.icns */; };
 		46A649C21148D99C00B31C85 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A649C11148D99C00B31C85 /* FsprgEmbeddedStore.framework */; };
 		46A649CF1148D9C600B31C85 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46A649C11148D99C00B31C85 /* FsprgEmbeddedStore.framework */; };
 		46A649D61148DA0300B31C85 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A649D41148DA0300B31C85 /* AppController.h */; };
@@ -64,6 +65,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Example2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2_Prefix.pch; sourceTree = "<group>"; };
+		4684D97E114A32F500CFE920 /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
 		46A649C11148D99C00B31C85 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = ../FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
 		46A649D41148DA0300B31C85 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		46A649D51148DA0300B31C85 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				46A64A651148E2CE00B31C85 /* OrderView.html */,
 				46A64AC71148F1EC00B31C85 /* OrderView.css */,
 				46A64AFC1148FC2900B31C85 /* jquery-1.4.2.js */,
+				4684D97E114A32F500CFE920 /* APPL.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				46A64AC81148F1EC00B31C85 /* OrderView.css in Resources */,
 				46A64BDA114903BD00B31C85 /* MGTemplateEngine README.txt in Resources */,
 				46A64BDB114903BD00B31C85 /* Source Code License.rtf in Resources */,
+				4684D97F114A32F500CFE920 /* APPL.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

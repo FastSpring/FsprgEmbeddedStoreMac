@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4684D94D114A31F300CFE920 /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4684D94C114A31F300CFE920 /* APPL.icns */; };
 		46886D6D1147AAD5000BC887 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */; };
 		46886D7C1147AAE3000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */; };
 		46886FB211481087000BC887 /* OrderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 46886FB011481087000BC887 /* OrderView.h */; };
@@ -46,6 +47,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* TestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp_Prefix.pch; sourceTree = "<group>"; };
+		4684D94C114A31F300CFE920 /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
 		46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = ../FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
 		46886FB011481087000BC887 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
 		46886FB111481087000BC887 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
@@ -136,11 +138,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				46F4E1871140383E00ECAFE6 /* toolbarPreview.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				46F4E2591140675000ECAFE6 /* OrderView.xib */,
+				46F4E1871140383E00ECAFE6 /* toolbarPreview.png */,
+				4684D94C114A31F300CFE920 /* APPL.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				46F4E1881140383E00ECAFE6 /* toolbarPreview.png in Resources */,
 				46F4E25A1140675000ECAFE6 /* OrderView.xib in Resources */,
+				4684D94D114A31F300CFE920 /* APPL.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
