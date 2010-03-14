@@ -79,8 +79,17 @@
 
 - (void)loadWithParameters:(FsprgStoreParameters *)parameters
 {
+	NSURLRequest *urlRequest = [parameters toURLRequest];
+
+	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[urlRequest URL]];
+	NSUInteger i, count = [cookies count];
+	for (i = 0; i < count; i++) {
+		NSHTTPCookie *cookie = [cookies objectAtIndex:i];
+		[[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+	}
+	
 	isInitialLoad = TRUE;
-	[[webView mainFrame] loadRequest:[parameters toURLRequest]];
+	[[webView mainFrame] loadRequest:urlRequest];
 }
 
 - (void)loadWithContentsOfFile:(NSString *)aPath
