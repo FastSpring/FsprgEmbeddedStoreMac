@@ -46,7 +46,7 @@
 {
 	FsprgStoreParameters *parameters = [FsprgStoreParameters parameters];
 	[parameters setOrderProcessType:kFsprgOrderProcessDetail];
-	[parameters setStoreId:@"spootnik" withProductId:@"fsembeddedstore"];
+	[parameters setStoreId:@"your_store" withProductId:@"your_product"];
 	[parameters setMode:kFsprgModeTest];
 	
 	[[self storeController] loadWithParameters:parameters];
