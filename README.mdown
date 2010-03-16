@@ -1,0 +1,210 @@
+FastSpring's embedded store consists of a controller with some integration points and WebKit's web view. It's thin and very flexible and lets you integrate the FastSpring the way that fits best for your application.
+
+To get an idea of how it works the SDK provides two examples and a test application. FastSpring also provides [FsprgEmbeddedStore framework's source code](src/FsprgEmbeddedStore) to ease debugging and to give you a better understanding of what happens behind the scenes. There are separate framework builds for 10.4 and 10.5+. The test app and the examples are 10.5+ only.
+
+---
+
+# FsprgEmbeddedStore.framework #
+
+The FsprgEmbeddedStore framework consists mainly out of the `FsprgEmbeddedStoreController` and its delegate protocol, `FsprgEmbeddedStoreDelegate`.
+
+The `FsprgEmbeddedStoreController` controls the connected `WebView` (WebKit). It provides functionality to load the store and to monitor the page loading progress.
+
+	@interface FsprgEmbeddedStoreController : NSObject
+		- (WebView *)webView;
+		- (void)setWebView:(WebView *)aWebView;
+		- (id <FsprgEmbeddedStoreDelegate>)delegate;
+		- (void)setDelegate:(id <FsprgEmbeddedStoreDelegate>)aDelegate;
+
+		- (void)loadWithParameters:(FsprgStoreParameters *)parameters;
+		- (void)loadWithContentsOfFile:(NSString *)aPath;
+		- (BOOL)isLoading;
+		- (double)estimatedLoadingProgress;
+	@end
+
+In addition, it has some integration points defined by the `FsprgEmbeddedStoreDelegate` protocol. It gives notification of the initial load of the store and of order completion. There's also the possibility to define a view to present the order confirmation to the user.
+
+	@protocol FsprgEmbeddedStoreDelegate <NSObject>
+		- (void)didLoadStore;
+		- (void)didReceiveOrder:(FsprgOrder *)order;
+		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
+	@end
+
+
+## How-to embed the framework ##
+
+* Drag FSEmbeddedStore.framework to Linked Frameworks  
+  Uncheck "Copy items into destination ..."  
+  Reference Type: Relative to Project
+* Add "Copy Files" Build Phase  
+  Destination: Frameworks  
+  Path: <empty>
+* Rename Build Phase to "Copy Frameworks"
+* Drag FSEmbeddedStore.framework to that Build Phase
+
+
+## How-to use the framework ##
+
+* Create an `AppController` and use `FsprgEmbeddedStoreController`. Example1.app and Example2.app are providing examples how to implement the `AppController` in detail.
+* Open MainMenu.nib
+* Create an instance of `AppController` inside Interface Builder
+* Drag WebKit control onto screen and connect it to the storeView Outlet of `AppController`
+
+
+### Example: AppController.h ###
+
+	@interface AppController : NSObject <FsprgEmbeddedStoreDelegate> {
+		IBOutlet WebView* storeView;
+		FsprgEmbeddedStoreController *storeController;
+	}
+
+	- (FsprgEmbeddedStoreController *)storeController;
+	- (void)setStoreController:(FsprgEmbeddedStoreController *)aStoreController;
+
+	- (IBAction)load:(id)sender;
+
+	@end
+
+---
+
+# Example1.app #
+
+![Example1.app Screenshot](README/example1_screenshot.png "Example1.app Screenshot")
+
+Example1 app defaults contact fields by accessing MacOS' AddressBook. The order confirmation is a View XIB built inside Interface Builder.
+
+
+## How-to implement the AppController ##
+
+* Set self as delegate on `init`
+* Set webView to `FsprgEmbeddedStoreController` on `awakeFromNib`
+* Delegate `load:` to `loadWithParameters:` of `FsprgEmbeddedStoreController`
+* Implement `viewWithFrame:forOrder:` by using a `NSViewController` (here `OrderViewController`) that uses the View XIB defined inside Interface Builder
+
+
+### Extract from AppController.h ###
+
+	@implementation AppController
+
+	- (id) init
+	{
+		self = [super init];
+		if (self != nil) {
+			[self setStoreController:[[[FsprgEmbeddedStoreController alloc] init] autorelease]];
+			[[self storeController] setDelegate:self];
+		}
+		return self;
+	}
+
+	- (void)awakeFromNib
+	{
+		[[self storeController] setWebView:storeView];
+		[self load:nil];
+	}
+
+	- (IBAction)load:(id)sender
+	{
+		FsprgStoreParameters *parameters = [FsprgStoreParameters parameters];
+		...
+		[[self storeController] loadWithParameters:parameters];
+	}
+
+	- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order
+	{
+		OrderViewController *orderViewController = [[OrderViewController alloc] initWithNibName:@"OrderView" bundle:nil];
+		[orderViewController setRepresentedObject:order];
+
+		[[orderViewController view] setFrame:frame];
+		return [orderViewController view];
+	}
+
+	@end
+
+
+## How-to create the View XIB ##
+
+* Create class `OrderViewController` by extending `NSViewController`
+* Create View XIB
+* Set File’s Owner class to `OrderViewController`
+* Assign File’s Owner view Outlet to the main "Custom View"
+* Bind controls (e.g. label) to File’s Owner representedObject (= `FSOrder`) to present order confirmation data to the user
+
+---
+
+# Example2.app #
+
+![Example2.app Screenshot](README/example2_screenshot.png "Example2.app Screenshot")
+
+Example2 presents the order confirmation by using HTML, CSS and JavaScript. It uses Matt Gemmell's [MGTemplateEngine](http://mattgemmell.com/2008/05/20/mgtemplateengine-templates-with-cocoa) to render the HTML.
+
+
+## How-To create order HTML view ##
+
+The AppController looks like the one in Example1. The only difference is the `viewWithFrame:forOrder:` implementation. It uses `WebFrame`'s `loadHTMLString:baseURL:` method to load the HTML and present it to the user.
+
+### Extract from AppController.h ###
+
+	@implementation AppController
+
+	- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order
+	{
+		MGTemplateEngine *engine = [MGTemplateEngine templateEngine];
+		[engine setMatcher:[ICUTemplateMatcher matcherWithTemplateEngine:engine]];
+	
+		NSString *templatePath = [[NSBundle mainBundle] pathForResource:@"OrderView" ofType:@"html"];
+		NSDictionary *variables = [NSDictionary dictionaryWithObject:order forKey:@"order"];
+		NSString *htmlString = [engine processTemplateInFileAtPath:templatePath withVariables:variables];
+
+		NSString *templateDirectory = [templatePath substringToIndex:[templatePath length]-[[templatePath lastPathComponent] length]];
+		NSURL *baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", templateDirectory]];
+	
+		WebFrame *webFrame = [[[WebView alloc] initWithFrame:frame] mainFrame];
+		[webFrame loadHTMLString:htmlString baseURL:baseURL];
+	
+		return [webFrame frameView];
+	}
+
+	@end
+
+As we set `FsprgOrder` to a variable we can now conveniently access the order information inside the template. The baseURL points to the Resource directory. Thus, we can access CSS files to style the view and JavaScript to add some behavior and nice effects.
+
+
+### OrderView.html ###
+
+	<html>
+		<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+			<title>Your Order</title>
+			<link rel="stylesheet" type="text/css" href="OrderView.css">
+			<script src="jquery-1.4.2.js"></script>
+			<script language="javascript">
+				$(function() {
+					$(".orderItemsTitle").fadeIn(2000);
+					$(".orderItem").fadeIn(2000);
+				});
+			</script>
+		</head>
+		<body>
+			<div class="thankYouNote">Thanks for you order {{ order.customerFirstName }}!</div>
+			<div class="orderItemsTitle">Ordered items</div>
+			{% for orderItem in order.orderItems %}
+			<div class="orderItem">
+				<div class="productName">
+				{{ orderItem.productName }}
+				{% if orderItem.quantity > 1 %} ({{ orderItem.quantity }}) {% /if %}
+				</div>
+				<div class="licenseKey">Your license key: {{ orderItem.license.firstLicenseCode }}</div>
+			</div>
+			{% /for %}
+		</body>
+	</html>
+
+---
+
+# Test.app #
+
+![Test.app Screenshot](README/testapp_screenshot.png "Test.app Screenshot")
+
+The Test application lets you explore FastSpring's parameters and shows you the native order confirmation result (XML plist format).
+
+You can also store that confirmation result as a plist file and load it by using the `FsprgEmbeddedStoreController`'s `loadWithContentsOfFile:` method. It simplifies the development and testing of the order confirmation view.
