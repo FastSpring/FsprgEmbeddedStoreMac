@@ -12,6 +12,10 @@
 #import "FsprgFileDownload.h"
 
 
+/*!
+ * Order item information. FsprgOrderItem is backed by a NSMutableDictionary that
+ * can be accessed and modified via the raw and setRaw: methods.
+ */
 @interface FsprgOrderItem : NSObject {
 	NSDictionary *raw;
 }
@@ -27,13 +31,15 @@
 - (NSNumber *)quantity;
 - (FsprgFulfillment *)fulfillment;
 
-/*
-	Shortcut to fulfillment.license
+/*!
+ * Shortcut for [[self fulfillment] valueForKey:@"license"].
+ * @result License information.
  */
 - (FsprgLicense *)license;
 
-/*
-	Shortcut to fulfillment.download
+/*!
+ * Shortcut for [[self fulfillment] valueForKey:@"download"].
+ * @result Download information.
  */
 - (FsprgFileDownload *)download;
 

@@ -8,14 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 
-extern NSString * const kFsprgOrderProcessDetail;
+/*! Constants for setOrderProcessType: */
 extern NSString * const kFsprgOrderProcessDetail;
 extern NSString * const kFsprgOrderProcessInstant;
 
+/*! Constants for setMode: */
 extern NSString * const kFsprgModeActive;
 extern NSString * const kFsprgModeActiveTest;
 extern NSString * const kFsprgModeTest;
 
+
+/*!
+ * FastSpring store parameters. FsprgStoreParameters is backed by a NSMutableDictionary that
+ * can be accessed and modified via the raw and setRaw: methods.
+ */
 @interface FsprgStoreParameters : NSObject {
 	BOOL hasContactDefaults;
 	NSMutableDictionary *raw;

@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 
+/*!
+ * File download information. FsprgFileDownload is backed by a NSMutableDictionary that
+ * can be accessed and modified via the raw and setRaw: methods.
+ */
 @interface FsprgFileDownload : NSObject {
 	NSDictionary *raw;
 }

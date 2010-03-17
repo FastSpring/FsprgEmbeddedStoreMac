@@ -11,6 +11,9 @@
 #import "FsprgOrder.h"
 
 
+/*!
+ * WebDocumentRepresentation that calls FsprgEmbeddedStoreDelegate on receiving the order.
+ */
 @interface FsprgOrderDocumentRepresentation : NSObject <WebDocumentRepresentation> {
 	FsprgOrder *order;
 }

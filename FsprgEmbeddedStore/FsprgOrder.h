@@ -10,6 +10,10 @@
 #import "FsprgOrderItem.h"
 
 
+/*!
+ * Order information. FsprgOrder is backed by a NSMutableDictionary that
+ * can be accessed and modified via the raw and setRaw: methods.
+ */
 @interface FsprgOrder : NSObject {
 	NSDictionary *raw;
 }
@@ -29,7 +33,11 @@
 - (NSString *)customerLastName;
 - (NSString *)customerCompany;
 - (NSString *)customerEmail;
-	
+
+/*!
+ * Shortcut for [[self orderItems] objectAtIndex:0].
+ * @result First item.
+ */
 - (FsprgOrderItem *)firstOrderItem;
 - (NSArray *)orderItems;
 

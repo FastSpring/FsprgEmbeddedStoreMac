@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 
+/*!
+ * License information. FsprgLicense is backed by a NSMutableDictionary that
+ * can be accessed and modified via the raw and setRaw: methods.
+ */
 @interface FsprgLicense : NSObject {
 	NSDictionary *raw;
 }

@@ -10,6 +10,10 @@
 #import <WebKit/WebKit.h>
 
 
+/*!
+ * WebDocumentView implementation encapsulating the order
+ * confirmation view of FsprgEmbeddedStoreDelegate.
+ */
 @interface FsprgOrderView : NSView <WebDocumentView> {
 	WebDataSource *dataSource;
 	BOOL needsLayout;
