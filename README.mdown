@@ -1,10 +1,28 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Documentation FsprgEmbeddedStoreSDK</title>
+<link rel='stylesheet' href='README/style.css' type='text/css'/>
+<script src='README/jquery-1.4.2.js'></script>
+<script src='README/readme.js'></script>
+</head>
+<body>
+
+
+<h1 id='header'>FastSpring Embedded Store SDK</h1>
+<div id='summary'></div>
+
+
+# Introduction #
+<span class="abstract">Introduction to FastSpring's embedded store SDK.</span>
+
 FastSpring's embedded store consists of a controller with some integration points and WebKit's web view. It's thin and very flexible and lets you integrate the FastSpring the way that fits best for your application.
 
-To get an idea of how it works the SDK provides two examples and a test application. FastSpring also provides [FsprgEmbeddedStore framework's source code](src/FsprgEmbeddedStore) to ease debugging and to give you a better understanding of what happens behind the scenes. There are separate framework builds for 10.4 and 10.5+. The test app and the examples are 10.5+ only.
+To get an idea of how it works the SDK provides two examples and a test application. FastSpring also provides [FsprgEmbeddedStore framework's source code](src/FsprgEmbeddedStore) to ease debugging and to give you a better understanding of what happens behind the scenes. There are separate framework builds for 10.4 and 10.5+. The test application is 10.5+ only and the examples are available as source code. All source code is released under the [MIT license](License.txt). It is open to contributions and its use is unrestricted.
 
----
 
 # FsprgEmbeddedStore.framework #
+<span class="abstract">Cocoa Framework to integrate the FastSpring store.</span>
 
 The FsprgEmbeddedStore framework consists mainly out of the `FsprgEmbeddedStoreController` and its delegate protocol, `FsprgEmbeddedStoreDelegate`.
 
@@ -30,7 +48,6 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
 	@end
 
-
 ## How-to embed the framework ##
 
 * Drag FSEmbeddedStore.framework to Linked Frameworks  
@@ -42,14 +59,12 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 * Rename Build Phase to "Copy Frameworks"
 * Drag FSEmbeddedStore.framework to that Build Phase
 
-
 ## How-to use the framework ##
 
 * Create an `AppController` and use `FsprgEmbeddedStoreController`. Example1.app and Example2.app are providing examples how to implement the `AppController` in detail.
 * Open MainMenu.nib
 * Create an instance of `AppController` inside Interface Builder
 * Drag WebKit control onto screen and connect it to the storeView Outlet of `AppController`
-
 
 ### Example: AppController.h ###
 
@@ -65,14 +80,13 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 
 	@end
 
----
 
 # Example1.app #
-
-![Example1.app Screenshot](README/example1_screenshot.png "Example1.app Screenshot")
+<span class="abstract">Defaults contact fields and order confirmation is a View XIB built inside Interface Builder.</span>
 
 Example1 app defaults contact fields by accessing MacOS' AddressBook. The order confirmation is a View XIB built inside Interface Builder.
 
+![Example1.app Screenshot](README/example1_screenshot.png "Example1.app Screenshot")
 
 ## How-to implement the AppController ##
 
@@ -80,7 +94,6 @@ Example1 app defaults contact fields by accessing MacOS' AddressBook. The order 
 * Set webView to `FsprgEmbeddedStoreController` on `awakeFromNib`
 * Delegate `load:` to `loadWithParameters:` of `FsprgEmbeddedStoreController`
 * Implement `viewWithFrame:forOrder:` by using a `NSViewController` (here `OrderViewController`) that uses the View XIB defined inside Interface Builder
-
 
 ### Extract from AppController.h ###
 
@@ -120,7 +133,6 @@ Example1 app defaults contact fields by accessing MacOS' AddressBook. The order 
 
 	@end
 
-
 ## How-to create the View XIB ##
 
 * Create class `OrderViewController` by extending `NSViewController`
@@ -129,14 +141,13 @@ Example1 app defaults contact fields by accessing MacOS' AddressBook. The order 
 * Assign File’s Owner view Outlet to the main "Custom View"
 * Bind controls (e.g. label) to File’s Owner representedObject (= `FSOrder`) to present order confirmation data to the user
 
----
 
 # Example2.app #
-
-![Example2.app Screenshot](README/example2_screenshot.png "Example2.app Screenshot")
+<span class="abstract">Order confirmation is built by using HTML, CSS and JavaScript.</span>
 
 Example2 presents the order confirmation by using HTML, CSS and JavaScript. It uses Matt Gemmell's [MGTemplateEngine](http://mattgemmell.com/2008/05/20/mgtemplateengine-templates-with-cocoa) to render the HTML.
 
+![Example2.app Screenshot](README/example2_screenshot.png "Example2.app Screenshot")
 
 ## How-To create order HTML view ##
 
@@ -199,12 +210,15 @@ As we set `FsprgOrder` to a variable we can now conveniently access the order in
 		</body>
 	</html>
 
----
 
 # Test.app #
-
-![Test.app Screenshot](README/testapp_screenshot.png "Test.app Screenshot")
+<span class="abstract">Explore FastSpring's parameters and shows you the native order confirmation result.</span>
 
 The Test application lets you explore FastSpring's parameters and shows you the native order confirmation result (XML plist format).
 
+![Test.app Settings Screenshot](README/testapp_settings_screenshot.png "Test.app Settings Screenshot")
+![Test.app Results Screenshot](README/testapp_results_screenshot.png "Test.app Results Screenshot")
+
 You can also store that confirmation result as a plist file and load it by using the `FsprgEmbeddedStoreController`'s `loadWithContentsOfFile:` method. It simplifies the development and testing of the order confirmation view.
+
+</body></html>
