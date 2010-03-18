@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4684D94D114A31F300CFE920 /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4684D94C114A31F300CFE920 /* APPL.icns */; };
-		46886D6D1147AAD5000BC887 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */; };
-		46886D7C1147AAE3000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */; };
 		46886FB211481087000BC887 /* OrderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 46886FB011481087000BC887 /* OrderView.h */; };
 		46886FB311481087000BC887 /* OrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46886FB111481087000BC887 /* OrderView.m */; };
+		46A03C941152F1EE005B8EA0 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */; };
+		46A03C971152F1F6005B8EA0 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */; };
 		46F4DFB9113EDD7C00ECAFE6 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F4DFB5113EDD7C00ECAFE6 /* AppController.h */; };
 		46F4DFBA113EDD7C00ECAFE6 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DFB6113EDD7C00ECAFE6 /* AppController.m */; };
 		46F4DFBB113EDD7C00ECAFE6 /* OrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */; };
@@ -31,7 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				46886D7C1147AAE3000BC887 /* FsprgEmbeddedStore.framework in Copy Frameworks */,
+				46A03C971152F1F6005B8EA0 /* FsprgEmbeddedStore.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,9 +48,9 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* TestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp_Prefix.pch; sourceTree = "<group>"; };
 		4684D94C114A31F300CFE920 /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
-		46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = ../FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework; sourceTree = SOURCE_ROOT; };
 		46886FB011481087000BC887 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
 		46886FB111481087000BC887 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
+		46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = "../FsprgEmbeddedStore/build/Release 10.5+/FsprgEmbeddedStore.framework"; sourceTree = SOURCE_ROOT; };
 		46F4DFB5113EDD7C00ECAFE6 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
 		46F4DFB6113EDD7C00ECAFE6 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = SOURCE_ROOT; };
 		46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = SOURCE_ROOT; };
@@ -67,7 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				46886D6D1147AAD5000BC887 /* FsprgEmbeddedStore.framework in Frameworks */,
+				46A03C941152F1EE005B8EA0 /* FsprgEmbeddedStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				46886D6C1147AAD5000BC887 /* FsprgEmbeddedStore.framework */,
+				46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -271,6 +271,7 @@
 					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
 					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
 					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release\"",
+					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release 10.5+\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -295,6 +296,7 @@
 					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
 					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
 					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release\"",
+					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release 10.5+\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

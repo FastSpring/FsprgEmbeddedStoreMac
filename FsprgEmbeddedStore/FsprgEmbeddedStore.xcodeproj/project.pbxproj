@@ -507,10 +507,9 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FsprgEmbeddedStore_Prefix.pch;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "UnitTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				"New Setting" = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -536,7 +535,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FsprgEmbeddedStore_Prefix.pch;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "UnitTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
@@ -562,7 +561,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FsprgEmbeddedStore_Prefix.pch;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "UnitTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (

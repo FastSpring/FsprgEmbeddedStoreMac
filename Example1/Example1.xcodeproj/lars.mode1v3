@@ -268,18 +268,18 @@
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1058C7A0FEA54F0111CA2CBB</string>
-								<string>46886E611147B916000BC887</string>
-								<string>467BEDE9113AF50200C21AFE</string>
 								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>46A03C1D1152F0EE005B8EA0</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
-									<integer>1</integer>
+									<integer>16</integer>
+									<integer>14</integer>
+									<integer>13</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -333,20 +333,16 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>46B3577711513E7900E15318</string>
+										<string>46A03C2C1152F0FC005B8EA0</string>
 										<key>history</key>
 										<array>
 											<string>46A64C3D1149061600B31C85</string>
 											<string>4684D9A7114A332D00CFE920</string>
 											<string>4684D9A8114A332D00CFE920</string>
 											<string>467C9EB7114E63220067125A</string>
-											<string>467C9EB8114E63220067125A</string>
-											<string>467C9EBA114E63220067125A</string>
-											<string>467C9EBC114E63220067125A</string>
-											<string>467C9EBE114E63220067125A</string>
 											<string>467C9EFF11501B250067125A</string>
 											<string>467C9F0011501B250067125A</string>
-											<string>465C290011510B9E0001F9BD</string>
+											<string>46F788A51152ED860025FEF6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -404,9 +400,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>46B3574A11513CD100E15318</string>
+				<string>46A03C1F1152F0EE005B8EA0</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>46B3574B11513CD100E15318</string>
+				<string>46A03C201152F0EE005B8EA0</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -544,8 +540,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>46B3575611513CE600E15318</string>
-		<string>46B3575711513CE600E15318</string>
+		<string>46A03C2A1152F0EE005B8EA0</string>
+		<string>46A03C2B1152F0EE005B8EA0</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4670961A113AE5B200932A17</string>
@@ -629,7 +625,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4670961A113AE5B200932A17</string>
-				<string>46B3574C11513CD100E15318</string>
+				<string>46A03C211152F0EE005B8EA0</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -751,13 +747,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>46B3574E11513CE600E15318</string>
+				<string>46A03C221152F0EE005B8EA0</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>46B3574F11513CE600E15318</string>
-				<string>46B3575011513CE600E15318</string>
-				<string>46B3575111513CE600E15318</string>
-				<string>46B3575211513CE600E15318</string>
-				<string>46B3575311513CE600E15318</string>
+				<string>46A03C231152F0EE005B8EA0</string>
+				<string>46A03C241152F0EE005B8EA0</string>
+				<string>46A03C251152F0EE005B8EA0</string>
+				<string>46A03C261152F0EE005B8EA0</string>
+				<string>46A03C271152F0EE005B8EA0</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -911,7 +907,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>46B3575411513CE600E15318</string>
+				<string>46A03C281152F0EE005B8EA0</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

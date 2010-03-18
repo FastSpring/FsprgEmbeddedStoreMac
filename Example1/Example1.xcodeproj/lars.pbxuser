@@ -80,36 +80,22 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 290536630;
-			PBXWorkspaceStateSaveDate = 290536630;
+			PBXPerProjectTemplateStateSaveDate = 290648240;
+			PBXWorkspaceStateSaveDate = 290648240;
 		};
 		perUserProjectItems = {
-			465C290011510B9E0001F9BD /* PBXTextBookmark */ = 465C290011510B9E0001F9BD /* PBXTextBookmark */;
 			467C9EB7114E63220067125A /* PlistBookmark */ = 467C9EB7114E63220067125A /* PlistBookmark */;
-			467C9EB8114E63220067125A /* PBXTextBookmark */ = 467C9EB8114E63220067125A /* PBXTextBookmark */;
-			467C9EBA114E63220067125A /* PBXTextBookmark */ = 467C9EBA114E63220067125A /* PBXTextBookmark */;
-			467C9EBC114E63220067125A /* PBXTextBookmark */ = 467C9EBC114E63220067125A /* PBXTextBookmark */;
-			467C9EBE114E63220067125A /* PBXTextBookmark */ = 467C9EBE114E63220067125A /* PBXTextBookmark */;
 			467C9EFF11501B250067125A /* PBXTextBookmark */ = 467C9EFF11501B250067125A /* PBXTextBookmark */;
 			467C9F0011501B250067125A /* PBXTextBookmark */ = 467C9F0011501B250067125A /* PBXTextBookmark */;
 			4684D9A7114A332D00CFE920 /* PBXBookmark */ = 4684D9A7114A332D00CFE920 /* PBXBookmark */;
 			4684D9A8114A332D00CFE920 /* PBXTextBookmark */ = 4684D9A8114A332D00CFE920 /* PBXTextBookmark */;
+			46A03C2C1152F0FC005B8EA0 /* PBXTextBookmark */ = 46A03C2C1152F0FC005B8EA0 /* PBXTextBookmark */;
 			46A64C3D1149061600B31C85 /* PBXTextBookmark */ = 46A64C3D1149061600B31C85 /* PBXTextBookmark */;
-			46B3577711513E7900E15318 /* PBXTextBookmark */ = 46B3577711513E7900E15318 /* PBXTextBookmark */;
+			46F788A51152ED860025FEF6 /* PBXTextBookmark */ = 46F788A51152ED860025FEF6 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 46709626113AE5B200932A17 /* Source Control */;
 		userBuildSettings = {
 		};
-	};
-	465C290011510B9E0001F9BD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
-		name = "AppController.m: 19";
-		rLen = 0;
-		rLoc = 317;
-		rType = 0;
-		vrLen = 1182;
-		vrLoc = 36;
 	};
 	46709611113AE59B00932A17 /* Example1 */ = {
 		isa = PBXExecutable;
@@ -164,9 +150,9 @@
 	};
 	467BED7C113AEF7300C21AFE /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {831, 1235}}";
-			sepNavSelRange = "{1927, 0}";
-			sepNavVisRange = "{882, 1604}";
+			sepNavIntBoundsRect = "{{0, 0}, {831, 1248}}";
+			sepNavSelRange = "{1385, 0}";
+			sepNavVisRange = "{888, 1598}";
 		};
 	};
 	467BEE17113AF88000C21AFE /* OrderViewController.h */ = {
@@ -194,74 +180,6 @@
 		name = /Users/lars/Xcode/FsprgEmbeddedStore/Example1/Info.plist;
 		rLen = 0;
 		rLoc = 2147483647;
-	};
-	467C9EB8114E63220067125A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467C9EB9114E63220067125A /* FsprgEmbeddedStoreController.h */;
-		name = "FsprgEmbeddedStoreController.h: 14";
-		rLen = 484;
-		rLoc = 261;
-		rType = 0;
-		vrLen = 684;
-		vrLoc = 61;
-	};
-	467C9EB9114E63220067125A /* FsprgEmbeddedStoreController.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgEmbeddedStoreController.h;
-		path = /Users/lars/Xcode/FsprgEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgEmbeddedStoreController.h;
-		sourceTree = "<absolute>";
-	};
-	467C9EBA114E63220067125A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467C9EBB114E63220067125A /* FsprgEmbeddedStoreDelegate.h */;
-		name = "FsprgEmbeddedStoreDelegate.h: 12";
-		rLen = 0;
-		rLoc = 240;
-		rType = 0;
-		vrLen = 434;
-		vrLoc = 0;
-	};
-	467C9EBB114E63220067125A /* FsprgEmbeddedStoreDelegate.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgEmbeddedStoreDelegate.h;
-		path = /Users/lars/Xcode/FsprgEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgEmbeddedStoreDelegate.h;
-		sourceTree = "<absolute>";
-	};
-	467C9EBC114E63220067125A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467C9EBD114E63220067125A /* FsprgEmbeddedStore.h */;
-		name = "FsprgEmbeddedStore.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 407;
-		vrLoc = 0;
-	};
-	467C9EBD114E63220067125A /* FsprgEmbeddedStore.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgEmbeddedStore.h;
-		path = /Users/lars/Xcode/FsprgEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgEmbeddedStore.h;
-		sourceTree = "<absolute>";
-	};
-	467C9EBE114E63220067125A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 467C9EBF114E63220067125A /* FsprgStoreParameters.h */;
-		name = "FsprgStoreParameters.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 891;
-		vrLoc = 597;
-	};
-	467C9EBF114E63220067125A /* FsprgStoreParameters.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = FsprgStoreParameters.h;
-		path = /Users/lars/Xcode/FsprgEmbeddedStore/FsprgEmbeddedStore/build/Release/FsprgEmbeddedStore.framework/Headers/FsprgStoreParameters.h;
-		sourceTree = "<absolute>";
 	};
 	467C9EFF11501B250067125A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -297,6 +215,16 @@
 		vrLen = 93;
 		vrLoc = 0;
 	};
+	46A03C2C1152F0FC005B8EA0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
+		name = "AppController.m: 55";
+		rLen = 0;
+		rLoc = 1385;
+		rType = 0;
+		vrLen = 1598;
+		vrLoc = 888;
+	};
 	46A64C3D1149061600B31C85 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 467BEE18113AF88000C21AFE /* OrderViewController.m */;
@@ -307,15 +235,15 @@
 		vrLen = 552;
 		vrLoc = 0;
 	};
-	46B3577711513E7900E15318 /* PBXTextBookmark */ = {
+	46F788A51152ED860025FEF6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 467BED7C113AEF7300C21AFE /* AppController.m */;
 		name = "AppController.m: 66";
 		rLen = 0;
 		rLoc = 1927;
 		rType = 0;
-		vrLen = 1604;
-		vrLoc = 882;
+		vrLen = 1598;
+		vrLoc = 888;
 	};
 	8D1107260486CEB800E47090 /* Example1 */ = {
 		activeExec = 0;
