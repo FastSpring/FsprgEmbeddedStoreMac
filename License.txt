@@ -1,6 +1,6 @@
 MIT License: http://en.wikipedia.org/wiki/MIT_License
 
-Copyright (c) 2007 Lars Steiger
+Copyright (c) 2010 FastSpring, LLC
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
