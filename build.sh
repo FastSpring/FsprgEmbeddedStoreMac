@@ -10,6 +10,7 @@ rm -R -f FsprgEmbeddedStoreSDK
 
 # FsprgEmbeddedStoreStyle.zip
 zip -r FsprgEmbeddedStoreStyle FsprgEmbeddedStoreStyle -x *.svn* *.DS_Store*
+mv FsprgEmbeddedStoreStyle.zip FsprgEmbeddedStoreSDK 
 
 # README.html
 mkdir -p FsprgEmbeddedStoreSDK/README
