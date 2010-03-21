@@ -40,6 +40,7 @@
 {
     if (webView != aWebView) {
         [webView release];
+		[webView setPostsFrameChangedNotifications:FALSE];
 		[webView setFrameLoadDelegate:nil];
 		[webView setUIDelegate:nil];
 		[webView setApplicationNameForUserAgent:nil];
@@ -47,9 +48,14 @@
 		
 		
         webView = [aWebView retain];
+		[webView setPostsFrameChangedNotifications:TRUE];
 		[webView setFrameLoadDelegate:self];
 		[webView setUIDelegate:self];
 		[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
+		[[NSNotificationCenter defaultCenter] addObserver:self 
+												 selector:@selector(webViewFrameChanged:) 
+													 name:NSViewFrameDidChangeNotification 
+												   object:webView];
 		[[NSNotificationCenter defaultCenter] addObserver:self 
 												 selector:@selector(estimatedLoadingProgressChanged:) 
 													 name:WebViewProgressStartedNotification 
@@ -128,6 +134,27 @@
 	[self setIsLoading:TRUE];
 }
 
+- (void)resizeContentDivE {
+	DOMElement *resizableContentE = [[[[self webView] mainFrame] DOMDocument] getElementById:@"FsprgResizableContent"];
+	if(resizableContentE == nil) {
+		return;
+	}
+	
+	float windowHeight = [[self webView] frame].size.height;
+	float pageNavigationHeight = [[[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"] floatValue];
+	
+	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
+	float paddingTop = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingTop] length]-2] floatValue];
+	float paddingBottom = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingBottom] length]-2] floatValue];
+	
+	float newHeight = windowHeight - paddingTop - paddingBottom - pageNavigationHeight;
+	[[resizableContentE style] setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
+}
+- (void)webViewFrameChanged:(NSNotification *)aNotification
+{
+	[self resizeContentDivE];
+}
+
 
 // WebFrameLoadDelegate
 
@@ -137,6 +164,7 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
+	[self resizeContentDivE];
 	if(isInitialLoad) {
 		isInitialLoad = FALSE;
 		[[self delegate] didLoadStore];

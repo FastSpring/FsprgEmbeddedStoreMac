@@ -1,0 +1,5 @@
+If one of the following images file names is present in this directory:
+
+header.png, header.gif, header.jpg
+
+Then that image will be used as the header image for customers that checkout using PayPal.
