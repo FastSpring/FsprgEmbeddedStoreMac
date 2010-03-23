@@ -100,16 +100,10 @@
 
 - (void)loadWithContentsOfFile:(NSString *)aPath
 {
-	NSString *mimeType = nil;
-	if([[aPath pathExtension] isEqualTo:@"plist"]) {
-		mimeType = @"text/xml";
-	} else if([[aPath pathExtension] isEqualTo:@"html"]) {
-		mimeType = @"text/html";
-	}
-	NSData *data = [NSData dataWithContentsOfFile:aPath];
-	
 	isInitialLoad = TRUE;
-	[[webView mainFrame] loadData:data MIMEType:mimeType textEncodingName:@"UTF-8" baseURL:nil];
+
+	NSString *fileURL = [NSString stringWithFormat:@"file://%@", aPath];
+	[[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:fileURL]]];
 }
 
 - (BOOL)isLoading
@@ -132,6 +126,15 @@
 {
 	[self setEstimatedLoadingProgress:-1];
 	[self setIsLoading:TRUE];
+}
+- (BOOL)isSecure
+{
+	WebDataSource *mainFrameDs = [[[self webView] mainFrame] dataSource];
+	return [@"https" isEqualTo:[[[mainFrameDs request] URL] scheme]];
+}
+- (void)setIsSecure:(BOOL)aFlag
+{
+	// just triggering change observer
 }
 
 - (void)resizeContentDivE {
@@ -164,6 +167,8 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
+	[self setIsSecure:TRUE]; // just triggering change observer
+
 	[self resizeContentDivE];
 	if(isInitialLoad) {
 		isInitialLoad = FALSE;

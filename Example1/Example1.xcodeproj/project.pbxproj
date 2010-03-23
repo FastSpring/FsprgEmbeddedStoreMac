@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4603257E1158AD8C00A5554B /* IsSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4603257D1158AD8C00A5554B /* IsSecureIcon.png */; };
+		4603258F1158ADCC00A5554B /* IsNotSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4603258E1158ADCC00A5554B /* IsNotSecureIcon.png */; };
 		467BED7D113AEF7300C21AFE /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 467BED7B113AEF7300C21AFE /* AppController.h */; };
 		467BED7E113AEF7300C21AFE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BED7C113AEF7300C21AFE /* AppController.m */; };
 		467BEDEA113AF50200C21AFE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467BEDE9113AF50200C21AFE /* AddressBook.framework */; };
@@ -45,6 +47,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Example1_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1_Prefix.pch; sourceTree = "<group>"; };
+		4603257D1158AD8C00A5554B /* IsSecureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IsSecureIcon.png; sourceTree = "<group>"; };
+		4603258E1158ADCC00A5554B /* IsNotSecureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IsNotSecureIcon.png; sourceTree = "<group>"; };
 		467BED7B113AEF7300C21AFE /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		467BED7C113AEF7300C21AFE /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		467BEDE9113AF50200C21AFE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -139,6 +143,8 @@
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				467BEE13113AF82100C21AFE /* OrderView.xib */,
 				4684D95C114A323500CFE920 /* APPL.icns */,
+				4603257D1158AD8C00A5554B /* IsSecureIcon.png */,
+				4603258E1158ADCC00A5554B /* IsNotSecureIcon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				467BEE14113AF82100C21AFE /* OrderView.xib in Resources */,
 				4684D95D114A323500CFE920 /* APPL.icns in Resources */,
+				4603257E1158AD8C00A5554B /* IsSecureIcon.png in Resources */,
+				4603258F1158ADCC00A5554B /* IsNotSecureIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,4 +58,10 @@
  */
 - (double)estimatedLoadingProgress;
 
+/**
+ * Useful to show a secure icon.
+ * @result TRUE if connection is secure (SSL)
+ */
+- (BOOL)isSecure;
+
 @end
