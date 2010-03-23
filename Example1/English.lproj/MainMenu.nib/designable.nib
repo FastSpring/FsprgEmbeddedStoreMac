@@ -904,38 +904,6 @@
 							</object>
 							<bool key="NSEditable">YES</bool>
 						</object>
-						<object class="NSImageView" id="400840808">
-							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">268</int>
-							<object class="NSMutableSet" key="NSDragTypes">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSArray" key="set.sortedObjects">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Apple PDF pasteboard type</string>
-									<string>Apple PICT pasteboard type</string>
-									<string>Apple PNG pasteboard type</string>
-									<string>NSFilenamesPboardType</string>
-									<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-									<string>NeXT TIFF v4.0 pasteboard type</string>
-								</object>
-							</object>
-							<string key="NSFrame">{{20, 433}, {16, 16}}</string>
-							<reference key="NSSuperview" ref="439893737"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSImageCell" key="NSCell" id="75435705">
-								<int key="NSCellFlags">130560</int>
-								<int key="NSCellFlags2">33554432</int>
-								<object class="NSCustomResource" key="NSContents">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">IsNotSecureIcon</string>
-								</object>
-								<int key="NSAlign">0</int>
-								<int key="NSScale">0</int>
-								<int key="NSStyle">0</int>
-								<bool key="NSAnimates">NO</bool>
-							</object>
-							<bool key="NSEditable">YES</bool>
-						</object>
 					</object>
 					<string key="NSFrameSize">{640, 470}</string>
 					<reference key="NSSuperview"/>
@@ -1352,22 +1320,6 @@
 						</object>
 					</object>
 					<int key="connectionID">396</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: storeController.isSecure</string>
-						<reference key="source" ref="400840808"/>
-						<reference key="destination" ref="697805878"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="400840808"/>
-							<reference key="NSDestination" ref="697805878"/>
-							<string key="NSLabel">hidden: storeController.isSecure</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">storeController.isSecure</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">400</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1986,7 +1938,6 @@
 							<reference ref="962219012"/>
 							<reference ref="139558370"/>
 							<reference ref="491905244"/>
-							<reference ref="400840808"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -2037,20 +1988,6 @@
 						<int key="objectID">392</int>
 						<reference key="object" ref="1055366267"/>
 						<reference key="parent" ref="491905244"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">397</int>
-						<reference key="object" ref="400840808"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="75435705"/>
-						</object>
-						<reference key="parent" ref="439893737"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">398</int>
-						<reference key="object" ref="75435705"/>
-						<reference key="parent" ref="400840808"/>
 					</object>
 				</object>
 			</object>
@@ -2209,8 +2146,6 @@
 					<string>384.IBPluginDependency</string>
 					<string>391.IBPluginDependency</string>
 					<string>392.IBPluginDependency</string>
-					<string>397.IBPluginDependency</string>
-					<string>398.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
 					<string>56.IBPluginDependency</string>
@@ -2395,8 +2330,6 @@
 					<string>{{33, 99}, {480, 360}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.WebKitIBPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

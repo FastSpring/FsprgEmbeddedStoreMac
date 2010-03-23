@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -278,7 +280,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,14 +316,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AppController.m</string>
+								<string>OrderViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AppController.m</string>
+										<string>OrderViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>46032701115907EA00A5554B</string>
+										<string>4603270B115986BF00A5554B</string>
 										<key>history</key>
 										<array>
 											<string>46886FC411481273000BC887</string>
@@ -341,13 +341,12 @@
 											<string>46886FFD11481DD7000BC887</string>
 											<string>46A64C671149063700B31C85</string>
 											<string>4684D995114A332500CFE920</string>
-											<string>46188B7F114C47A7002255FE</string>
 											<string>460326451158B5FE00A5554B</string>
 											<string>460326461158B5FE00A5554B</string>
-											<string>460326471158B5FE00A5554B</string>
 											<string>460326911158C8A400A5554B</string>
 											<string>460326DA115902FF00A5554B</string>
-											<string>460326DB115902FF00A5554B</string>
+											<string>4603270A115986BF00A5554B</string>
+											<string>46188B7F114C47A7002255FE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -545,13 +544,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>46032702115907EA00A5554B</string>
 		<string>460326C01158FFB700A5554B</string>
 		<string>460326C11158FFB700A5554B</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>46F4DF69113E8A0A00ECAFE6</string>
 		<string>/Users/lars/Xcode/FsprgEmbeddedStore/TestApp/TestApp.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1280 719 0 0 1280 778 </string>
@@ -925,7 +923,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

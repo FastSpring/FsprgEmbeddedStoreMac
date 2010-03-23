@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		460325DB1158B1FC00A5554B /* IsSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 460325D91158B1FC00A5554B /* IsSecureIcon.png */; };
-		460325DC1158B1FC00A5554B /* IsNotSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 460325DA1158B1FC00A5554B /* IsNotSecureIcon.png */; };
 		4684D97F114A32F500CFE920 /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4684D97E114A32F500CFE920 /* APPL.icns */; };
 		46A03C3A1152F117005B8EA0 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A03C391152F117005B8EA0 /* FsprgEmbeddedStore.framework */; };
 		46A03C3D1152F12A005B8EA0 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46A03C391152F117005B8EA0 /* FsprgEmbeddedStore.framework */; };
@@ -68,7 +67,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Example2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2_Prefix.pch; sourceTree = "<group>"; };
 		460325D91158B1FC00A5554B /* IsSecureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IsSecureIcon.png; sourceTree = "<group>"; };
-		460325DA1158B1FC00A5554B /* IsNotSecureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IsNotSecureIcon.png; sourceTree = "<group>"; };
 		4684D97E114A32F500CFE920 /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
 		46A03C391152F117005B8EA0 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = "../FsprgEmbeddedStore/build/Release 10.5+/FsprgEmbeddedStore.framework"; sourceTree = SOURCE_ROOT; };
 		46A649D41148DA0300B31C85 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				46A64AFC1148FC2900B31C85 /* jquery-1.4.2.js */,
 				4684D97E114A32F500CFE920 /* APPL.icns */,
 				460325D91158B1FC00A5554B /* IsSecureIcon.png */,
-				460325DA1158B1FC00A5554B /* IsNotSecureIcon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -329,7 +326,6 @@
 				46A64BDB114903BD00B31C85 /* Source Code License.rtf in Resources */,
 				4684D97F114A32F500CFE920 /* APPL.icns in Resources */,
 				460325DB1158B1FC00A5554B /* IsSecureIcon.png in Resources */,
-				460325DC1158B1FC00A5554B /* IsNotSecureIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
