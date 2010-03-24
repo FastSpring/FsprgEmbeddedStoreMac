@@ -81,7 +81,7 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 
 	@end
 
-## How-to provide an link to the web-store ##
+## How-to provide a link to the web-store ##
 
 Sometimes users prefer to use a web-store instead of an embedded-store. Use `FsprgStoreParameters` to build the web-store URL and open it inside the default browser by using `NSWorkspace`.
 
