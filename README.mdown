@@ -279,7 +279,7 @@ As we set `FsprgOrder` to a variable we can now conveniently access the order in
 			</script>
 		</head>
 		<body>
-			<div class="thankYouNote">Thanks for you order {{ order.customerFirstName }}!</div>
+			<div class="thankYouNote">Thanks for your order {{ order.customerFirstName }}!</div>
 			<div class="orderItemsTitle">Ordered items</div>
 			{% for orderItem in order.orderItems %}
 			<div class="orderItem">
