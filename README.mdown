@@ -94,6 +94,75 @@ Sometimes users prefer to use a web-store instead of an embedded-store. Use `Fsp
 		[[NSWorkspace sharedWorkspace] openURL:[parameters toURL]];
 	}
 
+## FsprgOrder API ##
+
+The FsprgOrder object represents the order confirmation returned via `FsprgEmbeddedStoreDelegate` protocol. To spare you plunging through the headers the following sections contain a real-life example and a compressed API documentation of FsprgOrder and its referred classes.
+
+### Example ###
+
+Here's a real-life example to show the most common case of grabbing the serial number from the fulfilled license. _Thanks to Greg Scown from [SmileOnMyMac](http://www.smileonmymac.com) for sharing._
+
+	- (void)didReceiveOrder:(FsprgOrder *)order
+	{
+	   NSEnumerator *e = [[order orderItems] objectEnumerator];
+	   FsprgOrderItem *item = nil;
+	   while (item = [e nextObject]) {
+	       if ([[item productName] hasPrefix:@"MyItemNamePrefix") {
+	           NSString *userName = [[item license] licenseName];
+	           NSString *serialNumber = [[item license] firstLicenseCode];
+	           if ([[[item productName] lowercaseString] rangeOfString:@"upgrade"].location == NSNotFound) {
+	               NSLog(@"Upgrade purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
+	           } else {
+	               NSLog(@"Full purchase:\nName: %@\nSerial #: %@",	userName, serialNumber);
+	           }
+	       }
+	   }
+	}
+
+### FsprgOrder.h ###
+
+	- (BOOL)orderIsTest;
+	- (NSString *)orderReference;
+	- (NSString *)orderLanguage;
+	- (NSString *)orderCurrency;
+	- (NSNumber *)orderTotal;
+	- (NSString *)customerFirstName;
+	- (NSString *)customerLastName;
+	- (NSString *)customerCompany;
+	- (NSString *)customerEmail;
+	- (FsprgOrderItem *)firstOrderItem; // Shortcut for [[self orderItems] objectAtIndex:0].
+	- (NSArray *)orderItems;
+
+### FsprgOrderItem.h ###
+
+	- (NSString *)productName;
+	- (NSString *)productDisplay;
+	- (NSNumber *)quantity;
+	- (FsprgFulfillment *)fulfillment;
+	- (FsprgLicense *)license;         // Shortcut for [[self fulfillment] valueForKey:@"license"]
+	- (FsprgFileDownload *)download;   // Shortcut for [[self fulfillment] valueForKey:@"download"]
+
+### FsprgFulfillment.h ###
+
+	/*!
+	 * @param aKey type of fulfillment (e.g. license, download)
+	 * @result Specific fulfillment information (FsprgLicense, FsprgFileDownload).
+	 */
+	- (id)valueForKey:(NSString *)aKey;
+
+### FsprgLicense.h ###
+
+	- (NSString *)licenseName;
+	- (NSString *)licenseEmail;
+	- (NSString *)licenseCompany;
+	- (NSString *)firstLicenseCode;
+	- (NSArray *)licenseCodes;
+	- (NSDictionary *)licensePropertyList;
+	- (NSURL *)licenseURL;
+
+### FsprgFileDownload.h ###
+
+	- (NSURL *)fileURL;
 
 # Example1.app #
 <span class="abstract">Defaults contact fields and order confirmation is a View XIB built inside Interface Builder.</span>
