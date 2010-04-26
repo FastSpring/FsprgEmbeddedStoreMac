@@ -1,8 +1,8 @@
 #!/bin/sh
 
 rm -R -f FsprgEmbeddedStoreSDK
-./build_project.sh "FsprgEmbeddedStore" "Release 10.4" "FsprgEmbeddedStoreSDK/MacOS 10.5+"
-./build_project.sh "FsprgEmbeddedStore" "Release 10.5+" "FsprgEmbeddedStoreSDK/MacOS 10.4"
+./build_project.sh "FsprgEmbeddedStore" "Release 10.4" "FsprgEmbeddedStoreSDK/MacOS 10.4"
+./build_project.sh "FsprgEmbeddedStore" "Release 10.5+" "FsprgEmbeddedStoreSDK/MacOS 10.5+"
 ./build_project.sh "TestApp" "Release" "FsprgEmbeddedStoreSDK"
 ./build_project.sh "FsprgEmbeddedStore" "Source" "FsprgEmbeddedStoreSDK/src"
 ./build_project.sh "Example1" "Source" "FsprgEmbeddedStoreSDK/src"
