@@ -27,7 +27,12 @@ h1 {
 }
 
 #header {
+	background-color: white;
+	color: black;
+	
 	margin-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 h2 {
@@ -83,4 +88,10 @@ img {
 	border: 1px solid #cccbba;
 	padding: 5px;
 	
+}
+
+#logo {
+	position: absolute;
+	right: 0px;
+	border: 0px;
 }
