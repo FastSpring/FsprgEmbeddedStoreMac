@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -278,7 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
+									<integer>11</integer>
 									<integer>7</integer>
 									<integer>0</integer>
 								</array>
@@ -314,6 +312,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -331,18 +331,17 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>460327131159870300A5554B</string>
+										<string>46AB4BEA11B95A6900EB4772</string>
 										<key>history</key>
 										<array>
 											<string>4684D9A7114A332D00CFE920</string>
 											<string>4684D9A8114A332D00CFE920</string>
 											<string>467C9EB7114E63220067125A</string>
 											<string>467C9F0011501B250067125A</string>
-											<string>460325A81158B02600A5554B</string>
 											<string>460325C61158B18600A5554B</string>
 											<string>460325E31158B2D900A5554B</string>
 											<string>460326A21158C8A700A5554B</string>
-											<string>460326A41158C8A700A5554B</string>
+											<string>46F5CF9D1196A72C00F28EA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -400,9 +399,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>460327141159870300A5554B</string>
+				<string>46AB4BE711B94B1000EB4772</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>460327151159870300A5554B</string>
+				<string>46AB4BE811B94B1000EB4772</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -621,7 +620,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4670961A113AE5B200932A17</string>
-				<string>460327161159870300A5554B</string>
+				<string>46AB4BE911B94B1000EB4772</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
