@@ -284,7 +284,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
+									<integer>11</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -309,7 +309,7 @@
 							<real>308</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 59 1280 719 0 0 1280 778 </string>
+						<string>400 309 1280 719 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -327,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FsprgEmbeddedStoreController.m</string>
+								<string>FsprgStoreParameters.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -335,11 +335,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FsprgEmbeddedStoreController.m</string>
+										<string>FsprgStoreParameters.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>463B747911C15C9800DA1207</string>
+										<string>46BF266C11E1CF2F001A5E27</string>
 										<key>history</key>
 										<array>
 											<string>46886C921147A787000BC887</string>
@@ -389,9 +389,9 @@
 											<string>462A531311B16C6A00FB2A6D</string>
 											<string>4673579011B30472009DF2ED</string>
 											<string>4673579111B30472009DF2ED</string>
-											<string>4616ED8911B429A100A81772</string>
 											<string>46AB4BE011B94B0800EB4772</string>
-											<string>463B747811C15C9800DA1207</string>
+											<string>4635AE7611E1CAF0006F7370</string>
+											<string>46BF266B11E1CF2F001A5E27</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -405,7 +405,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {950, 673}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 59 1280 719 0 0 1280 778 </string>
+								<string>400 309 1280 719 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -425,7 +425,7 @@
 								<key>Frame</key>
 								<string>{{0, 678}, {950, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 59 1280 719 0 0 1280 778 </string>
+								<string>400 309 1280 719 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -449,9 +449,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>463B747511C0417600DA1207</string>
+				<string>46BF266D11E1CF2F001A5E27</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>463B747611C0417600DA1207</string>
+				<string>46BF266E11E1CF2F001A5E27</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -593,7 +593,7 @@
 		<string>/Users/lars/Xcode/FsprgEmbeddedStore/FsprgEmbeddedStore/FsprgEmbeddedStore.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 59 1280 719 0 0 1280 778 </string>
+	<string>400 309 1280 719 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -623,7 +623,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {818, 266}}</string>
 								<key>RubberWindowFrame</key>
-								<string>267 153 818 548 0 0 1280 778 </string>
+								<string>498 292 818 548 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -647,7 +647,7 @@
 								<key>Frame</key>
 								<string>{{0, 271}, {818, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>267 153 818 548 0 0 1280 778 </string>
+								<string>498 292 818 548 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -670,7 +670,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>46886B8111477FA0000BC887</string>
-				<string>463B747711C0417700DA1207</string>
+				<string>46BF266F11E1CF2F001A5E27</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -679,7 +679,7 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>267 153 818 548 0 0 1280 778 </string>
+			<string>498 292 818 548 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>46886B8111477FA0000BC887</string>
 			<key>WindowToolIsVisible</key>

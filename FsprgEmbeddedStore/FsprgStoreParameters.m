@@ -38,7 +38,8 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 {
 	keyPathsForValuesAffecting = [[NSMutableDictionary dictionaryWithCapacity:1] retain];
 	
-	NSSet *toURLSet = [NSSet setWithObjects:NSStringFromSelector(@selector(orderProcessType)), 
+	NSSet *toURLSet = [NSSet setWithObjects:NSStringFromSelector(@selector(language)),
+											NSStringFromSelector(@selector(orderProcessType)), 
 											NSStringFromSelector(@selector(storeId)),
 											NSStringFromSelector(@selector(productId)),
 											NSStringFromSelector(@selector(mode)),
