@@ -18,6 +18,9 @@
 	[WebView registerViewClass:[FsprgOrderView class]
 		   representationClass:[FsprgOrderDocumentRepresentation class]
 				   forMIMEType:@"text/xml"];
+	[WebView registerViewClass:[FsprgOrderView class]
+		   representationClass:[FsprgOrderDocumentRepresentation class]
+				   forMIMEType:@"application/xml"];
 }
 
 - (id) init
