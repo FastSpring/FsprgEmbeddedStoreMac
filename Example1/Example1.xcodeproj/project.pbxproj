@@ -264,11 +264,6 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
-					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
-					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Debug\"",
-					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release\"",
-					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release 10.5+\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -291,11 +286,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../FSEmbeddedStore/build/Release 10.5+\"",
-					"\"$(SRCROOT)/../FstSpgEmbeddedStore/build/Release\"",
-					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Debug\"",
-					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release\"",
-					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../FsprgEmbeddedStore/build/Release 10.5+\"",
 				);
 				GCC_MODEL_TUNING = G5;
