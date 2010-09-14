@@ -11,6 +11,9 @@ if [[ $CONFIGURATION = "Source" ]]; then
 	
 	# copy src
 	cp -R -f "$PRODUCT_NAME" "$TARGET_DIR"
+	# remove development specific files
+	rm $TARGET_DIR/$PRODUCT_NAME/$PRODUCT_NAME.xcodeproj/*.mode1v3
+	rm $TARGET_DIR/$PRODUCT_NAME/$PRODUCT_NAME.xcodeproj/*.pbxuser
 	# remove build directory
 	rm -R -f "$TARGET_DIR/$PRODUCT_NAME/build"
 	# remove .svn directories
