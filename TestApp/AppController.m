@@ -121,6 +121,7 @@ static NSString * const kParams = @"params";
 - (void)dealloc
 {
     [self setParams:nil];
+	[[self storeController] setDelegate:nil];
     [self setStoreController:nil];
 	
     [super dealloc];

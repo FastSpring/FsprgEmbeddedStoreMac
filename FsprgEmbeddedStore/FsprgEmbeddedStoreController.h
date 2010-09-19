@@ -29,7 +29,7 @@
 
 - (id <FsprgEmbeddedStoreDelegate>)delegate;
 /*!
- * Sets a delegate to do some integration work.
+ * Sets a delegate to which it has a weak reference.
  * @param aDelegate Delegate to set.
  */
 - (void)setDelegate:(id <FsprgEmbeddedStoreDelegate>)aDelegate;

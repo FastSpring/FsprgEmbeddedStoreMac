@@ -42,31 +42,33 @@
 - (void)setWebView:(WebView *)aWebView
 {
     if (webView != aWebView) {
-        [webView release];
 		[webView setPostsFrameChangedNotifications:FALSE];
 		[webView setFrameLoadDelegate:nil];
 		[webView setUIDelegate:nil];
 		[webView setApplicationNameForUserAgent:nil];
 		[[NSNotificationCenter defaultCenter] removeObserver:self];
 		
-		
+		[webView release];
         webView = [aWebView retain];
-		[webView setPostsFrameChangedNotifications:TRUE];
-		[webView setFrameLoadDelegate:self];
-		[webView setUIDelegate:self];
-		[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
-		[[NSNotificationCenter defaultCenter] addObserver:self 
-												 selector:@selector(webViewFrameChanged:) 
-													 name:NSViewFrameDidChangeNotification 
-												   object:webView];
-		[[NSNotificationCenter defaultCenter] addObserver:self 
-												 selector:@selector(estimatedLoadingProgressChanged:) 
-													 name:WebViewProgressStartedNotification 
-												   object:webView];
-		[[NSNotificationCenter defaultCenter] addObserver:self 
-												 selector:@selector(estimatedLoadingProgressChanged:) 
-													 name:WebViewProgressEstimateChangedNotification 
-												   object:webView];
+		
+		if (webView) {
+			[webView setPostsFrameChangedNotifications:TRUE];
+			[webView setFrameLoadDelegate:self];
+			[webView setUIDelegate:self];
+			[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/1.0"];
+			[[NSNotificationCenter defaultCenter] addObserver:self 
+													 selector:@selector(webViewFrameChanged:) 
+														 name:NSViewFrameDidChangeNotification 
+													   object:webView];
+			[[NSNotificationCenter defaultCenter] addObserver:self 
+													 selector:@selector(estimatedLoadingProgressChanged:) 
+														 name:WebViewProgressStartedNotification 
+													   object:webView];
+			[[NSNotificationCenter defaultCenter] addObserver:self 
+													 selector:@selector(estimatedLoadingProgressChanged:) 
+														 name:WebViewProgressEstimateChangedNotification 
+													   object:webView];
+		}
     }
 }
 
@@ -75,15 +77,14 @@
 	if(delegate == nil) {
 		NSLog(@"No delegate has been assigned to FsprgEmbeddedStoreController!");
 	}
-    return [[delegate retain] autorelease]; 
+	return delegate;
 }
 
 - (void)setDelegate:(id <FsprgEmbeddedStoreDelegate>)aDelegate
 {
-    if (delegate != aDelegate) {
-        [delegate release];
-        delegate = [aDelegate retain];
-    }
+	// Keep a weak reference to delegates to prevent circular references
+	// See https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmObjectOwnership.html#//apple_ref/doc/uid/20000043-1044135
+	delegate = aDelegate;
 }
 
 - (void)loadWithParameters:(FsprgStoreParameters *)parameters

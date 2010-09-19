@@ -83,6 +83,7 @@
 
 - (void)dealloc
 {
+	[[self storeController] setDelegate:nil];
     [self setStoreController:nil];
 	
     [super dealloc];
