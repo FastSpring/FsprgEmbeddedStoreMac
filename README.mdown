@@ -22,6 +22,7 @@ FastSpring's embedded store consists of a controller with some integration point
 
 To get an idea of how it works the SDK provides two examples and a test application. FastSpring also provides [FsprgEmbeddedStore framework's source code](src/FsprgEmbeddedStore) to ease debugging and to give you a better understanding of what happens behind the scenes. There are separate framework builds for 10.4 and 10.5+. The test application is 10.5+ only and the examples are available as source code. All source code is released under the [MIT license](License.txt). It is open to contributions and its use is unrestricted.
 
+See also [Release Notes](RELEASE_NOTES.html) for the latest changes.
 
 
 # FsprgEmbeddedStore.framework #
@@ -44,10 +45,11 @@ The `FsprgEmbeddedStoreController` controls the connected `WebView` (WebKit). It
 		- (BOOL)isSecure;
 	@end
 
-In addition, it has some integration points defined by the `FsprgEmbeddedStoreDelegate` protocol. It gives notification of the initial load of the store and of order completion. There's also the possibility to define a view to present the order confirmation to the user.
+In addition, it has some integration points defined by the `FsprgEmbeddedStoreDelegate` protocol. It gives notification of the initial load of the store, of subsequent page loads and of order completion. There's also the possibility to define a view to present the order confirmation to the user.
 
 	@protocol FsprgEmbeddedStoreDelegate <NSObject>
-		- (void)didLoadStore;
+		- (void)didLoadStore:(NSURL *)url;
+		- (void)didLoadPage:(NSURL *)url;
 		- (void)didReceiveOrder:(FsprgOrder *)order;
 		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
 	@end

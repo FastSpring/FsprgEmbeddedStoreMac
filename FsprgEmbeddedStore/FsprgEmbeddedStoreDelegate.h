@@ -19,7 +19,12 @@
 /*!
  * Gets called on initial load of the store.
  */
-- (void)didLoadStore;
+- (void)didLoadStore:(NSURL *)url;
+
+/*!
+ * Gets called on subsequent page loads.
+ */
+- (void)didLoadPage:(NSURL *)url;
 
 /*!
  * Gets called after finishing the order process.

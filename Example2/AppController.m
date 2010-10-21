@@ -54,7 +54,11 @@
 
 // FsprgEmbeddedStoreDelegate
 
-- (void)didLoadStore
+- (void)didLoadStore:(NSURL *)url
+{
+}
+
+- (void)didLoadPage:(NSURL *)url
 {
 }
 

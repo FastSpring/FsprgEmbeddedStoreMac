@@ -17,6 +17,9 @@ mkdir -p FsprgEmbeddedStoreMacSDK/README
 cp -R -f README/* FsprgEmbeddedStoreMacSDK/README
 perl ./Markdown_1.0.1/Markdown.pl --html4tags README.mdown >> ./FsprgEmbeddedStoreMacSDK/README.html
 
+# RELEASE_NOTES.html
+perl ./Markdown_1.0.1/Markdown.pl --html4tags RELEASE_NOTES.mdown >> ./FsprgEmbeddedStoreMacSDK/RELEASE_NOTES.html
+
 # License.txt
 cp -R License.txt FsprgEmbeddedStoreMacSDK
 

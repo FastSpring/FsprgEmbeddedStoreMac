@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Release Notes FsprgEmbeddedStoreSDK</title>
+<link rel='stylesheet' href='README/style.css' type='text/css'/>
+</head>
+<body>
+
+<img id="logo" src="README/fastspring_logo.png"/>
+
+<h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
+
+# Release 1.0.3 #
+
+## URL on didLoadStore and didLoadPage ##
+Enhanced `FsprgEmbeddedStoreDelegate didLoadStore` and added `FsprgEmbeddedStoreDelegate didLoadPage`.
+
+	@protocol FsprgEmbeddedStoreDelegate <NSObject>
+		- (void)didLoadStore:(NSURL *)url;
+		- (void)didLoadPage:(NSURL *)url;
+		- (void)didReceiveOrder:(FsprgOrder *)order;
+		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
+	@end
+
+`didLoadPage` will be called on every subsequent page load after `didLoadStore`. It gives the possibility to monitor the URL and resize the window appropriately based on the URL.
+
+## WebKit Inspector ##
+
+Test.app sets the property to enable WebKit's Web Inspector. It can be opened by right clicking anywhere on the web frame and choosing Inspect Element. See also [http://trac.webkit.org/wiki/WebInspector](http://trac.webkit.org/wiki/WebInspector).
+
+
+
+# Release 1.0.2 #
+
+## In-lined with Cocoa's memory management idioms ##
+
+`FsprgEmbeddedStoreController setDelegate` keeps a weak reference to delegates to prevent circular references. See also [Apple Documentation](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmObjectOwnership.html#//apple_ref/doc/uid/20000043-1044135).
+
+
+
+# Release 1.0.1 #
+
+## Order Confirmation MacOS 10.5 ##
+
+Fixed: Order Confirmation View didn't show up on MacOS 10.5.
+
+</body></html>

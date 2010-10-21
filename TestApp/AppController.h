@@ -15,6 +15,7 @@
 	IBOutlet NSWindow *window;
 	IBOutlet NSView* settingsView;
 	IBOutlet NSView* previewView;
+	IBOutlet NSTextField* previewURL;
 	IBOutlet WebView* previewWebView;
 	FsprgStoreParameters *params;
 	FsprgEmbeddedStoreController *storeController;

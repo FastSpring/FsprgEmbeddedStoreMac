@@ -176,7 +176,9 @@
 	[self resizeContentDivE];
 	if(isInitialLoad) {
 		isInitialLoad = FALSE;
-		[[self delegate] didLoadStore];
+		[[self delegate] didLoadStore:[[[frame dataSource] request] URL]];
+	} else {
+		[[self delegate] didLoadPage:[[[frame dataSource] request] URL]];
 	}
 }
 

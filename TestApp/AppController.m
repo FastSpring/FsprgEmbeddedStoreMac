@@ -19,6 +19,8 @@ static NSString * const kParams = @"params";
 	if (self != nil) {
 		[self setStoreController:[[[FsprgEmbeddedStoreController alloc] init] autorelease]];
 
+		[[[NSUserDefaultsController sharedUserDefaultsController] defaults] setBool:TRUE forKey:@"WebKitDeveloperExtras"];
+		
 		NSDictionary *defaultParams = [[[NSUserDefaultsController sharedUserDefaultsController] defaults] dictionaryForKey:kParams];
 		if(defaultParams == nil) {
 			[self setParams:[FsprgStoreParameters parameters]];
@@ -85,9 +87,15 @@ static NSString * const kParams = @"params";
 
 // FsprgEmbeddedStoreDelegate
 
-- (void)didLoadStore
+- (void)didLoadStore:(NSURL *)url
 {
+	[previewURL setStringValue:[url absoluteString]];
 	[previewWebView setHidden:FALSE];
+}
+
+- (void)didLoadPage:(NSURL *)url
+{
+	[previewURL setStringValue:[url absoluteString]];
 }
 
 - (void)didReceiveOrder:(FsprgOrder *)order
