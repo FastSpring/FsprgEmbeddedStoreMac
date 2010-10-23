@@ -11,6 +11,15 @@
 #import "FsprgOrderDocumentRepresentation.h"
 
 
+@interface FsprgEmbeddedStoreController (Private)
+- (void)setIsLoading:(BOOL)aFlag;
+- (void)setEstimatedLoadingProgress:(double)aProgress;
+- (void)setIsSecure:(BOOL)aFlag;
+- (void)setStoreHost:(NSString *)aHost;
+- (void)resizeContentDivE;
+- (void)webViewFrameChanged:(NSNotification *)aNotification;
+@end
+
 @implementation FsprgEmbeddedStoreController
 
 + (void)initialize
@@ -29,7 +38,7 @@
 	if (self != nil) {
 		[self setWebView:nil];
 		[self setDelegate:nil];
-		isInitialLoad = FALSE;
+		[self setStoreHost:nil];
 	}
 	return self;
 }
@@ -98,13 +107,13 @@
 		[[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
 	}
 	
-	isInitialLoad = TRUE;
+	[self setStoreHost:nil];
 	[[webView mainFrame] loadRequest:urlRequest];
 }
 
 - (void)loadWithContentsOfFile:(NSString *)aPath
 {
-	isInitialLoad = TRUE;
+	[self setStoreHost:nil];
 
 	NSString *fileURL = [NSString stringWithFormat:@"file://%@", aPath];
 	[[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:fileURL]]];
@@ -141,6 +150,19 @@
 	// just triggering change observer
 }
 
+- (NSString *)storeHost
+{
+    return [[storeHost retain] autorelease]; 
+}
+
+- (void)setStoreHost:(NSString *)aHost
+{
+    if (storeHost != aHost) {
+		[storeHost release];
+        storeHost = [aHost retain];
+    }
+}
+
 - (void)resizeContentDivE {
 	DOMElement *resizableContentE = [[[[self webView] mainFrame] DOMDocument] getElementById:@"FsprgResizableContent"];
 	if(resizableContentE == nil) {
@@ -157,6 +179,7 @@
 	float newHeight = windowHeight - paddingTop - paddingBottom - pageNavigationHeight;
 	[[resizableContentE style] setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
 }
+
 - (void)webViewFrameChanged:(NSNotification *)aNotification
 {
 	[self resizeContentDivE];
@@ -174,11 +197,28 @@
 	[self setIsSecure:TRUE]; // just triggering change observer
 
 	[self resizeContentDivE];
-	if(isInitialLoad) {
-		isInitialLoad = FALSE;
-		[[self delegate] didLoadStore:[[[frame dataSource] request] URL]];
+	
+	NSURL *newURL = [[[frame dataSource] request] URL];
+	NSString *newStoreHost;
+	if ([@"file" isEqualTo:[newURL scheme]]) {
+		newStoreHost = @"file";
 	} else {
-		[[self delegate] didLoadPage:[[[frame dataSource] request] URL]];
+		newStoreHost = [newURL host];
+	}
+	
+	if([self storeHost] == nil) {
+		[self setStoreHost:newStoreHost];
+		[[self delegate] didLoadStore:newURL];
+	} else {
+		FsprgPageType newPageType;
+		if([newStoreHost isEqualTo:[self storeHost]]) {
+			newPageType = FsprgPageFS;
+		} else if([[newURL host] hasSuffix:@"paypal.com"]) {
+			newPageType = FsprgPagePayPal;
+		} else {
+			newPageType = FsprgPageUnknown;
+		}
+		[[self delegate] didLoadPage:newURL ofType:newPageType];
 	}
 }
 
@@ -207,6 +247,7 @@
 {
     [self setWebView:nil];
     [self setDelegate:nil];
+	[self setStoreHost:nil];
 	
     [super dealloc];
 }

@@ -10,6 +10,13 @@
 #import "FsprgStoreParameters.h";
 #import "FsprgOrder.h";
 
+/*! Type for didLoadPage:ofType: */
+typedef enum {
+	FsprgPageFS,
+	FsprgPagePayPal,
+	FsprgPageUnknown
+} FsprgPageType;
+
 
 /*!
  * Delegate protocol for FsprgEmbeddedStoreController.
@@ -18,13 +25,16 @@
 
 /*!
  * Gets called on initial load of the store.
+ * @param url URL of the loaded store
  */
 - (void)didLoadStore:(NSURL *)url;
 
 /*!
  * Gets called on subsequent page loads.
+ * @param url URL of the loaded page
+ * @param pageType Type of page this url is pointing to
  */
-- (void)didLoadPage:(NSURL *)url;
+- (void)didLoadPage:(NSURL *)url ofType:(FsprgPageType)pageType;
 
 /*!
  * Gets called after finishing the order process.

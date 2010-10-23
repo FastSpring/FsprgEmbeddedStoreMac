@@ -17,7 +17,7 @@
 @interface FsprgEmbeddedStoreController : NSObject {
 	WebView* webView;
 	id <FsprgEmbeddedStoreDelegate> delegate;
-	BOOL isInitialLoad;
+	NSString *storeHost;
 }
 
 - (WebView *)webView;
@@ -63,5 +63,11 @@
  * @result TRUE if connection is secure (SSL)
  */
 - (BOOL)isSecure;
+
+/*!
+ * Host that delivers the store (e.g. sites.fastspring.com).
+ * @result <code>nil</code> until the store has been loaded.
+ */
+- (NSString *)storeHost;
 
 @end

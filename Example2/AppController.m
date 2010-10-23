@@ -58,7 +58,7 @@
 {
 }
 
-- (void)didLoadPage:(NSURL *)url
+- (void)didLoadPage:(NSURL *)url ofType:(FsprgPageType)pageType
 {
 }
 

@@ -90,12 +90,26 @@ static NSString * const kParams = @"params";
 - (void)didLoadStore:(NSURL *)url
 {
 	[previewURL setStringValue:[url absoluteString]];
+	[previewPageType setStringValue:@"@FastSpring"];
+	[previewPageType setHidden:FALSE];
 	[previewWebView setHidden:FALSE];
 }
 
-- (void)didLoadPage:(NSURL *)url
+- (void)didLoadPage:(NSURL *)url ofType:(FsprgPageType)pageType;
 {
 	[previewURL setStringValue:[url absoluteString]];
+	switch (pageType) {
+		case FsprgPageFS:
+			[previewPageType setStringValue:@"@FastSpring"];
+			break;
+		case FsprgPagePayPal:
+			[previewPageType setStringValue:@"@PayPal"];
+			break;
+		case FsprgPageUnknown:
+		default:
+			[previewPageType setStringValue:@"@Unknown"];
+			break;
+	}
 }
 
 - (void)didReceiveOrder:(FsprgOrder *)order

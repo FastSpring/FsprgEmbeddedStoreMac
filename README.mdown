@@ -43,13 +43,20 @@ The `FsprgEmbeddedStoreController` controls the connected `WebView` (WebKit). It
 		- (BOOL)isLoading;
 		- (double)estimatedLoadingProgress;
 		- (BOOL)isSecure;
+		- (NSString *)storeHost;
 	@end
 
 In addition, it has some integration points defined by the `FsprgEmbeddedStoreDelegate` protocol. It gives notification of the initial load of the store, of subsequent page loads and of order completion. There's also the possibility to define a view to present the order confirmation to the user.
 
+	typedef enum {
+		FsprgPageFS,
+		FsprgPagePayPal,
+		FsprgPageUnknown
+	} FsprgPageType;
+
 	@protocol FsprgEmbeddedStoreDelegate <NSObject>
 		- (void)didLoadStore:(NSURL *)url;
-		- (void)didLoadPage:(NSURL *)url;
+		- (void)didLoadPage:(NSURL *)url ofType:(FsprgPageType)pageType;
 		- (void)didReceiveOrder:(FsprgOrder *)order;
 		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
 	@end

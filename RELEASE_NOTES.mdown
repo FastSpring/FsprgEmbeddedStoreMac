@@ -15,9 +15,15 @@
 ## URL on didLoadStore and didLoadPage ##
 Enhanced `FsprgEmbeddedStoreDelegate didLoadStore` and added `FsprgEmbeddedStoreDelegate didLoadPage`.
 
+	typedef enum {
+		FsprgPageFS,
+		FsprgPagePayPal,
+		FsprgPageUnknown
+	} FsprgPageType;
+
 	@protocol FsprgEmbeddedStoreDelegate <NSObject>
 		- (void)didLoadStore:(NSURL *)url;
-		- (void)didLoadPage:(NSURL *)url;
+		- (void)didLoadPage:(NSURL *)url ofType:(FsprgPageType)pageType;
 		- (void)didReceiveOrder:(FsprgOrder *)order;
 		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
 	@end
