@@ -222,6 +222,16 @@
 	}
 }
 
+- (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
+{
+	[[self delegate] webView:sender didFailProvisionalLoadWithError:error forFrame:frame];
+}
+
+- (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
+{
+	[[self delegate] webView:sender didFailLoadWithError:error forFrame:frame];
+}
+
 // WebUIDelegate
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame

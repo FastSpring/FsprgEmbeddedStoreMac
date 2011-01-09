@@ -10,6 +10,22 @@
 
 <h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
 
+# Release 1.0.4 #
+
+## Error Handling ##
+
+There wasn't a way to be notified of errors (e.g. no network connection) from FsprgEmbeddedStore. All you got was a blank white page inside the WebView.
+
+`FsprgEmbeddedStoreDelegate` provides now two new methods to notify the user of any errors. Example1 and Example2 contain an example implementation.
+
+	@protocol FsprgEmbeddedStoreDelegate <NSObject>
+		...
+		- (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame;
+		- (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame;
+	@end
+
+
+
 # Release 1.0.3 #
 
 ## URL on didLoadStore and didLoadPage ##

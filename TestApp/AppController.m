@@ -132,6 +132,16 @@ static NSString * const kParams = @"params";
 	return [orderViewController view];
 }
 
+- (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
+{
+	NSRunAlertPanel(@"Alert", [error localizedDescription], @"OK", nil, nil);
+}
+
+- (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
+{
+	NSRunAlertPanel(@"Alert", [error localizedDescription], @"OK", nil, nil);
+}
+
 // NSApplicationDelegate
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

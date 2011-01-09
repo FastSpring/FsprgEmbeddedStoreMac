@@ -59,6 +59,8 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 		- (void)didLoadPage:(NSURL *)url ofType:(FsprgPageType)pageType;
 		- (void)didReceiveOrder:(FsprgOrder *)order;
 		- (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
+		- (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame;
+		- (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame;
 	@end
 
 
