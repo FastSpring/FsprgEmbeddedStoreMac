@@ -12,10 +12,10 @@ rm -R -f FsprgEmbeddedStoreMacSDK
 zip -r FsprgEmbeddedStoreStyle FsprgEmbeddedStoreStyle -x *.svn* *.DS_Store*
 mv FsprgEmbeddedStoreStyle.zip FsprgEmbeddedStoreMacSDK 
 
-# README.html
-mkdir -p FsprgEmbeddedStoreMacSDK/README
-cp -R -f README/* FsprgEmbeddedStoreMacSDK/README
-perl ./Markdown_1.0.1/Markdown.pl --html4tags README.mdown >> ./FsprgEmbeddedStoreMacSDK/README.html
+# HOW_TO.html
+mkdir -p FsprgEmbeddedStoreMacSDK/HOW_TO
+cp -R -f HOW_TO/* FsprgEmbeddedStoreMacSDK/HOW_TO
+perl ./Markdown_1.0.1/Markdown.pl --html4tags HOW_TO.mdown >> ./FsprgEmbeddedStoreMacSDK/HOW_TO.html
 
 # RELEASE_NOTES.html
 perl ./Markdown_1.0.1/Markdown.pl --html4tags RELEASE_NOTES.mdown >> ./FsprgEmbeddedStoreMacSDK/RELEASE_NOTES.html
