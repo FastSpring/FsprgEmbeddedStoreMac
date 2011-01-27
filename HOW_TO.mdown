@@ -20,7 +20,7 @@
 
 FastSpring's embedded store consists of a controller with some integration points and WebKit's web view. It's thin and very flexible and lets you integrate FastSpring the way that fits best for your application.
 
-To get an idea of how it works the SDK provides two examples and a test application. FastSpring also provides [FsprgEmbeddedStore framework's source code](src/FsprgEmbeddedStore) to ease debugging and to give you a better understanding of what happens behind the scenes. There are separate framework builds for 10.4 and 10.5+. The test application is 10.5+ only and the examples are available as source code. All source code is released under the [MIT license](License.txt). It is open to contributions and its use is unrestricted.
+To get an idea of how it works, the SDK provides two examples and a test application. This SDK contains [FsprgEmbeddedStore framework's source code](src/FsprgEmbeddedStore) to ease debugging and to give you a better understanding of what happens behind the scenes. There are separate framework builds for 10.4 and 10.5+. The test application is 10.5+ only and the examples are available as source code. All source code is released under the [MIT license](License.txt). It is open to contributions and its use is unrestricted.
 
 See also [Release Notes](RELEASE_NOTES.html) for the latest changes.
 

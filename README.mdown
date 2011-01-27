@@ -1,0 +1,22 @@
+# About FastSpring #
+[FastSpring](http://www.fastspring.com) offers an innovative e-commerce engine designed to overcome ease of use, customer service, and cost issues that have plagued software e-commerce companies. We employ a customer-driven, iterative and collaborative Agile development process.
+
+# About FsprgEmbeddedStore SDK #
+
+FastSpring's embedded store consists of a controller with some integration points and WebKit's web view. It's thin and very flexible and lets you integrate FastSpring the way that fits best for your application.
+
+To get an idea of how it works, the SDK provides two examples and a test application. FastSpring provides complete source code to ease debugging and to give you a better understanding of what happens behind the scenes. All source code is released under the [MIT license](FsprgEmbeddedStoreMac/raw/master/License.txt). It is open to contributions and its use is unrestricted.
+
+# How-to build #
+
+You can download the repository and use Xcode to build each part (Framework, Examples and Test app) of it.
+
+Or you can use [build.sh](FsprgEmbeddedStoreMac/raw/master/build.sh) to build the whole SDK which contains all necessary binaries and a nicely formatted documentation (HOW_TO.html).
+
+Or you can download the SDK [here](FsprgEmbeddedStoreMac/downloads) (section Download Packages) if you don't want to build it by yourself.
+
+# How-to integrate
+
+Read our **[Integration Guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk)** to learn how to enable your store for request from FsprgEmbeddedStore.
+
+Download or build the SDK (see "How-to build"), extract, and review the **HOW_TO.html** document. This file contains an overview of the integration process for your Mac application.
