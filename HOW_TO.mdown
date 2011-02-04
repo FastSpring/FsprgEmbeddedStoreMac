@@ -2,13 +2,13 @@
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>Documentation FsprgEmbeddedStoreSDK</title>
-<link rel='stylesheet' href='README/style.css' type='text/css'/>
-<script src='README/jquery-1.4.2.js'></script>
-<script src='README/readme.js'></script>
+<link rel='stylesheet' href='HOW_TO/style.css' type='text/css'/>
+<script src='HOW_TO/jquery-1.4.2.js'></script>
+<script src='HOW_TO/how_to.js'></script>
 </head>
 <body>
 
-<img id="logo" src="README/fastspring_logo.png"/>
+<img id="logo" src="HOW_TO/fastspring_logo.png"/>
 
 <h1 id='header'>FastSpring Embedded Store SDK</h1>
 <div id='summary'></div>
@@ -189,7 +189,7 @@ Here's a real-life example to show the most common case of grabbing the serial n
 
 Example1 app defaults contact fields by accessing MacOS' AddressBook. The order confirmation is a View XIB built inside Interface Builder.
 
-![Example1.app Screenshot](README/example1_screenshot.png "Example1.app Screenshot")
+![Example1.app Screenshot](HOW_TO/example1_screenshot.png "Example1.app Screenshot")
 
 
 ## How-to implement the AppController ##
@@ -253,7 +253,7 @@ Example1 app defaults contact fields by accessing MacOS' AddressBook. The order 
 
 Example2 presents the order confirmation by using HTML, CSS and JavaScript. It uses Matt Gemmell's [MGTemplateEngine](http://mattgemmell.com/2008/05/20/mgtemplateengine-templates-with-cocoa) to render the HTML.
 
-![Example2.app Screenshot](README/example2_screenshot.png "Example2.app Screenshot")
+![Example2.app Screenshot](HOW_TO/example2_screenshot.png "Example2.app Screenshot")
 
 
 ## How-To create order HTML view ##
@@ -323,8 +323,8 @@ As we set `FsprgOrder` to a variable we can now conveniently access the order in
 
 The Test application lets you explore FastSpring's parameters and shows you the native order confirmation result (XML plist format).
 
-![Test.app Settings Screenshot](README/testapp_settings_screenshot.png "Test.app Settings Screenshot")
-![Test.app Results Screenshot](README/testapp_results_screenshot.png "Test.app Results Screenshot")
+![Test.app Settings Screenshot](HOW_TO/testapp_settings_screenshot.png "Test.app Settings Screenshot")
+![Test.app Results Screenshot](HOW_TO/testapp_results_screenshot.png "Test.app Results Screenshot")
 
 You can also store that confirmation result as a plist file and load it by using the `FsprgEmbeddedStoreController`'s `loadWithContentsOfFile:` method. It simplifies the development and testing of the order confirmation view.
 
