@@ -10,6 +10,14 @@
 
 <h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
 
+# Release 1.0.5 #
+
+## Moved to GitHub ##
+
+FastSpring's Embedded Store is now hosted on [GitHub](http://www.github.com).
+
+
+
 # Release 1.0.4 #
 
 ## Error Handling ##
