@@ -2,11 +2,11 @@
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>Release Notes FsprgEmbeddedStoreSDK</title>
-<link rel='stylesheet' href='README/style.css' type='text/css'/>
+<link rel='stylesheet' href='HOW_TO/style.css' type='text/css'/>
 </head>
 <body>
 
-<img id="logo" src="README/fastspring_logo.png"/>
+<img id="logo" src="HOW_TO/fastspring_logo.png"/>
 
 <h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
 
