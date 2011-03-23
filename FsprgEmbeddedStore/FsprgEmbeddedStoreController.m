@@ -213,7 +213,7 @@
 		FsprgPageType newPageType;
 		if([newStoreHost isEqualTo:[self storeHost]]) {
 			newPageType = FsprgPageFS;
-		} else if([[newURL host] hasSuffix:@"paypal.com"]) {
+		} else if([newStoreHost hasSuffix:@"paypal.com"]) {
 			newPageType = FsprgPagePayPal;
 		} else {
 			newPageType = FsprgPageUnknown;
