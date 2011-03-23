@@ -10,6 +10,37 @@
 
 <h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
 
+# Release 1.0.6 #
+
+## Coupon Parameter ##
+
+`FsprgStoreParameters` has now a coupon parameter.
+
+	/*!
+	 * Pass a coupon code via the URL to automatically apply a coupon to the order so that the customer 
+	 * does not need to enter it. A corresponding coupon code must be setup and associated with a promotion.
+	 * Example: DECSPECIAL987
+	 */
+	- (NSString *)coupon;
+	- (void)setCoupon:(NSString *)aCoupon;
+
+## Order total and item total in USD ##
+
+`FsprgOrder` and `FsprgOrderItem` provide now totals in USD.
+
+	@interface FsprgOrder : NSObject {
+	...
+	- (NSNumber *)orderTotalUSD;
+	...
+	
+	@interface FsprgOrderItem : NSObject {
+	...
+	- (NSNumber *)itemTotal;
+	- (NSNumber *)itemTotalUSD;
+	...
+
+	
+
 # Release 1.0.5 #
 
 ## Moved to GitHub ##
