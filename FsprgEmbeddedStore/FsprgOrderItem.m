@@ -52,6 +52,16 @@
 	return [[self raw] valueForKey:@"Quantity"];
 }
 
+- (NSNumber *)itemTotal
+{
+	return [[self raw] valueForKey:@"ItemTotal"];
+}
+
+- (NSNumber *)itemTotalUSD
+{
+	return [[self raw] valueForKey:@"ItemTotalUSD"];
+}
+
 - (FsprgFulfillment *)fulfillment
 {
 	return [FsprgFulfillment fulfillmentWithDictionary:[[self raw] valueForKey:@"Fulfillment"]];

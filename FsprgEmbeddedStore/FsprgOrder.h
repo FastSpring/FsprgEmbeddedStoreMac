@@ -29,6 +29,7 @@
 - (NSString *)orderLanguage;
 - (NSString *)orderCurrency;
 - (NSNumber *)orderTotal;
+- (NSNumber *)orderTotalUSD;
 - (NSString *)customerFirstName;
 - (NSString *)customerLastName;
 - (NSString *)customerCompany;

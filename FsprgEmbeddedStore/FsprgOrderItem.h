@@ -29,6 +29,8 @@
 - (NSString *)productName;
 - (NSString *)productDisplay;
 - (NSNumber *)quantity;
+- (NSNumber *)itemTotal;
+- (NSNumber *)itemTotalUSD;
 - (FsprgFulfillment *)fulfillment;
 
 /*!

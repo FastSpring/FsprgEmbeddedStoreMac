@@ -70,6 +70,11 @@
 	return [[self raw] valueForKey:@"OrderTotal"];
 }
 
+- (NSNumber *)orderTotalUSD
+{
+	return [[self raw] valueForKey:@"OrderTotalUSD"];
+}
+
 - (NSString *)customerFirstName
 {
 	return [[self raw] valueForKey:@"CustomerFirstName"];
