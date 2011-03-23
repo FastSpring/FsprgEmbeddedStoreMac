@@ -24,6 +24,7 @@ static NSString * const kCampaign = @"campaign";
 static NSString * const kOption = @"option";
 static NSString * const kReferrer = @"referrer";
 static NSString * const kSource = @"source";
+static NSString * const kCoupon = @"coupon";
 static NSString * const kContactFname = @"contact_fname";
 static NSString * const kContactLname = @"contact_lname";
 static NSString * const kContactEmail = @"contact_email";
@@ -47,6 +48,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 											NSStringFromSelector(@selector(option)),
 											NSStringFromSelector(@selector(referrer)),
 											NSStringFromSelector(@selector(source)),
+											NSStringFromSelector(@selector(coupon)),
 											NSStringFromSelector(@selector(contactFname)),
 											NSStringFromSelector(@selector(contactLname)),
 											NSStringFromSelector(@selector(contactEmail)),
@@ -248,6 +250,15 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (void)setSource:(NSString *)aSource
 {
 	[self setObject:aSource forKey:kSource];
+}
+
+- (NSString *)coupon
+{
+	return [[self raw] objectForKey:kCoupon];
+}
+- (void)setCoupon:(NSString *)aCoupon
+{
+	[self setObject:aCoupon forKey:kCoupon];
 }
 
 - (BOOL)hasContactDefaults
