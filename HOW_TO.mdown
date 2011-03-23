@@ -144,6 +144,7 @@ Here's a real-life example to show the most common case of grabbing the serial n
 	- (NSString *)orderLanguage;
 	- (NSString *)orderCurrency;
 	- (NSNumber *)orderTotal;
+	- (NSNumber *)orderTotalUSD;
 	- (NSString *)customerFirstName;
 	- (NSString *)customerLastName;
 	- (NSString *)customerCompany;
@@ -156,6 +157,8 @@ Here's a real-life example to show the most common case of grabbing the serial n
 	- (NSString *)productName;
 	- (NSString *)productDisplay;
 	- (NSNumber *)quantity;
+	- (NSNumber *)itemTotal;
+	- (NSNumber *)itemTotalUSD;
 	- (FsprgFulfillment *)fulfillment;
 	- (FsprgLicense *)license;         // Shortcut for [[self fulfillment] valueForKey:@"license"]
 	- (FsprgFileDownload *)download;   // Shortcut for [[self fulfillment] valueForKey:@"download"]
