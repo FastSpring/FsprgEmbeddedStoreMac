@@ -10,6 +10,18 @@
 
 <h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
 
+# Release 1.0.7 #
+
+## Providing SubscriptionReference
+
+`FsprgOrderItem` provides a subscriptionReference attribute if the order was a subscription. This reference can be used to make calls to FastSpring's [Subscription API](https://support.fastspring.com/entries/236487-api-subscriptions).
+
+	@interface FsprgOrderItem : NSObject {
+	...
+	- (NSString *)subscriptionReference;
+	...
+
+
 # Release 1.0.6 #
 
 ## Coupon Parameter ##
