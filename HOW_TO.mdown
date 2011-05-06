@@ -159,9 +159,10 @@ Here's a real-life example to show the most common case of grabbing the serial n
 	- (NSNumber *)quantity;
 	- (NSNumber *)itemTotal;
 	- (NSNumber *)itemTotalUSD;
+	- (NSString *)subscriptionReference; // See https://support.fastspring.com/entries/236487-api-subscriptions
 	- (FsprgFulfillment *)fulfillment;
-	- (FsprgLicense *)license;         // Shortcut for [[self fulfillment] valueForKey:@"license"]
-	- (FsprgFileDownload *)download;   // Shortcut for [[self fulfillment] valueForKey:@"download"]
+	- (FsprgLicense *)license;           // Shortcut for [[self fulfillment] valueForKey:@"license"]
+	- (FsprgFileDownload *)download;     // Shortcut for [[self fulfillment] valueForKey:@"download"]
 
 ### FsprgFulfillment.h ###
 

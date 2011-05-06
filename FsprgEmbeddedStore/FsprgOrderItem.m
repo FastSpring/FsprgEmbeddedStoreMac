@@ -62,6 +62,11 @@
 	return [[self raw] valueForKey:@"ItemTotalUSD"];
 }
 
+- (NSString *)subscriptionReference
+{
+	return [[self raw] valueForKey:@"SubscriptionReference"];
+}
+
 - (FsprgFulfillment *)fulfillment
 {
 	return [FsprgFulfillment fulfillmentWithDictionary:[[self raw] valueForKey:@"Fulfillment"]];
