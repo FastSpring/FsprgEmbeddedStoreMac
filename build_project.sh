@@ -16,8 +16,6 @@ if [[ $CONFIGURATION = "Source" ]]; then
 	rm $TARGET_DIR/$PRODUCT_NAME/$PRODUCT_NAME.xcodeproj/*.pbxuser
 	# remove build directory
 	rm -R -f "$TARGET_DIR/$PRODUCT_NAME/build"
-	# remove .svn directories
-	find "$TARGET_DIR/$PRODUCT_NAME" -name .svn -print0 | xargs -0 rm -rf
 	# remove .DS_Store directories
 	find "$TARGET_DIR/$PRODUCT_NAME" -name .DS_Store -print0 | xargs -0 rm -rf
 else

@@ -9,7 +9,7 @@ rm -R -f FsprgEmbeddedStoreMacSDK
 ./build_project.sh "Example2" "Source" "FsprgEmbeddedStoreMacSDK/src"
 
 # FsprgEmbeddedStoreStyle.zip
-zip -r FsprgEmbeddedStoreStyle FsprgEmbeddedStoreStyle -x *.svn* *.DS_Store*
+zip -r FsprgEmbeddedStoreStyle FsprgEmbeddedStoreStyle -x *.DS_Store*
 mv FsprgEmbeddedStoreStyle.zip FsprgEmbeddedStoreMacSDK 
 
 # HOW_TO.html
