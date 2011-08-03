@@ -10,6 +10,13 @@
 
 <h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
 
+# Release 1.0.8 #
+
+## Solved interference with Safari Plugins
+
+Safari Plugins which intercepts the text/xml and application/xml content types got in the way of our Embedded Store interception while showing the order confirmation. Customers saw the source (plist) instead of the order confirmation view. We switched the content type to application/x-fsprgorder+xml to prevent any interference with Safari Plugins.
+
+
 # Release 1.0.7 #
 
 ## Providing SubscriptionReference
