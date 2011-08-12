@@ -13,11 +13,11 @@
 		46886FB311481087000BC887 /* OrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46886FB111481087000BC887 /* OrderView.m */; };
 		46A03C941152F1EE005B8EA0 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */; };
 		46A03C971152F1F6005B8EA0 /* FsprgEmbeddedStore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */; };
+		46CB777713F53A9000C768F5 /* toolbarPreview.png in Resources */ = {isa = PBXBuildFile; fileRef = 46CB777613F53A9000C768F5 /* toolbarPreview.png */; };
 		46F4DFB9113EDD7C00ECAFE6 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F4DFB5113EDD7C00ECAFE6 /* AppController.h */; };
 		46F4DFBA113EDD7C00ECAFE6 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DFB6113EDD7C00ECAFE6 /* AppController.m */; };
 		46F4DFBB113EDD7C00ECAFE6 /* OrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */; };
 		46F4DFBC113EDD7C00ECAFE6 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DFB8113EDD7C00ECAFE6 /* OrderViewController.m */; };
-		46F4E1881140383E00ECAFE6 /* toolbarPreview.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F4E1871140383E00ECAFE6 /* toolbarPreview.png */; };
 		46F4E25A1140675000ECAFE6 /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F4E2591140675000ECAFE6 /* OrderView.xib */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -53,11 +53,11 @@
 		46886FB011481087000BC887 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
 		46886FB111481087000BC887 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
 		46A03C931152F1EE005B8EA0 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FsprgEmbeddedStore.framework; path = "../FsprgEmbeddedStore/build/Release 10.5+/FsprgEmbeddedStore.framework"; sourceTree = SOURCE_ROOT; };
+		46CB777613F53A9000C768F5 /* toolbarPreview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarPreview.png; sourceTree = "<group>"; };
 		46F4DFB5113EDD7C00ECAFE6 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
 		46F4DFB6113EDD7C00ECAFE6 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = SOURCE_ROOT; };
 		46F4DFB7113EDD7C00ECAFE6 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = SOURCE_ROOT; };
 		46F4DFB8113EDD7C00ECAFE6 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = SOURCE_ROOT; };
-		46F4E1871140383E00ECAFE6 /* toolbarPreview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toolbarPreview.png; path = "../../../Documents/Cocoa/Classic_Icons/!PNG/32/toolbarPreview.png"; sourceTree = SOURCE_ROOT; };
 		46F4E2591140675000ECAFE6 /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,11 +140,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46CB777613F53A9000C768F5 /* toolbarPreview.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				46F4E2591140675000ECAFE6 /* OrderView.xib */,
-				46F4E1871140383E00ECAFE6 /* toolbarPreview.png */,
 				4684D94C114A31F300CFE920 /* APPL.icns */,
 				460326091158B35F00A5554B /* IsSecureIcon.png */,
 			);
@@ -206,7 +206,6 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TestApp" */;
 			compatibilityVersion = "Xcode 3.0";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -230,10 +229,10 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				46F4E1881140383E00ECAFE6 /* toolbarPreview.png in Resources */,
 				46F4E25A1140675000ECAFE6 /* OrderView.xib in Resources */,
 				4684D94D114A31F300CFE920 /* APPL.icns in Resources */,
 				4603260B1158B36000A5554B /* IsSecureIcon.png in Resources */,
+				46CB777713F53A9000C768F5 /* toolbarPreview.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
