@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "FsprgStoreParameters.h";
-#import "FsprgOrder.h";
+#import "FsprgStoreParameters.h"
+#import "FsprgOrder.h"
 
 /*! Type for didLoadPage:ofType: */
 typedef enum {
