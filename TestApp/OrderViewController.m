@@ -27,7 +27,7 @@
 - (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
     if (returnCode == NSOKButton) {
-        [self setFileName:[sheet filename]];
+        [self setFileName:[[sheet URL] path]];
 		
 		NSError *error = nil;
 		[[self representedObject] writeToFile:[self fileName] atomically:FALSE encoding:NSUTF8StringEncoding error:&error];
@@ -39,12 +39,19 @@
     NSSavePanel* savePanel = [NSSavePanel savePanel];
 
 	[savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"plist"]];
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+    [savePanel beginSheetModalForWindow:[[self view] window]
+                      completionHandler:^(NSInteger result) {
+                          [self savePanelDidEnd:savePanel returnCode:result contextInfo:nil];
+                      }];
+#else
 	[savePanel beginSheetForDirectory:nil
 								 file:[[self fileName] lastPathComponent]
 					   modalForWindow:[[self view] window]
 						modalDelegate:self
 					   didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:) 
 						  contextInfo:nil];
+#endif
 }
 
 - (void)dealloc

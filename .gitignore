@@ -1,6 +1,7 @@
 Example1/build/
 Example2/build/
-FsprgEmbeddedStore/build/
 TestApp/build
 *.mode1v3
 *.pbxuser
+xcuserdata
+.DS_Store

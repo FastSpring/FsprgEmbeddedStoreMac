@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import <FsprgEmbeddedStore/FsprgEmbeddedStore.h>
+#import "FsprgEmbeddedStore.h"
 
 
 @interface AppController : NSObject <FsprgEmbeddedStoreDelegate> {

@@ -64,8 +64,10 @@ static NSString * const kParams = @"params";
 - (void)awakeFromNib
 {
 	[[self storeController] setWebView:previewWebView];
-	[[window toolbar] setSelectedItemIdentifier:@"settings"];
-	[self switchToSettings:nil];
+    
+    NSToolbarItem *firstItem = [[[window toolbar] items] objectAtIndex:0];
+	[[window toolbar] setSelectedItemIdentifier:[firstItem itemIdentifier]];
+    [[firstItem target] performSelector:[firstItem action]];
 }
 
 - (IBAction)switchToSettings:(id)sender
