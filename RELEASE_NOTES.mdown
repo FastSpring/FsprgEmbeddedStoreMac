@@ -1,14 +1,12 @@
-<html>
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<title>Release Notes FsprgEmbeddedStoreSDK</title>
-<link rel='stylesheet' href='HOW_TO/style.css' type='text/css'/>
-</head>
-<body>
+# FastSpring Embedded Store SDK Release Notes
 
-<img id="logo" src="HOW_TO/fastspring_logo.png"/>
 
-<h1 id='header'>FastSpring Embedded Store SDK<br/>Release Notes</h1>
+# Release 1.0.9 #
+
+## Simplified and made projects Xcode 3.2 compatible
+
+FsprgEmbeddedStore is no longer a Framework and we don't provide builds anymore. You can directly clone or fork our git repository through GitHub. As we're already providing source code, you can simply reference FsprgEmbeddedStoreMac/FsprgEmbeddedStore from your App. If you'd like to run our examples or test app, simply run them through Xcode.
+
 
 # Release 1.0.8 #
 
@@ -123,5 +121,3 @@ Test.app sets the property to enable WebKit's Web Inspector. It can be opened by
 ## Order Confirmation MacOS 10.5 ##
 
 Fixed: Order Confirmation View didn't show up on MacOS 10.5.
-
-</body></html>
