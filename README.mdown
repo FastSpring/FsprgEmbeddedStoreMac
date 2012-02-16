@@ -49,18 +49,19 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 ## How-to embed it ##
 
 1. [Clone or fork](http://help.github.com/fork-a-repo) our repository.
-2. In Xcode, perform File/Add Files to "Your App"... and choose the directory `FsprgEmbeddedStoreMac/FsprgEmbeddedStore`. We suggest to uncheck the option `Copy items into destination group's folder`.
-3. Delete references to `FsprgEmbeddedStoreMac/FsprgEmbeddedStore/Tests` if you don't need FsprgEmbeddedStore unit tests.
-4. Add WebKit.framework to your Targets
+2. Open your project in Xcode.
+3. Perform File/Add Files to "Your App"... and choose the directory `FsprgEmbeddedStoreMac/FsprgEmbeddedStore`. We suggest to uncheck the option `Copy items into destination group's folder`.
+4. Delete reference to `FsprgEmbeddedStoreMac/FsprgEmbeddedStore/Tests` (in your project) if you don't need FsprgEmbeddedStore unit tests.
+5. Add WebKit.framework to your Targets.
 
 
 ## How-to use it ##
 
-1. Read our **[Integration Guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk)** to learn how to enable your store for requests from FsprgEmbeddedStore.
-2. Create an `AppController` and use `FsprgEmbeddedStoreController`. Example1.app and Example2.app are showing how to implement the `AppController` in detail.
-3. Open MainMenu.nib
-4. Create an instance of `AppController` inside Interface Builder
-5. Drag WebKit control onto screen and connect it to the storeView Outlet of `AppController`
+1. Read our [Integration Guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how to enable your store for FsprgEmbeddedStore requests.
+2. Create an `AppController` and use `FsprgEmbeddedStoreController`. Example1.app and Example2.app are showing how to implement an `AppController` in detail.
+3. Open MainMenu.nib.
+4. Create an instance of `AppController` inside Interface Builder.
+5. Drag WebKit control onto screen and connect it to the storeView Outlet of `AppController`.
 
 ### Example: AppController.h ###
 
@@ -303,7 +304,7 @@ As we set `FsprgOrder` to a variable we can now conveniently access the order in
 
 The Test application lets you explore FastSpring's parameters and shows you the native order confirmation result (XML plist format).
 
-![Test.app Settings Screenshot](FsprgEmbeddedStoreMac/raw/master/README/testapp_settings_screenshot.png "Test.app Settings Screenshot")
+![Test.app Settings Screenshot](FsprgEmbeddedStoreMac/raw/master/README/testapp_settings_screenshot.png "Test.app Settings Screenshot")&nbsp;
 ![Test.app Results Screenshot](FsprgEmbeddedStoreMac/raw/master/README/testapp_results_screenshot.png "Test.app Results Screenshot")
 
 You can also store that confirmation result as a plist file and load it by using the `FsprgEmbeddedStoreController`'s `loadWithContentsOfFile:` method. It simplifies the development and testing of the order confirmation view.
