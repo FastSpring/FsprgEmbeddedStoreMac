@@ -172,7 +172,7 @@ Here's a real-life example to show the most common case of grabbing the serial n
 
 Example1 app defaults contact fields by accessing MacOS' AddressBook. The order confirmation is a View XIB built inside Interface Builder.
 
-![Example1.app Screenshot](FsprgEmbeddedStoreMac/raw/master/README/example1_screenshot.png "Example1.app Screenshot")
+![Example1.app Screenshot](https://github.com/FastSpring/FsprgEmbeddedStoreMac/raw/master/README/example1_screenshot.png "Example1.app Screenshot")
 
 
 ## How-to implement the AppController ##
@@ -235,7 +235,7 @@ Example1 app defaults contact fields by accessing MacOS' AddressBook. The order 
 
 Example2 presents the order confirmation by using HTML, CSS and JavaScript. It uses Matt Gemmell's [MGTemplateEngine](http://mattgemmell.com/2008/05/20/mgtemplateengine-templates-with-cocoa) to render the HTML.
 
-![Example2.app Screenshot](FsprgEmbeddedStoreMac/raw/master/README/example2_screenshot.png "Example2.app Screenshot")
+![Example2.app Screenshot](https://github.com/FastSpring/FsprgEmbeddedStoreMac/raw/master/README/example2_screenshot.png "Example2.app Screenshot")
 
 
 ## How-To create order HTML view ##
@@ -304,7 +304,7 @@ As we set `FsprgOrder` to a variable we can now conveniently access the order in
 
 The Test application lets you explore FastSpring's parameters and shows you the native order confirmation result (XML plist format).
 
-![Test.app Settings Screenshot](FsprgEmbeddedStoreMac/raw/master/README/testapp_settings_screenshot.png "Test.app Settings Screenshot")&nbsp;
-![Test.app Results Screenshot](FsprgEmbeddedStoreMac/raw/master/README/testapp_results_screenshot.png "Test.app Results Screenshot")
+![Test.app Settings Screenshot](https://github.com/FastSpring/FsprgEmbeddedStoreMac/raw/master/README/testapp_settings_screenshot.png "Test.app Settings Screenshot")&nbsp;
+![Test.app Results Screenshot](https://github.com/FastSpring/FsprgEmbeddedStoreMac/raw/master/README/testapp_results_screenshot.png "Test.app Results Screenshot")
 
 You can also store that confirmation result as a plist file and load it by using the `FsprgEmbeddedStoreController`'s `loadWithContentsOfFile:` method. It simplifies the development and testing of the order confirmation view.
