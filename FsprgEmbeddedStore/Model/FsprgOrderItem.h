@@ -31,11 +31,18 @@
 - (NSNumber *)quantity;
 - (NSNumber *)itemTotal;
 - (NSNumber *)itemTotalUSD;
+
 /*!
  * This reference can be used to make calls to FastSpring's Subscription API.
  * See https://support.fastspring.com/entries/236487-api-subscriptions
  */
 - (NSString *)subscriptionReference;
+
+/*!
+ * This URL can be presented to the customer to manage their subscription.
+ */
+- (NSURL *)subscriptionCustomerURL;
+
 - (FsprgFulfillment *)fulfillment;
 
 /*!
