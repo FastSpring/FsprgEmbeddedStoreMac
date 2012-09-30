@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 #import "FsprgStoreParameters.h"
 #import "FsprgOrder.h"
 
