@@ -105,7 +105,7 @@ Here's a real-life example to show the most common case of grabbing the serial n
 	   NSEnumerator *e = [[order orderItems] objectEnumerator];
 	   FsprgOrderItem *item = nil;
 	   while (item = [e nextObject]) {
-	       if ([[item productName] hasPrefix:@"MyItemNamePrefix") {
+	       if ([[item productName] hasPrefix:@"MyItemNamePrefix"]) {
 	           NSString *userName = [[item license] licenseName];
 	           NSString *serialNumber = [[item license] firstLicenseCode];
 	           if ([[[item productName] lowercaseString] rangeOfString:@"upgrade"].location != NSNotFound) {
