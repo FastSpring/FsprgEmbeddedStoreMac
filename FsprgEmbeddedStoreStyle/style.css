@@ -1,0 +1,137 @@
+/* FastSpring Mac Embedded Store Styles */
+body {
+	font: -webkit-control;
+	font-family: "Lucida Grande", helvetica, sans-serif;
+	color: -webkit-text;
+	background: white;
+	margin: 0px;
+	padding-bottom: 58px;
+}
+body:before {
+	content: "";
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+	box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+	z-index: 100;
+}
+h1,h2,h3,h4 {
+	font-family: "Gill Sans", helvetica, sans-serif;
+	font-weight: 500;
+}
+h3 {
+	font-size: 1.3em;
+}	
+
+#FsprgResizableContent {
+	padding: 20px 30px;
+	overflow: auto;
+}
+
+.store-page-navigation {
+	position:fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 48px;
+	padding:0;
+	margin: 0;
+	border-top: 1px solid #7f7f7f;
+	background: -webkit-gradient(
+   					 	linear,
+    					left bottom,
+    					left top,
+    					color-stop(0.0, rgb(153,153,153)),
+    					color-stop(0.97, rgb(197,197,197)),
+    					color-stop(1, rgb(234,234,234)));
+}
+.store-page-navigation .store-action-command {
+	float: right;
+	margin-right: 30px;
+	margin-top: 10px;
+}
+.store-product-detail-image img, 
+.store-product-list-item-image img  {
+    margin-right: 1em;
+    padding: .5em;
+}
+.store-product-list-item-description-short {
+	margin-top: .5em;
+}
+
+.store-decorate-silk input[type=text] {
+	height: 18px;
+	-webkit-border-radius: 4px;
+	-webkit-appearance: textfield;
+	background: white;
+	font: -webkit-control;
+	padding: 2px 3px;
+}
+
+.store-decorate-silk input[type=password] {
+	height: 18px;
+	-webkit-border-radius: 0px;
+	-webkit-appearance: textfield;
+	background: white;
+	font: -webkit-control;
+}
+
+.store-decorate-silk input[type=submit] {
+	-webkit-appearance: button;	
+	font: -webkit-control;
+	color: -webkit-text;
+	padding: 5px;
+}
+
+.core-form-field-label {
+	margin: 0 0 4px 0;
+}
+.core-form-field-body {
+	padding-left: 0px;
+	margin: 0px;
+}
+.core-form-field-body-note {
+    color: #555;
+	padding-top: 3px;
+}
+#store-variation-selection-body {
+	-webkit-appearance: listbox;
+}
+
+a {
+	text-decoration: none;
+}
+.store-action-command > a:hover {
+	color: -webkit-text;
+}
+.store-action-command > a:visited {
+	color: -webkit-text;
+}
+.store-order-item-base-title {
+    font-weight: 500;
+	font-size: 1.2em;
+}
+.store-action-command, 
+.store-product-detail-offer-title {
+	-webkit-appearance: button;	
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	font: -webkit-control;
+	color: -webkit-text;
+	cursor: default;
+	padding: 5px;
+}
+.store-action-title {
+	font: -webkit-control;
+	color: -webkit-text;
+}
+
+#store-processing-element {
+	font: -webkit-control;
+	background-image: none;
+	color: -webkit-text;
+	padding-right: 10px;
+}
