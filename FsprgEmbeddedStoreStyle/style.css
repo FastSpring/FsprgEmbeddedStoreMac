@@ -117,6 +117,8 @@ a {
 .store-action-command, 
 .store-product-detail-offer-title {
 	-webkit-appearance: button;	
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
 	font: -webkit-control;
 	color: -webkit-text;
 	cursor: default;
