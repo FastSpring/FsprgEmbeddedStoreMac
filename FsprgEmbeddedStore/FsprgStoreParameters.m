@@ -10,6 +10,7 @@
 
 NSString * const kFsprgOrderProcessDetail = @"detail";
 NSString * const kFsprgOrderProcessInstant = @"instant";
+NSString * const kFsprgOrderProcessCheckout = @"checkout";
 
 NSString * const kFsprgModeActive = @"active";
 NSString * const kFsprgModeActiveTest = @"active.test";
@@ -103,7 +104,10 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSURLRequest *)toURLRequest
 {
-	return [NSMutableURLRequest requestWithURL:[self toURL]];
+	NSURL *toURL = [self toURL];
+	if (toURL)
+		return [NSMutableURLRequest requestWithURL:toURL];
+	return nil;
 }
 
 - (NSURL *)toURL
@@ -126,8 +130,12 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 		urlAsStr = [NSString stringWithFormat:@"%@://sites.fastspring.com/%@/product/%@", protocol, storeIdEncoded, productIdEncoded];
 	} else if([kFsprgOrderProcessInstant isEqualTo:[self orderProcessType]]) {
 		urlAsStr = [NSString stringWithFormat:@"https://sites.fastspring.com/%@/instant/%@", storeIdEncoded, productIdEncoded];
-	} else {
+	} else if ([kFsprgOrderProcessCheckout isEqualTo:[self orderProcessType]]) {
+		urlAsStr = [NSString stringWithFormat:@"https://sites.fastspring.com/%@/checkout/%@", storeIdEncoded, productIdEncoded];
+	}
+	else {
 		NSAssert1(FALSE, @"OrderProcessType '%@' unknown.", [self orderProcessType]);
+		return nil;
 	}
 
 	NSMutableArray *keys = [NSMutableArray arrayWithArray:[[self raw] allKeys]];

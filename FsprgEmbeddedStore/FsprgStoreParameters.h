@@ -11,6 +11,7 @@
 /*! Constants for setOrderProcessType: */
 extern NSString * const kFsprgOrderProcessDetail;
 extern NSString * const kFsprgOrderProcessInstant;
+extern NSString * const kFsprgOrderProcessCheckout;
 
 /*! Constants for setMode: */
 extern NSString * const kFsprgModeActive;
