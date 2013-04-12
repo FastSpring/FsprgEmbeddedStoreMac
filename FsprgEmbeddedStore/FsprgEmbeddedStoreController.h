@@ -64,6 +64,12 @@
  */
 - (BOOL)isSecure;
 
+/**
+ *
+ * @result NSArray containing SecCertificateRef objects for the host of the main frame, if it was loaded via https.
+ */
+- (NSArray *)securityCertificates;
+
 /*!
  * Host that delivers the store (e.g. sites.fastspring.com).
  * @result <code>nil</code> until the store has been loaded.

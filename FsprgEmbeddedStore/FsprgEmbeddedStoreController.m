@@ -10,17 +10,27 @@
 #import "FsprgOrderView.h"
 #import "FsprgOrderDocumentRepresentation.h"
 
+@interface FsprgEmbeddedStoreController ()
+
+@property (nonatomic, retain) NSMutableDictionary *hostCertificates;
+@property (nonatomic, retain) NSMapTable *connectionsToRequests;
+
+@end
 
 @interface FsprgEmbeddedStoreController (Private)
+
 - (void)setIsLoading:(BOOL)aFlag;
 - (void)setEstimatedLoadingProgress:(double)aProgress;
 - (void)setIsSecure:(BOOL)aFlag;
 - (void)setStoreHost:(NSString *)aHost;
 - (void)resizeContentDivE;
 - (void)webViewFrameChanged:(NSNotification *)aNotification;
+
 @end
 
 @implementation FsprgEmbeddedStoreController
+
+@synthesize hostCertificates=_hostCertificates;
 
 + (void)initialize
 {
@@ -36,8 +46,21 @@
 		[self setWebView:nil];
 		[self setDelegate:nil];
 		[self setStoreHost:nil];
+		self.hostCertificates = [NSMutableDictionary dictionary];
+		self.connectionsToRequests = [NSMapTable mapTableWithStrongToStrongObjects];
 	}
 	return self;
+}
+
+- (void)dealloc
+{
+    [self setWebView:nil];
+    [self setDelegate:nil];
+	[self setStoreHost:nil];
+	[_hostCertificates release];
+	[_connectionsToRequests release];
+	
+    [super dealloc];
 }
 
 - (WebView *)webView
@@ -51,6 +74,7 @@
 		[webView setPostsFrameChangedNotifications:FALSE];
 		[webView setFrameLoadDelegate:nil];
 		[webView setUIDelegate:nil];
+		[webView setResourceLoadDelegate:nil];
 		[webView setApplicationNameForUserAgent:nil];
 		[[NSNotificationCenter defaultCenter] removeObserver:self];
 		
@@ -61,6 +85,7 @@
 			[webView setPostsFrameChangedNotifications:TRUE];
 			[webView setFrameLoadDelegate:self];
 			[webView setUIDelegate:self];
+			[webView setResourceLoadDelegate:self];
 			[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/2.0"];
 			[[NSNotificationCenter defaultCenter] addObserver:self 
 													 selector:@selector(webViewFrameChanged:) 
@@ -96,6 +121,8 @@
 - (void)loadWithParameters:(FsprgStoreParameters *)parameters
 {
 	NSURLRequest *urlRequest = [parameters toURLRequest];
+	if (urlRequest == nil)
+		return;
 
 	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[urlRequest URL]];
 	NSUInteger i, count = [cookies count];
@@ -151,6 +178,15 @@
 	// just triggering change observer
 }
 
+- (NSArray *)securityCertificates
+{
+	if ([self isSecure] == NO)
+		return nil;
+	NSString *mainFrameURL = [[self webView] mainFrameURL];
+	NSString *host = [[NSURL URLWithString:mainFrameURL] host];
+	return [self.hostCertificates objectForKey:host];
+}
+
 - (NSString *)storeHost
 {
     return [[storeHost retain] autorelease]; 
@@ -165,13 +201,22 @@
 }
 
 - (void)resizeContentDivE {
+	if ([self.delegate respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)])
+	{
+		if ([self.delegate shouldStoreControllerFixContentDivHeight:self] == NO)
+			return;
+	}
+	
 	DOMElement *resizableContentE = [[[[self webView] mainFrame] DOMDocument] getElementById:@"FsprgResizableContent"];
 	if(resizableContentE == nil) {
 		return;
 	}
 	
 	float windowHeight = [[self webView] frame].size.height;
-	float pageNavigationHeight = [[[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"] floatValue];
+	id result = [[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
+	if (result == [WebUndefined undefined])
+		return;
+	float pageNavigationHeight = [(NSString *)result floatValue];
 	
 	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
 	float paddingTop = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingTop] length]-2] floatValue];
@@ -237,7 +282,14 @@
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
-	NSRunAlertPanel(@"Alert", message, @"OK", nil, nil);
+	NSString *title = [sender mainFrameTitle];
+	NSAlert *alertPanel = [NSAlert alertWithMessageText:title defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
+	[alertPanel beginSheetModalForWindow:[sender window] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+}
+
+- (NSUInteger)webView:(WebView *)sender dragDestinationActionMaskForDraggingInfo:(id <NSDraggingInfo>)draggingInfo
+{
+    return WebDragDestinationActionNone;
 }
 
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request
@@ -254,13 +306,68 @@
 	return subWebView;
 }
 
-- (void)dealloc
+#pragma mark - WebResourceLoadDelegate
+
+- (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource
 {
-    [self setWebView:nil];
-    [self setDelegate:nil];
-	[self setStoreHost:nil];
+	NSURL *URL = [request URL];
+	NSString *host = [URL host];
+	if ([self.hostCertificates objectForKey:host] == nil)
+	{
+		NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
+		[self.connectionsToRequests setObject:request forKey:connection];
+	}
+	return request;
+}
+
+#pragma mark - NURLConnection delegate
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
+{
+	return cachedResponse;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+}
+
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse
+{
+	return request;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	[self.connectionsToRequests setObject:nil forKey:connection];
+}
+
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+	return YES;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+{
+	SecTrustRef trustRef = [[challenge protectionSpace] serverTrust];
+	SecTrustResultType resultType;
+	SecTrustEvaluate(trustRef, &resultType);
+	CFIndex count = SecTrustGetCertificateCount(trustRef);
 	
-    [super dealloc];
+	NSMutableArray *certificates = [NSMutableArray arrayWithCapacity:count];
+	for (CFIndex idx = 0; idx < count; idx++)
+	{
+		SecCertificateRef certificateRef = SecTrustGetCertificateAtIndex(trustRef, idx);
+		[certificates addObject:(id)certificateRef];
+	}
+	
+	NSURLRequest *request = [self.connectionsToRequests objectForKey:connection];
+	NSURL *URL = [request URL];
+	NSString *host = [URL host];
+	[self.hostCertificates setObject:certificates forKey:host];
 }
 
 @end
