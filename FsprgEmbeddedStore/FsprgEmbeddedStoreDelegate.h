@@ -53,16 +53,6 @@ typedef enum {
 - (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order;
 
 /*!
- * Gets called after loading the page and upon resizing the window.
- * The default embedded store layout assumes that the content div's height will get shortened
- * to make room for the navigation bar. If your layout doesn't require that assumption, you can
- * return NO here to avoid this manual height fixing.
- * @param controller The store controller in question
- * @result YES if you'd like the store controller to fix the content div's height, NO otherwise.
- */
-- (BOOL)shouldStoreControllerFixContentDivHeight:(FsprgEmbeddedStoreController *)controller;
-
-/*!
  * Invoked if an error occurs when starting to load data for a page.
  * @param sender The web view containing the frame.
  * @param error Specifies the type of error that occurred during the load.
@@ -77,5 +67,16 @@ typedef enum {
  * @param frame The frame being loaded. 
  */
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame;
+
+@optional
+/*!
+ * Gets called after loading the page and upon resizing the window.
+ * The default embedded store layout assumes that the content div's height will get shortened
+ * to make room for the navigation bar. If your layout doesn't require that assumption, you can
+ * return NO here to avoid this manual height fixing.
+ * @param controller The store controller in question
+ * @result YES if you'd like the store controller to fix the content div's height, NO otherwise.
+ */
+- (BOOL)shouldStoreControllerFixContentDivHeight:(FsprgEmbeddedStoreController *)controller;
 
 @end
