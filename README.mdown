@@ -52,7 +52,7 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 2. Open your project in Xcode.
 3. Perform File/Add Files to "Your App"... and choose the directory `FsprgEmbeddedStoreMac/FsprgEmbeddedStore`. We suggest to uncheck the option `Copy items into destination group's folder`.
 4. Delete reference to `FsprgEmbeddedStoreMac/FsprgEmbeddedStore/Tests` (in your project) if you don't need FsprgEmbeddedStore unit tests.
-5. Add WebKit.framework to your Targets.
+5. Add WebKit.framework and Security.framework to your Targets.
 
 
 ## How-to use it ##
