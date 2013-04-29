@@ -10,12 +10,6 @@
 #import "FsprgOrderView.h"
 #import "FsprgOrderDocumentRepresentation.h"
 
-@interface FsprgEmbeddedStoreController ()
-
-@property (nonatomic, retain) NSMutableDictionary *hostCertificates;
-@property (nonatomic, retain) NSMapTable *connectionsToRequests;
-
-@end
 
 @interface FsprgEmbeddedStoreController (Private)
 
@@ -25,12 +19,15 @@
 - (void)setStoreHost:(NSString *)aHost;
 - (void)resizeContentDivE;
 - (void)webViewFrameChanged:(NSNotification *)aNotification;
+- (NSMutableDictionary *)hostCertificates;
+- (void)hostCertificates:(NSMutableDictionary *)aHostCertificates;
+- (NSMapTable *)connectionsToRequests;
+- (void)setConnectionsToRequests:(NSMapTable *)aConnectionsToRequests;
 
 @end
 
 @implementation FsprgEmbeddedStoreController
 
-@synthesize hostCertificates=_hostCertificates;
 
 + (void)initialize
 {
@@ -46,31 +43,20 @@
 		[self setWebView:nil];
 		[self setDelegate:nil];
 		[self setStoreHost:nil];
-		self.hostCertificates = [NSMutableDictionary dictionary];
-		self.connectionsToRequests = [NSMapTable mapTableWithStrongToStrongObjects];
+		[self setHostCertificates:[NSMutableDictionary dictionary]];
+		[self setConnectionsToRequests:[NSMapTable mapTableWithStrongToStrongObjects]];
 	}
 	return self;
 }
 
-- (void)dealloc
-{
-    [self setWebView:nil];
-    [self setDelegate:nil];
-	[self setStoreHost:nil];
-	[_hostCertificates release];
-	[_connectionsToRequests release];
-	
-    [super dealloc];
-}
-
 - (WebView *)webView
 {
-    return [[webView retain] autorelease]; 
+	return [[webView retain] autorelease];
 }
 
 - (void)setWebView:(WebView *)aWebView
 {
-    if (webView != aWebView) {
+	if (webView != aWebView) {
 		[webView setPostsFrameChangedNotifications:FALSE];
 		[webView setFrameLoadDelegate:nil];
 		[webView setUIDelegate:nil];
@@ -79,7 +65,7 @@
 		[[NSNotificationCenter defaultCenter] removeObserver:self];
 		
 		[webView release];
-        webView = [aWebView retain];
+		webView = [aWebView retain];
 		
 		if (webView) {
 			[webView setPostsFrameChangedNotifications:TRUE];
@@ -90,17 +76,17 @@
 			[[NSNotificationCenter defaultCenter] addObserver:self 
 													 selector:@selector(webViewFrameChanged:) 
 														 name:NSViewFrameDidChangeNotification 
-													   object:webView];
+                                                       object:webView];
 			[[NSNotificationCenter defaultCenter] addObserver:self 
 													 selector:@selector(estimatedLoadingProgressChanged:) 
 														 name:WebViewProgressStartedNotification 
-													   object:webView];
+                                                       object:webView];
 			[[NSNotificationCenter defaultCenter] addObserver:self 
 													 selector:@selector(estimatedLoadingProgressChanged:) 
 														 name:WebViewProgressEstimateChangedNotification 
-													   object:webView];
+                                                       object:webView];
 		}
-    }
+	}
 }
 
 - (id <FsprgEmbeddedStoreDelegate>)delegate
@@ -121,8 +107,9 @@
 - (void)loadWithParameters:(FsprgStoreParameters *)parameters
 {
 	NSURLRequest *urlRequest = [parameters toURLRequest];
-	if (urlRequest == nil)
+	if (urlRequest == nil) {
 		return;
+	}
 
 	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[urlRequest URL]];
 	NSUInteger i, count = [cookies count];
@@ -180,31 +167,34 @@
 
 - (NSArray *)securityCertificates
 {
-	if ([self isSecure] == NO)
+	if ([self isSecure] == NO) {
 		return nil;
+	}
+
 	NSString *mainFrameURL = [[self webView] mainFrameURL];
 	NSString *host = [[NSURL URLWithString:mainFrameURL] host];
-	return [self.hostCertificates objectForKey:host];
+	return [[self hostCertificates] objectForKey:host];
 }
 
 - (NSString *)storeHost
 {
-    return [[storeHost retain] autorelease]; 
+	return [[storeHost retain] autorelease];
 }
 
 - (void)setStoreHost:(NSString *)aHost
 {
-    if (storeHost != aHost) {
+	if (storeHost != aHost) {
 		[storeHost release];
-        storeHost = [aHost retain];
-    }
+		storeHost = [aHost retain];
+	}
 }
 
-- (void)resizeContentDivE {
-	if ([self.delegate respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)])
-	{
-		if ([self.delegate shouldStoreControllerFixContentDivHeight:self] == NO)
+- (void)resizeContentDivE
+{
+	if ([[self delegate] respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)]) {
+		if ([[self delegate] shouldStoreControllerFixContentDivHeight:self] == NO) {
 			return;
+		}
 	}
 	
 	DOMElement *resizableContentE = [[[[self webView] mainFrame] DOMDocument] getElementById:@"FsprgResizableContent"];
@@ -214,8 +204,9 @@
 	
 	float windowHeight = [[self webView] frame].size.height;
 	id result = [[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
-	if (result == [WebUndefined undefined])
+	if (result == [WebUndefined undefined]) {
 		return;
+	}
 	float pageNavigationHeight = [(NSString *)result floatValue];
 	
 	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
@@ -231,8 +222,34 @@
 	[self resizeContentDivE];
 }
 
+- (NSMutableDictionary *)hostCertificates
+{
+	return [[hostCertificates retain] autorelease];
+}
+- (void)setHostCertificates:(NSMutableDictionary *)anHostCertificates
+{
+	if (hostCertificates != anHostCertificates) {
+		[anHostCertificates retain];
+		[hostCertificates release];
+		hostCertificates = anHostCertificates;
+	}
+}
 
-// WebFrameLoadDelegate
+- (NSMapTable *)connectionsToRequests
+{
+	return [[connectionsToRequests retain] autorelease];
+}
+- (void)setConnectionsToRequests:(NSMapTable *)aConnectionsToRequests
+{
+	if (connectionsToRequests != aConnectionsToRequests) {
+		[aConnectionsToRequests retain];
+		[connectionsToRequests release];
+		connectionsToRequests = aConnectionsToRequests;
+	}
+}
+
+
+#pragma mark - WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
@@ -278,7 +295,7 @@
 	[[self delegate] webView:sender didFailLoadWithError:error forFrame:frame];
 }
 
-// WebUIDelegate
+#pragma mark - WebUIDelegate
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
@@ -289,7 +306,7 @@
 
 - (NSUInteger)webView:(WebView *)sender dragDestinationActionMaskForDraggingInfo:(id <NSDraggingInfo>)draggingInfo
 {
-    return WebDragDestinationActionNone;
+	return WebDragDestinationActionNone;
 }
 
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request
@@ -312,10 +329,10 @@
 {
 	NSURL *URL = [request URL];
 	NSString *host = [URL host];
-	if ([self.hostCertificates objectForKey:host] == nil)
+	if ([[self hostCertificates] objectForKey:host] == nil)
 	{
 		NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
-		[self.connectionsToRequests setObject:request forKey:connection];
+		[[self connectionsToRequests] setObject:request forKey:connection];
 	}
 	return request;
 }
@@ -342,7 +359,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	[self.connectionsToRequests setObject:nil forKey:connection];
+	[[self connectionsToRequests] setObject:nil forKey:connection];
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
@@ -364,10 +381,22 @@
 		[certificates addObject:(id)certificateRef];
 	}
 	
-	NSURLRequest *request = [self.connectionsToRequests objectForKey:connection];
+	NSURLRequest *request = [[self connectionsToRequests] objectForKey:connection];
 	NSURL *URL = [request URL];
 	NSString *host = [URL host];
-	[self.hostCertificates setObject:certificates forKey:host];
+	[[self hostCertificates] setObject:certificates forKey:host];
+}
+
+
+- (void)dealloc
+{
+	[self setWebView:nil];
+	[self setDelegate:nil];
+	[self setStoreHost:nil];
+	[self setHostCertificates:nil];
+	[self setConnectionsToRequests:nil];
+
+	[super dealloc];
 }
 
 @end

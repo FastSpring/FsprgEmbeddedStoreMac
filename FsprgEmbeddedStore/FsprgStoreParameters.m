@@ -105,9 +105,11 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 - (NSURLRequest *)toURLRequest
 {
 	NSURL *toURL = [self toURL];
-	if (toURL)
-		return [NSMutableURLRequest requestWithURL:toURL];
-	return nil;
+	if (toURL) {
+        return [NSMutableURLRequest requestWithURL:toURL];
+    } else {
+        return nil;
+    }
 }
 
 - (NSURL *)toURL
@@ -132,8 +134,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 		urlAsStr = [NSString stringWithFormat:@"https://sites.fastspring.com/%@/instant/%@", storeIdEncoded, productIdEncoded];
 	} else if ([kFsprgOrderProcessCheckout isEqualTo:[self orderProcessType]]) {
 		urlAsStr = [NSString stringWithFormat:@"https://sites.fastspring.com/%@/checkout/%@", storeIdEncoded, productIdEncoded];
-	}
-	else {
+	} else {
 		NSAssert1(FALSE, @"OrderProcessType '%@' unknown.", [self orderProcessType]);
 		return nil;
 	}
