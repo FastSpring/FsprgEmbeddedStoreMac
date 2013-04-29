@@ -375,8 +375,8 @@
 	CFIndex count = SecTrustGetCertificateCount(trustRef);
 	
 	NSMutableArray *certificates = [NSMutableArray arrayWithCapacity:count];
-	for (CFIndex idx = 0; idx < count; idx++)
-	{
+	CFIndex idx;
+	for (idx = 0; idx < count; idx++) {
 		SecCertificateRef certificateRef = SecTrustGetCertificateAtIndex(trustRef, idx);
 		[certificates addObject:(id)certificateRef];
 	}
