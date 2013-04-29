@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4603260B1158B36000A5554B /* IsSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 460326091158B35F00A5554B /* IsSecureIcon.png */; };
+		460C4B36172ECAF800E97DF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460C4B35172ECAF800E97DF9 /* Security.framework */; };
 		4641720214EC085400F412CC /* FsprgEmbeddedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 464171E614EC085400F412CC /* FsprgEmbeddedStore.h */; };
 		4641720314EC085400F412CC /* FsprgEmbeddedStoreController.h in Headers */ = {isa = PBXBuildFile; fileRef = 464171E714EC085400F412CC /* FsprgEmbeddedStoreController.h */; };
 		4641720414EC085400F412CC /* FsprgEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 464171E814EC085400F412CC /* FsprgEmbeddedStoreController.m */; };
@@ -67,6 +68,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* TestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp_Prefix.pch; sourceTree = "<group>"; };
 		460326091158B35F00A5554B /* IsSecureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IsSecureIcon.png; sourceTree = "<group>"; };
+		460C4B35172ECAF800E97DF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		464171E614EC085400F412CC /* FsprgEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStore.h; sourceTree = "<group>"; };
 		464171E714EC085400F412CC /* FsprgEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreController.h; sourceTree = "<group>"; };
 		464171E814EC085400F412CC /* FsprgEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgEmbeddedStoreController.m; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460C4B36172ECAF800E97DF9 /* Security.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4641721C14EC08E900F412CC /* WebKit.framework in Frameworks */,
 			);
@@ -132,6 +135,7 @@
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				4641721B14EC08E900F412CC /* WebKit.framework */,
+				460C4B35172ECAF800E97DF9 /* Security.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
