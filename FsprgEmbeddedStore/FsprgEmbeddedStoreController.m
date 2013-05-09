@@ -44,7 +44,11 @@
 		[self setDelegate:nil];
 		[self setStoreHost:nil];
 		[self setHostCertificates:[NSMutableDictionary dictionary]];
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_8
+		[self setConnectionsToRequests:[NSMapTable strongToStrongObjectsMapTable]];
+#else
 		[self setConnectionsToRequests:[NSMapTable mapTableWithStrongToStrongObjects]];
+#endif
 	}
 	return self;
 }
