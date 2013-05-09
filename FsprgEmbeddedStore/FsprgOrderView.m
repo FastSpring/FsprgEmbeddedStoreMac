@@ -73,6 +73,7 @@
 		NSView *newSubview = [[delegate delegate] viewWithFrame:[self frame] forOrder:order];
 		[self addSubview:newSubview];
 	}
+	[super layout];
 }
 
 - (void)viewDidMoveToHostWindow
