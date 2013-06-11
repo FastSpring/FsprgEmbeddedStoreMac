@@ -140,7 +140,7 @@ Here's a real-life example to show the most common case of grabbing the serial n
 	- (NSNumber *)itemTotal;
 	- (NSNumber *)itemTotalUSD;
 	- (NSString *)subscriptionReference; // See https://support.fastspring.com/entries/236487-api-subscriptions
-	- (NSString *)subscriptionCustomerURL; // This URL can be presented to the customer to manage their subscription.
+	- (NSURL *)subscriptionCustomerURL; // This URL can be presented to the customer to manage their subscription.
 	- (FsprgFulfillment *)fulfillment;
 	- (FsprgLicense *)license;           // Shortcut for [[self fulfillment] valueForKey:@"license"]
 	- (FsprgFileDownload *)download;     // Shortcut for [[self fulfillment] valueForKey:@"download"]

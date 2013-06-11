@@ -67,7 +67,7 @@
 	return [[self raw] valueForKey:@"SubscriptionReference"];
 }
 
-- (NSString *)subscriptionCustomerURL
+- (NSURL *)subscriptionCustomerURL
 {
     return [NSURL URLWithString:[[self raw] valueForKey:@"SubscriptionCustomerURL"]];
 }
