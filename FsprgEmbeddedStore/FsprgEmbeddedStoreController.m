@@ -20,7 +20,7 @@
 - (void)resizeContentDivE;
 - (void)webViewFrameChanged:(NSNotification *)aNotification;
 - (NSMutableDictionary *)hostCertificates;
-- (void)hostCertificates:(NSMutableDictionary *)aHostCertificates;
+- (void)setHostCertificates:(NSMutableDictionary *)aHostCertificates;
 - (NSMapTable *)connectionsToRequests;
 - (void)setConnectionsToRequests:(NSMapTable *)aConnectionsToRequests;
 
@@ -44,7 +44,7 @@
 		[self setDelegate:nil];
 		[self setStoreHost:nil];
 		[self setHostCertificates:[NSMutableDictionary dictionary]];
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_8
+#if defined(MAC_OS_X_VERSION_10_8) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_8
 		[self setConnectionsToRequests:[NSMapTable strongToStrongObjectsMapTable]];
 #else
 		[self setConnectionsToRequests:[NSMapTable mapTableWithStrongToStrongObjects]];
@@ -373,6 +373,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 {
+#if defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
 	SecTrustRef trustRef = [[challenge protectionSpace] serverTrust];
 	SecTrustResultType resultType;
 	SecTrustEvaluate(trustRef, &resultType);
@@ -389,6 +390,7 @@
 	NSURL *URL = [request URL];
 	NSString *host = [URL host];
 	[[self hostCertificates] setObject:certificates forKey:host];
+#endif
 }
 
 

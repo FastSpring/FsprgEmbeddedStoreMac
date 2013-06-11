@@ -39,7 +39,7 @@
     NSSavePanel* savePanel = [NSSavePanel savePanel];
 
 	[savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"plist"]];
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+#if defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
     [savePanel beginSheetModalForWindow:[[self view] window]
                       completionHandler:^(NSInteger result) {
                           [self savePanelDidEnd:savePanel returnCode:result contextInfo:nil];
