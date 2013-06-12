@@ -8,7 +8,6 @@
 
 #import "FsprgOrderView.h"
 #import "FsprgOrderDocumentRepresentation.h"
-#import "FsprgOrder.h"
 #import "FsprgEmbeddedStoreController.h"
 
 
@@ -66,14 +65,17 @@
 	if([[self subviews] count] == 0) {
 		[self setFrame:[[self superview] frame]];
 		
-		FsprgOrderDocumentRepresentation *representation = [[self dataSource] representation];
+		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)[[self dataSource] representation];
 		FsprgOrder *order = [representation order];
 
 		FsprgEmbeddedStoreController *delegate = [[[[self dataSource] webFrame] webView] UIDelegate];
 		NSView *newSubview = [[delegate delegate] viewWithFrame:[self frame] forOrder:order];
 		[self addSubview:newSubview];
 	}
+
+#if defined(MAC_OS_X_VERSION_10_7) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
 	[super layout];
+#endif
 }
 
 - (void)viewDidMoveToHostWindow

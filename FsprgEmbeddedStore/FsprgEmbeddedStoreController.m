@@ -10,6 +10,9 @@
 #import "FsprgOrderView.h"
 #import "FsprgOrderDocumentRepresentation.h"
 
+// We don't retrieve SSL certificates below OSX 10.6
+#define RETRIEVE_SSL_CERTIFICATES defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+
 
 @interface FsprgEmbeddedStoreController (Private)
 
@@ -331,6 +334,7 @@
 
 - (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource
 {
+#if RETRIEVE_SSL_CERTIFICATES
 	NSURL *URL = [request URL];
 	NSString *host = [URL host];
 	if ([[self hostCertificates] objectForKey:host] == nil)
@@ -338,11 +342,13 @@
 		NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
 		[[self connectionsToRequests] setObject:request forKey:connection];
 	}
+#endif
 	return request;
 }
 
 #pragma mark - NURLConnection delegate
 
+#if RETRIEVE_SSL_CERTIFICATES
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
 {
 	return cachedResponse;
@@ -373,25 +379,24 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 {
-#if defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
 	SecTrustRef trustRef = [[challenge protectionSpace] serverTrust];
 	SecTrustResultType resultType;
 	SecTrustEvaluate(trustRef, &resultType);
-	CFIndex count = SecTrustGetCertificateCount(trustRef);
-	
-	NSMutableArray *certificates = [NSMutableArray arrayWithCapacity:count];
+	NSUInteger count = (NSUInteger)SecTrustGetCertificateCount(trustRef);
+
+    NSMutableArray *certificates = [NSMutableArray arrayWithCapacity:count];
 	CFIndex idx;
 	for (idx = 0; idx < count; idx++) {
 		SecCertificateRef certificateRef = SecTrustGetCertificateAtIndex(trustRef, idx);
 		[certificates addObject:(id)certificateRef];
 	}
-	
+
 	NSURLRequest *request = [[self connectionsToRequests] objectForKey:connection];
 	NSURL *URL = [request URL];
 	NSString *host = [URL host];
 	[[self hostCertificates] setObject:certificates forKey:host];
-#endif
 }
+#endif
 
 
 - (void)dealloc
