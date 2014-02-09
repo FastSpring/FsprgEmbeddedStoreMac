@@ -48,6 +48,8 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 
 ## How-to embed it ##
 
+Use our [CocoaPod](http://cocoapods.org/?q=fsprgembeddedstoremac) or perform the following steps.
+
 1. [Clone or fork](http://help.github.com/fork-a-repo) our repository.
 2. Open your project in Xcode.
 3. Perform File/Add Files to "Your App"... and choose the directory `FsprgEmbeddedStoreMac/FsprgEmbeddedStore`. We suggest to uncheck the option `Copy items into destination group's folder`.
