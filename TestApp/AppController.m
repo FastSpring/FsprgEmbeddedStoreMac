@@ -27,7 +27,7 @@ static NSString * const kParams = @"params";
 			[[self params] setOrderProcessType:kFsprgOrderProcessDetail];
 			[[self params] setMode:kFsprgModeTest];
 		} else {
-			[self setParams:[FsprgStoreParameters parametersWithRaw:(NSMutableDictionary *)defaultParams]];
+			[self setParams:[FsprgStoreParameters parametersWithRaw:[[defaultParams mutableCopy] autorelease]]];
 		}
 		
 		[[self storeController] setDelegate:self];
