@@ -208,8 +208,8 @@
 	if(resizableContentE == nil) {
 		return;
 	}
-	
-	float windowHeight = [[self webView] frame].size.height;
+
+    CGFloat windowHeight = [[self webView] frame].size.height;
 	id result = [[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
 	if (result == [WebUndefined undefined]) {
 		return;
@@ -219,8 +219,8 @@
 	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
 	float paddingTop = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingTop] length]-2] floatValue];
 	float paddingBottom = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingBottom] length]-2] floatValue];
-	
-	float newHeight = windowHeight - paddingTop - paddingBottom - pageNavigationHeight;
+
+    CGFloat newHeight = windowHeight - paddingTop - paddingBottom - pageNavigationHeight;
 	[[resizableContentE style] setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
 }
 

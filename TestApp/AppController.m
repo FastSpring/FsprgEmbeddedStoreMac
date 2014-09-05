@@ -124,7 +124,7 @@ static NSString * const kParams = @"params";
 	NSData *data = [NSPropertyListSerialization dataFromPropertyList:[order raw] 
 															  format:NSPropertyListXMLFormat_v1_0 
 													errorDescription:&errorDesc];
-	NSString *orderAsStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	NSString *orderAsStr = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
 
 	OrderViewController *orderViewController = [[OrderViewController alloc] initWithNibName:@"OrderView" bundle:nil];
 	[orderViewController setRepresentedObject:orderAsStr];
@@ -136,12 +136,12 @@ static NSString * const kParams = @"params";
 
 - (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	NSRunAlertPanel(@"Alert", [error localizedDescription], @"OK", nil, nil);
+    NSRunAlertPanel(@"Alert", @"%@", @"OK", nil, nil, [error localizedDescription]);
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	NSRunAlertPanel(@"Alert", [error localizedDescription], @"OK", nil, nil);
+    NSRunAlertPanel(@"Alert", @"%@", @"OK", nil, nil, [error localizedDescription]);
 }
 
 // NSApplicationDelegate

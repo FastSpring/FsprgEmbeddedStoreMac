@@ -87,12 +87,12 @@
 
 - (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	NSRunAlertPanel(@"Alert", [error localizedDescription], @"OK", nil, nil);
+    NSRunAlertPanel(@"Alert", @"%@", @"OK", nil, nil, [error localizedDescription]);
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	NSRunAlertPanel(@"Alert", [error localizedDescription], @"OK", nil, nil);
+	NSRunAlertPanel(@"Alert", @"%@", @"OK", nil, nil, [error localizedDescription]);
 }
 
 - (void)dealloc
