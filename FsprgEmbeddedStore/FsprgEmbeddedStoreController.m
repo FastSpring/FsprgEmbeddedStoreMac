@@ -334,7 +334,7 @@
 
 - (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource
 {
-    #if RETRIEVE_SSL_CERTIFICATES
+#if RETRIEVE_SSL_CERTIFICATES
 	NSURL *URL = [request URL];
 	NSString *host = [URL host];
 	if ([[self hostCertificates] objectForKey:host] == nil)
