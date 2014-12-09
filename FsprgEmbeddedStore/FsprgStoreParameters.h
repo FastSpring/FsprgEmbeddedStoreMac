@@ -104,6 +104,16 @@ extern NSString * const kFsprgModeTest;
 - (NSString *)coupon;
 - (void)setCoupon:(NSString *)aCoupon;
 
+/*!
+ * This parameter has many uses within SpringBoard. A tag is a variable that can hold any positive integer value.
+ * If no value is specified, it holds a value of 1. Tags can be used by parts of the order process. Adding multiple
+ * tag parameters can be achieved by separating each tag (sometimes with numeric value) with a comma, as shown below.
+ *
+ * mytaga,mytagb,mytagc=2,anothertag=8
+ */
+- (NSString *)tags;
+- (void)setTags:(NSString *)aTags;
+
 - (BOOL)hasContactDefaults;
 - (NSString *)contactFname;
 - (void)setContactFname:(NSString *)aContactFname;
