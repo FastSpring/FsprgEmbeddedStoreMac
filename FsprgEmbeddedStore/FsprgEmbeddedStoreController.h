@@ -19,7 +19,6 @@
     id <FsprgEmbeddedStoreDelegate> delegate;
     NSString *storeHost;
     NSMutableDictionary *hostCertificates;
-    NSMapTable *connectionsToRequests;
 }
 
 - (WebView *)webView;
