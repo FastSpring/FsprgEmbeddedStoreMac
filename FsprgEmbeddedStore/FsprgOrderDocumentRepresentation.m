@@ -23,14 +23,13 @@
 
 - (FsprgOrder *)order
 {
-    return [[order retain] autorelease]; 
+    return order; 
 }
 
 - (void)setOrder:(FsprgOrder *)anOrder
 {
     if (order != anOrder) {
-        [order release];
-        order = [anOrder retain];
+        order = anOrder;
     }
 }
 
@@ -70,7 +69,6 @@
 {
     [self setOrder:nil];
 	
-    [super dealloc];
 }
 
 @end

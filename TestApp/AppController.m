@@ -17,7 +17,7 @@ static NSString * const kParams = @"params";
 {
 	self = [super init];
 	if (self != nil) {
-		[self setStoreController:[[[FsprgEmbeddedStoreController alloc] init] autorelease]];
+		[self setStoreController:[[FsprgEmbeddedStoreController alloc] init]];
 
 		[[[NSUserDefaultsController sharedUserDefaultsController] defaults] setBool:TRUE forKey:@"WebKitDeveloperExtras"];
 		
@@ -27,7 +27,7 @@ static NSString * const kParams = @"params";
 			[[self params] setOrderProcessType:kFsprgOrderProcessDetail];
 			[[self params] setMode:kFsprgModeTest];
 		} else {
-			[self setParams:[FsprgStoreParameters parametersWithRaw:[[defaultParams mutableCopy] autorelease]]];
+			[self setParams:[FsprgStoreParameters parametersWithRaw:[defaultParams mutableCopy]]];
 		}
 		
 		[[self storeController] setDelegate:self];
@@ -37,27 +37,25 @@ static NSString * const kParams = @"params";
 
 - (FsprgEmbeddedStoreController *)storeController
 {
-    return [[storeController retain] autorelease]; 
+    return storeController; 
 }
 
 - (void)setStoreController:(FsprgEmbeddedStoreController *)aStoreController
 {
     if (storeController != aStoreController) {
-        [storeController release];
-        storeController = [aStoreController retain];
+        storeController = aStoreController;
     }
 }
 
 - (FsprgStoreParameters *)params
 {
-    return [[params retain] autorelease]; 
+    return params; 
 }
 
 - (void)setParams:(FsprgStoreParameters *)aParams
 {
     if (params != aParams) {
-        [params release];
-        params = [aParams retain];
+        params = aParams;
     }
 }
 
@@ -124,7 +122,7 @@ static NSString * const kParams = @"params";
 	NSData *data = [NSPropertyListSerialization dataFromPropertyList:[order raw] 
 															  format:NSPropertyListXMLFormat_v1_0 
 													errorDescription:&errorDesc];
-	NSString *orderAsStr = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+	NSString *orderAsStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
 	OrderViewController *orderViewController = [[OrderViewController alloc] initWithNibName:@"OrderView" bundle:nil];
 	[orderViewController setRepresentedObject:orderAsStr];
@@ -158,7 +156,6 @@ static NSString * const kParams = @"params";
 	[[self storeController] setDelegate:nil];
     [self setStoreController:nil];
 	
-    [super dealloc];
 }
 
 @end

@@ -27,13 +27,12 @@
 
 - (WebDataSource *)dataSource
 {
-    return [[dataSource retain] autorelease]; 
+    return dataSource; 
 }
 - (void)setDataSource:(WebDataSource *)aDataSource
 {
     if (dataSource != aDataSource) {
-        [dataSource release];
-        dataSource = [aDataSource retain];
+        dataSource = aDataSource;
     }
 }
 - (void)dataSourceUpdated:(WebDataSource *)aDataSource
@@ -89,7 +88,6 @@
 {
     [self setDataSource:nil];
 	
-    [super dealloc];
 }
 
 @end

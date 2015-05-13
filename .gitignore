@@ -5,3 +5,4 @@ TestApp/build
 *.pbxuser
 xcuserdata
 .DS_Store
+TestApp.xccheckout

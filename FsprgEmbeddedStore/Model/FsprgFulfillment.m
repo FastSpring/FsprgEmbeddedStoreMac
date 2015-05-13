@@ -15,7 +15,7 @@
 
 + (FsprgFulfillment *)fulfillmentWithDictionary:(NSDictionary *)aDictionary
 {
-	return [[[FsprgFulfillment alloc] initWithDictionary:aDictionary] autorelease];
+	return [[FsprgFulfillment alloc] initWithDictionary:aDictionary];
 }
 
 - (FsprgFulfillment *)initWithDictionary:(NSDictionary *)aDictionary
@@ -28,14 +28,13 @@
 }
 - (NSDictionary *)raw
 {
-    return [[raw retain] autorelease]; 
+    return raw; 
 }
 
 - (void)setRaw:(NSDictionary *)aDictionary
 {
     if (raw != aDictionary) {
-        [raw release];
-        raw = [aDictionary retain];
+        raw = aDictionary;
     }
 }
 
@@ -63,7 +62,6 @@
 {
     [self setRaw:nil];
 	
-    [super dealloc];
 }
 
 @end
