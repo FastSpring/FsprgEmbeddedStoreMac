@@ -79,4 +79,11 @@ typedef enum {
  */
 - (BOOL)shouldStoreControllerFixContentDivHeight:(FsprgEmbeddedStoreController *)controller;
 
+/*!
+ * Invoked when starting to load a page.
+ * @param sender The web view containing the frame.
+ * @param frame The frame being loaded.
+ */
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame;
+
 @end
