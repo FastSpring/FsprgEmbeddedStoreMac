@@ -25,8 +25,8 @@ extern NSString * const kFsprgModeTest;
  */
 @interface FsprgStoreParameters : NSObject
 
-@property (assign) BOOL hasContactDefaults;
-@property (copy) NSMutableDictionary *raw;
+@property (nonatomic, assign) BOOL hasContactDefaults;
+@property (nonatomic, copy) NSMutableDictionary *raw;
 
 + (FsprgStoreParameters *)parameters;
 + (FsprgStoreParameters *)parametersWithRaw:(NSMutableDictionary *)aRaw;
