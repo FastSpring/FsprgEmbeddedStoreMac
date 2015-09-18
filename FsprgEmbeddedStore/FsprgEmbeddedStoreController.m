@@ -15,6 +15,9 @@
 
 
 @interface FsprgEmbeddedStoreController (Private)
+#if defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11
+<WebFrameLoadDelegate, WebUIDelegate, WebResourceLoadDelegate>
+#endif
 
 - (void)setIsLoading:(BOOL)aFlag;
 - (void)setEstimatedLoadingProgress:(double)aProgress;
