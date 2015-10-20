@@ -13,8 +13,7 @@
 // We don't retrieve SSL certificates below OSX 10.6
 #define RETRIEVE_SSL_CERTIFICATES defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
 
-
-@interface FsprgEmbeddedStoreController (Private)
+@interface FsprgEmbeddedStoreController ()
 
 - (void)setIsLoading:(BOOL)aFlag;
 - (void)setEstimatedLoadingProgress:(double)aProgress;
@@ -26,6 +25,11 @@
 - (void)setHostCertificates:(NSMutableDictionary *)aHostCertificates;
 
 @end
+
+#if defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11
+@interface FsprgEmbeddedStoreController () <WebFrameLoadDelegate, WebUIDelegate, WebResourceLoadDelegate>
+@end
+#endif
 
 @implementation FsprgEmbeddedStoreController
 
