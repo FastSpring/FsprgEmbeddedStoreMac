@@ -15,12 +15,19 @@
 {
 	NSPropertyListFormat *format = nil;
 	NSString *errorDesc = nil;
-	
+
+#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_6
 	NSDictionary *aDict = [NSPropertyListSerialization propertyListFromData:aData
 													   mutabilityOption:NSPropertyListImmutable
 													   format:format 
 													   errorDescription:&errorDesc];
 		
+#else
+	NSDictionary *aDict = [NSPropertyListSerialization propertyListWithData:aData
+																	options:NSPropertyListImmutable
+																	 format:format
+																	  error:nil];
+#endif
 	
 	return [[[FsprgOrder alloc] initWithDictionary:aDict] autorelease];
 }
