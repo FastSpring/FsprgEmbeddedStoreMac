@@ -62,8 +62,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 + (FsprgStoreParameters *)parameters
 {
-	NSMutableDictionary *raw = [NSMutableDictionary dictionaryWithCapacity:15];
-	return [[[FsprgStoreParameters alloc] initWithRaw:raw] autorelease];
+	return [[[FsprgStoreParameters alloc] init] autorelease];
 }
 
 + (FsprgStoreParameters *)parametersWithRaw:(NSMutableDictionary *)aRaw
@@ -81,26 +80,19 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	}
 }
 
-- (id)initWithRaw:(NSMutableDictionary *)aRaw
+- (instancetype)init
+{
+    NSMutableDictionary *raw = [NSMutableDictionary dictionaryWithCapacity:15];
+    return [self initWithRaw:raw];
+}
+
+- (instancetype)initWithRaw:(NSMutableDictionary *)aRaw
 {
 	self = [super init];
 	if (self != nil) {
-		[self setRaw:aRaw];
+		_raw = [aRaw mutableCopy];
 	}
 	return self;
-}
-
-- (NSMutableDictionary *)raw
-{
-    return [[raw retain] autorelease]; 
-}
-
-- (void)setRaw:(NSMutableDictionary *)aRaw
-{
-    if (raw != aRaw) {
-        [raw release];
-        raw = [aRaw retain];
-    }
 }
 
 - (NSURLRequest *)toURLRequest

@@ -23,10 +23,10 @@ extern NSString * const kFsprgModeTest;
  * FastSpring store parameters. FsprgStoreParameters is backed by a NSMutableDictionary that
  * can be accessed and modified via the raw and setRaw: methods.
  */
-@interface FsprgStoreParameters : NSObject {
-	BOOL hasContactDefaults;
-	NSMutableDictionary *raw;
-}
+@interface FsprgStoreParameters : NSObject
+
+@property (nonatomic, assign) BOOL hasContactDefaults;
+@property (nonatomic, copy) NSMutableDictionary *raw;
 
 + (FsprgStoreParameters *)parameters;
 + (FsprgStoreParameters *)parametersWithRaw:(NSMutableDictionary *)aRaw;
@@ -34,9 +34,8 @@ extern NSString * const kFsprgModeTest;
 - (NSURLRequest *)toURLRequest;
 - (NSURL *)toURL;
 
-- (id)initWithRaw:(NSMutableDictionary *)aRaw;
-- (NSMutableDictionary *)raw;
-- (void)setRaw:(NSMutableDictionary *)aRaw;
+- (instancetype)init;
+- (instancetype)initWithRaw:(NSMutableDictionary *)aRaw;
 
 /*!
  * Pass a language code via the URL to bypass automatic language detection.
