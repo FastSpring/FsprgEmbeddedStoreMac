@@ -115,11 +115,11 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSURL *)toURL
 {
-	NSString *storeIdEncoded = [[self storeId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *storeIdEncoded = [[self storeId] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 	if(storeIdEncoded == nil) {
 		storeIdEncoded = @"";
 	}
-	NSString *productIdEncoded = [[self productId] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *productIdEncoded = [[self productId] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 	if(productIdEncoded == nil) {
 		productIdEncoded = @"";
 	}
@@ -154,7 +154,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 		if(value != nil) {
 			queryStr = [queryStr stringByAppendingFormat:@"&%@=%@",
 						key,
-						[value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+						[value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
 		}
 	}
 		
