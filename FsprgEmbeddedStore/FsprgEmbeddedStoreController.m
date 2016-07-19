@@ -43,7 +43,7 @@
 		[self setWebView:nil];
 		[self setDelegate:nil];
 		[self setStoreHost:nil];
-		[self setHostCertificates:[NSMutableDictionary dictionary]];
+		self.hostCertificates = [NSMutableDictionary dictionary];
 	}
 	return self;
 }
@@ -104,7 +104,7 @@
 
 - (void)loadWithParameters:(FsprgStoreParameters *)parameters
 {
-	NSURLRequest *urlRequest = [parameters toURLRequest];
+	NSURLRequest *urlRequest = parameters.toURLRequest;
 	if (urlRequest == nil) {
 		return;
 	}
@@ -134,7 +134,7 @@
 
 - (BOOL)isLoading
 {
-	return [self estimatedLoadingProgress] < 100;
+	return self.estimatedLoadingProgress < 100;
 }
 - (void)setIsLoading:(BOOL)aFlag
 {
@@ -155,7 +155,7 @@
 }
 - (BOOL)isSecure
 {
-	WebDataSource *mainFrameDs = [self webView].mainFrame.dataSource;
+	WebDataSource *mainFrameDs = self.webView.mainFrame.dataSource;
 	return [@"https" isEqualTo:mainFrameDs.request.URL.scheme];
 }
 - (void)setIsSecure:(BOOL)aFlag
@@ -165,13 +165,13 @@
 
 - (NSArray *)securityCertificates
 {
-	if ([self isSecure] == NO) {
+	if (self.secure == NO) {
 		return nil;
 	}
 
-	NSString *mainFrameURL = [self webView].mainFrameURL;
+	NSString *mainFrameURL = self.webView.mainFrameURL;
 	NSString *host = [NSURL URLWithString:mainFrameURL].host;
-	return [self hostCertificates][host];
+	return self.hostCertificates[host];
 }
 
 - (NSString *)storeHost
@@ -188,25 +188,25 @@
 
 - (void)resizeContentDivE
 {
-	if ([[self delegate] respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)]) {
-		if ([[self delegate] shouldStoreControllerFixContentDivHeight:self] == NO) {
+	if ([self.delegate respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)]) {
+		if ([self.delegate shouldStoreControllerFixContentDivHeight:self] == NO) {
 			return;
 		}
 	}
 	
-	DOMElement *resizableContentE = [[self webView].mainFrame.DOMDocument getElementById:@"FsprgResizableContent"];
+	DOMElement *resizableContentE = [self.webView.mainFrame.DOMDocument getElementById:@"FsprgResizableContent"];
 	if(resizableContentE == nil) {
 		return;
 	}
 
-    CGFloat windowHeight = [self webView].frame.size.height;
-	id result = [[self webView].windowScriptObject evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
+    CGFloat windowHeight = self.webView.frame.size.height;
+	id result = [self.webView.windowScriptObject evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
 	if (result == [WebUndefined undefined]) {
 		return;
 	}
 	float pageNavigationHeight = ((NSString *)result).floatValue;
 	
-	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
+	DOMCSSStyleDeclaration *cssStyle = [self.webView computedStyleForElement:resizableContentE pseudoElement:nil];	
 	float paddingTop = [[cssStyle paddingBottom] substringToIndex:[cssStyle paddingTop].length-2].floatValue;
 	float paddingBottom = [[cssStyle paddingBottom] substringToIndex:[cssStyle paddingBottom].length-2].floatValue;
 
@@ -235,8 +235,8 @@
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
-    if ([[self delegate] respondsToSelector:@selector(webView:didStartProvisionalLoadForFrame:)]) {
-        [[self delegate] webView:sender didStartProvisionalLoadForFrame:frame];
+    if ([self.delegate respondsToSelector:@selector(webView:didStartProvisionalLoadForFrame:)]) {
+        [self.delegate webView:sender didStartProvisionalLoadForFrame:frame];
     }
 }
 
@@ -254,30 +254,30 @@
 		newStoreHost = newURL.host;
 	}
 	
-	if([self storeHost] == nil) {
+	if(self.storeHost == nil) {
 		[self setStoreHost:newStoreHost];
-		[[self delegate] didLoadStore:newURL];
+		[self.delegate didLoadStore:newURL];
 	} else {
 		FsprgPageType newPageType;
-		if([newStoreHost isEqualTo:[self storeHost]]) {
+		if([newStoreHost isEqualTo:self.storeHost]) {
 			newPageType = FsprgPageFS;
 		} else if([newStoreHost hasSuffix:@"paypal.com"]) {
 			newPageType = FsprgPagePayPal;
 		} else {
 			newPageType = FsprgPageUnknown;
 		}
-		[[self delegate] didLoadPage:newURL ofType:newPageType];
+		[self.delegate didLoadPage:newURL ofType:newPageType];
 	}
 }
 
 - (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	[[self delegate] webView:sender didFailProvisionalLoadWithError:error forFrame:frame];
+	[self.delegate webView:sender didFailProvisionalLoadWithError:error forFrame:frame];
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	[[self delegate] webView:sender didFailLoadWithError:error forFrame:frame];
+	[self.delegate webView:sender didFailLoadWithError:error forFrame:frame];
 }
 
 #pragma mark - WebUIDelegate
@@ -331,7 +331,7 @@
     }
 
     NSString *host = challenge.protectionSpace.host;
-    [self hostCertificates][host] = certificates;
+    self.hostCertificates[host] = certificates;
 
     [challenge.sender useCredential:[NSURLCredential credentialForTrust:trustRef] forAuthenticationChallenge:challenge];
 }

@@ -37,7 +37,7 @@
 }
 - (void)dataSourceUpdated:(WebDataSource *)aDataSource
 {
-	[self setDataSource:aDataSource];
+	self.dataSource = aDataSource;
 }
 
 - (BOOL)needsLayout
@@ -52,7 +52,7 @@
 
 - (void)drawRect:(NSRect)aRect
 {
-	if([self needsLayout]) {
+	if(self.needsLayout) {
 		[self setNeedsLayout:FALSE];
 		[self layout];
 	}
@@ -64,11 +64,11 @@
 	if(self.subviews.count == 0) {
 		self.frame = self.superview.frame;
 		
-		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)[self dataSource].representation;
-		FsprgOrder *order = [representation order];
+		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)self.dataSource.representation;
+		FsprgOrder *order = representation.order;
 
-		FsprgEmbeddedStoreController *delegate = [self dataSource].webFrame.webView.UIDelegate;
-		NSView *newSubview = [[delegate delegate] viewWithFrame:self.frame forOrder:order];
+		FsprgEmbeddedStoreController *delegate = self.dataSource.webFrame.webView.UIDelegate;
+		NSView *newSubview = [delegate.delegate viewWithFrame:self.frame forOrder:order];
 		[self addSubview:newSubview];
 	}
 

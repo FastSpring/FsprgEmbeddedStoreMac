@@ -22,7 +22,7 @@
 {
 	self = [super init];
 	if (self != nil) {
-		[self setRaw:aDictionary];
+		self.raw = aDictionary;
 	}
 	return self;
 }
@@ -40,7 +40,7 @@
 
 - (id)valueForKey:(NSString *)aKey
 {
-	NSDictionary *anItem = [[self raw] valueForKey:aKey];
+	NSDictionary *anItem = [self.raw valueForKey:aKey];
 	
 	if([[anItem valueForKey:@"FulfillmentType"] isEqual:@"License"]) {
 		return [FsprgLicense licenseWithDictionary:anItem];

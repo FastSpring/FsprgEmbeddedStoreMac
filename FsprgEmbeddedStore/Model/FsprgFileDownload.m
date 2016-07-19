@@ -20,7 +20,7 @@
 {
 	self = [super init];
 	if (self != nil) {
-		[self setRaw:aDictionary];
+		self.raw = aDictionary;
 	}
 	return self;
 }
@@ -37,7 +37,7 @@
 
 - (NSURL *)fileURL
 {
-	return [NSURL URLWithString:[[self raw] valueForKey:@"FileURL"]];
+	return [NSURL URLWithString:[self.raw valueForKey:@"FileURL"]];
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key

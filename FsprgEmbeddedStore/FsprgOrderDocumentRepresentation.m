@@ -52,9 +52,9 @@
 
 - (void)receivedData:(NSData *)aData withDataSource:(WebDataSource *)aDataSource
 {
-	[self setOrder:[FsprgOrder orderFromData:aData]];
+	self.order = [FsprgOrder orderFromData:aData];
 	FsprgEmbeddedStoreController *delegate = aDataSource.webFrame.webView.frameLoadDelegate;
-	[[delegate delegate] didReceiveOrder:[self order]];
+	[delegate.delegate didReceiveOrder:self.order];
 }
 
 - (void)receivedError:(NSError *)anError withDataSource:(WebDataSource *)aDataSource
