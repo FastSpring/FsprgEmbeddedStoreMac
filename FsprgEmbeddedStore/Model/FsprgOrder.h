@@ -20,26 +20,25 @@
 
 + (FsprgOrder *)orderFromData:(NSData *)aData;
 
-- (FsprgOrder *)initWithDictionary:(NSDictionary *)aDictionary;
-- (NSDictionary *)raw;
-- (void)setRaw:(NSDictionary *)aDictionary;
+- (FsprgOrder *)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
+@property (NS_NONATOMIC_IOSONLY, copy) NSDictionary *raw;
 
-- (BOOL)orderIsTest;
-- (NSString *)orderReference;
-- (NSString *)orderLanguage;
-- (NSString *)orderCurrency;
-- (NSNumber *)orderTotal;
-- (NSNumber *)orderTotalUSD;
-- (NSString *)customerFirstName;
-- (NSString *)customerLastName;
-- (NSString *)customerCompany;
-- (NSString *)customerEmail;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL orderIsTest;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *orderReference;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *orderLanguage;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *orderCurrency;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSNumber *orderTotal;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSNumber *orderTotalUSD;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *customerFirstName;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *customerLastName;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *customerCompany;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *customerEmail;
 
 /*!
  * Shortcut for [[self orderItems] objectAtIndex:0].
  * @result First item.
  */
-- (FsprgOrderItem *)firstOrderItem;
-- (NSArray *)orderItems;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) FsprgOrderItem *firstOrderItem;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *orderItems;
 
 @end

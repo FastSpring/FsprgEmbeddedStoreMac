@@ -19,9 +19,7 @@
 	BOOL needsLayout;
 }
 
-- (WebDataSource *)dataSource;
-- (void)setDataSource:(WebDataSource *)aDataSource;
-- (BOOL)needsLayout;
-- (void)setNeedsLayout:(BOOL)flag;
+@property (NS_NONATOMIC_IOSONLY, assign) WebDataSource *dataSource;
+@property (NS_NONATOMIC_IOSONLY) BOOL needsLayout;
 
 @end

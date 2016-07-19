@@ -21,19 +21,17 @@
     NSMutableDictionary *hostCertificates;
 }
 
-- (WebView *)webView;
+@property (NS_NONATOMIC_IOSONLY, strong) WebView *webView;
 /*!
  * Connects this controller to a web view.
  * @param aWebView Web view to connect.
  */
-- (void)setWebView:(WebView *)aWebView;
 
-- (id <FsprgEmbeddedStoreDelegate>)delegate;
+@property (NS_NONATOMIC_IOSONLY, assign) id<FsprgEmbeddedStoreDelegate> delegate;
 /*!
  * Sets a delegate to which it has a weak reference.
  * @param aDelegate Delegate to set.
  */
-- (void)setDelegate:(id <FsprgEmbeddedStoreDelegate>)aDelegate;
 
 /*!
  * Loads the store using the given parameters.
@@ -51,30 +49,30 @@
  * Useful to trigger e.g. the hidden flag of a progress bar.
  * @result TRUE if loading a page.
  */
-- (BOOL)isLoading;
+@property (NS_NONATOMIC_IOSONLY, getter=isLoading, readonly) BOOL loading;
 
 /*!
  * Useful to provide the value for a progress bar.
  * @result The loading progress in percent of a page (0 - 100)
  */
-- (double)estimatedLoadingProgress;
+@property (NS_NONATOMIC_IOSONLY, readonly) double estimatedLoadingProgress;
 
 /**
  * Useful to show a secure icon.
  * @result TRUE if connection is secure (SSL)
  */
-- (BOOL)isSecure;
+@property (NS_NONATOMIC_IOSONLY, getter=isSecure, readonly) BOOL secure;
 
 /**
  *
  * @result NSArray containing SecCertificateRef objects for the host of the main frame, if it was loaded via https.
  */
-- (NSArray *)securityCertificates;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *securityCertificates;
 
 /*!
  * Host that delivers the store (e.g. sites.fastspring.com).
  * @result <code>nil</code> until the store has been loaded.
  */
-- (NSString *)storeHost;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *storeHost;
 
 @end

@@ -12,7 +12,7 @@
 
 @implementation FsprgOrderDocumentRepresentation
 
-- (id) init
+- (instancetype) init
 {
 	self = [super init];
 	if (self != nil) {
@@ -53,7 +53,7 @@
 - (void)receivedData:(NSData *)aData withDataSource:(WebDataSource *)aDataSource
 {
 	[self setOrder:[FsprgOrder orderFromData:aData]];
-	FsprgEmbeddedStoreController *delegate = [[[aDataSource webFrame] webView] frameLoadDelegate];
+	FsprgEmbeddedStoreController *delegate = aDataSource.webFrame.webView.frameLoadDelegate;
 	[[delegate delegate] didReceiveOrder:[self order]];
 }
 

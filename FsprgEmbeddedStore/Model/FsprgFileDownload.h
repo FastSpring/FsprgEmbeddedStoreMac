@@ -19,10 +19,9 @@
 
 + (FsprgFileDownload *)fileDownloadWithDictionary:(NSDictionary *)aDictionary;
 
-- (FsprgFileDownload *)initWithDictionary:(NSDictionary *)aDictionary;
-- (NSDictionary *)raw;
-- (void)setRaw:(NSDictionary *)aDictionary;
+- (FsprgFileDownload *)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
+@property (NS_NONATOMIC_IOSONLY, copy) NSDictionary *raw;
 
-- (NSURL *)fileURL;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSURL *fileURL;
 
 @end

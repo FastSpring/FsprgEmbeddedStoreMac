@@ -13,14 +13,14 @@
 
 @implementation FsprgOrderView
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
 		[self setDataSource:nil];
         [self setNeedsLayout:FALSE];
 		[self setAutoresizesSubviews:TRUE];
-		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
+		self.autoresizingMask = (NSViewWidthSizable | NSViewHeightSizable);
     }
     return self;
 }
@@ -61,14 +61,14 @@
 
 - (void)layout
 {
-	if([[self subviews] count] == 0) {
-		[self setFrame:[[self superview] frame]];
+	if(self.subviews.count == 0) {
+		self.frame = self.superview.frame;
 		
-		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)[[self dataSource] representation];
+		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)[self dataSource].representation;
 		FsprgOrder *order = [representation order];
 
-		FsprgEmbeddedStoreController *delegate = [[[[self dataSource] webFrame] webView] UIDelegate];
-		NSView *newSubview = [[delegate delegate] viewWithFrame:[self frame] forOrder:order];
+		FsprgEmbeddedStoreController *delegate = [self dataSource].webFrame.webView.UIDelegate;
+		NSView *newSubview = [[delegate delegate] viewWithFrame:self.frame forOrder:order];
 		[self addSubview:newSubview];
 	}
 

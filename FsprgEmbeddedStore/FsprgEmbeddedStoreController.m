@@ -22,8 +22,7 @@
 - (void)setStoreHost:(NSString *)aHost;
 - (void)resizeContentDivE;
 - (void)webViewFrameChanged:(NSNotification *)aNotification;
-- (NSMutableDictionary *)hostCertificates;
-- (void)setHostCertificates:(NSMutableDictionary *)aHostCertificates;
+@property (NS_NONATOMIC_IOSONLY, copy) NSMutableDictionary *hostCertificates;
 
 @end
 
@@ -37,7 +36,7 @@
 				   forMIMEType:@"application/x-fsprgorder+xml"];
 }
 
-- (id) init
+- (instancetype) init
 {
 	self = [super init];
 	if (self != nil) {
@@ -68,10 +67,10 @@
 		
 		if (webView) {
 			[webView setPostsFrameChangedNotifications:TRUE];
-			[webView setFrameLoadDelegate:self];
-			[webView setUIDelegate:self];
-			[webView setResourceLoadDelegate:self];
-			[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/2.0"];
+			webView.frameLoadDelegate = self;
+			webView.UIDelegate = self;
+			webView.resourceLoadDelegate = self;
+			webView.applicationNameForUserAgent = @"FSEmbeddedStore/2.0";
 			[[NSNotificationCenter defaultCenter] addObserver:self 
 													 selector:@selector(webViewFrameChanged:) 
 														 name:NSViewFrameDidChangeNotification 
@@ -110,15 +109,15 @@
 		return;
 	}
 
-	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[urlRequest URL]];
-	NSUInteger i, count = [cookies count];
+	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:urlRequest.URL];
+	NSUInteger i, count = cookies.count;
 	for (i = 0; i < count; i++) {
-		NSHTTPCookie *cookie = [cookies objectAtIndex:i];
+		NSHTTPCookie *cookie = cookies[i];
 		[[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
 	}
 	
 	[self setStoreHost:nil];
-	[[webView mainFrame] loadRequest:urlRequest];
+	[webView.mainFrame loadRequest:urlRequest];
 }
 
 - (void)loadWithContentsOfFile:(NSString *)aPath
@@ -129,7 +128,7 @@
 	if(data == nil) {
 		NSLog(@"File %@ not found.", aPath);
 	} else {
-		[[webView mainFrame] loadData:data MIMEType:@"application/x-fsprgorder+xml" textEncodingName:@"UTF-8" baseURL:nil];
+		[webView.mainFrame loadData:data MIMEType:@"application/x-fsprgorder+xml" textEncodingName:@"UTF-8" baseURL:nil];
 	}
 }
 
@@ -143,7 +142,7 @@
 }
 - (double)estimatedLoadingProgress
 {
-	return [webView estimatedProgress] * 100;
+	return webView.estimatedProgress * 100;
 }
 - (void)setEstimatedLoadingProgress:(double)aProgress
 {
@@ -156,8 +155,8 @@
 }
 - (BOOL)isSecure
 {
-	WebDataSource *mainFrameDs = [[[self webView] mainFrame] dataSource];
-	return [@"https" isEqualTo:[[[mainFrameDs request] URL] scheme]];
+	WebDataSource *mainFrameDs = [self webView].mainFrame.dataSource;
+	return [@"https" isEqualTo:mainFrameDs.request.URL.scheme];
 }
 - (void)setIsSecure:(BOOL)aFlag
 {
@@ -170,9 +169,9 @@
 		return nil;
 	}
 
-	NSString *mainFrameURL = [[self webView] mainFrameURL];
-	NSString *host = [[NSURL URLWithString:mainFrameURL] host];
-	return [[self hostCertificates] objectForKey:host];
+	NSString *mainFrameURL = [self webView].mainFrameURL;
+	NSString *host = [NSURL URLWithString:mainFrameURL].host;
+	return [self hostCertificates][host];
 }
 
 - (NSString *)storeHost
@@ -195,24 +194,24 @@
 		}
 	}
 	
-	DOMElement *resizableContentE = [[[[self webView] mainFrame] DOMDocument] getElementById:@"FsprgResizableContent"];
+	DOMElement *resizableContentE = [[self webView].mainFrame.DOMDocument getElementById:@"FsprgResizableContent"];
 	if(resizableContentE == nil) {
 		return;
 	}
 
-    CGFloat windowHeight = [[self webView] frame].size.height;
-	id result = [[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
+    CGFloat windowHeight = [self webView].frame.size.height;
+	id result = [[self webView].windowScriptObject evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
 	if (result == [WebUndefined undefined]) {
 		return;
 	}
-	float pageNavigationHeight = [(NSString *)result floatValue];
+	float pageNavigationHeight = ((NSString *)result).floatValue;
 	
 	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
-	float paddingTop = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingTop] length]-2] floatValue];
-	float paddingBottom = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingBottom] length]-2] floatValue];
+	float paddingTop = [[cssStyle paddingBottom] substringToIndex:[cssStyle paddingTop].length-2].floatValue;
+	float paddingBottom = [[cssStyle paddingBottom] substringToIndex:[cssStyle paddingBottom].length-2].floatValue;
 
     CGFloat newHeight = windowHeight - paddingTop - paddingBottom - pageNavigationHeight;
-	[[resizableContentE style] setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
+	[resizableContentE.style setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
 }
 
 - (void)webViewFrameChanged:(NSNotification *)aNotification
@@ -247,12 +246,12 @@
 
 	[self resizeContentDivE];
 	
-	NSURL *newURL = [[[frame dataSource] request] URL];
+	NSURL *newURL = frame.dataSource.request.URL;
 	NSString *newStoreHost;
-	if ([@"file" isEqualTo:[newURL scheme]]) {
+	if ([@"file" isEqualTo:newURL.scheme]) {
 		newStoreHost = @"file";
 	} else {
-		newStoreHost = [newURL host];
+		newStoreHost = newURL.host;
 	}
 	
 	if([self storeHost] == nil) {
@@ -285,9 +284,9 @@
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
-	NSString *title = [sender mainFrameTitle];
+	NSString *title = sender.mainFrameTitle;
 	NSAlert *alertPanel = [NSAlert alertWithMessageText:title defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
-	[alertPanel beginSheetModalForWindow:[sender window] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+	[alertPanel beginSheetModalForWindow:sender.window modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 }
 
 - (NSUInteger)webView:(WebView *)sender dragDestinationActionMaskForDraggingInfo:(id <NSDraggingInfo>)draggingInfo
@@ -303,7 +302,7 @@
 										 defer:NO];
 	WebView *subWebView = [[WebView alloc] initWithFrame:NSMakeRect(0,0,0,0)];
 	[window setReleasedWhenClosed:TRUE];
-	[window setContentView:subWebView];
+	window.contentView = subWebView;
 	[window makeKeyAndOrderFront:sender];
 	
 	return subWebView;
@@ -319,7 +318,7 @@
 
 - (void)webView:(WebView *)sender resource:(id)identifier didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge fromDataSource:(WebDataSource *)dataSource
 {
-    SecTrustRef trustRef = [[challenge protectionSpace] serverTrust];
+    SecTrustRef trustRef = challenge.protectionSpace.serverTrust;
     SecTrustResultType resultType;
     SecTrustEvaluate(trustRef, &resultType);
     NSUInteger count = (NSUInteger)SecTrustGetCertificateCount(trustRef);
@@ -331,10 +330,10 @@
         [certificates addObject:(__bridge id)certificateRef];
     }
 
-    NSString *host = [[challenge protectionSpace] host];
-    [[self hostCertificates] setObject:certificates forKey:host];
+    NSString *host = challenge.protectionSpace.host;
+    [self hostCertificates][host] = certificates;
 
-    [[challenge sender] useCredential:[NSURLCredential credentialForTrust:trustRef] forAuthenticationChallenge:challenge];
+    [challenge.sender useCredential:[NSURLCredential credentialForTrust:trustRef] forAuthenticationChallenge:challenge];
 }
 #endif
 

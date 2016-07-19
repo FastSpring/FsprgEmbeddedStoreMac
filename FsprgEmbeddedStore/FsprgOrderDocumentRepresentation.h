@@ -18,7 +18,6 @@
 	FsprgOrder *order;
 }
 
-- (FsprgOrder *)order;
-- (void)setOrder:(FsprgOrder *)anOrder;
+@property (NS_NONATOMIC_IOSONLY, strong) FsprgOrder *order;
 
 @end

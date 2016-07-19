@@ -12,11 +12,11 @@
 #import "FsprgOrder.h"
 
 /*! Type for didLoadPage:ofType: */
-typedef enum {
+typedef NS_ENUM(unsigned int, FsprgPageType) {
 	FsprgPageFS,
 	FsprgPagePayPal,
 	FsprgPageUnknown
-} FsprgPageType;
+};
 
 @class FsprgEmbeddedStoreController;
 

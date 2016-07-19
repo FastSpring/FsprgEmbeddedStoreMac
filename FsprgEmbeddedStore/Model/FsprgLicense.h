@@ -19,16 +19,15 @@
 
 + (FsprgLicense *)licenseWithDictionary:(NSDictionary *)aDictionary;
 
-- (FsprgLicense *)initWithDictionary:(NSDictionary *)aDictionary;
-- (NSDictionary *)raw;
-- (void)setRaw:(NSDictionary *)aDictionary;
+- (FsprgLicense *)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
+@property (NS_NONATOMIC_IOSONLY, copy) NSDictionary *raw;
 
-- (NSString *)licenseName;
-- (NSString *)licenseEmail;
-- (NSString *)licenseCompany;
-- (NSString *)firstLicenseCode;
-- (NSArray *)licenseCodes;
-- (NSDictionary *)licensePropertyList;
-- (NSURL *)licenseURL;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *licenseName;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *licenseEmail;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *licenseCompany;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *firstLicenseCode;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *licenseCodes;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSDictionary *licensePropertyList;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSURL *licenseURL;
 
 @end

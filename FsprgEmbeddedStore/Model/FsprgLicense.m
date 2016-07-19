@@ -53,7 +53,7 @@
 
 - (NSString *)firstLicenseCode
 {
-	return [[self licenseCodes] objectAtIndex:0];
+	return [self licenseCodes][0];
 }
 
 - (NSArray *)licenseCodes

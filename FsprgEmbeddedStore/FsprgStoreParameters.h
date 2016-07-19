@@ -31,54 +31,46 @@ extern NSString * const kFsprgModeTest;
 + (FsprgStoreParameters *)parameters;
 + (FsprgStoreParameters *)parametersWithRaw:(NSMutableDictionary *)aRaw;
 
-- (NSURLRequest *)toURLRequest;
-- (NSURL *)toURL;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSURLRequest *toURLRequest;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSURL *toURL;
 
-- (id)initWithRaw:(NSMutableDictionary *)aRaw;
-- (NSMutableDictionary *)raw;
-- (void)setRaw:(NSMutableDictionary *)aRaw;
+- (instancetype)initWithRaw:(NSMutableDictionary *)aRaw NS_DESIGNATED_INITIALIZER;
+@property (NS_NONATOMIC_IOSONLY, copy) NSMutableDictionary *raw;
 
 /*!
  * Pass a language code via the URL to bypass automatic language detection.
  * Example: de
  */
-- (NSString *)language;
-- (void)setLanguage:(NSString *)aLanguage;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *language;
 
 /*!
  * Use kFsprgOrderProcessDetail or kFsprgOrderProcessInstant.
  */
-- (NSString *)orderProcessType;
-- (void)setOrderProcessType:(NSString *)anOrderProcessType;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *orderProcessType;
 
 /*!
  * Store path name and product path name.
  * These are found in a full product URL such as sites.fastspring.com/<STOREPATH>/product/<PRODUCTPATH>
  */
 - (void)setStoreId:(NSString *)aStoreId withProductId:(NSString *)aProductId;
-- (NSString *)storeId;
-- (void)setStoreId:(NSString *)aStoreId;
-- (NSString *)productId;
-- (void)setProductId:(NSString *)aProductId;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *storeId;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *productId;
 
 /*!
  * Use kFsprgModeActive, kFsprgModeActiveTest or kFsprgModeTest.
  */
-- (NSString *)mode;
-- (void)setMode:(NSString *)aMode;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *mode;
 
 /*!
  * Used for "External Tracking". Go to "Link Sources" inside SpringBoard.
  * Example: november_sale_post
  */
-- (NSString *)campaign;
-- (void)setCampaign:(NSString *)aCampaign;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *campaign;
 
 /*!
  * Used for advanced and atypical store configuration options.
  */
-- (NSString *)option;
-- (void)setOption:(NSString *)anOption;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *option;
 
 /*!
  * Pass a custom referrer via the URL to override the automatically detected referring URL (HTTP_REFERER).
@@ -86,23 +78,20 @@ extern NSString * const kFsprgModeTest;
  * passed in this parameter then no data will be stored from the HTTP_REFERER header.
  * Example: xyz123
  */
-- (NSString *)referrer;
-- (void)setReferrer:(NSString *)aReferrer;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *referrer;
 
 /*!
  * Used for "External Tracking". Go to "Link Sources" inside SpringBoard.
  * Example: my_blog
  */
-- (NSString *)source;
-- (void)setSource:(NSString *)aSource;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *source;
 
 /*!
  * Pass a coupon code via the URL to automatically apply a coupon to the order so that the customer 
  * does not need to enter it. A corresponding coupon code must be setup and associated with a promotion.
  * Example: DECSPECIAL987
  */
-- (NSString *)coupon;
-- (void)setCoupon:(NSString *)aCoupon;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *coupon;
 
 /*!
  * This parameter has many uses within SpringBoard. A tag is a variable that can hold any positive integer value.
@@ -111,19 +100,13 @@ extern NSString * const kFsprgModeTest;
  *
  * mytaga,mytagb,mytagc=2,anothertag=8
  */
-- (NSString *)tags;
-- (void)setTags:(NSString *)aTags;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *tags;
 
-- (BOOL)hasContactDefaults;
-- (NSString *)contactFname;
-- (void)setContactFname:(NSString *)aContactFname;
-- (NSString *)contactLname;
-- (void)setContactLname:(NSString *)aContactLname;
-- (NSString *)contactEmail;
-- (void)setContactEmail:(NSString *)aContactEmail;
-- (NSString *)contactCompany;
-- (void)setContactCompany:(NSString *)aContactCompany;
-- (NSString *)contactPhone;
-- (void)setContactPhone:(NSString *)aContactPhone;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasContactDefaults;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *contactFname;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *contactLname;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *contactEmail;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *contactCompany;
+@property (NS_NONATOMIC_IOSONLY, copy) NSString *contactPhone;
 
 @end

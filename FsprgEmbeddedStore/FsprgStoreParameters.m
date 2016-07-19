@@ -57,7 +57,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 											NSStringFromSelector(@selector(contactCompany)),
 											NSStringFromSelector(@selector(contactPhone)),
 											nil];
-	[keyPathsForValuesAffecting setObject:toURLSet forKey:NSStringFromSelector(@selector(toURL))];
+	keyPathsForValuesAffecting[NSStringFromSelector(@selector(toURL))] = toURLSet;
 }
 
 + (FsprgStoreParameters *)parameters
@@ -81,7 +81,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	}
 }
 
-- (id)initWithRaw:(NSMutableDictionary *)aRaw
+- (instancetype)initWithRaw:(NSMutableDictionary *)aRaw
 {
 	self = [super init];
 	if (self != nil) {
@@ -139,16 +139,16 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 		return nil;
 	}
 
-	NSMutableArray *keys = [NSMutableArray arrayWithArray:[[self raw] allKeys]];
+	NSMutableArray *keys = [NSMutableArray arrayWithArray:[self raw].allKeys];
 	[keys removeObject:kOrderProcessType];
 	[keys removeObject:kStoreId];
 	[keys removeObject:kProductId];
 	[keys sortUsingSelector:@selector(compare:)];
 	
 	NSString *queryStr = @"";
-	NSUInteger i, count = [keys count];
+	NSUInteger i, count = keys.count;
 	for (i = 0; i < count; i++) {
-		NSString *key = [keys objectAtIndex:i];
+		NSString *key = keys[i];
 		NSString *value = [[self raw] valueForKey:key];
 		if(value != nil) {
 			queryStr = [queryStr stringByAppendingFormat:@"&%@=%@",
@@ -157,7 +157,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 		}
 	}
 		
-	if([queryStr length] > 0) {
+	if(queryStr.length > 0) {
 		urlAsStr = [NSString stringWithFormat:@"%@?%@", urlAsStr, [queryStr substringFromIndex:1]];
 	}
 	
@@ -169,13 +169,13 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	if(anObject == nil) {
 		[[self raw] removeObjectForKey:aKey];
 	} else {
-		[[self raw] setObject:anObject forKey:aKey];
+		[self raw][aKey] = anObject;
 	}
 }
 
 - (NSString *)language
 {
-    return [[self raw] objectForKey:kLanguage];
+    return [self raw][kLanguage];
 }
 
 - (void)setLanguage:(NSString *)aLanguage
@@ -185,7 +185,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)orderProcessType
 {
-    return [[self raw] objectForKey:kOrderProcessType];
+    return [self raw][kOrderProcessType];
 }
 - (void)setOrderProcessType:(NSString *)anOrderProcessType
 {
@@ -200,7 +200,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)storeId
 {
-    return [[self raw] objectForKey:kStoreId];
+    return [self raw][kStoreId];
 }
 - (void)setStoreId:(NSString *)aStoreId
 {
@@ -209,7 +209,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)productId
 {
-    return [[self raw] objectForKey:kProductId];
+    return [self raw][kProductId];
 }
 - (void)setProductId:(NSString *)aProductId
 {
@@ -218,7 +218,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)mode
 {
-	return [[self raw] objectForKey:kMode];
+	return [self raw][kMode];
 }
 - (void)setMode:(NSString *)aMode
 {
@@ -227,7 +227,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)campaign
 {
-    return [[self raw] objectForKey:kCampaign];
+    return [self raw][kCampaign];
 }
 - (void)setCampaign:(NSString *)aCampaign
 {
@@ -236,7 +236,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)option
 {
-    return [[self raw] objectForKey:kOption];
+    return [self raw][kOption];
 }
 - (void)setOption:(NSString *)anOption
 {
@@ -245,7 +245,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)referrer
 {
-    return [[self raw] objectForKey:kReferrer];
+    return [self raw][kReferrer];
 }
 - (void)setReferrer:(NSString *)aReferrer
 {
@@ -254,7 +254,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)source
 {
-    return [[self raw] objectForKey:kSource];
+    return [self raw][kSource];
 }
 - (void)setSource:(NSString *)aSource
 {
@@ -263,7 +263,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)coupon
 {
-	return [[self raw] objectForKey:kCoupon];
+	return [self raw][kCoupon];
 }
 - (void)setCoupon:(NSString *)aCoupon
 {
@@ -272,7 +272,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)tags
 {
-    return [[self raw] objectForKey:kTags];
+    return [self raw][kTags];
 }
 - (void)setTags:(NSString *)aTags
 {
@@ -281,7 +281,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (BOOL)hasContactDefaults
 {
-	NSArray *allKeys = [[self raw] allKeys];
+	NSArray *allKeys = [self raw].allKeys;
 
 	return [allKeys containsObject:kContactFname] ||
 		   [allKeys containsObject:kContactLname] ||
@@ -292,7 +292,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)contactFname
 {
-    return [[self raw] objectForKey:kContactFname];
+    return [self raw][kContactFname];
 }
 - (void)setContactFname:(NSString *)aContactFname
 {
@@ -301,7 +301,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)contactLname
 {
-    return [[self raw] objectForKey:kContactLname];
+    return [self raw][kContactLname];
 }
 - (void)setContactLname:(NSString *)aContactLname
 {
@@ -310,7 +310,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)contactEmail
 {
-    return [[self raw] objectForKey:kContactEmail];
+    return [self raw][kContactEmail];
 }
 - (void)setContactEmail:(NSString *)aContactEmail
 {
@@ -319,7 +319,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)contactCompany
 {
-    return [[self raw] objectForKey:kContactCompany];
+    return [self raw][kContactCompany];
 }
 - (void)setContactCompany:(NSString *)aContactCompany
 {
@@ -328,7 +328,7 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 
 - (NSString *)contactPhone
 {
-    return [[self raw] objectForKey:kContactPhone];
+    return [self raw][kContactPhone];
 }
 - (void)setContactPhone:(NSString *)aContactPhone
 {

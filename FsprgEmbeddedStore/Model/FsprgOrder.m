@@ -97,17 +97,17 @@
 - (FsprgOrderItem *)firstOrderItem
 {
 	NSArray *items = [[self raw] valueForKey:@"OrderItems"];
-	return [FsprgOrderItem itemWithDictionary:[items objectAtIndex:0]];
+	return [FsprgOrderItem itemWithDictionary:items[0]];
 }
 
 - (NSArray *)orderItems
 {
 	NSArray *items = [[self raw] valueForKey:@"OrderItems"];
-	NSMutableArray *orderItems = [NSMutableArray arrayWithCapacity:[items count]];
+	NSMutableArray *orderItems = [NSMutableArray arrayWithCapacity:items.count];
 
-	NSUInteger i, count = [items count];
+	NSUInteger i, count = items.count;
 	for (i = 0; i < count; i++) {
-		NSDictionary *anItem = [items objectAtIndex:i];
+		NSDictionary *anItem = items[i];
 		[orderItems addObject:[FsprgOrderItem itemWithDictionary:anItem]];
 	}
 	
