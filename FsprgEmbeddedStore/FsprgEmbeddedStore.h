@@ -15,5 +15,15 @@ FOUNDATION_EXPORT double FsprgEmbeddedStoreVersionNumber;
 FOUNDATION_EXPORT const unsigned char FsprgEmbeddedStoreVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FsprgEmbeddedStore/PublicHeader.h>
+#import "FsprgEmbeddedStoreController.h"
+#import "FsprgEmbeddedStoreDelegate.h"
+#import "FsprgStoreParameters.h"
+
+// Model
+#import "FsprgOrder.h"
+#import "FsprgOrderItem.h"
+#import "FsprgFulfillment.h"
+#import "FsprgLicense.h"
+#import "FsprgFileDownload.h"
 
 

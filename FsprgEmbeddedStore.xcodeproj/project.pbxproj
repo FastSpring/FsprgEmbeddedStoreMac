@@ -8,25 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		DABC89F11D3E913200B2FA05 /* FsprgEmbeddedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89F01D3E913200B2FA05 /* FsprgEmbeddedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DABC8A151D3E915F00B2FA05 /* FsprgEmbeddedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89F91D3E915F00B2FA05 /* FsprgEmbeddedStore.h */; };
-		DABC8A161D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FA1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h */; };
+		DABC8A161D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FA1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A171D3E915F00B2FA05 /* FsprgEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC89FB1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.m */; };
-		DABC8A181D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FC1D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h */; };
+		DABC8A181D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FC1D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A191D3E915F00B2FA05 /* FsprgOrderDocumentRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FD1D3E915F00B2FA05 /* FsprgOrderDocumentRepresentation.h */; };
 		DABC8A1A1D3E915F00B2FA05 /* FsprgOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC89FE1D3E915F00B2FA05 /* FsprgOrderDocumentRepresentation.m */; };
 		DABC8A1B1D3E915F00B2FA05 /* FsprgOrderView.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FF1D3E915F00B2FA05 /* FsprgOrderView.h */; };
 		DABC8A1C1D3E915F00B2FA05 /* FsprgOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A001D3E915F00B2FA05 /* FsprgOrderView.m */; };
-		DABC8A1D1D3E915F00B2FA05 /* FsprgStoreParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A011D3E915F00B2FA05 /* FsprgStoreParameters.h */; };
+		DABC8A1D1D3E915F00B2FA05 /* FsprgStoreParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A011D3E915F00B2FA05 /* FsprgStoreParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A1E1D3E915F00B2FA05 /* FsprgStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A021D3E915F00B2FA05 /* FsprgStoreParameters.m */; };
-		DABC8A1F1D3E915F00B2FA05 /* FsprgFileDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A041D3E915F00B2FA05 /* FsprgFileDownload.h */; };
+		DABC8A1F1D3E915F00B2FA05 /* FsprgFileDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A041D3E915F00B2FA05 /* FsprgFileDownload.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A201D3E915F00B2FA05 /* FsprgFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A051D3E915F00B2FA05 /* FsprgFileDownload.m */; };
-		DABC8A211D3E915F00B2FA05 /* FsprgFulfillment.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A061D3E915F00B2FA05 /* FsprgFulfillment.h */; };
+		DABC8A211D3E915F00B2FA05 /* FsprgFulfillment.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A061D3E915F00B2FA05 /* FsprgFulfillment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A221D3E915F00B2FA05 /* FsprgFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A071D3E915F00B2FA05 /* FsprgFulfillment.m */; };
-		DABC8A231D3E915F00B2FA05 /* FsprgLicense.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A081D3E915F00B2FA05 /* FsprgLicense.h */; };
+		DABC8A231D3E915F00B2FA05 /* FsprgLicense.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A081D3E915F00B2FA05 /* FsprgLicense.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A241D3E915F00B2FA05 /* FsprgLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A091D3E915F00B2FA05 /* FsprgLicense.m */; };
-		DABC8A251D3E915F00B2FA05 /* FsprgOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A0A1D3E915F00B2FA05 /* FsprgOrder.h */; };
+		DABC8A251D3E915F00B2FA05 /* FsprgOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A0A1D3E915F00B2FA05 /* FsprgOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A261D3E915F00B2FA05 /* FsprgOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A0B1D3E915F00B2FA05 /* FsprgOrder.m */; };
-		DABC8A271D3E915F00B2FA05 /* FsprgOrderItem.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A0C1D3E915F00B2FA05 /* FsprgOrderItem.h */; };
+		DABC8A271D3E915F00B2FA05 /* FsprgOrderItem.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC8A0C1D3E915F00B2FA05 /* FsprgOrderItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A281D3E915F00B2FA05 /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A0D1D3E915F00B2FA05 /* FsprgOrderItem.m */; };
 /* End PBXBuildFile section */
 
@@ -135,18 +134,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DABC8A211D3E915F00B2FA05 /* FsprgFulfillment.h in Headers */,
-				DABC8A1D1D3E915F00B2FA05 /* FsprgStoreParameters.h in Headers */,
-				DABC8A161D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h in Headers */,
-				DABC89F11D3E913200B2FA05 /* FsprgEmbeddedStore.h in Headers */,
-				DABC8A1F1D3E915F00B2FA05 /* FsprgFileDownload.h in Headers */,
-				DABC8A231D3E915F00B2FA05 /* FsprgLicense.h in Headers */,
 				DABC8A251D3E915F00B2FA05 /* FsprgOrder.h in Headers */,
-				DABC8A271D3E915F00B2FA05 /* FsprgOrderItem.h in Headers */,
+				DABC8A161D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h in Headers */,
 				DABC8A181D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h in Headers */,
+				DABC8A1D1D3E915F00B2FA05 /* FsprgStoreParameters.h in Headers */,
+				DABC8A1F1D3E915F00B2FA05 /* FsprgFileDownload.h in Headers */,
+				DABC8A211D3E915F00B2FA05 /* FsprgFulfillment.h in Headers */,
+				DABC8A271D3E915F00B2FA05 /* FsprgOrderItem.h in Headers */,
+				DABC8A231D3E915F00B2FA05 /* FsprgLicense.h in Headers */,
+				DABC89F11D3E913200B2FA05 /* FsprgEmbeddedStore.h in Headers */,
 				DABC8A1B1D3E915F00B2FA05 /* FsprgOrderView.h in Headers */,
 				DABC8A191D3E915F00B2FA05 /* FsprgOrderDocumentRepresentation.h in Headers */,
-				DABC8A151D3E915F00B2FA05 /* FsprgEmbeddedStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
