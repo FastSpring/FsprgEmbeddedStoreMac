@@ -18,7 +18,12 @@
 	return [[FsprgFulfillment alloc] initWithDictionary:aDictionary];
 }
 
-- (FsprgFulfillment *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
@@ -26,6 +31,7 @@
 	}
 	return self;
 }
+
 - (NSDictionary *)raw
 {
     return raw; 

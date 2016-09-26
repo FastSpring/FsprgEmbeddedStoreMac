@@ -16,7 +16,12 @@
 	return [[FsprgLicense alloc] initWithDictionary:aDictionary];
 }
 
-- (FsprgLicense *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {

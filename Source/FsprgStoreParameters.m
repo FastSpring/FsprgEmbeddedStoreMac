@@ -81,6 +81,11 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	}
 }
 
+- (instancetype)init
+{
+    return [self initWithRaw:[NSMutableDictionary dictionary]];
+}
+
 - (instancetype)initWithRaw:(NSMutableDictionary *)aRaw
 {
 	self = [super init];

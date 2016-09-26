@@ -20,7 +20,7 @@
 
 + (FsprgOrder *)orderFromData:(NSData *)aData;
 
-- (FsprgOrder *)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
 @property (NS_NONATOMIC_IOSONLY, copy) NSDictionary *raw;
 
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL orderIsTest;

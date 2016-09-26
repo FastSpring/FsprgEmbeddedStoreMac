@@ -32,18 +32,25 @@
 	return [[FsprgOrder alloc] initWithDictionary:aDict];
 }
 
-- (FsprgOrder *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
 		self.raw = aDictionary;
 	}
 	return self;
-}									
+}
+
 - (NSDictionary *)raw
 {
     return raw; 
 }
+
 - (void)setRaw:(NSDictionary *)aDictionary
 {
     if (raw != aDictionary) {

@@ -19,7 +19,7 @@
 
 + (FsprgLicense *)licenseWithDictionary:(NSDictionary *)aDictionary;
 
-- (FsprgLicense *)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
 @property (NS_NONATOMIC_IOSONLY, copy) NSDictionary *raw;
 
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *licenseName;

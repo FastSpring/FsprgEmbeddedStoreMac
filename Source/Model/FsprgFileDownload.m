@@ -16,7 +16,12 @@
 	return [[FsprgFileDownload alloc] initWithDictionary:aDictionary];
 }
 
-- (FsprgFileDownload *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
@@ -24,10 +29,12 @@
 	}
 	return self;
 }
+
 - (NSDictionary *)raw
 {
     return raw; 
 }
+
 - (void)setRaw:(NSDictionary *)aDictionary
 {
     if (raw != aDictionary) {
