@@ -13,8 +13,7 @@
 // We don't retrieve SSL certificates below OSX 10.6
 #define RETRIEVE_SSL_CERTIFICATES defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
 
-
-@interface FsprgEmbeddedStoreController (Private)
+@interface FsprgEmbeddedStoreController ()
 
 - (void)setIsLoading:(BOOL)aFlag;
 - (void)setEstimatedLoadingProgress:(double)aProgress;
@@ -22,9 +21,14 @@
 - (void)setStoreHost:(NSString *)aHost;
 - (void)resizeContentDivE;
 - (void)webViewFrameChanged:(NSNotification *)aNotification;
-@property (NS_NONATOMIC_IOSONLY, copy) NSMutableDictionary *hostCertificates;
+@property (nonatomic, copy) NSMutableDictionary *hostCertificates;
 
 @end
+
+#if defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11
+@interface FsprgEmbeddedStoreController () <WebFrameLoadDelegate, WebUIDelegate, WebResourceLoadDelegate>
+@end
+#endif
 
 @implementation FsprgEmbeddedStoreController
 
@@ -104,7 +108,7 @@
 
 - (void)loadWithParameters:(FsprgStoreParameters *)parameters
 {
-	NSURLRequest *urlRequest = parameters.toURLRequest;
+	NSURLRequest *urlRequest = [parameters toURLRequest];
 	if (urlRequest == nil) {
 		return;
 	}
@@ -285,8 +289,14 @@
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
 	NSString *title = sender.mainFrameTitle;
-	NSAlert *alertPanel = [NSAlert alertWithMessageText:title defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
-	[alertPanel beginSheetModalForWindow:sender.window modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+	NSAlert *alertPanel = [[NSAlert alloc] init];
+	[alertPanel setMessageText:title];
+	[alertPanel setInformativeText:message];
+#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_9
+	[alertPanel beginSheetModalForWindow:[sender window] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+#else
+	[alertPanel beginSheetModalForWindow:[sender window] completionHandler:nil];
+#endif
 }
 
 - (NSUInteger)webView:(WebView *)sender dragDestinationActionMaskForDraggingInfo:(id <NSDraggingInfo>)draggingInfo
@@ -302,7 +312,7 @@
 										 defer:NO];
 	WebView *subWebView = [[WebView alloc] initWithFrame:NSMakeRect(0,0,0,0)];
 	[window setReleasedWhenClosed:TRUE];
-	window.contentView = subWebView;
+	[window setContentView:subWebView];
 	[window makeKeyAndOrderFront:sender];
 	
 	return subWebView;
@@ -344,7 +354,6 @@
 	[self setDelegate:nil];
 	[self setStoreHost:nil];
 	[self setHostCertificates:nil];
-
 }
 
 @end
