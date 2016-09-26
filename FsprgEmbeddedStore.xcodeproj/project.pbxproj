@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		507FDCBB1D9983F400FE07E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FDCBA1D9983F400FE07E7 /* AppDelegate.swift */; };
+		507FDCBD1D9983F400FE07E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507FDCBC1D9983F400FE07E7 /* Assets.xcassets */; };
+		507FDCC01D9983F400FE07E7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507FDCBE1D9983F400FE07E7 /* MainMenu.xib */; };
+		507FDCC51D9983FD00FE07E7 /* FsprgEmbeddedStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABC89ED1D3E913200B2FA05 /* FsprgEmbeddedStore.framework */; };
+		507FDCC61D9983FD00FE07E7 /* FsprgEmbeddedStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DABC89ED1D3E913200B2FA05 /* FsprgEmbeddedStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DABC89F11D3E913200B2FA05 /* FsprgEmbeddedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89F01D3E913200B2FA05 /* FsprgEmbeddedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A161D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h in Headers */ = {isa = PBXBuildFile; fileRef = DABC89FA1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DABC8A171D3E915F00B2FA05 /* FsprgEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC89FB1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.m */; };
@@ -29,11 +34,39 @@
 		DABC8A281D3E915F00B2FA05 /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC8A0D1D3E915F00B2FA05 /* FsprgOrderItem.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		507FDCC71D9983FD00FE07E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DABC89E41D3E913200B2FA05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DABC89EC1D3E913200B2FA05;
+			remoteInfo = FsprgEmbeddedStore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		507FDCC91D9983FD00FE07E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				507FDCC61D9983FD00FE07E7 /* FsprgEmbeddedStore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		507FDCB81D9983F400FE07E7 /* TestUsage-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestUsage-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		507FDCBA1D9983F400FE07E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		507FDCBC1D9983F400FE07E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		507FDCBF1D9983F400FE07E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		507FDCC11D9983F400FE07E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DABC89ED1D3E913200B2FA05 /* FsprgEmbeddedStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FsprgEmbeddedStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABC89F01D3E913200B2FA05 /* FsprgEmbeddedStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStore.h; sourceTree = "<group>"; };
 		DABC89F21D3E913200B2FA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DABC89F91D3E915F00B2FA05 /* FsprgEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStore.h; sourceTree = "<group>"; };
 		DABC89FA1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreController.h; sourceTree = "<group>"; };
 		DABC89FB1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgEmbeddedStoreController.m; sourceTree = "<group>"; };
 		DABC89FC1D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +89,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		507FDCB51D9983F400FE07E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507FDCC51D9983FD00FE07E7 /* FsprgEmbeddedStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DABC89E91D3E913200B2FA05 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,10 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		507FDCB91D9983F400FE07E7 /* TestUsage-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				507FDCBA1D9983F400FE07E7 /* AppDelegate.swift */,
+				507FDCBC1D9983F400FE07E7 /* Assets.xcassets */,
+				507FDCBE1D9983F400FE07E7 /* MainMenu.xib */,
+				507FDCC11D9983F400FE07E7 /* Info.plist */,
+			);
+			path = "TestUsage-Swift";
+			sourceTree = "<group>";
+		};
 		DABC89E31D3E913200B2FA05 = {
 			isa = PBXGroup;
 			children = (
 				DABC89EF1D3E913200B2FA05 /* FsprgEmbeddedStore */,
+				507FDCB91D9983F400FE07E7 /* TestUsage-Swift */,
 				DABC89EE1D3E913200B2FA05 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				DABC89ED1D3E913200B2FA05 /* FsprgEmbeddedStore.framework */,
+				507FDCB81D9983F400FE07E7 /* TestUsage-Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +149,6 @@
 		DABC89F81D3E915F00B2FA05 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DABC89F91D3E915F00B2FA05 /* FsprgEmbeddedStore.h */,
 				DABC89FA1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.h */,
 				DABC89FB1D3E915F00B2FA05 /* FsprgEmbeddedStoreController.m */,
 				DABC89FC1D3E915F00B2FA05 /* FsprgEmbeddedStoreDelegate.h */,
@@ -151,6 +204,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		507FDCB71D9983F400FE07E7 /* TestUsage-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507FDCC21D9983F400FE07E7 /* Build configuration list for PBXNativeTarget "TestUsage-Swift" */;
+			buildPhases = (
+				507FDCB41D9983F400FE07E7 /* Sources */,
+				507FDCB51D9983F400FE07E7 /* Frameworks */,
+				507FDCB61D9983F400FE07E7 /* Resources */,
+				507FDCC91D9983FD00FE07E7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				507FDCC81D9983FD00FE07E7 /* PBXTargetDependency */,
+			);
+			name = "TestUsage-Swift";
+			productName = "TestUsage-Swift";
+			productReference = 507FDCB81D9983F400FE07E7 /* TestUsage-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DABC89EC1D3E913200B2FA05 /* FsprgEmbeddedStore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DABC89F51D3E913200B2FA05 /* Build configuration list for PBXNativeTarget "FsprgEmbeddedStore" */;
@@ -175,9 +247,14 @@
 		DABC89E41D3E913200B2FA05 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Edovia Inc.";
 				TargetAttributes = {
+					507FDCB71D9983F400FE07E7 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 					DABC89EC1D3E913200B2FA05 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -189,6 +266,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DABC89E31D3E913200B2FA05;
 			productRefGroup = DABC89EE1D3E913200B2FA05 /* Products */;
@@ -196,11 +274,21 @@
 			projectRoot = "";
 			targets = (
 				DABC89EC1D3E913200B2FA05 /* FsprgEmbeddedStore */,
+				507FDCB71D9983F400FE07E7 /* TestUsage-Swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		507FDCB61D9983F400FE07E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507FDCBD1D9983F400FE07E7 /* Assets.xcassets in Resources */,
+				507FDCC01D9983F400FE07E7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DABC89EB1D3E913200B2FA05 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +299,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		507FDCB41D9983F400FE07E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507FDCBB1D9983F400FE07E7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DABC89E81D3E913200B2FA05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,7 +325,61 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		507FDCC81D9983FD00FE07E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DABC89EC1D3E913200B2FA05 /* FsprgEmbeddedStore */;
+			targetProxy = 507FDCC71D9983FD00FE07E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		507FDCBE1D9983F400FE07E7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				507FDCBF1D9983F400FE07E7 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		507FDCC31D9983F400FE07E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TestUsage-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fastspring.sdk.TestUsage-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		507FDCC41D9983F400FE07E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TestUsage-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fastspring.sdk.TestUsage-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		DABC89F31D3E913200B2FA05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -362,6 +512,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		507FDCC21D9983F400FE07E7 /* Build configuration list for PBXNativeTarget "TestUsage-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507FDCC31D9983F400FE07E7 /* Debug */,
+				507FDCC41D9983F400FE07E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DABC89E71D3E913200B2FA05 /* Build configuration list for PBXProject "FsprgEmbeddedStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
