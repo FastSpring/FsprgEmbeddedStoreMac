@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ECD9FA0CCDC4DEE088D281486C1095F3D525E37F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E3159BE2A0AA0438B45583734574FC90102D82D0" : 0,
+    "ECD9FA0CCDC4DEE088D281486C1095F3D525E37F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B768050C-9603-4641-B8E2-7C1CCD4FF558",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E3159BE2A0AA0438B45583734574FC90102D82D0" : "..",
+    "ECD9FA0CCDC4DEE088D281486C1095F3D525E37F" : "FsprgEmbeddedStore\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FsprgEmbeddedStore",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FsprgEmbeddedStore.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/edovia\/screens-3-for-mac.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E3159BE2A0AA0438B45583734574FC90102D82D0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Edovia\/FsprgEmbeddedStoreMac.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ECD9FA0CCDC4DEE088D281486C1095F3D525E37F"
+    }
+  ]
+}
