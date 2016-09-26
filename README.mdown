@@ -1,5 +1,8 @@
 # Introduction #
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/FsprgEmbeddedStoreMac.svg)](http://cocoapods.org/pods/FsprgEmbeddedStoreMac)
+
 [FastSpring](http://www.fastspring.com) offers an innovative e-commerce engine designed to overcome ease of use, customer service, and cost issues that have plagued software e-commerce companies.
 
 FastSpring's embedded store consists of a controller with some integration points and WebKit's web view. It's thin and very flexible and lets you integrate FastSpring the way that fits best for your application.
@@ -48,7 +51,7 @@ In addition, it has some integration points defined by the `FsprgEmbeddedStoreDe
 
 ## How-to embed it ##
 
-Use our [CocoaPod](http://cocoapods.org/?q=fsprgembeddedstoremac) or perform the following steps.
+Use our [CocoaPod](http://cocoapods.org/pods/FsprgEmbeddedStoreMac), Carthage, or perform the following steps.
 
 1. [Clone or fork](http://help.github.com/fork-a-repo) our repository.
 2. Open your project in Xcode.
