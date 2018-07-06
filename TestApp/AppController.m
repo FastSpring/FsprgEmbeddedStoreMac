@@ -126,7 +126,7 @@ static NSString * const kParams = @"params";
 													errorDescription:&errorDesc];
 	NSString *orderAsStr = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
 
-	OrderViewController *orderViewController = [[OrderViewController alloc] initWithNibName:@"OrderView" bundle:nil];
+	OrderViewController *orderViewController = [[[OrderViewController alloc] initWithNibName:@"OrderView" bundle:nil] autorelease];
 	[orderViewController setRepresentedObject:orderAsStr];
 
 	[[[orderViewController view] window] setBackgroundColor:[NSColor blackColor]];

@@ -11,7 +11,7 @@
 #import "FsprgOrderDocumentRepresentation.h"
 
 // We don't retrieve SSL certificates below OSX 10.6
-#define RETRIEVE_SSL_CERTIFICATES defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
+#define RETRIEVE_SSL_CERTIFICATES /* defined(MAC_OS_X_VERSION_10_6) && */ MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
 
 @interface FsprgEmbeddedStoreController ()
 
@@ -294,7 +294,7 @@
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
 	NSString *title = [sender mainFrameTitle];
-	NSAlert *alertPanel = [[NSAlert alloc] init];
+	NSAlert *alertPanel = [[[NSAlert alloc] init] autorelease];
 	[alertPanel setMessageText:title];
 	[alertPanel setInformativeText:message];
 #if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_9

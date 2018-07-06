@@ -14,9 +14,9 @@
 + (FsprgOrder *)orderFromData:(NSData *)aData
 {
 	NSPropertyListFormat *format = nil;
-	NSString *errorDesc = nil;
 
 #if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_6
+	NSString *errorDesc = nil;
 	NSDictionary *aDict = [NSPropertyListSerialization propertyListFromData:aData
 													   mutabilityOption:NSPropertyListImmutable
 													   format:format 

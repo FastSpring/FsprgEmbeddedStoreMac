@@ -45,7 +45,10 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 											NSStringFromSelector(@selector(orderProcessType)), 
 											NSStringFromSelector(@selector(storeId)),
 											NSStringFromSelector(@selector(productId)),
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wselector"
 											NSStringFromSelector(@selector(mode)),
+#pragma clang diagnostic pop
 											NSStringFromSelector(@selector(campaign)),
 											NSStringFromSelector(@selector(option)),
 											NSStringFromSelector(@selector(referrer)),
@@ -144,7 +147,10 @@ static NSMutableDictionary *keyPathsForValuesAffecting;
 	[keys removeObject:kOrderProcessType];
 	[keys removeObject:kStoreId];
 	[keys removeObject:kProductId];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wselector"
 	[keys sortUsingSelector:@selector(compare:)];
+#pragma clang diagnostic pop
 	
 	NSString *queryStr = @"";
 	NSUInteger i, count = [keys count];
