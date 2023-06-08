@@ -22,10 +22,8 @@
 
 @end
 
-#if defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11
 @interface FsprgEmbeddedStoreController () <WebFrameLoadDelegate, WebUIDelegate, WebResourceLoadDelegate>
 @end
-#endif
 
 @implementation FsprgEmbeddedStoreController
 
