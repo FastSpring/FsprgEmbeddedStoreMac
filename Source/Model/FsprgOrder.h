@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "FsprgOrderItem.h"
+#import <FsprgEmbeddedStore/FsprgOrderItem.h>
 
 
 /*!

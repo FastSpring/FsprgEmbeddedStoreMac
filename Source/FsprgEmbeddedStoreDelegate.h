@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import "FsprgStoreParameters.h"
-#import "FsprgOrder.h"
+#import <FsprgEmbeddedStore/FsprgStoreParameters.h>
+#import <FsprgEmbeddedStore/FsprgOrder.h>
 
 /*! Type for didLoadPage:ofType: */
 typedef NS_ENUM(unsigned int, FsprgPageType) {
