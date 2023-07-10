@@ -13,78 +13,83 @@
 
 + (FsprgOrderItem *)itemWithDictionary:(NSDictionary *)aDictionary
 {
-	return [[[FsprgOrderItem alloc] initWithDictionary:aDictionary] autorelease];
+	return [[FsprgOrderItem alloc] initWithDictionary:aDictionary];
 }
 
-- (FsprgOrderItem *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
-		[self setRaw:aDictionary];
+		self.raw = aDictionary;
 	}
 	return self;
 }
+
 - (NSDictionary *)raw
 {
-    return [[raw retain] autorelease]; 
+    return raw; 
 }
 
 - (void)setRaw:(NSDictionary *)aDictionary
 {
     if (raw != aDictionary) {
-        [raw release];
-        raw = [aDictionary retain];
+        raw = aDictionary;
     }
 }
 
 - (NSString *)productName
 {
-	return [[self raw] valueForKey:@"ProductName"];
+	return [self.raw valueForKey:@"ProductName"];
 }
 
 - (NSString *)productDisplay
 {
-	return [[self raw] valueForKey:@"ProductDisplay"];
+	return [self.raw valueForKey:@"ProductDisplay"];
 }
 
 - (NSNumber *)quantity
 {
-	return [[self raw] valueForKey:@"Quantity"];
+	return [self.raw valueForKey:@"Quantity"];
 }
 
 - (NSNumber *)itemTotal
 {
-	return [[self raw] valueForKey:@"ItemTotal"];
+	return [self.raw valueForKey:@"ItemTotal"];
 }
 
 - (NSNumber *)itemTotalUSD
 {
-	return [[self raw] valueForKey:@"ItemTotalUSD"];
+	return [self.raw valueForKey:@"ItemTotalUSD"];
 }
 
 - (NSString *)subscriptionReference
 {
-	return [[self raw] valueForKey:@"SubscriptionReference"];
+	return [self.raw valueForKey:@"SubscriptionReference"];
 }
 
 - (NSURL *)subscriptionCustomerURL
 {
-    return [NSURL URLWithString:[[self raw] valueForKey:@"SubscriptionCustomerURL"]];
+    return [NSURL URLWithString:[self.raw valueForKey:@"SubscriptionCustomerURL"]];
 }
 
 - (FsprgFulfillment *)fulfillment
 {
-	return [FsprgFulfillment fulfillmentWithDictionary:[[self raw] valueForKey:@"Fulfillment"]];
+	return [FsprgFulfillment fulfillmentWithDictionary:[self.raw valueForKey:@"Fulfillment"]];
 }
 
 - (FsprgLicense *)license
 {
-	return [[self fulfillment] valueForKey:@"license"];
+	return [self.fulfillment valueForKey:@"license"];
 }
 
 - (FsprgFileDownload *)download
 {
-	return [[self fulfillment] valueForKey:@"download"];
+	return [self.fulfillment valueForKey:@"download"];
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
@@ -97,7 +102,6 @@
 {
     [self setRaw:nil];
 	
-    [super dealloc];
 }
 
 @end

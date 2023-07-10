@@ -5,3 +5,6 @@ TestApp/build
 *.pbxuser
 xcuserdata
 .DS_Store
+TestApp.xccheckout
+Example2/Example2.xcodeproj/project.xcworkspace/xcshareddata
+Example1/Example1.xcodeproj/project.xcworkspace/xcshareddata

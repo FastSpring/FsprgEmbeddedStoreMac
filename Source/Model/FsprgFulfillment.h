@@ -19,9 +19,8 @@
 
 + (FsprgFulfillment *)fulfillmentWithDictionary:(NSDictionary *)aDictionary;
 
-- (FsprgFulfillment *)initWithDictionary:(NSDictionary *)aDictionary;
-- (NSDictionary *)raw;
-- (void)setRaw:(NSDictionary *)aDictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary NS_DESIGNATED_INITIALIZER;
+@property (NS_NONATOMIC_IOSONLY, copy) NSDictionary *raw;
 
 /*!
  * @param aKey type of fulfillment (e.g. license, download)

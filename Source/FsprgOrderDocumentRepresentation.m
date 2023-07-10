@@ -12,7 +12,7 @@
 
 @implementation FsprgOrderDocumentRepresentation
 
-- (id) init
+- (instancetype) init
 {
 	self = [super init];
 	if (self != nil) {
@@ -23,14 +23,13 @@
 
 - (FsprgOrder *)order
 {
-    return [[order retain] autorelease]; 
+    return order; 
 }
 
 - (void)setOrder:(FsprgOrder *)anOrder
 {
     if (order != anOrder) {
-        [order release];
-        order = [anOrder retain];
+        order = anOrder;
     }
 }
 
@@ -53,9 +52,9 @@
 
 - (void)receivedData:(NSData *)aData withDataSource:(WebDataSource *)aDataSource
 {
-	[self setOrder:[FsprgOrder orderFromData:aData]];
-	FsprgEmbeddedStoreController *delegate = [[[aDataSource webFrame] webView] frameLoadDelegate];
-	[[delegate delegate] didReceiveOrder:[self order]];
+	self.order = [FsprgOrder orderFromData:aData];
+	FsprgEmbeddedStoreController *delegate = aDataSource.webFrame.webView.frameLoadDelegate;
+	[delegate.delegate didReceiveOrder:self.order];
 }
 
 - (void)receivedError:(NSError *)anError withDataSource:(WebDataSource *)aDataSource
@@ -70,7 +69,6 @@
 {
     [self setOrder:nil];
 	
-    [super dealloc];
 }
 
 @end

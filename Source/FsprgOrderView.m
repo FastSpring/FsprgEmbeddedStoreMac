@@ -13,32 +13,31 @@
 
 @implementation FsprgOrderView
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
 		[self setDataSource:nil];
         [self setNeedsLayout:FALSE];
 		[self setAutoresizesSubviews:TRUE];
-		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
+		self.autoresizingMask = (NSViewWidthSizable | NSViewHeightSizable);
     }
     return self;
 }
 
 - (WebDataSource *)dataSource
 {
-    return [[dataSource retain] autorelease]; 
+    return dataSource; 
 }
 - (void)setDataSource:(WebDataSource *)aDataSource
 {
     if (dataSource != aDataSource) {
-        [dataSource release];
-        dataSource = [aDataSource retain];
+        dataSource = aDataSource;
     }
 }
 - (void)dataSourceUpdated:(WebDataSource *)aDataSource
 {
-	[self setDataSource:aDataSource];
+	self.dataSource = aDataSource;
 }
 
 - (BOOL)needsLayout
@@ -53,7 +52,7 @@
 
 - (void)drawRect:(NSRect)aRect
 {
-	if([self needsLayout]) {
+	if(self.needsLayout) {
 		[self setNeedsLayout:FALSE];
 		[self layout];
 	}
@@ -62,20 +61,18 @@
 
 - (void)layout
 {
-	if([[self subviews] count] == 0) {
-		[self setFrame:[[self superview] frame]];
+	if(self.subviews.count == 0) {
+		self.frame = self.superview.frame;
 		
-		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)[[self dataSource] representation];
-		FsprgOrder *order = [representation order];
+		FsprgOrderDocumentRepresentation *representation = (FsprgOrderDocumentRepresentation *)self.dataSource.representation;
+		FsprgOrder *order = representation.order;
 
-		FsprgEmbeddedStoreController *delegate = [[[[self dataSource] webFrame] webView] UIDelegate];
-		NSView *newSubview = [[delegate delegate] viewWithFrame:[self frame] forOrder:order];
+		FsprgEmbeddedStoreController *delegate = self.dataSource.webFrame.webView.UIDelegate;
+		NSView *newSubview = [delegate.delegate viewWithFrame:self.frame forOrder:order];
 		[self addSubview:newSubview];
 	}
 
-#if defined(MAC_OS_X_VERSION_10_7) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
 	[super layout];
-#endif
 }
 
 - (void)viewDidMoveToHostWindow
@@ -89,7 +86,6 @@
 {
     [self setDataSource:nil];
 	
-    [super dealloc];
 }
 
 @end

@@ -15,33 +15,38 @@
 
 + (FsprgFulfillment *)fulfillmentWithDictionary:(NSDictionary *)aDictionary
 {
-	return [[[FsprgFulfillment alloc] initWithDictionary:aDictionary] autorelease];
+	return [[FsprgFulfillment alloc] initWithDictionary:aDictionary];
 }
 
-- (FsprgFulfillment *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
-		[self setRaw:aDictionary];
+		self.raw = aDictionary;
 	}
 	return self;
 }
+
 - (NSDictionary *)raw
 {
-    return [[raw retain] autorelease]; 
+    return raw; 
 }
 
 - (void)setRaw:(NSDictionary *)aDictionary
 {
     if (raw != aDictionary) {
-        [raw release];
-        raw = [aDictionary retain];
+        raw = aDictionary;
     }
 }
 
 - (id)valueForKey:(NSString *)aKey
 {
-	NSDictionary *anItem = [[self raw] valueForKey:aKey];
+	NSDictionary *anItem = [self.raw valueForKey:aKey];
 	
 	if([[anItem valueForKey:@"FulfillmentType"] isEqual:@"License"]) {
 		return [FsprgLicense licenseWithDictionary:anItem];
@@ -63,7 +68,6 @@
 {
     [self setRaw:nil];
 	
-    [super dealloc];
 }
 
 @end

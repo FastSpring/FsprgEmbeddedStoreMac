@@ -10,9 +10,6 @@
 #import "FsprgOrderView.h"
 #import "FsprgOrderDocumentRepresentation.h"
 
-// We don't retrieve SSL certificates below OSX 10.6
-#define RETRIEVE_SSL_CERTIFICATES defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
-
 @interface FsprgEmbeddedStoreController ()
 
 - (void)setIsLoading:(BOOL)aFlag;
@@ -21,15 +18,12 @@
 - (void)setStoreHost:(NSString *)aHost;
 - (void)resizeContentDivE;
 - (void)webViewFrameChanged:(NSNotification *)aNotification;
-- (NSMutableDictionary *)hostCertificates;
-- (void)setHostCertificates:(NSMutableDictionary *)aHostCertificates;
+@property (nonatomic, copy) NSMutableDictionary *hostCertificates;
 
 @end
 
-#if defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11
 @interface FsprgEmbeddedStoreController () <WebFrameLoadDelegate, WebUIDelegate, WebResourceLoadDelegate>
 @end
-#endif
 
 @implementation FsprgEmbeddedStoreController
 
@@ -41,21 +35,21 @@
 				   forMIMEType:@"application/x-fsprgorder+xml"];
 }
 
-- (id) init
+- (instancetype) init
 {
 	self = [super init];
 	if (self != nil) {
 		[self setWebView:nil];
 		[self setDelegate:nil];
 		[self setStoreHost:nil];
-		[self setHostCertificates:[NSMutableDictionary dictionary]];
+		self.hostCertificates = [NSMutableDictionary dictionary];
 	}
 	return self;
 }
 
 - (WebView *)webView
 {
-	return [[webView retain] autorelease];
+	return webView;
 }
 
 - (void)setWebView:(WebView *)aWebView
@@ -68,15 +62,14 @@
 		[webView setApplicationNameForUserAgent:nil];
 		[[NSNotificationCenter defaultCenter] removeObserver:self];
 		
-		[webView release];
-		webView = [aWebView retain];
+		webView = aWebView;
 		
 		if (webView) {
 			[webView setPostsFrameChangedNotifications:TRUE];
-			[webView setFrameLoadDelegate:self];
-			[webView setUIDelegate:self];
-			[webView setResourceLoadDelegate:self];
-			[webView setApplicationNameForUserAgent:@"FSEmbeddedStore/2.0"];
+			webView.frameLoadDelegate = self;
+			webView.UIDelegate = self;
+			webView.resourceLoadDelegate = self;
+			webView.applicationNameForUserAgent = @"FSEmbeddedStore/2.0";
 			[[NSNotificationCenter defaultCenter] addObserver:self 
 													 selector:@selector(webViewFrameChanged:) 
 														 name:NSViewFrameDidChangeNotification 
@@ -115,15 +108,15 @@
 		return;
 	}
 
-	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[urlRequest URL]];
-	NSUInteger i, count = [cookies count];
+	NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:urlRequest.URL];
+	NSUInteger i, count = cookies.count;
 	for (i = 0; i < count; i++) {
-		NSHTTPCookie *cookie = [cookies objectAtIndex:i];
+		NSHTTPCookie *cookie = cookies[i];
 		[[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
 	}
 	
 	[self setStoreHost:nil];
-	[[webView mainFrame] loadRequest:urlRequest];
+	[webView.mainFrame loadRequest:urlRequest];
 }
 
 - (void)loadWithContentsOfFile:(NSString *)aPath
@@ -134,13 +127,13 @@
 	if(data == nil) {
 		NSLog(@"File %@ not found.", aPath);
 	} else {
-		[[webView mainFrame] loadData:data MIMEType:@"application/x-fsprgorder+xml" textEncodingName:@"UTF-8" baseURL:nil];
+		[webView.mainFrame loadData:data MIMEType:@"application/x-fsprgorder+xml" textEncodingName:@"UTF-8" baseURL:nil];
 	}
 }
 
 - (BOOL)isLoading
 {
-	return [self estimatedLoadingProgress] < 100;
+	return self.estimatedLoadingProgress < 100;
 }
 - (void)setIsLoading:(BOOL)aFlag
 {
@@ -148,7 +141,7 @@
 }
 - (double)estimatedLoadingProgress
 {
-	return [webView estimatedProgress] * 100;
+	return webView.estimatedProgress * 100;
 }
 - (void)setEstimatedLoadingProgress:(double)aProgress
 {
@@ -161,8 +154,8 @@
 }
 - (BOOL)isSecure
 {
-	WebDataSource *mainFrameDs = [[[self webView] mainFrame] dataSource];
-	return [@"https" isEqualTo:[[[mainFrameDs request] URL] scheme]];
+	WebDataSource *mainFrameDs = self.webView.mainFrame.dataSource;
+	return [@"https" isEqualTo:mainFrameDs.request.URL.scheme];
 }
 - (void)setIsSecure:(BOOL)aFlag
 {
@@ -171,54 +164,53 @@
 
 - (NSArray *)securityCertificates
 {
-	if ([self isSecure] == NO) {
+	if (self.secure == NO) {
 		return nil;
 	}
 
-	NSString *mainFrameURL = [[self webView] mainFrameURL];
-	NSString *host = [[NSURL URLWithString:mainFrameURL] host];
-	return [[self hostCertificates] objectForKey:host];
+	NSString *mainFrameURL = self.webView.mainFrameURL;
+	NSString *host = [NSURL URLWithString:mainFrameURL].host;
+	return self.hostCertificates[host];
 }
 
 - (NSString *)storeHost
 {
-	return [[storeHost retain] autorelease];
+	return storeHost;
 }
 
 - (void)setStoreHost:(NSString *)aHost
 {
 	if (storeHost != aHost) {
-		[storeHost release];
-		storeHost = [aHost retain];
+		storeHost = aHost;
 	}
 }
 
 - (void)resizeContentDivE
 {
-	if ([[self delegate] respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)]) {
-		if ([[self delegate] shouldStoreControllerFixContentDivHeight:self] == NO) {
+	if ([self.delegate respondsToSelector:@selector(shouldStoreControllerFixContentDivHeight:)]) {
+		if ([self.delegate shouldStoreControllerFixContentDivHeight:self] == NO) {
 			return;
 		}
 	}
 	
-	DOMElement *resizableContentE = [[[[self webView] mainFrame] DOMDocument] getElementById:@"FsprgResizableContent"];
+	DOMElement *resizableContentE = [self.webView.mainFrame.DOMDocument getElementById:@"FsprgResizableContent"];
 	if(resizableContentE == nil) {
 		return;
 	}
 
-    CGFloat windowHeight = [[self webView] frame].size.height;
-	id result = [[[self webView] windowScriptObject] evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
+    CGFloat windowHeight = self.webView.frame.size.height;
+	id result = [self.webView.windowScriptObject evaluateWebScript:@"document.getElementsByClassName('store-page-navigation')[0].clientHeight"];
 	if (result == [WebUndefined undefined]) {
 		return;
 	}
-	float pageNavigationHeight = [(NSString *)result floatValue];
+	float pageNavigationHeight = ((NSString *)result).floatValue;
 	
-	DOMCSSStyleDeclaration *cssStyle = [[self webView] computedStyleForElement:resizableContentE pseudoElement:nil];	
-	float paddingTop = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingTop] length]-2] floatValue];
-	float paddingBottom = [[[cssStyle paddingBottom] substringToIndex:[[cssStyle paddingBottom] length]-2] floatValue];
+	DOMCSSStyleDeclaration *cssStyle = [self.webView computedStyleForElement:resizableContentE pseudoElement:nil];	
+	float paddingTop = [[cssStyle paddingBottom] substringToIndex:[cssStyle paddingTop].length-2].floatValue;
+	float paddingBottom = [[cssStyle paddingBottom] substringToIndex:[cssStyle paddingBottom].length-2].floatValue;
 
     CGFloat newHeight = windowHeight - paddingTop - paddingBottom - pageNavigationHeight;
-	[[resizableContentE style] setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
+	[resizableContentE.style setHeight:[NSString stringWithFormat:@"%fpx", newHeight]];
 }
 
 - (void)webViewFrameChanged:(NSNotification *)aNotification
@@ -228,13 +220,11 @@
 
 - (NSMutableDictionary *)hostCertificates
 {
-	return [[hostCertificates retain] autorelease];
+	return hostCertificates;
 }
 - (void)setHostCertificates:(NSMutableDictionary *)anHostCertificates
 {
 	if (hostCertificates != anHostCertificates) {
-		[anHostCertificates retain];
-		[hostCertificates release];
 		hostCertificates = anHostCertificates;
 	}
 }
@@ -244,8 +234,8 @@
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
-    if ([[self delegate] respondsToSelector:@selector(webView:didStartProvisionalLoadForFrame:)]) {
-        [[self delegate] webView:sender didStartProvisionalLoadForFrame:frame];
+    if ([self.delegate respondsToSelector:@selector(webView:didStartProvisionalLoadForFrame:)]) {
+        [self.delegate webView:sender didStartProvisionalLoadForFrame:frame];
     }
 }
 
@@ -255,53 +245,49 @@
 
 	[self resizeContentDivE];
 	
-	NSURL *newURL = [[[frame dataSource] request] URL];
+	NSURL *newURL = frame.dataSource.request.URL;
 	NSString *newStoreHost;
-	if ([@"file" isEqualTo:[newURL scheme]]) {
+	if ([@"file" isEqualTo:newURL.scheme]) {
 		newStoreHost = @"file";
 	} else {
-		newStoreHost = [newURL host];
+		newStoreHost = newURL.host;
 	}
 	
-	if([self storeHost] == nil) {
+	if(self.storeHost == nil) {
 		[self setStoreHost:newStoreHost];
-		[[self delegate] didLoadStore:newURL];
+		[self.delegate didLoadStore:newURL];
 	} else {
 		FsprgPageType newPageType;
-		if([newStoreHost isEqualTo:[self storeHost]]) {
+		if([newStoreHost isEqualTo:self.storeHost]) {
 			newPageType = FsprgPageFS;
 		} else if([newStoreHost hasSuffix:@"paypal.com"]) {
 			newPageType = FsprgPagePayPal;
 		} else {
 			newPageType = FsprgPageUnknown;
 		}
-		[[self delegate] didLoadPage:newURL ofType:newPageType];
+		[self.delegate didLoadPage:newURL ofType:newPageType];
 	}
 }
 
 - (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	[[self delegate] webView:sender didFailProvisionalLoadWithError:error forFrame:frame];
+	[self.delegate webView:sender didFailProvisionalLoadWithError:error forFrame:frame];
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-	[[self delegate] webView:sender didFailLoadWithError:error forFrame:frame];
+	[self.delegate webView:sender didFailLoadWithError:error forFrame:frame];
 }
 
 #pragma mark - WebUIDelegate
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
 {
-	NSString *title = [sender mainFrameTitle];
+	NSString *title = sender.mainFrameTitle;
 	NSAlert *alertPanel = [[NSAlert alloc] init];
 	[alertPanel setMessageText:title];
 	[alertPanel setInformativeText:message];
-#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_9
-	[alertPanel beginSheetModalForWindow:[sender window] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
-#else
 	[alertPanel beginSheetModalForWindow:[sender window] completionHandler:nil];
-#endif
 }
 
 - (NSUInteger)webView:(WebView *)sender dragDestinationActionMaskForDraggingInfo:(id <NSDraggingInfo>)draggingInfo
@@ -312,10 +298,10 @@
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request
 {
 	NSWindow *window = [[NSWindow alloc] initWithContentRect:NSMakeRect(0,0,0,0)
-										 styleMask:(NSClosableWindowMask|NSResizableWindowMask)
-										 backing:NSBackingStoreBuffered
-										 defer:NO];
-	WebView *subWebView = [[[WebView alloc] initWithFrame:NSMakeRect(0,0,0,0)] autorelease];
+                                                   styleMask:(NSWindowStyleMaskClosable|NSWindowStyleMaskResizable)
+                                                     backing:NSBackingStoreBuffered
+                                                       defer:NO];
+	WebView *subWebView = [[WebView alloc] initWithFrame:NSMakeRect(0,0,0,0)];
 	[window setReleasedWhenClosed:TRUE];
 	[window setContentView:subWebView];
 	[window makeKeyAndOrderFront:sender];
@@ -325,7 +311,6 @@
 
 #pragma mark - WebResourceLoadDelegate
 
-#if RETRIEVE_SSL_CERTIFICATES
 - (BOOL)webView:(WebView *)sender resource:(id)identifier canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace forDataSource:(WebDataSource *)dataSource
 {
     return TRUE;
@@ -333,7 +318,7 @@
 
 - (void)webView:(WebView *)sender resource:(id)identifier didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge fromDataSource:(WebDataSource *)dataSource
 {
-    SecTrustRef trustRef = [[challenge protectionSpace] serverTrust];
+    SecTrustRef trustRef = challenge.protectionSpace.serverTrust;
     SecTrustResultType resultType;
     SecTrustEvaluate(trustRef, &resultType);
     NSUInteger count = (NSUInteger)SecTrustGetCertificateCount(trustRef);
@@ -342,16 +327,14 @@
     CFIndex idx;
     for (idx = 0; idx < (CFIndex)count; idx++) {
         SecCertificateRef certificateRef = SecTrustGetCertificateAtIndex(trustRef, idx);
-        [certificates addObject:(id)certificateRef];
+        [certificates addObject:(__bridge id)certificateRef];
     }
 
-    NSString *host = [[challenge protectionSpace] host];
-    [[self hostCertificates] setObject:certificates forKey:host];
+    NSString *host = challenge.protectionSpace.host;
+    self.hostCertificates[host] = certificates;
 
-    [[challenge sender] useCredential:[NSURLCredential credentialForTrust:trustRef] forAuthenticationChallenge:challenge];
+    [challenge.sender useCredential:[NSURLCredential credentialForTrust:trustRef] forAuthenticationChallenge:challenge];
 }
-#endif
-
 
 - (void)dealloc
 {
@@ -359,8 +342,6 @@
 	[self setDelegate:nil];
 	[self setStoreHost:nil];
 	[self setHostCertificates:nil];
-
-	[super dealloc];
 }
 
 @end

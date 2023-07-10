@@ -13,14 +13,13 @@
 
 - (NSString *)fileName
 {
-    return [[fileName retain] autorelease]; 
+    return fileName; 
 }
 
 - (void)setFileName:(NSString *)aFileName
 {
     if (fileName != aFileName) {
-        [fileName release];
-        fileName = [aFileName retain];
+        fileName = aFileName;
     }
 }
 
@@ -58,7 +57,6 @@
 {
     [self setFileName:nil];
 	
-    [super dealloc];
 }
 
 @end

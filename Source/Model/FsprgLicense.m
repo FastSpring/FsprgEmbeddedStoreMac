@@ -13,63 +13,67 @@
 
 + (FsprgLicense *)licenseWithDictionary:(NSDictionary *)aDictionary
 {
-	return [[[FsprgLicense alloc] initWithDictionary:aDictionary] autorelease];
+	return [[FsprgLicense alloc] initWithDictionary:aDictionary];
 }
 
-- (FsprgLicense *)initWithDictionary:(NSDictionary *)aDictionary
+- (instancetype)init
+{
+    return [self initWithDictionary:@{}];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)aDictionary
 {
 	self = [super init];
 	if (self != nil) {
-		[self setRaw:aDictionary];
+		self.raw = aDictionary;
 	}
 	return self;
 }
 - (NSDictionary *)raw
 {
-    return [[raw retain] autorelease]; 
+    return raw; 
 }
 
 - (void)setRaw:(NSDictionary *)aDictionary
 {
     if (raw != aDictionary) {
-        [raw release];
-        raw = [aDictionary retain];
+        raw = aDictionary;
     }
 }
 
 - (NSString *)licenseName
 {
-	return [[self raw] valueForKey:@"LicenseName"];
+	return [self.raw valueForKey:@"LicenseName"];
 }
 
 - (NSString *)licenseEmail
 {
-	return [[self raw] valueForKey:@"LicenseEmail"];
+	return [self.raw valueForKey:@"LicenseEmail"];
 }
 
 - (NSString *)licenseCompany
 {
-	return [[self raw] valueForKey:@"LicenseCompany"];
+	return [self.raw valueForKey:@"LicenseCompany"];
 }
 
 - (NSString *)firstLicenseCode
 {
-	return [[self licenseCodes] objectAtIndex:0];
+	return self.licenseCodes[0];
 }
 
 - (NSArray *)licenseCodes
 {
-	return [[self raw] valueForKey:@"LicenseCodes"];
+	return [self.raw valueForKey:@"LicenseCodes"];
 }
 
 - (NSDictionary *)licensePropertyList
 {
-	return [[self raw] valueForKey:@"LicensePropertyList"];
+	return [self.raw valueForKey:@"LicensePropertyList"];
 }
 
 - (NSURL *)licenseURL
 {
-	return [NSURL URLWithString:[[self raw] valueForKey:@"LicenseURL"]];
+	return [NSURL URLWithString:[self.raw valueForKey:@"LicenseURL"]];
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
@@ -82,7 +86,6 @@
 {
     [self setRaw:nil];
 	
-    [super dealloc];
 }
 
 @end
